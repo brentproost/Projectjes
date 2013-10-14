@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<style type="text/css">
+#shoppingcart
+{
+	position:absolute;
+	background:red;
+	left:80%;
+	width:200px;
+}
+</style>
+<script>
+$(document).ready(function(e) {
+	var getal= 0;
+    $("#click123").click(function(e)	
+	{
+		getal++;
+		$("#shoppingcart").append("<div id="+getal+"></br> <label>test<label><label id='remove'>$nbsp;remove</label></div>");
+		
+		$("#remove").click(function(e)	
+		{
+			alert($(this).find("id"));
+		});
+	});	
+	
+	
+});
+
+</script>
+</head>
+
+<body>
+<div id="shoppingcart">
+shoppingcart:
+</div>
+<div>
+<form>
+<label id="click123">test</label>
+</form>
+</div>
+</body>
+</html>

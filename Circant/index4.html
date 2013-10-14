@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="js/examples/horizontal/css/MenuMatic.css" type="text/css" media="screen" charset="utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div data-role="header">
+<img src="images/logo.jpg" />
+<ul id="nav">
+	<li><a href="#">Home</a>
+	</li>
+    <li><a href="#">Aanbod</a>
+		<ul>
+			<li><a href="#">Lessen</a></li>
+            <li><a href="#">Stages</a></li>
+            <li><a href="#">Specialisaties</a></li>
+		</ul>
+	</li>
+    <li><a href="#">Initiaties</a>
+		<ul>
+			<li><a href="#">Open piste</a></li>
+            <li><a href="#">Workshop</a></li>
+            <li><a href="#">Animaties</a></li>
+            <li><a href="#">Materiaal verhuur</a></li>
+		</ul>
+	</li>
+    <li><a href="#">Over ons</a>
+		<ul>
+			<li><a href="#">Missie & Visie</a></li>
+            <li><a href="#">Wie is wie</a></li>
+            <li><a href="#">Geschiedenis</a></li>
+		</ul>
+	</li>
+</ul>
+</div>
+<div data-role="content">
+	<div id="sidebar-left">
+		left
+	</div>
+	<div id="sidebar-right">
+	right
+	</div>
+</div>
+
+	<script src="js/MenuMatic_0.68.3.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" >
+		window.addEvent('domready', function() {			
+			var myMenu = new MenuMatic();
+		});		
+	</script>
+
+</body>
+</html>
