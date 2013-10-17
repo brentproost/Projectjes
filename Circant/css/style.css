@@ -6,7 +6,7 @@ body
 
 [data-role="header"] 
 {
-	background:white;
+	background:red;
 	width: 1000px ;
   	margin-left: auto ;
   	margin-right: auto ;
@@ -32,27 +32,53 @@ body
   	margin-left: auto ;
   	margin-right: auto ;
 	margin-top: 0px;
+	padding:0;
 	position:relative;
 }
 
 #sidebar-left
 {
-	background:red;
+	background:white;
 	width: 200px ;
-	height:100%;
+	height:800px;
   	margin-left: 0px ;
 	margin-top: 0px;
 	float:left;
-	
+	border-right:solid 1px;
+	border-color:black;
 	}
 
 #sidebar-right
 {
-	background:red;
+	background:white;
+	border-left:solid 1px;
+	border-color:black;
 	width: 200px ;
 	height:100%;
   	margin-left: 0px ;
 	margin-top: 0px;
 	float:right;
 	z-index:1;
+	height:800px;
 	}
+	
+#content
+{
+	width:598px;
+	float:left;
+	background:white;
+	height:800px;
+	
+	
+}
+	
+.has_click
+{
+	cursor:pointer;
+	
+}
+
+h1
+{
+ margin:0;
+}
