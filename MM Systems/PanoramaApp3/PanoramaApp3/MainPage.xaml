@@ -5,6 +5,7 @@
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800" 
@@ -43,34 +44,38 @@
             <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
             <controls:PanoramaItem Name="item2" Header="second item">
                 <!--Double line list with image placeholder and text wrapping-->
-                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Date}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
-                                <!--Replace rectangle with image-->
-                                <Rectangle Height="100" Width="100" Fill="#FFE5001b" Margin="12,0,9,0"/>
-                                <StackPanel Width="311">                                    
-                                    <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                    <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </controls:PanoramaItem>
-            <controls:PanoramaItem Header="Third item">
-                <!--Double line list with image placeholder and text wrapping-->
-                <ListBox Margin="0,0,-12,0" ItemsSource="{Binding Date}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
+                <ListBox Margin="0,0,-12,0" >
                             <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
                                 <!--Replace rectangle with image-->
                                 <StackPanel Width="311">
-                                    <Slider Maximum ="10"></Slider>
+                            <toolkit:DatePicker ValueStringFormat="{}{0:dd-MM-yyyy}"></toolkit:DatePicker>
+                            <toolkit:TimePicker ValueStringFormat="{}{0:HH:mm}"></toolkit:TimePicker>
+                                    <Button Content="Oke" Click="Button_Click"></Button>
                                 </StackPanel>
                             </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
+                </ListBox>
+            </controls:PanoramaItem>
+            <controls:PanoramaItem x:Name="item3" Header="Third item">
+                <!--Double line list with image placeholder and text wrapping-->
+                <ListBox Margin="0,0,-12,0" >
+                            <StackPanel Orientation="Vertical" Width="430" Margin="0,0,0,17">
+                                <toolkit:MultiselectList>
+                                    <toolkit:ListPicker>
+                                        <toolkit:ListPickerItem>test1</toolkit:ListPickerItem>
+                                <toolkit:ListPickerItem>test2</toolkit:ListPickerItem>
+                                <toolkit:ListPickerItem>test3</toolkit:ListPickerItem>
+                                <toolkit:ListPickerItem>test4</toolkit:ListPickerItem>
+                            </toolkit:ListPicker>
+                                </toolkit:MultiselectList>
+                                <StackPanel Orientation="Horizontal" >
+                        <Slider x:Name="SliderVermoeidheid" Width="400" Minimum="0" Maximum ="10"></Slider>
+                        <TextBlock Text="{Binding ElementName=SliderVermoeidheid,Path=Value}"></TextBlock>
+                        </StackPanel>
+                                <StackPanel Orientation="Horizontal" >
+                            <Slider x:Name="SliderBelangrijk" Width="400" Minimum="0" Maximum ="10"></Slider>
+                        <TextBlock Text="{Binding ElementName=SliderBelangrijk,Path=Value}"></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
                 </ListBox>
             </controls:PanoramaItem>
         </controls:Panorama>
