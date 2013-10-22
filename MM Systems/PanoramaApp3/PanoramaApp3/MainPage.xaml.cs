@@ -51,5 +51,20 @@ namespace PanoramaApp3
             //NavigatedTo(2);
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            PanoramaApp.DefaultItem = item3;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Pages/Settings.xaml", UriKind.Relative));
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Pages/Graphs.xaml", UriKind.Relative));
+        }
     }
 }
