@@ -13,3 +13,19 @@ C:\Users\senne\Documents\Visual Studio 2012\Projects\PanoramaApp3\PanoramaApp3\o
 C:\Users\senne\Documents\Visual Studio 2012\Projects\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.pdb
 C:\Users\senne\documents\visual studio 2012\Projects\PanoramaApp3\PanoramaApp3\obj\Debug\XapCacheFile.xml
 C:\Users\senne\documents\visual studio 2012\Projects\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.csprojResolveAssemblyReference.cache
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\ApplicationIcon.png
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Background.png
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PanoramaApp3.dll
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PanoramaApp3.pdb
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\AppManifest.xaml
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PanoramaApp3.xap
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Microsoft.Phone.Controls.dll
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Microsoft.Phone.Controls.xml
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.csprojResolveAssemblyReference.cache
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\App.g.cs
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\MainPage.g.cs
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.g.resources
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.dll
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.pdb
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\XapCacheFile.xml

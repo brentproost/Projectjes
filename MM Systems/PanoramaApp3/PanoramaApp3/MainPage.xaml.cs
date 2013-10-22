@@ -51,5 +51,10 @@ namespace PanoramaApp3
             //NavigatedTo(2);
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            PanoramaApp.DefaultItem = item3;
+        }
     }
 }
