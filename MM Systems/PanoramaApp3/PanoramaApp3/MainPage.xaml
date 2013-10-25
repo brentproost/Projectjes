@@ -22,7 +22,13 @@
                 <TextBlock Margin="10" Text="{Binding Voornaam}"></TextBlock>
                 <TextBlock Margin="10" Text="{Binding Adres}"></TextBlock>
             </StackPanel>
-        </DataTemplate>     
+        </DataTemplate>
+
+        <DataTemplate x:Key="ActivitiesTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="10" Text="{Binding Omschrijving}"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
     </phone:PhoneApplicationPage.Resources>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
@@ -73,13 +79,8 @@
                 <!--Double line list with image placeholder and text wrapping-->
                 <ListBox Margin="0,0,-12,0" >
                             <StackPanel Orientation="Vertical" Width="430" Margin="0,0,0,17">
-                                <TextBlock TextAlignment="Center">Activiteit</TextBlock>    
-                                <toolkit:ListPicker>
-                                        <toolkit:ListPickerItem>test1</toolkit:ListPickerItem>
-                                <toolkit:ListPickerItem>test2</toolkit:ListPickerItem>
-                                <toolkit:ListPickerItem>test3</toolkit:ListPickerItem>
-                                <toolkit:ListPickerItem>test4</toolkit:ListPickerItem>
-                            </toolkit:ListPicker>
+                                <TextBlock TextAlignment="Center">Activiteit</TextBlock>
+                        <toolkit:ListPicker ItemTemplate="{StaticResource ActivitiesTemplate}" x:Name="lp_Activiteiten"></toolkit:ListPicker>
                         <TextBlock TextAlignment="Center">Moeheid</TextBlock>
                         <StackPanel Orientation="Horizontal" >
                         <Slider x:Name="SliderVermoeidheid" Width="400" Minimum="0" Maximum ="10"></Slider>

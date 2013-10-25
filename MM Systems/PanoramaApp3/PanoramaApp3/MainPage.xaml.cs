@@ -36,8 +36,18 @@ namespace PanoramaApp3
 
             ServiceReference.ServiceClient serviceClient = new ServiceReference.ServiceClient();
 
+            serviceClient.GetAllActivitiesCompleted += serviceClient_GetAllActivitiesCompleted;
+            serviceClient.GetAllActivitiesAsync();
             serviceClient.GetAllUsersCompleted += serviceClient_GetAllUsersCompleted;
             serviceClient.GetAllUsersAsync();
+        }
+
+        void serviceClient_GetAllActivitiesCompleted(object sender, ServiceReference.GetAllActivitiesCompletedEventArgs e)
+        {
+            if (e.Result != null)
+            {
+                lp_Activiteiten.ItemsSource = e.Result;
+            }
         }
 
         void serviceClient_GetAllUsersCompleted(object sender, ServiceReference.GetAllUsersCompletedEventArgs e)

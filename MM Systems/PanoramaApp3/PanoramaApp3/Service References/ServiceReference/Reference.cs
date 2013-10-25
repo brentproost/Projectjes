@@ -210,6 +210,51 @@ namespace PanoramaApp3.ServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Tbl_Activiteiten", Namespace="http://schemas.datacontract.org/2004/07/Wcf")]
+    public partial class Tbl_Activiteiten : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int IDField;
+        
+        private string OmschrijvingField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Omschrijving {
+            get {
+                return this.OmschrijvingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OmschrijvingField, value) != true)) {
+                    this.OmschrijvingField = value;
+                    this.RaisePropertyChanged("Omschrijving");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService")]
     public interface IService {
@@ -218,6 +263,11 @@ namespace PanoramaApp3.ServiceReference {
         System.IAsyncResult BeginGetAllUsers(System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> EndGetAllUsers(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/GetAllActivities", ReplyAction="http://tempuri.org/IService/GetAllActivitiesResponse")]
+        System.IAsyncResult BeginGetAllActivities(System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Activiteiten> EndGetAllActivities(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -245,6 +295,25 @@ namespace PanoramaApp3.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetAllActivitiesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetAllActivitiesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Activiteiten> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Activiteiten>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class ServiceClient : System.ServiceModel.ClientBase<PanoramaApp3.ServiceReference.IService>, PanoramaApp3.ServiceReference.IService {
         
         private BeginOperationDelegate onBeginGetAllUsersDelegate;
@@ -252,6 +321,12 @@ namespace PanoramaApp3.ServiceReference {
         private EndOperationDelegate onEndGetAllUsersDelegate;
         
         private System.Threading.SendOrPostCallback onGetAllUsersCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetAllActivitiesDelegate;
+        
+        private EndOperationDelegate onEndGetAllActivitiesDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetAllActivitiesCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -308,6 +383,8 @@ namespace PanoramaApp3.ServiceReference {
         
         public event System.EventHandler<GetAllUsersCompletedEventArgs> GetAllUsersCompleted;
         
+        public event System.EventHandler<GetAllActivitiesCompletedEventArgs> GetAllActivitiesCompleted;
+        
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
@@ -354,6 +431,50 @@ namespace PanoramaApp3.ServiceReference {
                 this.onGetAllUsersCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAllUsersCompleted);
             }
             base.InvokeAsync(this.onBeginGetAllUsersDelegate, null, this.onEndGetAllUsersDelegate, this.onGetAllUsersCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult PanoramaApp3.ServiceReference.IService.BeginGetAllActivities(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetAllActivities(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Activiteiten> PanoramaApp3.ServiceReference.IService.EndGetAllActivities(System.IAsyncResult result) {
+            return base.Channel.EndGetAllActivities(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetAllActivities(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return ((PanoramaApp3.ServiceReference.IService)(this)).BeginGetAllActivities(callback, asyncState);
+        }
+        
+        private object[] OnEndGetAllActivities(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Activiteiten> retVal = ((PanoramaApp3.ServiceReference.IService)(this)).EndGetAllActivities(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetAllActivitiesCompleted(object state) {
+            if ((this.GetAllActivitiesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetAllActivitiesCompleted(this, new GetAllActivitiesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetAllActivitiesAsync() {
+            this.GetAllActivitiesAsync(null);
+        }
+        
+        public void GetAllActivitiesAsync(object userState) {
+            if ((this.onBeginGetAllActivitiesDelegate == null)) {
+                this.onBeginGetAllActivitiesDelegate = new BeginOperationDelegate(this.OnBeginGetAllActivities);
+            }
+            if ((this.onEndGetAllActivitiesDelegate == null)) {
+                this.onEndGetAllActivitiesDelegate = new EndOperationDelegate(this.OnEndGetAllActivities);
+            }
+            if ((this.onGetAllActivitiesCompletedDelegate == null)) {
+                this.onGetAllActivitiesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAllActivitiesCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetAllActivitiesDelegate, null, this.onEndGetAllActivitiesDelegate, this.onGetAllActivitiesCompletedDelegate, userState);
         }
         
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
@@ -441,6 +562,18 @@ namespace PanoramaApp3.ServiceReference {
             public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> EndGetAllUsers(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> _result = ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User>)(base.EndInvoke("GetAllUsers", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginGetAllActivities(System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[0];
+                System.IAsyncResult _result = base.BeginInvoke("GetAllActivities", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Activiteiten> EndGetAllActivities(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Activiteiten> _result = ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Activiteiten>)(base.EndInvoke("GetAllActivities", _args, result)));
                 return _result;
             }
         }
