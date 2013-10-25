@@ -22,5 +22,10 @@ namespace Wcf
         {
             return Data.Tbl_Users.ToList();
         }
+
+        List<Tbl_Activiteiten> IService.GetAllActivities()
+        {
+            return Data.Tbl_Activiteitens.ToList();
+        }
     }
 }
