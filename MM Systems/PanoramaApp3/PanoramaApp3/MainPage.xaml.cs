@@ -33,6 +33,19 @@ namespace PanoramaApp3
             {
                 App.ViewModel.LoadData();
             }
+
+            ServiceReference.ServiceClient serviceClient = new ServiceReference.ServiceClient();
+
+            serviceClient.GetAllUsersCompleted += serviceClient_GetAllUsersCompleted;
+            serviceClient.GetAllUsersAsync();
+        }
+
+        void serviceClient_GetAllUsersCompleted(object sender, ServiceReference.GetAllUsersCompletedEventArgs e)
+        {
+            if (e.Result != null)
+            {
+                lstb.ItemsSource = e.Result;
+            }
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
