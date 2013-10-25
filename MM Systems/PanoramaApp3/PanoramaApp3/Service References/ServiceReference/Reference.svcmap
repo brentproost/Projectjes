@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="aeeedc7e-90c3-4dd1-8a57-39bb34963545" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c497bbd7-6d32-453b-a48a-227166e6e424" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -20,15 +20,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:59309/Service.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://employeebrentproostservice.cloudapp.net/Service.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Service.xsd" MetadataType="Schema" ID="1043a701-f831-4d6c-ad37-00a5cd93fc78" SourceId="1" SourceUrl="http://localhost:59309/Service.svc?xsd=xsd1" />
-    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="b26c65d4-2f3c-4050-9950-bebd1a953e1f" SourceId="1" SourceUrl="http://localhost:59309/Service.svc?xsd=xsd3" />
-    <MetadataFile FileName="Service2.xsd" MetadataType="Schema" ID="445396c9-6071-4634-a205-4740795bb44f" SourceId="1" SourceUrl="http://localhost:59309/Service.svc?xsd=xsd2" />
-    <MetadataFile FileName="Service.wsdl" MetadataType="Wsdl" ID="55ac3645-9603-47ac-9325-28e51a6ada2d" SourceId="1" SourceUrl="http://localhost:59309/Service.svc?wsdl" />
-    <MetadataFile FileName="Service.disco" MetadataType="Disco" ID="dca6c815-473f-46be-81cc-1759a65907d6" SourceId="1" SourceUrl="http://localhost:59309/Service.svc?disco" />
-    <MetadataFile FileName="Service3.xsd" MetadataType="Schema" ID="c77b6d3f-074a-4ae7-b5e7-7802e4db2f1b" SourceId="1" SourceUrl="http://localhost:59309/Service.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service.wsdl" MetadataType="Wsdl" ID="2f76b1e9-5cc0-42b9-8411-ff81292f365a" SourceId="1" SourceUrl="http://employeebrentproostservice.cloudapp.net/Service.svc?wsdl" />
+    <MetadataFile FileName="Service.xsd" MetadataType="Schema" ID="a96ef3df-fa13-475d-a40c-c483b51e3b55" SourceId="1" SourceUrl="http://employeebrentproostservice.cloudapp.net/Service.svc?xsd=xsd3" />
+    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="fe403bf2-d090-4eba-ab16-b4e44ad7ef10" SourceId="1" SourceUrl="http://employeebrentproostservice.cloudapp.net/Service.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service2.xsd" MetadataType="Schema" ID="862588a3-026d-49af-857f-1d0f1e0c2c20" SourceId="1" SourceUrl="http://employeebrentproostservice.cloudapp.net/Service.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service3.xsd" MetadataType="Schema" ID="24c60ad9-9ea6-42f6-a248-33bc32b58249" SourceId="1" SourceUrl="http://employeebrentproostservice.cloudapp.net/Service.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service.disco" MetadataType="Disco" ID="97305612-0a66-4997-886b-e5d4aa76fe2e" SourceId="1" SourceUrl="http://employeebrentproostservice.cloudapp.net/Service.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
