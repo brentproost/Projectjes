@@ -9,9 +9,9 @@
             </basicHttpBinding>
         </bindings>
         <client>
-            <endpoint address="http://localhost:59309/Service.svc" binding="basicHttpBinding"
-                bindingConfiguration="BasicHttpBinding_IService" contract="ServiceReference.IService"
-                name="BasicHttpBinding_IService" />
+            <endpoint address="http://employeebrentproostservice.cloudapp.net/Service.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IService"
+                contract="ServiceReference.IService" name="BasicHttpBinding_IService" />
         </client>
     </system.serviceModel>
 </configuration>
