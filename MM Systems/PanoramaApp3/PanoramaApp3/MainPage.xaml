@@ -9,12 +9,21 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800" 
-    d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
+    
+    <phone:PhoneApplicationPage.Resources>
+        <DataTemplate x:Key="UserTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="10" Text="{Binding Naam}"></TextBlock>
+                <TextBlock Margin="10" Text="{Binding Voornaam}"></TextBlock>
+                <TextBlock Margin="10" Text="{Binding Adres}"></TextBlock>
+            </StackPanel>
+        </DataTemplate>     
+    </phone:PhoneApplicationPage.Resources>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -36,7 +45,8 @@
                                 <TextBlock Text="Grafieken van vorige data bekijken" TextWrapping="Wrap" Margin="25,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
                                 <Button Content="Instellingen" Margin="12,-14,12,0" Click="Button_Click_1" />
                                 <TextBlock Text="Log je uit of verander andere instellingen" TextWrapping="Wrap" Margin="25,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                            </StackPanel>
+                        <ListBox x:Name="lstb" ItemsSource="{Binding}" ItemTemplate="{StaticResource UserTemplate}" Height="Auto" ></ListBox>
+                    </StackPanel>
                 </ListBox>
             </controls:PanoramaItem>
  
