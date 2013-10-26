@@ -30,7 +30,7 @@
             </StackPanel>
         </DataTemplate>
     </phone:PhoneApplicationPage.Resources>
-cx
+
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
  
