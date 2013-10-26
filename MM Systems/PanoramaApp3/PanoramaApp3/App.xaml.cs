@@ -81,6 +81,9 @@ namespace PanoramaApp3
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+            //Uri nUri = new Uri("/Pages/Settings.xaml", UriKind.Relative);
+            //((App)Application.Current).RootFrame.Navigate(nUri);
+ 
         }
 
         // Code to execute when the application is activated (brought to foreground)
