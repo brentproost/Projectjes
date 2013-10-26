@@ -9,12 +9,27 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800" 
-    d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
+    
+    <phone:PhoneApplicationPage.Resources>
+        <DataTemplate x:Key="UserTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="10" Text="{Binding Naam}"></TextBlock>
+                <TextBlock Margin="10" Text="{Binding Voornaam}"></TextBlock>
+                <TextBlock Margin="10" Text="{Binding Adres}"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ActivitiesTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="10" Text="{Binding Omschrijving}"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
+    </phone:PhoneApplicationPage.Resources>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -36,7 +51,8 @@
                                 <TextBlock Text="Grafieken van vorige data bekijken" TextWrapping="Wrap" Margin="25,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
                                 <Button Content="Instellingen" Margin="12,-14,12,0" Click="Button_Click_1" />
                                 <TextBlock Text="Log je uit of verander andere instellingen" TextWrapping="Wrap" Margin="25,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                            </StackPanel>
+                        <ListBox x:Name="lstb" ItemsSource="{Binding}" ItemTemplate="{StaticResource UserTemplate}" Height="Auto" ></ListBox>
+                    </StackPanel>
                 </ListBox>
             </controls:PanoramaItem>
  
@@ -63,13 +79,8 @@
                 <!--Double line list with image placeholder and text wrapping-->
                 <ListBox Margin="0,0,-12,0" >
                             <StackPanel Orientation="Vertical" Width="430" Margin="0,0,0,17">
-                                <TextBlock TextAlignment="Center">Activiteit</TextBlock>    
-                                <toolkit:ListPicker>
-                                        <toolkit:ListPickerItem>test1</toolkit:ListPickerItem>
-                                <toolkit:ListPickerItem>test2</toolkit:ListPickerItem>
-                                <toolkit:ListPickerItem>test3</toolkit:ListPickerItem>
-                                <toolkit:ListPickerItem>test4</toolkit:ListPickerItem>
-                            </toolkit:ListPicker>
+                                <TextBlock TextAlignment="Center">Activiteit</TextBlock>
+                        <toolkit:ListPicker ItemTemplate="{StaticResource ActivitiesTemplate}" x:Name="lp_Activiteiten"></toolkit:ListPicker>
                         <TextBlock TextAlignment="Center">Moeheid</TextBlock>
                         <StackPanel Orientation="Horizontal" >
                         <Slider x:Name="SliderVermoeidheid" Width="400" Minimum="0" Maximum ="10"></Slider>

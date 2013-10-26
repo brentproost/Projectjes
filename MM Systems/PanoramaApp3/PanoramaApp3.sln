@@ -2,6 +2,13 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanoramaApp3", "PanoramaApp3\PanoramaApp3.csproj", "{A5DA957D-E725-4F28-A852-9E7E44C5056D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D37F397A-158D-402F-AA2C-D62A3DF84BA3} = {D37F397A-158D-402F-AA2C-D62A3DF84BA3}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wcf", "WcfService\Wcf\Wcf.csproj", "{D37F397A-158D-402F-AA2C-D62A3DF84BA3}"
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Wcf.Azure2", "Wcf.Azure2\Wcf.Azure2.ccproj", "{5D086370-767F-42EB-BB8E-CB4805C5BC49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +22,14 @@ Global
 		{A5DA957D-E725-4F28-A852-9E7E44C5056D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5DA957D-E725-4F28-A852-9E7E44C5056D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A5DA957D-E725-4F28-A852-9E7E44C5056D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D37F397A-158D-402F-AA2C-D62A3DF84BA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D37F397A-158D-402F-AA2C-D62A3DF84BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D37F397A-158D-402F-AA2C-D62A3DF84BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D37F397A-158D-402F-AA2C-D62A3DF84BA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D086370-767F-42EB-BB8E-CB4805C5BC49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D086370-767F-42EB-BB8E-CB4805C5BC49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D086370-767F-42EB-BB8E-CB4805C5BC49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D086370-767F-42EB-BB8E-CB4805C5BC49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
