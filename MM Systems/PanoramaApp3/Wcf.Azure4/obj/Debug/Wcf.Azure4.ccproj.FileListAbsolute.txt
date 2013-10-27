@@ -1,2 +1,0 @@
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\Wcf.Azure4\bin\Debug\ServiceConfiguration.cscfg
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\Wcf.Azure4\bin\Debug\ServiceDefinition.csdef
