@@ -1,8 +1,8 @@
-﻿<xapCache source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PanoramaApp3.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="27-10-2013 16:15:00">
+﻿<xapCache source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PanoramaApp3.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="27-10-2013 19:56:41">
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="27-10-2013 12:53:27" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Background.png" archivePath="Background.png" lastWriteTime="22-10-2013 12:38:47" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="22-10-2013 12:38:47" />
-  <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.dll" archivePath="PanoramaApp3.dll" lastWriteTime="27-10-2013 16:14:59" />
+  <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.dll" archivePath="PanoramaApp3.dll" lastWriteTime="27-10-2013 19:56:41" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\packages\Coding4Fun.Toolkit.Audio.2.0.7\lib\wp71\Coding4Fun.Toolkit.Audio.dll" archivePath="Coding4Fun.Toolkit.Audio.dll" lastWriteTime="27-10-2013 12:53:13" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\packages\Coding4Fun.Toolkit.Controls.2.0.7\lib\wp71\Coding4Fun.Toolkit.Controls.dll" archivePath="Coding4Fun.Toolkit.Controls.dll" lastWriteTime="27-10-2013 12:53:13" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\packages\Coding4Fun.Toolkit.Net.2.0.7\lib\wp71\Coding4Fun.Toolkit.Net.dll" archivePath="Coding4Fun.Toolkit.Net.dll" lastWriteTime="27-10-2013 12:53:13" />
@@ -11,7 +11,7 @@
   <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.1\Libraries\Silverlight\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="6-7-2012 01:40:16" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\packages\SilverlightToolkitWP.4.2012.6.25\lib\sl4-windowsphone71\Microsoft.Phone.Controls.Toolkit.dll" archivePath="Microsoft.Phone.Controls.Toolkit.dll" lastWriteTime="22-10-2013 12:41:52" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\ReadMe.Coding4Fun.Toolkit.txt" archivePath="ReadMe.Coding4Fun.Toolkit.txt" lastWriteTime="27-10-2013 12:53:08" />
-  <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="27-10-2013 15:21:47" />
+  <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="27-10-2013 16:31:35" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Toolkit.Content\ApplicationBar.Cancel.png" archivePath="Toolkit.Content\ApplicationBar.Cancel.png" lastWriteTime="22-10-2013 12:41:52" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Toolkit.Content\ApplicationBar.Check.png" archivePath="Toolkit.Content\ApplicationBar.Check.png" lastWriteTime="22-10-2013 12:41:52" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Toolkit.Content\ApplicationBar.Delete.png" archivePath="Toolkit.Content\ApplicationBar.Delete.png" lastWriteTime="22-10-2013 12:41:52" />
