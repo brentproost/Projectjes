@@ -41,4 +41,3 @@ C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\ru\System.Spatial.resources.dll
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\obj\Debug\Wcf.csprojResolveAssemblyReference.cache

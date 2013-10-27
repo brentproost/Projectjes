@@ -36,20 +36,8 @@ namespace PanoramaApp3
 
             ServiceReference.ServiceClient serviceClient = new ServiceReference.ServiceClient();
 
-            serviceClient.SigninUserCompleted += serviceClient_SigninUserCompleted;
-            serviceClient.SigninUserAsync("brentproost");
             serviceClient.GetAllActivitiesCompleted += serviceClient_GetAllActivitiesCompleted;
             serviceClient.GetAllActivitiesAsync();
-            serviceClient.GetAllUsersCompleted += serviceClient_GetAllUsersCompleted;
-            serviceClient.GetAllUsersAsync();
-        }
-
-        void serviceClient_SigninUserCompleted(object sender, ServiceReference.SigninUserCompletedEventArgs e)
-        {
-            if (e.Result != null)
-            {
-                lstb.ItemsSource = e.Result;
-            }
         }
 
         void serviceClient_GetAllActivitiesCompleted(object sender, ServiceReference.GetAllActivitiesCompletedEventArgs e)
@@ -57,14 +45,6 @@ namespace PanoramaApp3
             if (e.Result != null)
             {
                 lp_Activiteiten.ItemsSource = e.Result;
-            }
-        }
-
-        void serviceClient_GetAllUsersCompleted(object sender, ServiceReference.GetAllUsersCompletedEventArgs e)
-        {
-            if (e.Result != null)
-            {
-                lstb.ItemsSource = e.Result;
             }
         }
 

@@ -42,12 +42,12 @@ namespace Wcf
     partial void InsertTbl_Score(Tbl_Score instance);
     partial void UpdateTbl_Score(Tbl_Score instance);
     partial void DeleteTbl_Score(Tbl_Score instance);
-    partial void InsertTbl_User(Tbl_User instance);
-    partial void UpdateTbl_User(Tbl_User instance);
-    partial void DeleteTbl_User(Tbl_User instance);
     partial void InsertTbl_Weersomstandigheden(Tbl_Weersomstandigheden instance);
     partial void UpdateTbl_Weersomstandigheden(Tbl_Weersomstandigheden instance);
     partial void DeleteTbl_Weersomstandigheden(Tbl_Weersomstandigheden instance);
+    partial void InsertTbl_User(Tbl_User instance);
+    partial void UpdateTbl_User(Tbl_User instance);
+    partial void DeleteTbl_User(Tbl_User instance);
     #endregion
 		
 		public DataClassesDataContext() : 
@@ -112,19 +112,19 @@ namespace Wcf
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_User> Tbl_Users
-		{
-			get
-			{
-				return this.GetTable<Tbl_User>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Tbl_Weersomstandigheden> Tbl_Weersomstandighedens
 		{
 			get
 			{
 				return this.GetTable<Tbl_Weersomstandigheden>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_User> Tbl_Users
+		{
+			get
+			{
+				return this.GetTable<Tbl_User>();
 			}
 		}
 	}
@@ -737,6 +737,92 @@ namespace Wcf
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Weersomstandigheden")]
+	public partial class Tbl_Weersomstandigheden : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _Omschrijving;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnOmschrijvingChanging(string value);
+    partial void OnOmschrijvingChanged();
+    #endregion
+		
+		public Tbl_Weersomstandigheden()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Omschrijving", DbType="NChar(20) NOT NULL", CanBeNull=false)]
+		public string Omschrijving
+		{
+			get
+			{
+				return this._Omschrijving;
+			}
+			set
+			{
+				if ((this._Omschrijving != value))
+				{
+					this.OnOmschrijvingChanging(value);
+					this.SendPropertyChanging();
+					this._Omschrijving = value;
+					this.SendPropertyChanged("Omschrijving");
+					this.OnOmschrijvingChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Users")]
 	public partial class Tbl_User : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -759,7 +845,7 @@ namespace Wcf
 		
 		private string _Gebruikersnaam;
 		
-		private System.Data.Linq.Binary _Paswoord;
+		private string _Paswoord;
 		
 		private int _Rechten_ID;
 		
@@ -783,7 +869,7 @@ namespace Wcf
     partial void OnPostcodeChanged();
     partial void OnGebruikersnaamChanging(string value);
     partial void OnGebruikersnaamChanged();
-    partial void OnPaswoordChanging(System.Data.Linq.Binary value);
+    partial void OnPaswoordChanging(string value);
     partial void OnPaswoordChanged();
     partial void OnRechten_IDChanging(int value);
     partial void OnRechten_IDChanged();
@@ -954,8 +1040,8 @@ namespace Wcf
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Paswoord", DbType="VarBinary(200) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary Paswoord
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Paswoord", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Paswoord
 		{
 			get
 			{
@@ -990,92 +1076,6 @@ namespace Wcf
 					this._Rechten_ID = value;
 					this.SendPropertyChanged("Rechten_ID");
 					this.OnRechten_IDChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Weersomstandigheden")]
-	public partial class Tbl_Weersomstandigheden : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _Omschrijving;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnOmschrijvingChanging(string value);
-    partial void OnOmschrijvingChanged();
-    #endregion
-		
-		public Tbl_Weersomstandigheden()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Omschrijving", DbType="NChar(20) NOT NULL", CanBeNull=false)]
-		public string Omschrijving
-		{
-			get
-			{
-				return this._Omschrijving;
-			}
-			set
-			{
-				if ((this._Omschrijving != value))
-				{
-					this.OnOmschrijvingChanging(value);
-					this.SendPropertyChanging();
-					this._Omschrijving = value;
-					this.SendPropertyChanged("Omschrijving");
-					this.OnOmschrijvingChanged();
 				}
 			}
 		}

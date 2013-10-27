@@ -9,7 +9,7 @@
             </basicHttpBinding>
         </bindings>
         <client>
-            <endpoint address="http://employeebrentproostservice.cloudapp.net/Service.svc"
+            <endpoint address="http://mmsystemsservice.cloudapp.net/Service.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IService"
                 contract="ServiceReference.IService" name="BasicHttpBinding_IService" />
         </client>

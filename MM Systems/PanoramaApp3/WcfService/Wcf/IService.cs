@@ -18,6 +18,6 @@ namespace Wcf
         List<Tbl_Activiteiten> GetAllActivities();
 
         [OperationContract]
-        List<Tbl_User> SigninUser(string uname);
+        string SigninUser(string uname, string pass);
     }
 }

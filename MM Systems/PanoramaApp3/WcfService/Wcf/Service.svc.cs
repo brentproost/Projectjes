@@ -28,11 +28,19 @@ namespace Wcf
             return Data.Tbl_Activiteitens.ToList();
         }
 
-        public List<Tbl_User> SigninUser(string uname)
+        string IService.SigninUser(string uname, string pass)
         {
-            IEnumerable<Tbl_User> result = Data.Tbl_Users.Where(a => a.Gebruikersnaam == uname);
-            return result.ToList();
-        }
+            try
+            {
+                IEnumerable<Tbl_User> result = Data.Tbl_Users.Where(a => a.Paswoord == pass && a.Gebruikersnaam == uname);
+                List<Tbl_User> r = result.ToList();
 
+                return "Welkom " + r[0].Naam + " " + r[0].Voornaam + "!";
+            }
+            catch (Exception)
+            {
+                return "Deze gebruikersnaam of paswoord wordt niet herkend.";
+            }
+        }
     }
 }

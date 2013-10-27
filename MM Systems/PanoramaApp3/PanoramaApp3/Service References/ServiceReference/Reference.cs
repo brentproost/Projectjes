@@ -30,7 +30,7 @@ namespace PanoramaApp3.ServiceReference {
         
         private int NummerField;
         
-        private PanoramaApp3.ServiceReference.Binary PaswoordField;
+        private string PaswoordField;
         
         private string PlaatsField;
         
@@ -106,7 +106,7 @@ namespace PanoramaApp3.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public PanoramaApp3.ServiceReference.Binary Paswoord {
+        public string Paswoord {
             get {
                 return this.PaswoordField;
             }
@@ -182,36 +182,6 @@ namespace PanoramaApp3.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Binary", Namespace="http://schemas.datacontract.org/2004/07/System.Data.Linq")]
-    public partial class Binary : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private byte[] BytesField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte[] Bytes {
-            get {
-                return this.BytesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BytesField, value) != true)) {
-                    this.BytesField = value;
-                    this.RaisePropertyChanged("Bytes");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Tbl_Activiteiten", Namespace="http://schemas.datacontract.org/2004/07/Wcf")]
     public partial class Tbl_Activiteiten : object, System.ComponentModel.INotifyPropertyChanged {
         
@@ -270,9 +240,9 @@ namespace PanoramaApp3.ServiceReference {
         System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Activiteiten> EndGetAllActivities(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/SigninUser", ReplyAction="http://tempuri.org/IService/SigninUserResponse")]
-        System.IAsyncResult BeginSigninUser(string uname, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginSigninUser(string uname, string pass, System.AsyncCallback callback, object asyncState);
         
-        System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> EndSigninUser(System.IAsyncResult result);
+        string EndSigninUser(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -328,10 +298,10 @@ namespace PanoramaApp3.ServiceReference {
             this.results = results;
         }
         
-        public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> Result {
+        public string Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User>)(this.results[0]));
+                return ((string)(this.results[0]));
             }
         }
     }
@@ -510,22 +480,23 @@ namespace PanoramaApp3.ServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult PanoramaApp3.ServiceReference.IService.BeginSigninUser(string uname, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginSigninUser(uname, callback, asyncState);
+        System.IAsyncResult PanoramaApp3.ServiceReference.IService.BeginSigninUser(string uname, string pass, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginSigninUser(uname, pass, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> PanoramaApp3.ServiceReference.IService.EndSigninUser(System.IAsyncResult result) {
+        string PanoramaApp3.ServiceReference.IService.EndSigninUser(System.IAsyncResult result) {
             return base.Channel.EndSigninUser(result);
         }
         
         private System.IAsyncResult OnBeginSigninUser(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string uname = ((string)(inValues[0]));
-            return ((PanoramaApp3.ServiceReference.IService)(this)).BeginSigninUser(uname, callback, asyncState);
+            string pass = ((string)(inValues[1]));
+            return ((PanoramaApp3.ServiceReference.IService)(this)).BeginSigninUser(uname, pass, callback, asyncState);
         }
         
         private object[] OnEndSigninUser(System.IAsyncResult result) {
-            System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> retVal = ((PanoramaApp3.ServiceReference.IService)(this)).EndSigninUser(result);
+            string retVal = ((PanoramaApp3.ServiceReference.IService)(this)).EndSigninUser(result);
             return new object[] {
                     retVal};
         }
@@ -537,11 +508,11 @@ namespace PanoramaApp3.ServiceReference {
             }
         }
         
-        public void SigninUserAsync(string uname) {
-            this.SigninUserAsync(uname, null);
+        public void SigninUserAsync(string uname, string pass) {
+            this.SigninUserAsync(uname, pass, null);
         }
         
-        public void SigninUserAsync(string uname, object userState) {
+        public void SigninUserAsync(string uname, string pass, object userState) {
             if ((this.onBeginSigninUserDelegate == null)) {
                 this.onBeginSigninUserDelegate = new BeginOperationDelegate(this.OnBeginSigninUser);
             }
@@ -552,7 +523,8 @@ namespace PanoramaApp3.ServiceReference {
                 this.onSigninUserCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnSigninUserCompleted);
             }
             base.InvokeAsync(this.onBeginSigninUserDelegate, new object[] {
-                        uname}, this.onEndSigninUserDelegate, this.onSigninUserCompletedDelegate, userState);
+                        uname,
+                        pass}, this.onEndSigninUserDelegate, this.onSigninUserCompletedDelegate, userState);
         }
         
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
@@ -655,16 +627,17 @@ namespace PanoramaApp3.ServiceReference {
                 return _result;
             }
             
-            public System.IAsyncResult BeginSigninUser(string uname, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
+            public System.IAsyncResult BeginSigninUser(string uname, string pass, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
                 _args[0] = uname;
+                _args[1] = pass;
                 System.IAsyncResult _result = base.BeginInvoke("SigninUser", _args, callback, asyncState);
                 return _result;
             }
             
-            public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> EndSigninUser(System.IAsyncResult result) {
+            public string EndSigninUser(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> _result = ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User>)(base.EndInvoke("SigninUser", _args, result)));
+                string _result = ((string)(base.EndInvoke("SigninUser", _args, result)));
                 return _result;
             }
         }
