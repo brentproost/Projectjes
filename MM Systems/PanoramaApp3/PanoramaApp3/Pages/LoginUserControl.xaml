@@ -9,7 +9,7 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     d:DesignHeight="480" d:DesignWidth="480">
 
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -33,18 +33,19 @@
                 <RowDefinition Height="519*" />
             </Grid.RowDefinitions>
 
-            <TextBlock Margin="10" Text="Welcome to The Greatest App Ever. Please login below." TextWrapping="Wrap"/>
-            <StackPanel HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="0" Width="430" Grid.Row="1">
+            <TextBlock Margin="10,10,10,51" Text="Welcome to The Greatest App Ever. Please login below." TextWrapping="Wrap"/>
+            <StackPanel HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="10,69,26,0" Width="430" Grid.RowSpan="2">
                 <StackPanel HorizontalAlignment="Center" Margin="15,0" 
-					VerticalAlignment="Top">
+            		VerticalAlignment="Top">
                     <TextBlock x:Name="lblUsername" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Center"/>
                     <TextBox x:Name="txtUsername" Margin="0" 
-						Text="{Binding Username, Mode=TwoWay}"
-						VerticalAlignment="Center" Width="430" HorizontalAlignment="Left"/>
+            			Text="{Binding Username, Mode=TwoWay}"
+            			VerticalAlignment="Center" Width="402" HorizontalAlignment="Left"/>
                     <TextBlock x:Name="lblPassword" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Center"/>
                     <PasswordBox  x:Name="txtPassword" HorizontalAlignment="Left" 
-						Password="{Binding Password, Mode=TwoWay}"
-						VerticalAlignment="Center" Margin="0" Width="430"/>
+            			Password="{Binding Password, Mode=TwoWay}"
+            			VerticalAlignment="Center" Margin="0" Width="402"/>
+                    <Button x:Name="btn_Login" Content="Login"/>
                 </StackPanel>
             </StackPanel>
         </Grid>

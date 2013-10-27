@@ -268,6 +268,11 @@ namespace PanoramaApp3.ServiceReference {
         System.IAsyncResult BeginGetAllActivities(System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Activiteiten> EndGetAllActivities(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/SigninUser", ReplyAction="http://tempuri.org/IService/SigninUserResponse")]
+        System.IAsyncResult BeginSigninUser(string uname, System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> EndSigninUser(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -314,6 +319,25 @@ namespace PanoramaApp3.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class SigninUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public SigninUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class ServiceClient : System.ServiceModel.ClientBase<PanoramaApp3.ServiceReference.IService>, PanoramaApp3.ServiceReference.IService {
         
         private BeginOperationDelegate onBeginGetAllUsersDelegate;
@@ -327,6 +351,12 @@ namespace PanoramaApp3.ServiceReference {
         private EndOperationDelegate onEndGetAllActivitiesDelegate;
         
         private System.Threading.SendOrPostCallback onGetAllActivitiesCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginSigninUserDelegate;
+        
+        private EndOperationDelegate onEndSigninUserDelegate;
+        
+        private System.Threading.SendOrPostCallback onSigninUserCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -384,6 +414,8 @@ namespace PanoramaApp3.ServiceReference {
         public event System.EventHandler<GetAllUsersCompletedEventArgs> GetAllUsersCompleted;
         
         public event System.EventHandler<GetAllActivitiesCompletedEventArgs> GetAllActivitiesCompleted;
+        
+        public event System.EventHandler<SigninUserCompletedEventArgs> SigninUserCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -475,6 +507,52 @@ namespace PanoramaApp3.ServiceReference {
                 this.onGetAllActivitiesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAllActivitiesCompleted);
             }
             base.InvokeAsync(this.onBeginGetAllActivitiesDelegate, null, this.onEndGetAllActivitiesDelegate, this.onGetAllActivitiesCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult PanoramaApp3.ServiceReference.IService.BeginSigninUser(string uname, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginSigninUser(uname, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> PanoramaApp3.ServiceReference.IService.EndSigninUser(System.IAsyncResult result) {
+            return base.Channel.EndSigninUser(result);
+        }
+        
+        private System.IAsyncResult OnBeginSigninUser(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string uname = ((string)(inValues[0]));
+            return ((PanoramaApp3.ServiceReference.IService)(this)).BeginSigninUser(uname, callback, asyncState);
+        }
+        
+        private object[] OnEndSigninUser(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> retVal = ((PanoramaApp3.ServiceReference.IService)(this)).EndSigninUser(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnSigninUserCompleted(object state) {
+            if ((this.SigninUserCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.SigninUserCompleted(this, new SigninUserCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void SigninUserAsync(string uname) {
+            this.SigninUserAsync(uname, null);
+        }
+        
+        public void SigninUserAsync(string uname, object userState) {
+            if ((this.onBeginSigninUserDelegate == null)) {
+                this.onBeginSigninUserDelegate = new BeginOperationDelegate(this.OnBeginSigninUser);
+            }
+            if ((this.onEndSigninUserDelegate == null)) {
+                this.onEndSigninUserDelegate = new EndOperationDelegate(this.OnEndSigninUser);
+            }
+            if ((this.onSigninUserCompletedDelegate == null)) {
+                this.onSigninUserCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnSigninUserCompleted);
+            }
+            base.InvokeAsync(this.onBeginSigninUserDelegate, new object[] {
+                        uname}, this.onEndSigninUserDelegate, this.onSigninUserCompletedDelegate, userState);
         }
         
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
@@ -574,6 +652,19 @@ namespace PanoramaApp3.ServiceReference {
             public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Activiteiten> EndGetAllActivities(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Activiteiten> _result = ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Activiteiten>)(base.EndInvoke("GetAllActivities", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginSigninUser(string uname, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = uname;
+                System.IAsyncResult _result = base.BeginInvoke("SigninUser", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> EndSigninUser(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> _result = ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User>)(base.EndInvoke("SigninUser", _args, result)));
                 return _result;
             }
         }

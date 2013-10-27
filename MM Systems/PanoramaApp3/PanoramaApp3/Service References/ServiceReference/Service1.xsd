@@ -25,4 +25,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="SigninUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SigninUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="SigninUserResult" nillable="true" type="q3:ArrayOfTbl_User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

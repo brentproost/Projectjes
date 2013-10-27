@@ -20,6 +20,12 @@
   <wsdl:message name="IService_GetAllActivities_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllActivitiesResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_SigninUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:SigninUser" />
+  </wsdl:message>
+  <wsdl:message name="IService_SigninUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SigninUserResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="GetAllUsers">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAllUsers" message="tns:IService_GetAllUsers_InputMessage" />
@@ -28,6 +34,10 @@
     <wsdl:operation name="GetAllActivities">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAllActivities" message="tns:IService_GetAllActivities_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetAllActivitiesResponse" message="tns:IService_GetAllActivities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SigninUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SigninUser" message="tns:IService_SigninUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SigninUserResponse" message="tns:IService_SigninUser_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -43,6 +53,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllActivities">
       <soap:operation soapAction="http://tempuri.org/IService/GetAllActivities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SigninUser">
+      <soap:operation soapAction="http://tempuri.org/IService/SigninUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

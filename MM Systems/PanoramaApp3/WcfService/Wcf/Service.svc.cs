@@ -27,5 +27,12 @@ namespace Wcf
         {
             return Data.Tbl_Activiteitens.ToList();
         }
+
+        public List<Tbl_User> SigninUser(string uname)
+        {
+            IEnumerable<Tbl_User> result = Data.Tbl_Users.Where(a => a.Gebruikersnaam == uname);
+            return result.ToList();
+        }
+
     }
 }

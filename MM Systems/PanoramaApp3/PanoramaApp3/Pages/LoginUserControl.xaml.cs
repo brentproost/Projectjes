@@ -56,6 +56,5 @@ namespace PanoramaApp3.Pages
             }
         }
 
-
     }
 }
