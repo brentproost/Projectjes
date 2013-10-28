@@ -56,6 +56,19 @@ namespace PanoramaApp3.Pages
             }
         }
 
+        private void btn_Login_Click(object sender, RoutedEventArgs e)
+        {
+            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+            client.SigninUserCompleted += client_SigninUserCompleted;
+            client.SigninUserAsync(txtGebruikersNaam.Text, txtPaswoord.Password);
+        }
 
+        void client_SigninUserCompleted(object sender, ServiceReference.SigninUserCompletedEventArgs e)
+        {
+            if (e.Result != null)
+            {
+                MessageBox.Show(e.Result);
+            }
+        }
     }
 }

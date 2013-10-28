@@ -52,3 +52,17 @@ C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Deb
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\Graphs.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\Settings.g.cs
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Coding4Fun.Toolkit.Audio.dll
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Coding4Fun.Toolkit.Controls.dll
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Coding4Fun.Toolkit.Net.dll
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Coding4Fun.Toolkit.Storage.dll
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Facebook.dll
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Facebook.xml
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\LoginUserControl.g.cs
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Coding4Fun.Toolkit.Audio.dll
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Coding4Fun.Toolkit.Controls.dll
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Coding4Fun.Toolkit.Net.dll
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Coding4Fun.Toolkit.Storage.dll
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Facebook.dll
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Facebook.xml
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\LoginUserControl.g.cs

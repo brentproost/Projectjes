@@ -28,7 +28,14 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Button Content="Login" Height="72" HorizontalAlignment="Center" Name="button1" VerticalAlignment="Center" Width="200" Click="Button_Click" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>            
+            <Button x:Name="Button" Grid.Row="1" Content="Login" Height="72" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Click="Button_Click" />
+            </Grid>
+            
         </Grid>
     </Grid>
 

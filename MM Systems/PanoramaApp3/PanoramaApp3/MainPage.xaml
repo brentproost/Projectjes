@@ -14,16 +14,8 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
-    
-    <phone:PhoneApplicationPage.Resources>
-        <DataTemplate x:Key="UserTemplate">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Margin="10" Text="{Binding Naam}"></TextBlock>
-                <TextBlock Margin="10" Text="{Binding Voornaam}"></TextBlock>
-                <TextBlock Margin="10" Text="{Binding Adres}"></TextBlock>
-            </StackPanel>
-        </DataTemplate>
 
+    <phone:PhoneApplicationPage.Resources>
         <DataTemplate x:Key="ActivitiesTemplate">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Margin="10" Text="{Binding Omschrijving}"></TextBlock>
@@ -33,63 +25,62 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
- 
+
         <!--Panorama control-->
         <controls:Panorama x:Name="PanoramaApp" Title="my application" Margin="-10,0,10,0">
             <controls:Panorama.Background>
                 <ImageBrush ImageSource="PanoramaBackground.png"/>
             </controls:Panorama.Background>
- 
+
             <!--Panorama item one-->
             <controls:PanoramaItem Name="item1" Header="Start Page">
                 <!--Double line list with text wrapping-->
                 <ListBox Margin="0,0,-12,0">
-                            <StackPanel Margin="0,0,0,17" Width="432">
-                                <Button Content="Nieuwe invoer" Margin="12,-14,12,0" Click="ButtonBase_OnClick"/>
-                                <TextBlock Text="Nieuwe data ingeven van een activiteit" TextWrapping="Wrap" Margin="25,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                                <Button Content="Grafieken" Margin="12,-14,12,0" Click="Button_Click_2" />
-                                <TextBlock Text="Grafieken van vorige data bekijken" TextWrapping="Wrap" Margin="25,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                                <Button Content="Instellingen" Margin="12,-14,12,0" Click="Button_Click_1" />
-                                <TextBlock Text="Log je uit of verander andere instellingen" TextWrapping="Wrap" Margin="25,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                        <ListBox x:Name="lstb" ItemsSource="{Binding}" ItemTemplate="{StaticResource UserTemplate}" Height="Auto" ></ListBox>
+                    <StackPanel Margin="0,0,0,17" Width="432">
+                        <Button Content="Nieuwe invoer" Margin="12,-14,12,0" Click="ButtonBase_OnClick"/>
+                        <TextBlock Text="Nieuwe data ingeven van een activiteit" TextWrapping="Wrap" Margin="25,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                        <Button Content="Grafieken" Margin="12,-14,12,0" Click="Button_Click_2" />
+                        <TextBlock Text="Grafieken van vorige data bekijken" TextWrapping="Wrap" Margin="25,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                        <Button Content="Instellingen" Margin="12,-14,12,0" Click="Button_Click_1" />
+                        <TextBlock Text="Log je uit of verander andere instellingen" TextWrapping="Wrap" Margin="25,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
                     </StackPanel>
                 </ListBox>
             </controls:PanoramaItem>
- 
+
             <!--Panorama item two-->
             <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
             <controls:PanoramaItem Name="item2" Header="second item">
                 <!--Double line list with image placeholder and text wrapping-->
                 <ListBox Margin="0,0,-12,0" >
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
-                                <!--Replace rectangle with image-->
-                                <StackPanel Width="311">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
+                        <!--Replace rectangle with image-->
+                        <StackPanel Width="311">
                             <toolkit:DatePicker ValueStringFormat="{}{0:dd-MM-yyyy}"></toolkit:DatePicker>
-                                    <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Horizontal">
                                 <toolkit:TimePicker ValueStringFormat="{}{0:HH}"></toolkit:TimePicker>
-                                        <TextBlock Margin="0,20,0,0" TextAlignment="Center">tot</TextBlock>
+                                <TextBlock Margin="0,20,0,0" TextAlignment="Center">tot</TextBlock>
                                 <toolkit:TimePicker ValueStringFormat="{}{0:HH}"></toolkit:TimePicker>
                             </StackPanel>
-                                    <Button Content="Oke" Click="Button_Click"></Button>
-                                </StackPanel>
-                            </StackPanel>
+                            <Button Content="Oke" Click="Button_Click"></Button>
+                        </StackPanel>
+                    </StackPanel>
                 </ListBox>
             </controls:PanoramaItem>
             <controls:PanoramaItem x:Name="item3" Header="Third item">
                 <!--Double line list with image placeholder and text wrapping-->
                 <ListBox Margin="0,0,-12,0" >
-                            <StackPanel Orientation="Vertical" Width="430" Margin="0,0,0,17">
-                                <TextBlock TextAlignment="Center">Activiteit</TextBlock>
+                    <StackPanel Orientation="Vertical" Width="430" Margin="0,0,0,17">
+                        <TextBlock TextAlignment="Center">Activiteit</TextBlock>
                         <toolkit:ListPicker ItemTemplate="{StaticResource ActivitiesTemplate}" x:Name="lp_Activiteiten"></toolkit:ListPicker>
                         <TextBlock TextAlignment="Center">Moeheid</TextBlock>
                         <StackPanel Orientation="Horizontal" >
-                        <Slider x:Name="SliderVermoeidheid" Width="400" Minimum="0" Maximum ="10"></Slider>
-                        <TextBlock Text="{Binding ElementName=SliderVermoeidheid,Path=Value}"></TextBlock>
+                            <Slider x:Name="SliderVermoeidheid" Width="400" Minimum="0" Maximum ="10"></Slider>
+                            <TextBlock Text="{Binding ElementName=SliderVermoeidheid,Path=Value}"></TextBlock>
                         </StackPanel>
                         <TextBlock TextAlignment="Center">Belangrijkheid</TextBlock>
                         <StackPanel Orientation="Horizontal" >
                             <Slider x:Name="SliderBelangrijk" Width="400" Minimum="0" Maximum ="10"></Slider>
-                        <TextBlock Text="{Binding ElementName=SliderBelangrijk,Path=Value}"></TextBlock>
+                            <TextBlock Text="{Binding ElementName=SliderBelangrijk,Path=Value}"></TextBlock>
                         </StackPanel>
                         <TextBlock TextAlignment="Center">Tevredenheid</TextBlock>
                         <StackPanel Orientation="Horizontal" >

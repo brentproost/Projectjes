@@ -38,8 +38,6 @@ namespace PanoramaApp3
 
             serviceClient.GetAllActivitiesCompleted += serviceClient_GetAllActivitiesCompleted;
             serviceClient.GetAllActivitiesAsync();
-            serviceClient.GetAllUsersCompleted += serviceClient_GetAllUsersCompleted;
-            serviceClient.GetAllUsersAsync();
         }
 
         void serviceClient_GetAllActivitiesCompleted(object sender, ServiceReference.GetAllActivitiesCompletedEventArgs e)
@@ -47,14 +45,6 @@ namespace PanoramaApp3
             if (e.Result != null)
             {
                 lp_Activiteiten.ItemsSource = e.Result;
-            }
-        }
-
-        void serviceClient_GetAllUsersCompleted(object sender, ServiceReference.GetAllUsersCompletedEventArgs e)
-        {
-            if (e.Result != null)
-            {
-                lstb.ItemsSource = e.Result;
             }
         }
 
@@ -89,5 +79,6 @@ namespace PanoramaApp3
         {
             NavigationService.Navigate(new Uri("/Pages/Graphs.xaml", UriKind.Relative));
         }
+
     }
 }
