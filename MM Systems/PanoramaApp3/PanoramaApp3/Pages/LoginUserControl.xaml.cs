@@ -63,7 +63,7 @@ namespace PanoramaApp3.Pages
             client.SigninUserAsync(txtUsername.Text, txtPassword.Password);
         }*/
 
-        void client_SigninUserCompleted(object sender, ServiceReference.SigninUserCompletedEventArgs e)
+        /*void client_SigninUserCompleted(object sender, ServiceReference.SigninUserCompletedEventArgs e)
         {
             MessageBox.Show("gelukt");
             if (e.Result != null)
@@ -73,6 +73,6 @@ namespace PanoramaApp3.Pages
                 client.SigninUserAsync(txtUsername.Text, txtPassword.Password);
                 MessageBox.Show(e.Result);
             }
-        }
+        }*/
     }
 }
