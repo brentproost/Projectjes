@@ -36,12 +36,22 @@ namespace PanoramaApp3
                 }
                 else
                 {
-                    MessageBox.Show(string.Format("Username: {0}, Password: {1}", luc.Username, luc.Password));
+                    ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+                    client.SigninUserCompleted += client_SigninUserCompleted;
+                    client.SigninUserAsync(luc.Username, luc.Password);
+                    //MessageBox.Show(string.Format("Username: {0}, Password: {1}", luc.Username, luc.Password));
                 }
             };
 
             messagePrompt.Show(); 
 
+        }
+        void client_SigninUserCompleted(object sender, ServiceReference.SigninUserCompletedEventArgs e)
+        {
+            if (e.Result != null)
+            {
+                MessageBox.Show(e.Result);
+            }
         }
     }
 }
