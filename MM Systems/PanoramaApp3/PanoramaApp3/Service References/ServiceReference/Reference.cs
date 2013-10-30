@@ -242,7 +242,7 @@ namespace PanoramaApp3.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/SigninUser", ReplyAction="http://tempuri.org/IService/SigninUserResponse")]
         System.IAsyncResult BeginSigninUser(string uname, string pass, System.AsyncCallback callback, object asyncState);
         
-        string EndSigninUser(System.IAsyncResult result);
+        bool EndSigninUser(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -298,10 +298,10 @@ namespace PanoramaApp3.ServiceReference {
             this.results = results;
         }
         
-        public string Result {
+        public bool Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
+                return ((bool)(this.results[0]));
             }
         }
     }
@@ -485,7 +485,7 @@ namespace PanoramaApp3.ServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        string PanoramaApp3.ServiceReference.IService.EndSigninUser(System.IAsyncResult result) {
+        bool PanoramaApp3.ServiceReference.IService.EndSigninUser(System.IAsyncResult result) {
             return base.Channel.EndSigninUser(result);
         }
         
@@ -496,7 +496,7 @@ namespace PanoramaApp3.ServiceReference {
         }
         
         private object[] OnEndSigninUser(System.IAsyncResult result) {
-            string retVal = ((PanoramaApp3.ServiceReference.IService)(this)).EndSigninUser(result);
+            bool retVal = ((PanoramaApp3.ServiceReference.IService)(this)).EndSigninUser(result);
             return new object[] {
                     retVal};
         }
@@ -635,9 +635,9 @@ namespace PanoramaApp3.ServiceReference {
                 return _result;
             }
             
-            public string EndSigninUser(System.IAsyncResult result) {
+            public bool EndSigninUser(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                string _result = ((string)(base.EndInvoke("SigninUser", _args, result)));
+                bool _result = ((bool)(base.EndInvoke("SigninUser", _args, result)));
                 return _result;
             }
         }

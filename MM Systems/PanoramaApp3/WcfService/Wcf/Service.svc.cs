@@ -28,18 +28,20 @@ namespace Wcf
             return Data.Tbl_Activiteitens.ToList();
         }
 
-        string IService.SigninUser(string uname, string pass)
+        bool IService.SigninUser(string uname, string pass)
         {
             try
             {
                 IEnumerable<Tbl_User> result = Data.Tbl_Users.Where(a => a.Paswoord == pass && a.Gebruikersnaam == uname);
                 List<Tbl_User> r = result.ToList();
 
-                return "Welkom " + r[0].Naam + " " + r[0].Voornaam + "!";
+                //return "Welkom " + r[0].Naam + " " + r[0].Voornaam + "!";
+                return true;
             }
             catch (Exception)
             {
-                return "Deze gebruikersnaam of paswoord wordt niet herkend.";
+                //return "Deze gebruikersnaam of paswoord wordt niet herkend.";
+                return false;
             }
         }
     }

@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanoramaApp3", "PanoramaApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wcf", "WcfService\Wcf\Wcf.csproj", "{D37F397A-158D-402F-AA2C-D62A3DF84BA3}"
 EndProject
-Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Wcf.Azure", "Wcf.Azure5\Wcf.Azure.ccproj", "{51FE05E0-3C32-4B32-8101-7677B46DF8F2}"
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Wcf.Azure2", "Wcf.Azure2\Wcf.Azure2.ccproj", "{EDB511F9-7A4C-41FD-9343-7AE414BE8480}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,10 +26,10 @@ Global
 		{D37F397A-158D-402F-AA2C-D62A3DF84BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D37F397A-158D-402F-AA2C-D62A3DF84BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D37F397A-158D-402F-AA2C-D62A3DF84BA3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{51FE05E0-3C32-4B32-8101-7677B46DF8F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51FE05E0-3C32-4B32-8101-7677B46DF8F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51FE05E0-3C32-4B32-8101-7677B46DF8F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51FE05E0-3C32-4B32-8101-7677B46DF8F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDB511F9-7A4C-41FD-9343-7AE414BE8480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDB511F9-7A4C-41FD-9343-7AE414BE8480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDB511F9-7A4C-41FD-9343-7AE414BE8480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDB511F9-7A4C-41FD-9343-7AE414BE8480}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
