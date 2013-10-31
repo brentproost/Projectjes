@@ -50,7 +50,7 @@ namespace PanoramaApp3
         }
         void client_SigninUserCompleted(object sender, ServiceReference.SigninUserCompletedEventArgs e)
         {
-            if (e.Result)
+            if (e.Result==true)
             {
                 MessageBox.Show("Je bent nu ingelogd");//"Welkom " + r[0].Naam + " " + r[0].Voornaam + "!"; moet zoiets komen bekijk Service.svc.cs
             }

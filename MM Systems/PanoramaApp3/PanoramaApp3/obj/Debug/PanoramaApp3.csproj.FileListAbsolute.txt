@@ -37,7 +37,6 @@ C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Deb
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Microsoft.Phone.Controls.dll
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Microsoft.Phone.Controls.xml
-C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.csprojResolveAssemblyReference.cache
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\App.g.cs
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\MainPage.g.cs
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.g.resources
@@ -63,3 +62,4 @@ C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Deb
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Facebook.dll
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Facebook.xml
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\LoginUserControl.g.cs
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.csprojResolveAssemblyReference.cache

@@ -28,7 +28,7 @@ namespace Wcf
             return Data.Tbl_Activiteitens.ToList();
         }
 
-        bool IService.SigninUser(string uname, string pass)
+        int IService.SigninUser(string uname, string pass)
         {
             try
             {
@@ -36,12 +36,12 @@ namespace Wcf
                 List<Tbl_User> r = result.ToList();
 
                 //return "Welkom " + r[0].Naam + " " + r[0].Voornaam + "!";
-                return true;
+                return r[0].ID;
             }
             catch (Exception)
             {
                 //return "Deze gebruikersnaam of paswoord wordt niet herkend.";
-                return false;
+                return 0;
             }
         }
     }
