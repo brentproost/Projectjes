@@ -50,11 +50,11 @@ namespace PanoramaApp3
         }
         void client_SigninUserCompleted(object sender, ServiceReference.SigninUserCompletedEventArgs e)
         {
-            if (e.Result==true)
+            if (e.Result != 0)
             {
                 MessageBox.Show("Je bent nu ingelogd");//"Welkom " + r[0].Naam + " " + r[0].Voornaam + "!"; moet zoiets komen bekijk Service.svc.cs
             }
-            if (e.Result == false)
+            else
             {
                 MessageBox.Show("Je referenties zijn niet gevonden");
             }
