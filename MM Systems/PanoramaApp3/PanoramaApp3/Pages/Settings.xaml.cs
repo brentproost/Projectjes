@@ -9,6 +9,7 @@ using Coding4Fun.Toolkit.Controls;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using PanoramaApp3.Pages;
+using PanoramaApp3.ServiceReference;
 
 namespace PanoramaApp3
 {
@@ -39,6 +40,7 @@ namespace PanoramaApp3
                     ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
                     client.SigninUserCompleted += client_SigninUserCompleted;
                     client.SigninUserAsync(luc.Username, luc.Password);
+
                     //MessageBox.Show(string.Format("Username: {0}, Password: {1}", luc.Username, luc.Password));
                 }
             };
@@ -48,9 +50,13 @@ namespace PanoramaApp3
         }
         void client_SigninUserCompleted(object sender, ServiceReference.SigninUserCompletedEventArgs e)
         {
-            if (e.Result != null)
+            if (e.Result==true)
             {
-                MessageBox.Show(e.Result);
+                MessageBox.Show("Je bent nu ingelogd");//"Welkom " + r[0].Naam + " " + r[0].Voornaam + "!"; moet zoiets komen bekijk Service.svc.cs
+            }
+            if (e.Result == false)
+            {
+                MessageBox.Show("Je referenties zijn niet gevonden");
             }
         }
     }
