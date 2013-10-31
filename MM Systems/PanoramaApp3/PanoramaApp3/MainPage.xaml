@@ -43,6 +43,7 @@
                         <TextBlock Text="Grafieken van vorige data bekijken" TextWrapping="Wrap" Margin="25,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
                         <Button Content="Instellingen" Margin="12,-14,12,0" Click="Button_Click_1" />
                         <TextBlock Text="Log je uit of verander andere instellingen" TextWrapping="Wrap" Margin="25,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                        <TextBlock x:Name="txt_user"></TextBlock>
                     </StackPanel>
                 </ListBox>
             </controls:PanoramaItem>

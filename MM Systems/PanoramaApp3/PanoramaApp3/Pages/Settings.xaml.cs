@@ -53,11 +53,23 @@ namespace PanoramaApp3
             if (e.Result != 0)
             {
                 MessageBox.Show("Je bent nu ingelogd");//"Welkom " + r[0].Naam + " " + r[0].Voornaam + "!"; moet zoiets komen bekijk Service.svc.cs
+                User.ID = e.Result;
+                User.Settings.Add("ID",User.ID);
+                Uri nUri = new Uri("/MainPage.xaml", UriKind.Relative);
+                ((App)Application.Current).RootFrame.Navigate(nUri);
             }
             else
             {
                 MessageBox.Show("Je referenties zijn niet gevonden");
+                User.ID = 0;
             }
         }
+
+        private void Logoff_OnClick(object sender, RoutedEventArgs e)
+        {
+            User.ID = 0;
+            User.Settings["ID"] = User.ID;
+        }
+
     }
 }

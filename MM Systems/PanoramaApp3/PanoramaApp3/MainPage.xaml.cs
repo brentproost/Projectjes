@@ -11,6 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using PanoramaApp3.ServiceReference;
 
 namespace PanoramaApp3
 {
@@ -24,6 +25,20 @@ namespace PanoramaApp3
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
+            if (User.ID != 0)
+            {
+                ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+                client.GetAllUsersCompleted += ClientOnGetAllUsersCompleted;
+                client.GetAllUsersAsync(User.ID);
+            }
+    }
+
+        private void ClientOnGetAllUsersCompleted(object sender, GetAllUsersCompletedEventArgs getAllUsersCompletedEventArgs)
+        {
+            if (getAllUsersCompletedEventArgs.Result != null)
+            {
+                item1.Header ="Welkom "+ getAllUsersCompletedEventArgs.Result[0].Voornaam;
+            }
         }
 
         // Load data for the ViewModel Items

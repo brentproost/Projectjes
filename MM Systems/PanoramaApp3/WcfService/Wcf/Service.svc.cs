@@ -17,7 +17,7 @@ namespace Wcf
         {
             Data = new DataClassesDataContext();
         }
-
+        
         public List<Tbl_User> GetAllUsers()
         {
             return Data.Tbl_Users.ToList();
@@ -27,7 +27,20 @@ namespace Wcf
         {
             return Data.Tbl_Activiteitens.ToList();
         }
-
+        List<Tbl_User> IService.GetAllUsers(int ID)
+        {
+            try
+            {
+                IEnumerable<Tbl_User> result = Data.Tbl_Users.Where(a => a.ID == ID);
+                List<Tbl_User> user = result.ToList();
+                return user;
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
         int IService.SigninUser(string uname, string pass)
         {
             try

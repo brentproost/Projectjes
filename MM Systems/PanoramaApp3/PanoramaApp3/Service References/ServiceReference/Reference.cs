@@ -230,7 +230,7 @@ namespace PanoramaApp3.ServiceReference {
     public interface IService {
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/GetAllUsers", ReplyAction="http://tempuri.org/IService/GetAllUsersResponse")]
-        System.IAsyncResult BeginGetAllUsers(System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGetAllUsers(int ID, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> EndGetAllUsers(System.IAsyncResult result);
         
@@ -392,8 +392,8 @@ namespace PanoramaApp3.ServiceReference {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult PanoramaApp3.ServiceReference.IService.BeginGetAllUsers(System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetAllUsers(callback, asyncState);
+        System.IAsyncResult PanoramaApp3.ServiceReference.IService.BeginGetAllUsers(int ID, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetAllUsers(ID, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -402,7 +402,8 @@ namespace PanoramaApp3.ServiceReference {
         }
         
         private System.IAsyncResult OnBeginGetAllUsers(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return ((PanoramaApp3.ServiceReference.IService)(this)).BeginGetAllUsers(callback, asyncState);
+            int ID = ((int)(inValues[0]));
+            return ((PanoramaApp3.ServiceReference.IService)(this)).BeginGetAllUsers(ID, callback, asyncState);
         }
         
         private object[] OnEndGetAllUsers(System.IAsyncResult result) {
@@ -418,11 +419,11 @@ namespace PanoramaApp3.ServiceReference {
             }
         }
         
-        public void GetAllUsersAsync() {
-            this.GetAllUsersAsync(null);
+        public void GetAllUsersAsync(int ID) {
+            this.GetAllUsersAsync(ID, null);
         }
         
-        public void GetAllUsersAsync(object userState) {
+        public void GetAllUsersAsync(int ID, object userState) {
             if ((this.onBeginGetAllUsersDelegate == null)) {
                 this.onBeginGetAllUsersDelegate = new BeginOperationDelegate(this.OnBeginGetAllUsers);
             }
@@ -432,7 +433,8 @@ namespace PanoramaApp3.ServiceReference {
             if ((this.onGetAllUsersCompletedDelegate == null)) {
                 this.onGetAllUsersCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAllUsersCompleted);
             }
-            base.InvokeAsync(this.onBeginGetAllUsersDelegate, null, this.onEndGetAllUsersDelegate, this.onGetAllUsersCompletedDelegate, userState);
+            base.InvokeAsync(this.onBeginGetAllUsersDelegate, new object[] {
+                        ID}, this.onEndGetAllUsersDelegate, this.onGetAllUsersCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -603,8 +605,9 @@ namespace PanoramaApp3.ServiceReference {
                     base(client) {
             }
             
-            public System.IAsyncResult BeginGetAllUsers(System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[0];
+            public System.IAsyncResult BeginGetAllUsers(int ID, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = ID;
                 System.IAsyncResult _result = base.BeginInvoke("GetAllUsers", _args, callback, asyncState);
                 return _result;
             }

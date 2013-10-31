@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Text;
 
@@ -17,5 +18,9 @@ namespace PanoramaApp3
         public static string Gebruikersnaam { get; set; }
         public static string Paswoord { get; set; }
         public static int Rechten_ID { get; set; }
+
+        public static IsolatedStorageSettings Settings =
+            System.IO.IsolatedStorage.IsolatedStorageSettings.ApplicationSettings;
+        
     }
 }

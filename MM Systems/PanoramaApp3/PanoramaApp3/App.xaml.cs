@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Net;
 using System.Windows;
@@ -81,9 +82,22 @@ namespace PanoramaApp3
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
-            //Uri nUri = new Uri("/Pages/Settings.xaml", UriKind.Relative);
-            //((App)Application.Current).RootFrame.Navigate(nUri);
- 
+            int ID=0;
+            if (IsolatedStorageSettings.ApplicationSettings.Contains("ID"))
+            {
+                User.ID = (int) User.Settings["ID"];
+            }
+            if (User.ID == 0)
+            {
+                Uri nUri = new Uri("/Pages/Settings.xaml", UriKind.Relative);
+                ((App) Application.Current).RootFrame.Navigate(nUri);
+            }
+            else
+            {
+                Uri nUri = new Uri("/MainPage.xaml", UriKind.Relative);
+                ((App)Application.Current).RootFrame.Navigate(nUri);
+            }
+
         }
 
         // Code to execute when the application is activated (brought to foreground)
