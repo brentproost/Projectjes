@@ -22,5 +22,8 @@ namespace Wcf
 
         [OperationContract]
         int SigninUser(string uname, string pass);
+
+        [OperationContract]
+        void AddUser(string naam, string voornaam, string adres, int nummer, string plaats, int postcode, string gebruikersn, string pasw);
     }
 }

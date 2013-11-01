@@ -54,4 +54,23 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="AddUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="naam" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="voornaam" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="adres" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nummer" type="xs:int" />
+        <xs:element minOccurs="0" name="plaats" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="postcode" type="xs:int" />
+        <xs:element minOccurs="0" name="gebruikersn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pasw" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

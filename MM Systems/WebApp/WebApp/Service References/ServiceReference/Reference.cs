@@ -248,6 +248,11 @@ namespace WebApp.ServiceReference {
         System.IAsyncResult BeginSigninUser(string uname, string pass, System.AsyncCallback callback, object asyncState);
         
         int EndSigninUser(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/AddUser", ReplyAction="http://tempuri.org/IService/AddUserResponse")]
+        System.IAsyncResult BeginAddUser(string naam, string voornaam, string adres, int nummer, string plaats, int postcode, string gebruikersn, string pasw, System.AsyncCallback callback, object asyncState);
+        
+        void EndAddUser(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -358,6 +363,12 @@ namespace WebApp.ServiceReference {
         
         private System.Threading.SendOrPostCallback onSigninUserCompletedDelegate;
         
+        private BeginOperationDelegate onBeginAddUserDelegate;
+        
+        private EndOperationDelegate onEndAddUserDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddUserCompletedDelegate;
+        
         private BeginOperationDelegate onBeginOpenDelegate;
         
         private EndOperationDelegate onEndOpenDelegate;
@@ -418,6 +429,8 @@ namespace WebApp.ServiceReference {
         public event System.EventHandler<GetAllActivitiesCompletedEventArgs> GetAllActivitiesCompleted;
         
         public event System.EventHandler<SigninUserCompletedEventArgs> SigninUserCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> AddUserCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -605,6 +618,65 @@ namespace WebApp.ServiceReference {
                         pass}, this.onEndSigninUserDelegate, this.onSigninUserCompletedDelegate, userState);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult WebApp.ServiceReference.IService.BeginAddUser(string naam, string voornaam, string adres, int nummer, string plaats, int postcode, string gebruikersn, string pasw, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddUser(naam, voornaam, adres, nummer, plaats, postcode, gebruikersn, pasw, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void WebApp.ServiceReference.IService.EndAddUser(System.IAsyncResult result) {
+            base.Channel.EndAddUser(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddUser(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string naam = ((string)(inValues[0]));
+            string voornaam = ((string)(inValues[1]));
+            string adres = ((string)(inValues[2]));
+            int nummer = ((int)(inValues[3]));
+            string plaats = ((string)(inValues[4]));
+            int postcode = ((int)(inValues[5]));
+            string gebruikersn = ((string)(inValues[6]));
+            string pasw = ((string)(inValues[7]));
+            return ((WebApp.ServiceReference.IService)(this)).BeginAddUser(naam, voornaam, adres, nummer, plaats, postcode, gebruikersn, pasw, callback, asyncState);
+        }
+        
+        private object[] OnEndAddUser(System.IAsyncResult result) {
+            ((WebApp.ServiceReference.IService)(this)).EndAddUser(result);
+            return null;
+        }
+        
+        private void OnAddUserCompleted(object state) {
+            if ((this.AddUserCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddUserCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddUserAsync(string naam, string voornaam, string adres, int nummer, string plaats, int postcode, string gebruikersn, string pasw) {
+            this.AddUserAsync(naam, voornaam, adres, nummer, plaats, postcode, gebruikersn, pasw, null);
+        }
+        
+        public void AddUserAsync(string naam, string voornaam, string adres, int nummer, string plaats, int postcode, string gebruikersn, string pasw, object userState) {
+            if ((this.onBeginAddUserDelegate == null)) {
+                this.onBeginAddUserDelegate = new BeginOperationDelegate(this.OnBeginAddUser);
+            }
+            if ((this.onEndAddUserDelegate == null)) {
+                this.onEndAddUserDelegate = new EndOperationDelegate(this.OnEndAddUser);
+            }
+            if ((this.onAddUserCompletedDelegate == null)) {
+                this.onAddUserCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddUserCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddUserDelegate, new object[] {
+                        naam,
+                        voornaam,
+                        adres,
+                        nummer,
+                        plaats,
+                        postcode,
+                        gebruikersn,
+                        pasw}, this.onEndAddUserDelegate, this.onAddUserCompletedDelegate, userState);
+        }
+        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -730,6 +802,25 @@ namespace WebApp.ServiceReference {
                 object[] _args = new object[0];
                 int _result = ((int)(base.EndInvoke("SigninUser", _args, result)));
                 return _result;
+            }
+            
+            public System.IAsyncResult BeginAddUser(string naam, string voornaam, string adres, int nummer, string plaats, int postcode, string gebruikersn, string pasw, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[8];
+                _args[0] = naam;
+                _args[1] = voornaam;
+                _args[2] = adres;
+                _args[3] = nummer;
+                _args[4] = plaats;
+                _args[5] = postcode;
+                _args[6] = gebruikersn;
+                _args[7] = pasw;
+                System.IAsyncResult _result = base.BeginInvoke("AddUser", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndAddUser(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("AddUser", _args, result);
             }
         }
     }

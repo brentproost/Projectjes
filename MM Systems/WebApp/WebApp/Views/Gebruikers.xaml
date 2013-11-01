@@ -9,8 +9,45 @@
            d:DesignWidth="640" d:DesignHeight="480"
            Title="Gebruikers Page">
     <Grid x:Name="LayoutRoot">
-
-        <sdk:DataGrid x:Name="dg_Gebruikers" ItemsSource="{Binding}"/>
+        <StackPanel>
+                <StackPanel Grid.Column="0">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Naam"></TextBlock>
+                        <TextBox x:Name="btnNaam" Width="100"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Voornaam"></TextBlock>
+                    <TextBox x:Name="btnVoornaam" Width="100"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Adres"></TextBlock>
+                    <TextBox  x:Name="btnAdres" Width="100"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Nummer"></TextBlock>
+                    <TextBox x:Name="btnNummer" Width="100"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Plaats"></TextBlock>
+                    <TextBox x:Name="btnPlaats" Width="100"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Postcode"></TextBlock>
+                    <TextBox x:Name="btnPostcode" Width="100"></TextBox>
+                        </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  Text="Gebruikersnaam"></TextBlock>
+                    <TextBox x:Name="btngebruikersnaam" Width="100"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Paswoord"></TextBlock>
+                    <TextBox x:Name="btnpasw" Width="100"></TextBox>
+                    </StackPanel>
+                <Button x:Name="btnsubmit" Content="Submit" Click="btnsubmit_Click_1"></Button>
+                </StackPanel>
+            <sdk:DataGrid VerticalContentAlignment="Stretch" x:Name="dg_Gebruikers" ItemsSource="{Binding}"/>
+        </StackPanel>
+        
 
     </Grid>
 </navigation:Page>

@@ -62,5 +62,32 @@ namespace Wcf
                 return 0;
             }
         }
+
+        void IService.AddUser(string naam, string voornaam, string adres, int nummer, string plaats, int postcode, string gebruikersn, string pasw)
+        {
+            Tbl_User usr = new Tbl_User
+            {
+                Naam = naam,
+                Voornaam = voornaam,
+                Adres = adres,
+                Nummer = nummer,
+                Plaats = plaats,
+                Postcode = postcode,
+                Gebruikersnaam = gebruikersn,
+                Paswoord = pasw,
+                Rechten_ID = 2
+            };
+
+            Data.Tbl_Users.InsertOnSubmit(usr);
+
+            try
+            {
+                Data.SubmitChanges();
+            }
+            catch (Exception)
+            {
+                Data.SubmitChanges();
+            }
+        }
     }
 }

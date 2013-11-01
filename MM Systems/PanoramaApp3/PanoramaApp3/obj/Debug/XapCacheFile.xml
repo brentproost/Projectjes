@@ -1,8 +1,8 @@
-﻿<xapCache source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PanoramaApp3.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="1-11-2013 16:59:55">
-  <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="1-11-2013 15:41:04" />
+﻿<xapCache source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PanoramaApp3.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="1-11-2013 18:10:12">
+  <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="1-11-2013 17:17:05" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Background.png" archivePath="Background.png" lastWriteTime="31-10-2013 06:57:10" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="31-10-2013 06:57:10" />
-  <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.dll" archivePath="PanoramaApp3.dll" lastWriteTime="1-11-2013 16:59:55" />
+  <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.dll" archivePath="PanoramaApp3.dll" lastWriteTime="1-11-2013 18:10:12" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\packages\Coding4Fun.Toolkit.Audio.2.0.7\lib\wp71\Coding4Fun.Toolkit.Audio.dll" archivePath="Coding4Fun.Toolkit.Audio.dll" lastWriteTime="31-10-2013 06:57:10" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\packages\Coding4Fun.Toolkit.Controls.2.0.7\lib\wp71\Coding4Fun.Toolkit.Controls.dll" archivePath="Coding4Fun.Toolkit.Controls.dll" lastWriteTime="31-10-2013 06:57:10" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\packages\Coding4Fun.Toolkit.Net.2.0.7\lib\wp71\Coding4Fun.Toolkit.Net.dll" archivePath="Coding4Fun.Toolkit.Net.dll" lastWriteTime="31-10-2013 06:57:10" />
@@ -17,7 +17,7 @@
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Toolkit.Content\ApplicationBar.Delete.png" archivePath="Toolkit.Content\ApplicationBar.Delete.png" lastWriteTime="31-10-2013 06:57:10" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Toolkit.Content\ApplicationBar.Select.png" archivePath="Toolkit.Content\ApplicationBar.Select.png" lastWriteTime="31-10-2013 06:57:10" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="31-10-2013 06:57:10" />
-  <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="1-11-2013 16:59:55" />
+  <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="1-11-2013 18:10:12" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="31-10-2013 06:57:10" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Background.png" archivePath="Background.png" lastWriteTime="31-10-2013 06:57:10" />
 </xapCache>

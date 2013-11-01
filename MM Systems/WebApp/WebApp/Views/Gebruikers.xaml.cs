@@ -33,5 +33,19 @@ namespace WebApp.Views
         {
         }
 
+
+        void client_AddUserCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            btnsubmit.Content = "gebruiker toegevoegd";
+        }
+
+        private void btnsubmit_Click_1(object sender, RoutedEventArgs e)
+        {
+            btnsubmit.Content = "een momentje aub, gebruiker wordt toegevoegd...";
+            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+            client.AddUserAsync(btnNaam.Text, btnVoornaam.Text, btnAdres.Text, Convert.ToInt16(btnNummer.Text), btnPlaats.Text, Convert.ToInt16(btnPostcode.Text), btngebruikersnaam.Text, btnpasw.Text);
+            client.AddUserCompleted += client_AddUserCompleted;
+        }
+
     }
 }
