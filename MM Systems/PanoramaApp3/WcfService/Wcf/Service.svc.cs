@@ -27,7 +27,7 @@ namespace Wcf
         {
             return Data.Tbl_Activiteitens.ToList();
         }
-        List<Tbl_User> IService.GetAllUsers(int ID)
+        List<Tbl_User> IService.GetUser(int ID)
         {
             try
             {
@@ -41,6 +41,11 @@ namespace Wcf
                 throw;
             }
         }
+        List<Tbl_User> IService.GetAllUsers()
+        {
+            return Data.Tbl_Users.ToList();
+        }
+
         int IService.SigninUser(string uname, string pass)
         {
             try

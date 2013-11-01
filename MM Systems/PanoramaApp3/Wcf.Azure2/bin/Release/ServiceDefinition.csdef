@@ -25,7 +25,7 @@
     </Imports>
     <Contents>
       <Content destination=".\">
-        <SourceDirectory path="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\Wcf.Azure2\rcf\Release\WcfContent\" />
+        <SourceDirectory path="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\Wcf.Azure2\rcf\Release\WcfContent\" />
       </Content>
     </Contents>
   </WebRole>

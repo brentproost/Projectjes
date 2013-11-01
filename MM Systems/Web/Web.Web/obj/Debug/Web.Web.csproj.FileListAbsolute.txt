@@ -1,5 +1,0 @@
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\Web\Web.Web\bin\Web.Web.dll
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\Web\Web.Web\bin\Web.Web.pdb
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\Web\Web.Web\obj\Debug\Web.Web.csprojResolveAssemblyReference.cache
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\Web\Web.Web\obj\Debug\Web.Web.dll
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\Web\Web.Web\obj\Debug\Web.Web.pdb

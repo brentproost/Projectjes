@@ -21,7 +21,6 @@ C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\B
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PanoramaApp3.xap
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Microsoft.Phone.Controls.dll
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Microsoft.Phone.Controls.xml
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.csprojResolveAssemblyReference.cache
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\App.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\MainPage.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.g.resources

@@ -12,7 +12,10 @@ namespace Wcf
     public interface IService
     {
         [OperationContract]
-        List<Tbl_User> GetAllUsers(int ID);
+        List<Tbl_User> GetUser(int ID);
+
+        [OperationContract]
+        List<Tbl_User> GetAllUsers();
 
         [OperationContract]
         List<Tbl_Activiteiten> GetAllActivities();

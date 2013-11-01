@@ -82,6 +82,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClientAccessPolicy.xml" />
+    <Content Include="CrossDomain.xml" />
     <Content Include="Service.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
