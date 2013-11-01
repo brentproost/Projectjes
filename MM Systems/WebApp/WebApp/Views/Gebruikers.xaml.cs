@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Navigation;
+using System.ComponentModel;
 
 namespace WebApp.Views
 {
@@ -43,9 +44,9 @@ namespace WebApp.Views
         {
             btnsubmit.Content = "een momentje aub, gebruiker wordt toegevoegd...";
             ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+            
             client.AddUserAsync(btnNaam.Text, btnVoornaam.Text, btnAdres.Text, Convert.ToInt16(btnNummer.Text), btnPlaats.Text, Convert.ToInt16(btnPostcode.Text), btngebruikersnaam.Text, btnpasw.Text);
             client.AddUserCompleted += client_AddUserCompleted;
         }
-
     }
 }
