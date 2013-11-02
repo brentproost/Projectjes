@@ -13,9 +13,9 @@
             <StackPanel x:Name="ContentStackPanel">
 
                 <TextBlock x:Name="HeaderText" Style="{StaticResource HeaderTextStyle}" 
-                                   Text="Home"/>
-                <TextBlock x:Name="ContentText" Style="{StaticResource ContentTextStyle}" 
-                                   Text="Home page content"/>
+                                   Text="Homepage"/>
+                <Button x:Name="btn_AddUser" HorizontalAlignment="Center" Content="add user" Click="btn_AddUser_Click">  
+                </Button>
 
             </StackPanel>
 

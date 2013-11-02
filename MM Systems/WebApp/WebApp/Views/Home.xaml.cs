@@ -24,5 +24,17 @@ namespace WebApp
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
         }
+
+        private void btn_AddUser_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new DialogBoxes.AddUser();
+            window.Closed += window_Closed;
+            window.Show();
+        }
+
+        void window_Closed(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

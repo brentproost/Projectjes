@@ -43,7 +43,7 @@
                         <TextBlock Text="Paswoord"></TextBlock>
                     <TextBox x:Name="btnpasw" Width="100"></TextBox>
                     </StackPanel>
-                <Button x:Name="btnsubmit" Content="Submit" Click="btnsubmit_Click_1"></Button>
+                <Button HorizontalAlignment="Center" x:Name="btnsubmit" Content="Submit" Click="btnsubmit_Click_1"></Button>
                 </StackPanel>
             <sdk:DataGrid VerticalContentAlignment="Stretch" x:Name="dg_Gebruikers" ItemsSource="{Binding}"/>
         </StackPanel>

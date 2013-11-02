@@ -1,5 +1,5 @@
-﻿<xapCache source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\WebApp.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="1-11-2013 19:04:05">
-  <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.dll" archivePath="WebApp.dll" lastWriteTime="1-11-2013 19:04:04" />
+﻿<xapCache source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\WebApp.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="2-11-2013 20:39:06">
+  <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.dll" archivePath="WebApp.dll" lastWriteTime="2-11-2013 20:39:06" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.ComponentModel.DataAnnotations.dll" archivePath="System.ComponentModel.DataAnnotations.dll" lastWriteTime="18-11-2011 16:40:20" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.Data.dll" archivePath="System.Windows.Controls.Data.dll" lastWriteTime="18-11-2011 16:40:20" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.Data.Input.dll" archivePath="System.Windows.Controls.Data.Input.dll" lastWriteTime="18-11-2011 16:40:20" />
@@ -7,5 +7,5 @@
   <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.Navigation.dll" archivePath="System.Windows.Controls.Navigation.dll" lastWriteTime="18-11-2011 16:40:20" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Data.dll" archivePath="System.Windows.Data.dll" lastWriteTime="18-11-2011 16:40:20" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="1-11-2013 15:27:44" />
-  <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="1-11-2013 19:04:05" />
+  <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="2-11-2013 20:35:52" />
 </xapCache>
