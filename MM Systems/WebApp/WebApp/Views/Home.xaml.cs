@@ -36,5 +36,12 @@ namespace WebApp
         {
             
         }
+
+        private void btn_AddActivity_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new DialogBoxes.AddActivity();
+            window.Closed += window_Closed;
+            window.Show();
+        }
     }
 }

@@ -37,7 +37,7 @@ namespace PanoramaApp3
         {
             if (getAllUsersCompletedEventArgs.Result != null)
             {
-                item1.Header ="Welkom "+ getAllUsersCompletedEventArgs.Result[0].Voornaam;
+                //item1.Header ="Welkom "+ getAllUsersCompletedEventArgs.Result[User.ID].Voornaam;
             }
         }
 

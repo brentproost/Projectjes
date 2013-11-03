@@ -48,6 +48,10 @@
 
                     <HyperlinkButton x:Name="Link3" Style="{StaticResource LinkStyle}" 
                                      NavigateUri="/Gebruikers" TargetName="ContentFrame" Content="Gebruikers"/>
+                    <Rectangle x:Name="Divider3" Style="{StaticResource DividerStyle}"/>
+
+                    <HyperlinkButton x:Name="Link4" Style="{StaticResource LinkStyle}" 
+                                     NavigateUri="/Afmelden" TargetName="ContentFrame" Content="Afmelden"/>
 
                 </StackPanel>
             </Border>

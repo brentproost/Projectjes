@@ -25,5 +25,8 @@ namespace Wcf
 
         [OperationContract]
         void AddUser(string naam, string voornaam, string adres, int nummer, string plaats, int postcode, string gebruikersn, string pasw);
+
+        [OperationContract]
+        void AddActivity(string omschr);
     }
 }

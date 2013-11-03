@@ -253,6 +253,11 @@ namespace WebApp.ServiceReference {
         System.IAsyncResult BeginAddUser(string naam, string voornaam, string adres, int nummer, string plaats, int postcode, string gebruikersn, string pasw, System.AsyncCallback callback, object asyncState);
         
         void EndAddUser(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/AddActivity", ReplyAction="http://tempuri.org/IService/AddActivityResponse")]
+        System.IAsyncResult BeginAddActivity(string omschr, System.AsyncCallback callback, object asyncState);
+        
+        void EndAddActivity(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -369,6 +374,12 @@ namespace WebApp.ServiceReference {
         
         private System.Threading.SendOrPostCallback onAddUserCompletedDelegate;
         
+        private BeginOperationDelegate onBeginAddActivityDelegate;
+        
+        private EndOperationDelegate onEndAddActivityDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddActivityCompletedDelegate;
+        
         private BeginOperationDelegate onBeginOpenDelegate;
         
         private EndOperationDelegate onEndOpenDelegate;
@@ -431,6 +442,8 @@ namespace WebApp.ServiceReference {
         public event System.EventHandler<SigninUserCompletedEventArgs> SigninUserCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> AddUserCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> AddActivityCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -677,6 +690,51 @@ namespace WebApp.ServiceReference {
                         pasw}, this.onEndAddUserDelegate, this.onAddUserCompletedDelegate, userState);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult WebApp.ServiceReference.IService.BeginAddActivity(string omschr, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddActivity(omschr, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void WebApp.ServiceReference.IService.EndAddActivity(System.IAsyncResult result) {
+            base.Channel.EndAddActivity(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddActivity(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string omschr = ((string)(inValues[0]));
+            return ((WebApp.ServiceReference.IService)(this)).BeginAddActivity(omschr, callback, asyncState);
+        }
+        
+        private object[] OnEndAddActivity(System.IAsyncResult result) {
+            ((WebApp.ServiceReference.IService)(this)).EndAddActivity(result);
+            return null;
+        }
+        
+        private void OnAddActivityCompleted(object state) {
+            if ((this.AddActivityCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddActivityCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddActivityAsync(string omschr) {
+            this.AddActivityAsync(omschr, null);
+        }
+        
+        public void AddActivityAsync(string omschr, object userState) {
+            if ((this.onBeginAddActivityDelegate == null)) {
+                this.onBeginAddActivityDelegate = new BeginOperationDelegate(this.OnBeginAddActivity);
+            }
+            if ((this.onEndAddActivityDelegate == null)) {
+                this.onEndAddActivityDelegate = new EndOperationDelegate(this.OnEndAddActivity);
+            }
+            if ((this.onAddActivityCompletedDelegate == null)) {
+                this.onAddActivityCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddActivityCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddActivityDelegate, new object[] {
+                        omschr}, this.onEndAddActivityDelegate, this.onAddActivityCompletedDelegate, userState);
+        }
+        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -821,6 +879,18 @@ namespace WebApp.ServiceReference {
             public void EndAddUser(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 base.EndInvoke("AddUser", _args, result);
+            }
+            
+            public System.IAsyncResult BeginAddActivity(string omschr, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = omschr;
+                System.IAsyncResult _result = base.BeginInvoke("AddActivity", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndAddActivity(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("AddActivity", _args, result);
             }
         }
     }

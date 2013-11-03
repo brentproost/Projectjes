@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Security.Cryptography;
 using System.ServiceModel;
 using System.Text;
 
@@ -75,11 +76,11 @@ namespace Wcf
                 Postcode = postcode,
                 Gebruikersnaam = gebruikersn,
                 Paswoord = pasw,
-                Rechten_ID = 2
+                Rechten_ID = 2,
             };
 
             Data.Tbl_Users.InsertOnSubmit(usr);
-
+           
             try
             {
                 Data.SubmitChanges();
@@ -89,5 +90,24 @@ namespace Wcf
                 Data.SubmitChanges();
             }
         }
+
+
+        void IService.AddActivity(string omschr)
+        {
+            Tbl_Activiteiten act = new Tbl_Activiteiten{Omschrijving = omschr};
+            Data.Tbl_Activiteitens.InsertOnSubmit(act);
+
+            try
+            {
+                Data.SubmitChanges();
+            }
+
+            catch (Exception)
+            {
+                Data.SubmitChanges();
+            }
+        }
+
+        
     }
 }

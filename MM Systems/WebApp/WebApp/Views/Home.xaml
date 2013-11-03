@@ -14,7 +14,9 @@
 
                 <TextBlock x:Name="HeaderText" Style="{StaticResource HeaderTextStyle}" 
                                    Text="Homepage"/>
-                <Button x:Name="btn_AddUser" HorizontalAlignment="Center" Content="add user" Click="btn_AddUser_Click">  
+                <Button x:Name="btn_AddUser" HorizontalAlignment="Center" Content="gebruiker toevoegen" Click="btn_AddUser_Click">  
+                </Button>
+                <Button x:Name="btn_AddActivity" HorizontalAlignment="Center" Content="activiteit toevoegen" Click="btn_AddActivity_Click">
                 </Button>
 
             </StackPanel>

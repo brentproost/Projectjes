@@ -82,7 +82,7 @@ namespace PanoramaApp3
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
-            int ID=0;
+
             if (IsolatedStorageSettings.ApplicationSettings.Contains("ID"))
             {
                 User.ID = (int) User.Settings["ID"];

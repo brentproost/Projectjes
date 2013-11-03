@@ -33,7 +33,8 @@
             </controls:Panorama.Background>
 
             <!--Panorama item one-->
-            <controls:PanoramaItem Name="item1" Header="Start Page">
+            <controls:PanoramaItem Name="item1" >
+
                 <!--Double line list with text wrapping-->
                 <ListBox Margin="0,0,-12,0">
                     <StackPanel Margin="0,0,0,17" Width="432">
