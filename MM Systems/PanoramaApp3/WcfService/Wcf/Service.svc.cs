@@ -75,7 +75,7 @@ namespace Wcf
                 Plaats = plaats,
                 Postcode = postcode,
                 Gebruikersnaam = gebruikersn,
-                Paswoord = pasw,
+                Paswoord = MD5Core.GetHashString(pasw),
                 Rechten_ID = 2,
             };
 
