@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Wcf.Azure2" generation="1" functional="0" release="0" Id="1ff24fce-76d5-40c8-9536-050d45cb48b5" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
+<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Wcf.Azure2" generation="1" functional="0" release="0" Id="d647e5b3-2b04-459d-bdfc-badafaff8855" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
   <groups>
     <group name="Wcf.Azure2Group" generation="1" functional="0" release="0">
       <componentports>
@@ -70,9 +70,9 @@
     </group>
   </groups>
   <implements>
-    <implementation Id="d7a3ab34-c23c-44d4-83a5-2c64e6d835dc" ref="Microsoft.RedDog.Contract\ServiceContract\Wcf.Azure2Contract@ServiceDefinition">
+    <implementation Id="4d09e2c7-8a18-456d-8893-d1029b118277" ref="Microsoft.RedDog.Contract\ServiceContract\Wcf.Azure2Contract@ServiceDefinition">
       <interfacereferences>
-        <interfaceReference Id="cba8a1da-7f80-4268-8db3-dc9f7b4515be" ref="Microsoft.RedDog.Contract\Interface\Wcf:Endpoint1@ServiceDefinition">
+        <interfaceReference Id="d6df8fda-f843-4ed9-a4d5-9b5d120989a2" ref="Microsoft.RedDog.Contract\Interface\Wcf:Endpoint1@ServiceDefinition">
           <inPort>
             <inPortMoniker name="/Wcf.Azure2/Wcf.Azure2Group/Wcf:Endpoint1" />
           </inPort>

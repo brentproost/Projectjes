@@ -414,3 +414,5 @@ C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.g.
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.dll
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.pdb
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\XapCacheFile.xml
+C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\PasswordHashGen.dll
+C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\PasswordHashGen.pdb

@@ -8,5 +8,6 @@
     <AssemblyPart x:Name="Facebook" Source="Facebook.dll" />
     <AssemblyPart x:Name="Microsoft.Phone.Controls" Source="Microsoft.Phone.Controls.dll" />
     <AssemblyPart x:Name="Microsoft.Phone.Controls.Toolkit" Source="Microsoft.Phone.Controls.Toolkit.dll" />
+    <AssemblyPart x:Name="PasswordHashGen" Source="PasswordHashGen.dll" />
   </Deployment.Parts>
 </Deployment>

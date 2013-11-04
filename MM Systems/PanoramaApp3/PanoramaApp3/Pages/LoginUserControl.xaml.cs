@@ -38,7 +38,7 @@ namespace PanoramaApp3.Pages
         {
             get
             {
-                return MD5Core.GetHashString(_Password);
+                return _Password;
             }
             set
             {

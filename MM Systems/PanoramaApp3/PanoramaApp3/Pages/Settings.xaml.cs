@@ -39,7 +39,7 @@ namespace PanoramaApp3
                 {
                     ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
                     client.SigninUserCompleted += client_SigninUserCompleted;
-                    client.SigninUserAsync(luc.Username, luc.Password);
+                    client.SigninUserAsync(luc.Username, MD5Core.GetHashString(luc.Password));
 
                     //MessageBox.Show(string.Format("Username: {0}, Password: {1}", luc.Username, luc.Password));
                 }
