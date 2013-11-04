@@ -167,6 +167,9 @@
     <None Include="Service References\ServiceReference\WebApp.ServiceReference.Tbl_Activiteiten.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference\WebApp.ServiceReference.Tbl_Categorien.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference\WebApp.ServiceReference.Tbl_User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

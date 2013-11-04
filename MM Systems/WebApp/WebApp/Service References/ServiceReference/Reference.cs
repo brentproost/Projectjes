@@ -185,9 +185,24 @@ namespace WebApp.ServiceReference {
     [System.Runtime.Serialization.DataContractAttribute(Name="Tbl_Activiteiten", Namespace="http://schemas.datacontract.org/2004/07/Wcf")]
     public partial class Tbl_Activiteiten : object, System.ComponentModel.INotifyPropertyChanged {
         
+        private int Categorie_IDField;
+        
         private int IDField;
         
         private string OmschrijvingField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Categorie_ID {
+            get {
+                return this.Categorie_IDField;
+            }
+            set {
+                if ((this.Categorie_IDField.Equals(value) != true)) {
+                    this.Categorie_IDField = value;
+                    this.RaisePropertyChanged("Categorie_ID");
+                }
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int ID {
@@ -198,6 +213,51 @@ namespace WebApp.ServiceReference {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Omschrijving {
+            get {
+                return this.OmschrijvingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OmschrijvingField, value) != true)) {
+                    this.OmschrijvingField = value;
+                    this.RaisePropertyChanged("Omschrijving");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Tbl_Categorien", Namespace="http://schemas.datacontract.org/2004/07/Wcf")]
+    public partial class Tbl_Categorien : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int IdField;
+        
+        private string OmschrijvingField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
@@ -244,6 +304,11 @@ namespace WebApp.ServiceReference {
         
         System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Activiteiten> EndGetAllActivities(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/GetAllCategories", ReplyAction="http://tempuri.org/IService/GetAllCategoriesResponse")]
+        System.IAsyncResult BeginGetAllCategories(System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Categorien> EndGetAllCategories(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/SigninUser", ReplyAction="http://tempuri.org/IService/SigninUserResponse")]
         System.IAsyncResult BeginSigninUser(string uname, string pass, System.AsyncCallback callback, object asyncState);
         
@@ -255,7 +320,7 @@ namespace WebApp.ServiceReference {
         void EndAddUser(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/AddActivity", ReplyAction="http://tempuri.org/IService/AddActivityResponse")]
-        System.IAsyncResult BeginAddActivity(string omschr, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginAddActivity(string omschr, int catid, System.AsyncCallback callback, object asyncState);
         
         void EndAddActivity(System.IAsyncResult result);
     }
@@ -323,6 +388,25 @@ namespace WebApp.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetAllCategoriesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetAllCategoriesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Categorien> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Categorien>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class SigninUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -361,6 +445,12 @@ namespace WebApp.ServiceReference {
         private EndOperationDelegate onEndGetAllActivitiesDelegate;
         
         private System.Threading.SendOrPostCallback onGetAllActivitiesCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetAllCategoriesDelegate;
+        
+        private EndOperationDelegate onEndGetAllCategoriesDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetAllCategoriesCompletedDelegate;
         
         private BeginOperationDelegate onBeginSigninUserDelegate;
         
@@ -438,6 +528,8 @@ namespace WebApp.ServiceReference {
         public event System.EventHandler<GetAllUsersCompletedEventArgs> GetAllUsersCompleted;
         
         public event System.EventHandler<GetAllActivitiesCompletedEventArgs> GetAllActivitiesCompleted;
+        
+        public event System.EventHandler<GetAllCategoriesCompletedEventArgs> GetAllCategoriesCompleted;
         
         public event System.EventHandler<SigninUserCompletedEventArgs> SigninUserCompleted;
         
@@ -584,6 +676,50 @@ namespace WebApp.ServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult WebApp.ServiceReference.IService.BeginGetAllCategories(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetAllCategories(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Categorien> WebApp.ServiceReference.IService.EndGetAllCategories(System.IAsyncResult result) {
+            return base.Channel.EndGetAllCategories(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetAllCategories(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return ((WebApp.ServiceReference.IService)(this)).BeginGetAllCategories(callback, asyncState);
+        }
+        
+        private object[] OnEndGetAllCategories(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Categorien> retVal = ((WebApp.ServiceReference.IService)(this)).EndGetAllCategories(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetAllCategoriesCompleted(object state) {
+            if ((this.GetAllCategoriesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetAllCategoriesCompleted(this, new GetAllCategoriesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetAllCategoriesAsync() {
+            this.GetAllCategoriesAsync(null);
+        }
+        
+        public void GetAllCategoriesAsync(object userState) {
+            if ((this.onBeginGetAllCategoriesDelegate == null)) {
+                this.onBeginGetAllCategoriesDelegate = new BeginOperationDelegate(this.OnBeginGetAllCategories);
+            }
+            if ((this.onEndGetAllCategoriesDelegate == null)) {
+                this.onEndGetAllCategoriesDelegate = new EndOperationDelegate(this.OnEndGetAllCategories);
+            }
+            if ((this.onGetAllCategoriesCompletedDelegate == null)) {
+                this.onGetAllCategoriesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAllCategoriesCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetAllCategoriesDelegate, null, this.onEndGetAllCategoriesDelegate, this.onGetAllCategoriesCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.IAsyncResult WebApp.ServiceReference.IService.BeginSigninUser(string uname, string pass, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginSigninUser(uname, pass, callback, asyncState);
         }
@@ -691,8 +827,8 @@ namespace WebApp.ServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult WebApp.ServiceReference.IService.BeginAddActivity(string omschr, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginAddActivity(omschr, callback, asyncState);
+        System.IAsyncResult WebApp.ServiceReference.IService.BeginAddActivity(string omschr, int catid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddActivity(omschr, catid, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -702,7 +838,8 @@ namespace WebApp.ServiceReference {
         
         private System.IAsyncResult OnBeginAddActivity(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string omschr = ((string)(inValues[0]));
-            return ((WebApp.ServiceReference.IService)(this)).BeginAddActivity(omschr, callback, asyncState);
+            int catid = ((int)(inValues[1]));
+            return ((WebApp.ServiceReference.IService)(this)).BeginAddActivity(omschr, catid, callback, asyncState);
         }
         
         private object[] OnEndAddActivity(System.IAsyncResult result) {
@@ -717,11 +854,11 @@ namespace WebApp.ServiceReference {
             }
         }
         
-        public void AddActivityAsync(string omschr) {
-            this.AddActivityAsync(omschr, null);
+        public void AddActivityAsync(string omschr, int catid) {
+            this.AddActivityAsync(omschr, catid, null);
         }
         
-        public void AddActivityAsync(string omschr, object userState) {
+        public void AddActivityAsync(string omschr, int catid, object userState) {
             if ((this.onBeginAddActivityDelegate == null)) {
                 this.onBeginAddActivityDelegate = new BeginOperationDelegate(this.OnBeginAddActivity);
             }
@@ -732,7 +869,8 @@ namespace WebApp.ServiceReference {
                 this.onAddActivityCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddActivityCompleted);
             }
             base.InvokeAsync(this.onBeginAddActivityDelegate, new object[] {
-                        omschr}, this.onEndAddActivityDelegate, this.onAddActivityCompletedDelegate, userState);
+                        omschr,
+                        catid}, this.onEndAddActivityDelegate, this.onAddActivityCompletedDelegate, userState);
         }
         
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
@@ -848,6 +986,18 @@ namespace WebApp.ServiceReference {
                 return _result;
             }
             
+            public System.IAsyncResult BeginGetAllCategories(System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[0];
+                System.IAsyncResult _result = base.BeginInvoke("GetAllCategories", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Categorien> EndGetAllCategories(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Categorien> _result = ((System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Categorien>)(base.EndInvoke("GetAllCategories", _args, result)));
+                return _result;
+            }
+            
             public System.IAsyncResult BeginSigninUser(string uname, string pass, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[2];
                 _args[0] = uname;
@@ -881,9 +1031,10 @@ namespace WebApp.ServiceReference {
                 base.EndInvoke("AddUser", _args, result);
             }
             
-            public System.IAsyncResult BeginAddActivity(string omschr, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
+            public System.IAsyncResult BeginAddActivity(string omschr, int catid, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
                 _args[0] = omschr;
+                _args[1] = catid;
                 System.IAsyncResult _result = base.BeginInvoke("AddActivity", _args, callback, asyncState);
                 return _result;
             }

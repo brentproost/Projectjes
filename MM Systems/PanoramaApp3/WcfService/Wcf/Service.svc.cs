@@ -92,9 +92,9 @@ namespace Wcf
         }
 
 
-        void IService.AddActivity(string omschr)
+        void IService.AddActivity(string omschr, int catid)
         {
-            Tbl_Activiteiten act = new Tbl_Activiteiten{Omschrijving = omschr};
+            Tbl_Activiteiten act = new Tbl_Activiteiten{Omschrijving = omschr, Categorie_ID = catid};
             Data.Tbl_Activiteitens.InsertOnSubmit(act);
 
             try
@@ -106,6 +106,11 @@ namespace Wcf
             {
                 Data.SubmitChanges();
             }
+        }
+
+        List<Tbl_Categorien> IService.GetAllCategories()
+        {
+            return Data.Tbl_Categoriens.ToList();
         }
     }
 }

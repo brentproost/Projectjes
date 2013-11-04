@@ -21,13 +21,16 @@ namespace Wcf
         List<Tbl_Activiteiten> GetAllActivities();
 
         [OperationContract]
+        List<Tbl_Categorien> GetAllCategories();
+
+        [OperationContract]
         int SigninUser(string uname, string pass);
 
         [OperationContract]
         void AddUser(string naam, string voornaam, string adres, int nummer, string plaats, int postcode, string gebruikersn, string pasw);
 
         [OperationContract]
-        void AddActivity(string omschr);
+        void AddActivity(string omschr, int catid);
 
     }
 }

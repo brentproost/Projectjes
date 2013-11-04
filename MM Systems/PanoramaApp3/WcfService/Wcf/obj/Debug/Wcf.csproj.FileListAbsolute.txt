@@ -88,3 +88,5 @@ C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\obj\D
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\obj\Debug\Wcf.csprojResolveAssemblyReference.cache
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\PasswordHashGen.dll
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\PasswordHashGen.pdb
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\PasswordHashGen.dll
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\PasswordHashGen.pdb

@@ -14,23 +14,78 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
-
     <phone:PhoneApplicationPage.Resources>
         <DataTemplate x:Key="ActivitiesTemplate">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Margin="10" Text="{Binding Omschrijving}"></TextBlock>
             </StackPanel>
         </DataTemplate>
+        <ControlTemplate x:Key="PhoneSimpleRepeatButton" TargetType="RepeatButton">
+            <Rectangle Fill="Transparent"/>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ThumbControlTemplate1" TargetType="Thumb">
+            <Rectangle Fill="{StaticResource PhoneForegroundBrush}"  Height="60" Width="50" />
+        </ControlTemplate>
+
+        <Style x:Key="SliderStyle1" TargetType="Slider">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Maximum" Value="10"/>
+            <Setter Property="Minimum" Value="0"/>
+            <Setter Property="Value" Value="0"/>
+            <Setter Property="Background" Value="{StaticResource PhoneContrastBackgroundBrush}"/>
+            <Setter Property="Foreground" Value="{StaticResource PhoneAccentBrush}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Slider">
+                        <Grid Background="Transparent">
+                            <VisualStateManager.VisualStateGroups>
+                            </VisualStateManager.VisualStateGroups>
+                            <Grid x:Name="HorizontalTemplate" Margin="{StaticResource PhoneHorizontalMargin}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="0"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Rectangle x:Name="HorizontalTrack" Grid.ColumnSpan="3" Fill="{TemplateBinding Background}" Height="12" IsHitTestVisible="False" Margin="0,22,0,50" Opacity="0.2"/>
+                                <Rectangle x:Name="HorizontalFill" Grid.Column="0" Fill="{TemplateBinding Foreground}" Height="12" IsHitTestVisible="False" Margin="0,22,0,50"/>
+                                <RepeatButton x:Name="HorizontalTrackLargeChangeDecreaseRepeatButton" Grid.Column="0" IsTabStop="False" Template="{StaticResource PhoneSimpleRepeatButton}"/>
+                                <RepeatButton x:Name="HorizontalTrackLargeChangeIncreaseRepeatButton" Grid.Column="2" IsTabStop="False" Template="{StaticResource PhoneSimpleRepeatButton}"/>
+                                <Thumb x:Name="HorizontalThumb" Grid.Column="1" Margin="-1,0,0,30" RenderTransformOrigin="0.5,0.5" Template="{StaticResource ThumbControlTemplate1}" Width="1">
+                                    <Thumb.RenderTransform>
+                                        <ScaleTransform ScaleY="1" ScaleX="32"/>
+                                    </Thumb.RenderTransform>
+                                </Thumb>
+                            </Grid>
+                            <Grid x:Name="VerticalTemplate" Margin="{StaticResource PhoneVerticalMargin}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="0"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Rectangle x:Name="VerticalTrack" Fill="{TemplateBinding Background}" IsHitTestVisible="False" Margin="12,0" Opacity="0.2" Grid.RowSpan="3" Width="12"/>
+                                <Rectangle x:Name="VerticalFill" Fill="{TemplateBinding Foreground}" IsHitTestVisible="False" Margin="12,0" Grid.Row="2" Width="12"/>
+                                <RepeatButton x:Name="VerticalTrackLargeChangeDecreaseRepeatButton" IsTabStop="False" Grid.Row="0" Template="{StaticResource PhoneSimpleRepeatButton}"/>
+                                <RepeatButton x:Name="VerticalTrackLargeChangeIncreaseRepeatButton" IsTabStop="False" Grid.Row="2" Template="{StaticResource PhoneSimpleRepeatButton}"/>
+                                <Thumb x:Name="VerticalThumb" Height="1" Margin="0,-1,0,0" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Template="{StaticResource ThumbControlTemplate1}">
+                                    <Thumb.RenderTransform>
+                                        <ScaleTransform ScaleY="32" ScaleX="1"/>
+                                    </Thumb.RenderTransform>
+                                </Thumb>
+                            </Grid>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </phone:PhoneApplicationPage.Resources>
+
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
 
         <!--Panorama control-->
         <controls:Panorama x:Name="PanoramaApp" Title="my application" Margin="-10,0,10,0">
-            <controls:Panorama.Background>
-                <ImageBrush ImageSource="PanoramaBackground.png"/>
-            </controls:Panorama.Background>
 
             <!--Panorama item one-->
             <controls:PanoramaItem Name="item1" >
@@ -60,9 +115,9 @@
                             <toolkit:DatePicker ValueStringFormat="{}{0:dd-MM-yyyy}"></toolkit:DatePicker>
                             <StackPanel Orientation="Horizontal">
                                 <TextBox Text="0">
-                                    
+
                                 </TextBox>
-                                    <TextBlock Margin="0,20,0,0" TextAlignment="Center">tot</TextBlock>
+                                <TextBlock Margin="0,20,0,0" TextAlignment="Center">tot</TextBlock>
                                 <toolkit:TimePicker ValueStringFormat="{}{0:HH}"></toolkit:TimePicker>
                             </StackPanel>
                             <Button Content="Oke" Click="Button_Click"></Button>
@@ -76,21 +131,16 @@
                     <StackPanel Orientation="Vertical" Width="400" Margin="0,0,0,17">
                         <TextBlock TextAlignment="Center">Activiteit</TextBlock>
                         <toolkit:ListPicker ItemTemplate="{StaticResource ActivitiesTemplate}" x:Name="lp_Activiteiten"></toolkit:ListPicker>
-                        <TextBlock TextAlignment="Center">Moeheid</TextBlock>
-                        <StackPanel Orientation="Horizontal" >
-                            <Slider x:Name="SliderVermoeidheid" Width="400" Minimum="0" Maximum ="10"></Slider>
-                            <TextBlock Text="{Binding ElementName=SliderVermoeidheid,Path=Value}"></TextBlock>
-                        </StackPanel>
-                        <TextBlock TextAlignment="Center">Belangrijkheid</TextBlock>
-                        <StackPanel Orientation="Horizontal" >
-                            <Slider x:Name="SliderBelangrijk" Width="400" Minimum="0" Maximum ="10"></Slider>
-                            <TextBlock Text="{Binding ElementName=SliderBelangrijk,Path=Value}"></TextBlock>
-                        </StackPanel>
-                        <TextBlock TextAlignment="Center">Tevredenheid</TextBlock>
-                        <StackPanel Orientation="Horizontal" >
-                            <Slider x:Name="SliderTevredenheid" Width="400" Minimum="0" Maximum ="10"></Slider>
-                            <TextBlock Text="{Binding ElementName=SliderTevredenheid,Path=Value}"></TextBlock>
-                        </StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Slider Grid.Column="0" Orientation="Vertical" x:Name="SliderVermoeidheid" Height="400" Minimum="0" Maximum ="10" Style="{StaticResource SliderStyle1}"></Slider>
+                            <Slider Grid.Column="1" Orientation="Vertical" x:Name="SliderBelangrijk" Minimum="0" Maximum ="10" Style="{StaticResource SliderStyle1}"></Slider>
+                            <Slider Grid.Column="2" Orientation="Vertical" x:Name="SliderTevredenheid" Minimum="0" Maximum ="10" Style="{StaticResource SliderStyle1}"></Slider>
+                        </Grid>
                         <StackPanel>
                             <Button Content="OK" Click="Button_Click_3"></Button>
                         </StackPanel>

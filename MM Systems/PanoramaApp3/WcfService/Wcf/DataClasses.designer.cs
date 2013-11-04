@@ -30,9 +30,6 @@ namespace Wcf
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertTbl_Activiteiten(Tbl_Activiteiten instance);
-    partial void UpdateTbl_Activiteiten(Tbl_Activiteiten instance);
-    partial void DeleteTbl_Activiteiten(Tbl_Activiteiten instance);
     partial void InsertTbl_Rechten(Tbl_Rechten instance);
     partial void UpdateTbl_Rechten(Tbl_Rechten instance);
     partial void DeleteTbl_Rechten(Tbl_Rechten instance);
@@ -48,6 +45,12 @@ namespace Wcf
     partial void InsertTbl_User(Tbl_User instance);
     partial void UpdateTbl_User(Tbl_User instance);
     partial void DeleteTbl_User(Tbl_User instance);
+    partial void InsertTbl_Activiteiten(Tbl_Activiteiten instance);
+    partial void UpdateTbl_Activiteiten(Tbl_Activiteiten instance);
+    partial void DeleteTbl_Activiteiten(Tbl_Activiteiten instance);
+    partial void InsertTbl_Categorien(Tbl_Categorien instance);
+    partial void UpdateTbl_Categorien(Tbl_Categorien instance);
+    partial void DeleteTbl_Categorien(Tbl_Categorien instance);
     #endregion
 		
 		public DataClassesDataContext() : 
@@ -78,14 +81,6 @@ namespace Wcf
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<Tbl_Activiteiten> Tbl_Activiteitens
-		{
-			get
-			{
-				return this.GetTable<Tbl_Activiteiten>();
-			}
 		}
 		
 		public System.Data.Linq.Table<Tbl_Rechten> Tbl_Rechtens
@@ -127,90 +122,20 @@ namespace Wcf
 				return this.GetTable<Tbl_User>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Activiteiten")]
-	public partial class Tbl_Activiteiten : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _Omschrijving;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnOmschrijvingChanging(string value);
-    partial void OnOmschrijvingChanged();
-    #endregion
-		
-		public Tbl_Activiteiten()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
+		public System.Data.Linq.Table<Tbl_Activiteiten> Tbl_Activiteitens
 		{
 			get
 			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
+				return this.GetTable<Tbl_Activiteiten>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Omschrijving", DbType="NChar(100) NOT NULL", CanBeNull=false)]
-		public string Omschrijving
+		public System.Data.Linq.Table<Tbl_Categorien> Tbl_Categoriens
 		{
 			get
 			{
-				return this._Omschrijving;
-			}
-			set
-			{
-				if ((this._Omschrijving != value))
-				{
-					this.OnOmschrijvingChanging(value);
-					this.SendPropertyChanging();
-					this._Omschrijving = value;
-					this.SendPropertyChanged("Omschrijving");
-					this.OnOmschrijvingChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this.GetTable<Tbl_Categorien>();
 			}
 		}
 	}
@@ -1076,6 +1001,202 @@ namespace Wcf
 					this._Rechten_ID = value;
 					this.SendPropertyChanged("Rechten_ID");
 					this.OnRechten_IDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Activiteiten")]
+	public partial class Tbl_Activiteiten : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _Omschrijving;
+		
+		private int _Categorie_ID;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnOmschrijvingChanging(string value);
+    partial void OnOmschrijvingChanged();
+    partial void OnCategorie_IDChanging(int value);
+    partial void OnCategorie_IDChanged();
+    #endregion
+		
+		public Tbl_Activiteiten()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Omschrijving", DbType="NChar(100) NOT NULL", CanBeNull=false)]
+		public string Omschrijving
+		{
+			get
+			{
+				return this._Omschrijving;
+			}
+			set
+			{
+				if ((this._Omschrijving != value))
+				{
+					this.OnOmschrijvingChanging(value);
+					this.SendPropertyChanging();
+					this._Omschrijving = value;
+					this.SendPropertyChanged("Omschrijving");
+					this.OnOmschrijvingChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Categorie_ID", DbType="Int NOT NULL")]
+		public int Categorie_ID
+		{
+			get
+			{
+				return this._Categorie_ID;
+			}
+			set
+			{
+				if ((this._Categorie_ID != value))
+				{
+					this.OnCategorie_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Categorie_ID = value;
+					this.SendPropertyChanged("Categorie_ID");
+					this.OnCategorie_IDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Categorien")]
+	public partial class Tbl_Categorien : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Omschrijving;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnOmschrijvingChanging(string value);
+    partial void OnOmschrijvingChanged();
+    #endregion
+		
+		public Tbl_Categorien()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Omschrijving", DbType="NChar(20) NOT NULL", CanBeNull=false)]
+		public string Omschrijving
+		{
+			get
+			{
+				return this._Omschrijving;
+			}
+			set
+			{
+				if ((this._Omschrijving != value))
+				{
+					this.OnOmschrijvingChanging(value);
+					this.SendPropertyChanging();
+					this._Omschrijving = value;
+					this.SendPropertyChanged("Omschrijving");
+					this.OnOmschrijvingChanged();
 				}
 			}
 		}

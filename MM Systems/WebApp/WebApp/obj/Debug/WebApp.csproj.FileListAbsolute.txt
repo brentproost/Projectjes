@@ -205,7 +205,6 @@ C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Web
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.dll
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.pdb
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\XapCacheFile.xml
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\WebApp.dll
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\WebApp.pdb
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\AppManifest.xaml
@@ -416,3 +415,5 @@ C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.pd
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\XapCacheFile.xml
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\PasswordHashGen.dll
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\PasswordHashGen.pdb
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\PasswordHashGen.dll
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\PasswordHashGen.pdb

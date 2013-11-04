@@ -64,3 +64,6 @@ C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Deb
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.csprojResolveAssemblyReference.cache
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PasswordHashGen.dll
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PasswordHashGen.pdb
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PasswordHashGen.dll
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PasswordHashGen.pdb
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.csprojResolveAssemblyReference.cache
