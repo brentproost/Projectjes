@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wcf", "WcfService\Wcf\Wcf.c
 EndProject
 Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Wcf.Azure2", "Wcf.Azure2\Wcf.Azure2.ccproj", "{EDB511F9-7A4C-41FD-9343-7AE414BE8480}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswordHashGen", "PasswordHashGen\PasswordHashGen.csproj", "{A753DB32-277F-4F28-AF27-A39413BD9CA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{EDB511F9-7A4C-41FD-9343-7AE414BE8480}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDB511F9-7A4C-41FD-9343-7AE414BE8480}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDB511F9-7A4C-41FD-9343-7AE414BE8480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A753DB32-277F-4F28-AF27-A39413BD9CA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A753DB32-277F-4F28-AF27-A39413BD9CA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A753DB32-277F-4F28-AF27-A39413BD9CA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A753DB32-277F-4F28-AF27-A39413BD9CA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

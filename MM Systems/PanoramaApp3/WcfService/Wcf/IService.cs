@@ -28,5 +28,6 @@ namespace Wcf
 
         [OperationContract]
         void AddActivity(string omschr);
+
     }
 }

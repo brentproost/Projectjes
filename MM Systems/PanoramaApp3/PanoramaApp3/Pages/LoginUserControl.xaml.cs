@@ -38,7 +38,7 @@ namespace PanoramaApp3.Pages
         {
             get
             {
-                return _Password;
+                return MD5Core.GetHashString(_Password);
             }
             set
             {
@@ -55,24 +55,5 @@ namespace PanoramaApp3.Pages
                 PropertyChanged(this, new PropertyChangedEventArgs(info));
             }
         }
-
-        /*private void btn_Login_Click(object sender, RoutedEventArgs e)
-        {
-            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
-            client.SigninUserCompleted += client_SigninUserCompleted;
-            client.SigninUserAsync(txtUsername.Text, txtPassword.Password);
-        }*/
-
-        /*void client_SigninUserCompleted(object sender, ServiceReference.SigninUserCompletedEventArgs e)
-        {
-            MessageBox.Show("gelukt");
-            if (e.Result != null)
-            {
-                ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
-                client.SigninUserCompleted += client_SigninUserCompleted;
-                client.SigninUserAsync(txtUsername.Text, txtPassword.Password);
-                MessageBox.Show(e.Result);
-            }
-        }*/
     }
 }
