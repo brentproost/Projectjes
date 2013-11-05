@@ -122,10 +122,9 @@ namespace Wcf
             return Data.Tbl_Categoriens.ToList();
         }
 
-
         void IService.AddCategory(string omschr)
         {
-            Tbl_Categorien cat = new Tbl_Categorien{ Omschrijving = omschr };
+            Tbl_Categorien cat = new Tbl_Categorien() {Omschrijving = omschr};
             Data.Tbl_Categoriens.InsertOnSubmit(cat);
 
             try

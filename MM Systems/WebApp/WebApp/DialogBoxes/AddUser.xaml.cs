@@ -27,7 +27,7 @@ namespace WebApp.DialogBoxes
 
             client.AddUserAsync(btnNaam.Text, btnVoornaam.Text, btnAdres.Text, Convert.ToInt16(btnNummer.Text), btnPlaats.Text, Convert.ToInt16(btnPostcode.Text), btngebruikersnaam.Text, btnpasw.Text);
             client.AddUserCompleted += client_AddUserCompleted;
-
+            client.CloseAsync();
         }
 
         void client_AddUserCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)

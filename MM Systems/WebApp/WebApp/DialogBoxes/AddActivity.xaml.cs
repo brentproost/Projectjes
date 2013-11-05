@@ -22,6 +22,7 @@ namespace WebApp.DialogBoxes
             ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
             client.GetAllCategoriesAsync();
             client.GetAllCategoriesCompleted += client_GetAllCategoriesCompleted;
+            client.CloseAsync();
         }
 
         void client_GetAllCategoriesCompleted(object sender, ServiceReference.GetAllCategoriesCompletedEventArgs e)
@@ -45,6 +46,7 @@ namespace WebApp.DialogBoxes
             ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
             client.AddActivityCompleted += client_AddActivityCompleted;
             client.AddActivityAsync(txtOmschr.Text, selected_id);
+            client.CloseAsync();
         }
 
         void client_AddActivityCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)

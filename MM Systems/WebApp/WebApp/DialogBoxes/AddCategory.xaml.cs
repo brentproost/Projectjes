@@ -22,14 +22,15 @@ namespace WebApp.DialogBoxes
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
-            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();           
+            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+            client.AddCategoryAsync(txtOmsch.Text);
             client.AddCategoryCompleted += client_AddCategoryCompleted;
-            client.AddCategoryAsync(txtOmschr.Text);  
+            client.CloseAsync();
         }
 
         void client_AddCategoryCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
-            MessageBox.Show("Categorie is toegevoegd");
+            MessageBox.Show("test");
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

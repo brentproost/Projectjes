@@ -19,7 +19,7 @@
         <StackPanel>
             <StackPanel Grid.Column="0" Orientation="Horizontal">
                 <TextBlock Margin="4" Text="Omschrijving"></TextBlock>
-                <TextBox Margin="2" x:Name="txtOmschr" Width="100"></TextBox>
+                <TextBox Margin="2" x:Name="txtOmsch" Width="100"></TextBox>
 
             </StackPanel>
         </StackPanel>
