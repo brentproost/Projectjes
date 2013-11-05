@@ -49,6 +49,12 @@
   <wsdl:message name="IService_AddActivity_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddActivityResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_AddCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCategoryResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="GetUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetUser" message="tns:IService_GetUser_InputMessage" />
@@ -77,6 +83,10 @@
     <wsdl:operation name="AddActivity">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/AddActivity" message="tns:IService_AddActivity_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/AddActivityResponse" message="tns:IService_AddActivity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddCategory" message="tns:IService_AddCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddCategoryResponse" message="tns:IService_AddCategory_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -137,6 +147,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddActivity">
       <soap:operation soapAction="http://tempuri.org/IService/AddActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCategory">
+      <soap:operation soapAction="http://tempuri.org/IService/AddCategory" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

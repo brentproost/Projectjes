@@ -10,8 +10,8 @@ namespace Wcf
     public class Activities
     {
         [DataMember]
-        public string OmschrijvingCat { get; set; }
+        public string Categorie { get; set; }
         [DataMember]
-        public string OmschrijvingAct { get; set; }
+        public string Activiteit { get; set; }
     }
 }

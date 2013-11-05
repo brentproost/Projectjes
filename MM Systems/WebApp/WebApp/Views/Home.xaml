@@ -18,6 +18,8 @@
                 </Button>
                 <Button x:Name="btn_AddActivity" HorizontalAlignment="Center" Content="activiteit toevoegen" Click="btn_AddActivity_Click">
                 </Button>
+                <Button x:Name="btn_AddCategory" HorizontalAlignment="Center" Content="Categorie toevoegen" Click="btn_AddCategory_Click">
+                </Button>
 
             </StackPanel>
 

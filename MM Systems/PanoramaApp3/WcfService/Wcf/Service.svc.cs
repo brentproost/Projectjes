@@ -32,8 +32,8 @@ namespace Wcf
                       join cat in Data.Tbl_Categoriens on act.Categorie_ID equals cat.Id
                       select new Activities()
                       {
-                          OmschrijvingAct = act.Omschrijving,
-                          OmschrijvingCat = cat.Omschrijving
+                          Activiteit = act.Omschrijving,
+                          Categorie = cat.Omschrijving
                       }).ToList();
             return actlist; 
         }
@@ -120,6 +120,23 @@ namespace Wcf
         List<Tbl_Categorien> IService.GetAllCategories()
         {
             return Data.Tbl_Categoriens.ToList();
+        }
+
+
+        void IService.AddCategory(string omschr)
+        {
+            Tbl_Categorien cat = new Tbl_Categorien{ Omschrijving = omschr };
+            Data.Tbl_Categoriens.InsertOnSubmit(cat);
+
+            try
+            {
+                Data.SubmitChanges();
+            }
+
+            catch (Exception)
+            {
+                Data.SubmitChanges();
+            }
         }
     }
 }

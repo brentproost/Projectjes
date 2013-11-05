@@ -185,32 +185,32 @@ namespace WebApp.ServiceReference {
     [System.Runtime.Serialization.DataContractAttribute(Name="Activities", Namespace="http://schemas.datacontract.org/2004/07/Wcf")]
     public partial class Activities : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private string OmschrijvingActField;
+        private string ActiviteitField;
         
-        private string OmschrijvingCatField;
+        private string CategorieField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OmschrijvingAct {
+        public string Activiteit {
             get {
-                return this.OmschrijvingActField;
+                return this.ActiviteitField;
             }
             set {
-                if ((object.ReferenceEquals(this.OmschrijvingActField, value) != true)) {
-                    this.OmschrijvingActField = value;
-                    this.RaisePropertyChanged("OmschrijvingAct");
+                if ((object.ReferenceEquals(this.ActiviteitField, value) != true)) {
+                    this.ActiviteitField = value;
+                    this.RaisePropertyChanged("Activiteit");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OmschrijvingCat {
+        public string Categorie {
             get {
-                return this.OmschrijvingCatField;
+                return this.CategorieField;
             }
             set {
-                if ((object.ReferenceEquals(this.OmschrijvingCatField, value) != true)) {
-                    this.OmschrijvingCatField = value;
-                    this.RaisePropertyChanged("OmschrijvingCat");
+                if ((object.ReferenceEquals(this.CategorieField, value) != true)) {
+                    this.CategorieField = value;
+                    this.RaisePropertyChanged("Categorie");
                 }
             }
         }
@@ -308,6 +308,11 @@ namespace WebApp.ServiceReference {
         System.IAsyncResult BeginAddActivity(string omschr, int catid, System.AsyncCallback callback, object asyncState);
         
         void EndAddActivity(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/AddCategory", ReplyAction="http://tempuri.org/IService/AddCategoryResponse")]
+        System.IAsyncResult BeginAddCategory(string omschr, System.AsyncCallback callback, object asyncState);
+        
+        void EndAddCategory(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -455,6 +460,12 @@ namespace WebApp.ServiceReference {
         
         private System.Threading.SendOrPostCallback onAddActivityCompletedDelegate;
         
+        private BeginOperationDelegate onBeginAddCategoryDelegate;
+        
+        private EndOperationDelegate onEndAddCategoryDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddCategoryCompletedDelegate;
+        
         private BeginOperationDelegate onBeginOpenDelegate;
         
         private EndOperationDelegate onEndOpenDelegate;
@@ -521,6 +532,8 @@ namespace WebApp.ServiceReference {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> AddUserCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> AddActivityCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> AddCategoryCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -858,6 +871,51 @@ namespace WebApp.ServiceReference {
                         catid}, this.onEndAddActivityDelegate, this.onAddActivityCompletedDelegate, userState);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult WebApp.ServiceReference.IService.BeginAddCategory(string omschr, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddCategory(omschr, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void WebApp.ServiceReference.IService.EndAddCategory(System.IAsyncResult result) {
+            base.Channel.EndAddCategory(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddCategory(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string omschr = ((string)(inValues[0]));
+            return ((WebApp.ServiceReference.IService)(this)).BeginAddCategory(omschr, callback, asyncState);
+        }
+        
+        private object[] OnEndAddCategory(System.IAsyncResult result) {
+            ((WebApp.ServiceReference.IService)(this)).EndAddCategory(result);
+            return null;
+        }
+        
+        private void OnAddCategoryCompleted(object state) {
+            if ((this.AddCategoryCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddCategoryCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddCategoryAsync(string omschr) {
+            this.AddCategoryAsync(omschr, null);
+        }
+        
+        public void AddCategoryAsync(string omschr, object userState) {
+            if ((this.onBeginAddCategoryDelegate == null)) {
+                this.onBeginAddCategoryDelegate = new BeginOperationDelegate(this.OnBeginAddCategory);
+            }
+            if ((this.onEndAddCategoryDelegate == null)) {
+                this.onEndAddCategoryDelegate = new EndOperationDelegate(this.OnEndAddCategory);
+            }
+            if ((this.onAddCategoryCompletedDelegate == null)) {
+                this.onAddCategoryCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddCategoryCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddCategoryDelegate, new object[] {
+                        omschr}, this.onEndAddCategoryDelegate, this.onAddCategoryCompletedDelegate, userState);
+        }
+        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -1027,6 +1085,18 @@ namespace WebApp.ServiceReference {
             public void EndAddActivity(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 base.EndInvoke("AddActivity", _args, result);
+            }
+            
+            public System.IAsyncResult BeginAddCategory(string omschr, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = omschr;
+                System.IAsyncResult _result = base.BeginInvoke("AddCategory", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndAddCategory(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("AddCategory", _args, result);
             }
         }
     }

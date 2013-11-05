@@ -88,6 +88,9 @@
     <Compile Include="DialogBoxes\AddActivity.xaml.cs">
       <DependentUpon>AddActivity.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DialogBoxes\AddCategory.xaml.cs">
+      <DependentUpon>AddCategory.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DialogBoxes\AddUser.xaml.cs">
       <DependentUpon>AddUser.xaml</DependentUpon>
     </Compile>
@@ -124,6 +127,10 @@
       <SubType>Designer</SubType>
     </Resource>
     <Page Include="DialogBoxes\AddActivity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DialogBoxes\AddCategory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

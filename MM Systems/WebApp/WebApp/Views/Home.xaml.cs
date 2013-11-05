@@ -43,5 +43,12 @@ namespace WebApp
             window.Closed += window_Closed;
             window.Show();
         }
+
+        private void btn_AddCategory_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new DialogBoxes.AddCategory();
+            window.Closed += window_Closed;
+            window.Show();
+        }
     }
 }

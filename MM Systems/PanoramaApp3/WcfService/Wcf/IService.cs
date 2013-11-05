@@ -32,5 +32,8 @@ namespace Wcf
         [OperationContract]
         void AddActivity(string omschr, int catid);
 
+        [OperationContract]
+        void AddCategory(string omschr);
+
     }
 }
