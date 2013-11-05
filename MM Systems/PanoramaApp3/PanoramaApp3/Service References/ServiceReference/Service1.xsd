@@ -21,17 +21,31 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Tbl_User" nillable="true" type="tns:Tbl_User" />
-  <xs:complexType name="ArrayOfTbl_Activiteiten">
+  <xs:complexType name="ArrayOfActivities">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tbl_Activiteiten" nillable="true" type="tns:Tbl_Activiteiten" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Activities" nillable="true" type="tns:Activities" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfTbl_Activiteiten" nillable="true" type="tns:ArrayOfTbl_Activiteiten" />
-  <xs:complexType name="Tbl_Activiteiten">
+  <xs:element name="ArrayOfActivities" nillable="true" type="tns:ArrayOfActivities" />
+  <xs:complexType name="Activities">
     <xs:sequence>
-      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Activiteit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Activiteit_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Categorie" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Activities" nillable="true" type="tns:Activities" />
+  <xs:complexType name="ArrayOfTbl_Categorien">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tbl_Categorien" nillable="true" type="tns:Tbl_Categorien" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTbl_Categorien" nillable="true" type="tns:ArrayOfTbl_Categorien" />
+  <xs:complexType name="Tbl_Categorien">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Omschrijving" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="Tbl_Activiteiten" nillable="true" type="tns:Tbl_Activiteiten" />
+  <xs:element name="Tbl_Categorien" nillable="true" type="tns:Tbl_Categorien" />
 </xs:schema>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Security.Cryptography;
@@ -24,19 +25,23 @@ namespace Wcf
             return Data.Tbl_Users.ToList();
         }
 
-        List<Activities> IService.GetAllActivities()
+        ObservableCollection<Activities> IService.GetAllActivities()
         {
             List<Activities> actlist = new List<Activities>();
             //actlist = (from act in Data.Tbl_Activiteitens select new Activities() { OmschrijvingAct = act.Omschrijving}).ToList();
             actlist = (from act in Data.Tbl_Activiteitens
-                      join cat in Data.Tbl_Categoriens on act.Categorie_ID equals cat.Id
-                      select new Activities()
-                      {
-                          Activiteit = act.Omschrijving,
-                          Categorie = cat.Omschrijving,
-                          Activiteit_ID = act.ID
-                      }).ToList();
-            return actlist; 
+                       join cat in Data.Tbl_Categoriens on act.Categorie_ID equals cat.Id
+                       select new Activities()
+                       {
+                           Activiteit = act.Omschrijving,
+                           Categorie = cat.Omschrijving,
+                           Activiteit_ID = act.ID
+                       }).ToList();
+
+            var oc= new ObservableCollection<Activities>();
+            foreach (var item in actlist)
+                oc.Add(item);
+            return oc; 
         }
         List<Tbl_User> IService.GetUser(int ID)
         {

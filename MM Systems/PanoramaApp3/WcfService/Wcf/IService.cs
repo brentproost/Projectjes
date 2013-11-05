@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -18,7 +19,7 @@ namespace Wcf
         List<Tbl_User> GetAllUsers();
 
         [OperationContract]
-        List<Activities> GetAllActivities();
+        ObservableCollection<Activities> GetAllActivities();
 
         [OperationContract]
         List<Tbl_Categorien> GetAllCategories();

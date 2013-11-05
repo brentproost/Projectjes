@@ -19,34 +19,50 @@ namespace WebApp.Views
         public Gebruikers()
         {
             InitializeComponent();
+            UpdateDataGrid();
+        }
+
+        void UpdateDataGrid()
+        {
+            dg_Gebruikers.ItemsSource = null;
             ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
             client.GetAllUsersAsync();
             client.GetAllUsersCompleted += client_GetAllUsersCompleted;
         }
+
 
         void client_GetAllUsersCompleted(object sender, ServiceReference.GetAllUsersCompletedEventArgs e)
         {
             dg_Gebruikers.ItemsSource = e.Result.ToList();
         }
 
-        // Executes when the user navigates to this page.
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-        }
-
-
         void client_AddUserCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
             btnsubmit.Content = "gebruiker toegevoegd";
+            UpdateDataGrid();
         }
 
         private void btnsubmit_Click_1(object sender, RoutedEventArgs e)
         {
+
             btnsubmit.Content = "een momentje aub, gebruiker wordt toegevoegd...";
             ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
-            
-            client.AddUserAsync(btnNaam.Text, btnVoornaam.Text, btnAdres.Text, Convert.ToInt16(btnNummer.Text), btnPlaats.Text, Convert.ToInt16(btnPostcode.Text), btngebruikersnaam.Text, MD5Core.GetHashString(btnpasw.Text));
+
+            client.AddUserAsync(txtNaam.Text, txtVoornaam.Text, txtAdres.Text, Convert.ToInt16(txtNummer.Text), txtPlaats.Text, Convert.ToInt16(txtPostcode.Text), txtgebruikersnaam.Text, MD5Core.GetHashString(txtpasw.Text));
             client.AddUserCompleted += client_AddUserCompleted;
+            txtNaam.Text = "";
+            txtVoornaam.Text = "";
+            txtAdres.Text = "";
+            txtNummer.Text = "";
+            txtPlaats.Text = "";
+            txtPostcode.Text = "";
+            txtgebruikersnaam.Text = "";
+            txtpasw.Text = "";
+        }
+
+        private void txt_TextInputStart(object sender, TextCompositionEventArgs e)
+        {
+            btnsubmit.Content = "Submit";
         }
     }
 }

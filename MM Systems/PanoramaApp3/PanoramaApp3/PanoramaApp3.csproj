@@ -134,7 +134,10 @@
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />
     <Content Include="ReadMe.Coding4Fun.Toolkit.txt" />
-    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Tbl_Activiteiten.datasource">
+    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Activities.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Tbl_Categorien.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Tbl_User.datasource">
@@ -177,13 +180,13 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ServiceReference\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\PasswordHashGen\PasswordHashGen.csproj">
       <Project>{A753DB32-277F-4F28-AF27-A39413BD9CA8}</Project>
       <Name>PasswordHashGen</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReference\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />

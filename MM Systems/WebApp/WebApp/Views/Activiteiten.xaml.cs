@@ -20,14 +20,22 @@ namespace WebApp
         public About()
         {
             InitializeComponent();
-            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
-            client.GetAllActivitiesCompleted += client_GetAllActivitiesCompleted;
-            client.GetAllActivitiesAsync();
+            UpdateDataGrid();
         }
 
         void client_GetAllActivitiesCompleted(object sender, ServiceReference.GetAllActivitiesCompletedEventArgs e)
         {
             gridd.ItemsSource = e.Result.ToList();
+        }
+
+        void UpdateDataGrid()
+        {
+            gridd.ItemsSource = null;
+
+            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+
+            client.GetAllActivitiesCompleted += client_GetAllActivitiesCompleted;
+            client.GetAllActivitiesAsync();
         }
 
         private void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -41,6 +49,7 @@ namespace WebApp
         void client_DeleteActivityCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
             MessageBox.Show("activiteit verwijderd");
+            UpdateDataGrid();
         }
     }
 }
