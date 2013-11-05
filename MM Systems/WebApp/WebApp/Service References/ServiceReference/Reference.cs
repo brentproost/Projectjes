@@ -182,50 +182,35 @@ namespace WebApp.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Tbl_Activiteiten", Namespace="http://schemas.datacontract.org/2004/07/Wcf")]
-    public partial class Tbl_Activiteiten : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.Runtime.Serialization.DataContractAttribute(Name="Activities", Namespace="http://schemas.datacontract.org/2004/07/Wcf")]
+    public partial class Activities : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private int Categorie_IDField;
+        private string OmschrijvingActField;
         
-        private int IDField;
-        
-        private string OmschrijvingField;
+        private string OmschrijvingCatField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Categorie_ID {
+        public string OmschrijvingAct {
             get {
-                return this.Categorie_IDField;
+                return this.OmschrijvingActField;
             }
             set {
-                if ((this.Categorie_IDField.Equals(value) != true)) {
-                    this.Categorie_IDField = value;
-                    this.RaisePropertyChanged("Categorie_ID");
+                if ((object.ReferenceEquals(this.OmschrijvingActField, value) != true)) {
+                    this.OmschrijvingActField = value;
+                    this.RaisePropertyChanged("OmschrijvingAct");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ID {
+        public string OmschrijvingCat {
             get {
-                return this.IDField;
+                return this.OmschrijvingCatField;
             }
             set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Omschrijving {
-            get {
-                return this.OmschrijvingField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OmschrijvingField, value) != true)) {
-                    this.OmschrijvingField = value;
-                    this.RaisePropertyChanged("Omschrijving");
+                if ((object.ReferenceEquals(this.OmschrijvingCatField, value) != true)) {
+                    this.OmschrijvingCatField = value;
+                    this.RaisePropertyChanged("OmschrijvingCat");
                 }
             }
         }
@@ -302,7 +287,7 @@ namespace WebApp.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/GetAllActivities", ReplyAction="http://tempuri.org/IService/GetAllActivitiesResponse")]
         System.IAsyncResult BeginGetAllActivities(System.AsyncCallback callback, object asyncState);
         
-        System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Activiteiten> EndGetAllActivities(System.IAsyncResult result);
+        System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Activities> EndGetAllActivities(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/GetAllCategories", ReplyAction="http://tempuri.org/IService/GetAllCategoriesResponse")]
         System.IAsyncResult BeginGetAllCategories(System.AsyncCallback callback, object asyncState);
@@ -378,10 +363,10 @@ namespace WebApp.ServiceReference {
             this.results = results;
         }
         
-        public System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Activiteiten> Result {
+        public System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Activities> Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Activiteiten>)(this.results[0]));
+                return ((System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Activities>)(this.results[0]));
             }
         }
     }
@@ -637,7 +622,7 @@ namespace WebApp.ServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Activiteiten> WebApp.ServiceReference.IService.EndGetAllActivities(System.IAsyncResult result) {
+        System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Activities> WebApp.ServiceReference.IService.EndGetAllActivities(System.IAsyncResult result) {
             return base.Channel.EndGetAllActivities(result);
         }
         
@@ -646,7 +631,7 @@ namespace WebApp.ServiceReference {
         }
         
         private object[] OnEndGetAllActivities(System.IAsyncResult result) {
-            System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Activiteiten> retVal = ((WebApp.ServiceReference.IService)(this)).EndGetAllActivities(result);
+            System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Activities> retVal = ((WebApp.ServiceReference.IService)(this)).EndGetAllActivities(result);
             return new object[] {
                     retVal};
         }
@@ -980,9 +965,9 @@ namespace WebApp.ServiceReference {
                 return _result;
             }
             
-            public System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Activiteiten> EndGetAllActivities(System.IAsyncResult result) {
+            public System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Activities> EndGetAllActivities(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Activiteiten> _result = ((System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Activiteiten>)(base.EndInvoke("GetAllActivities", _args, result)));
+                System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Activities> _result = ((System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Activities>)(base.EndInvoke("GetAllActivities", _args, result)));
                 return _result;
             }
             

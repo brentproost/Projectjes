@@ -18,7 +18,7 @@ namespace Wcf
         List<Tbl_User> GetAllUsers();
 
         [OperationContract]
-        List<Tbl_Activiteiten> GetAllActivities();
+        List<Activities> GetAllActivities();
 
         [OperationContract]
         List<Tbl_Categorien> GetAllCategories();

@@ -24,9 +24,18 @@ namespace Wcf
             return Data.Tbl_Users.ToList();
         }
 
-        List<Tbl_Activiteiten> IService.GetAllActivities()
+        List<Activities> IService.GetAllActivities()
         {
-            return Data.Tbl_Activiteitens.ToList();
+            List<Activities> actlist = new List<Activities>();
+            //actlist = (from act in Data.Tbl_Activiteitens select new Activities() { OmschrijvingAct = act.Omschrijving}).ToList();
+            actlist = (from act in Data.Tbl_Activiteitens
+                      join cat in Data.Tbl_Categoriens on act.Categorie_ID equals cat.Id
+                      select new Activities()
+                      {
+                          OmschrijvingAct = act.Omschrijving,
+                          OmschrijvingCat = cat.Omschrijving
+                      }).ToList();
+            return actlist; 
         }
         List<Tbl_User> IService.GetUser(int ID)
         {

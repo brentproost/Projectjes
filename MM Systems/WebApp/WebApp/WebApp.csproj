@@ -164,7 +164,7 @@
     <None Include="Service References\ServiceReference\Service2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference\WebApp.ServiceReference.Tbl_Activiteiten.datasource">
+    <None Include="Service References\ServiceReference\WebApp.ServiceReference.Activities.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference\WebApp.ServiceReference.Tbl_Categorien.datasource">
