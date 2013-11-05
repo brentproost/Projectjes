@@ -9,7 +9,31 @@
     Style="{StaticResource PageStyle}">
 
     <Grid x:Name="LayoutRoot">
-        <sdk:DataGrid x:Name="gridd" ItemsSource="{Binding}"></sdk:DataGrid>
+        <sdk:DataGrid AutoGenerateColumns="False" x:Name="gridd" ItemsSource="{Binding}">
+            <sdk:DataGrid.Columns>
+                <sdk:DataGridTemplateColumn Header="Activiteit" Width="SizeToCells" IsReadOnly="True">
+                    <sdk:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Activiteit}"></TextBlock>
+                        </DataTemplate>
+                    </sdk:DataGridTemplateColumn.CellTemplate>
+                </sdk:DataGridTemplateColumn>
+                <sdk:DataGridTemplateColumn Header="Categorie" Width="SizeToCells" IsReadOnly="True">
+                    <sdk:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Categorie}"></TextBlock>
+                        </DataTemplate>
+                    </sdk:DataGridTemplateColumn.CellTemplate>
+                </sdk:DataGridTemplateColumn>
+                <sdk:DataGridTemplateColumn Width="SizeToCells" IsReadOnly="True">
+                    <sdk:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                                <Image Source="/WebApp;component/icon-delete.png" Tag="{Binding Activiteit_ID}" MouseLeftButtonUp="Image_MouseLeftButtonUp" ></Image>
+                        </DataTemplate>
+                    </sdk:DataGridTemplateColumn.CellTemplate>
+                </sdk:DataGridTemplateColumn>
+            </sdk:DataGrid.Columns>
+        </sdk:DataGrid>
     </Grid>
 
 </navigation:Page>

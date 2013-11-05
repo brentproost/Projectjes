@@ -11,6 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ServiceModel;
+using System.ComponentModel;
 
 namespace WebApp
 {
@@ -27,6 +28,19 @@ namespace WebApp
         void client_GetAllActivitiesCompleted(object sender, ServiceReference.GetAllActivitiesCompletedEventArgs e)
         {
             gridd.ItemsSource = e.Result.ToList();
+        }
+
+        private void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+            client.DeleteActivityCompleted += client_DeleteActivityCompleted;
+            client.DeleteActivityAsync(Convert.ToInt32((((Image)sender).Tag).ToString()));
+            
+        }
+
+        void client_DeleteActivityCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            MessageBox.Show("activiteit verwijderd");
         }
     }
 }

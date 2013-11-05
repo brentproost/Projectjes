@@ -33,7 +33,8 @@ namespace Wcf
                       select new Activities()
                       {
                           Activiteit = act.Omschrijving,
-                          Categorie = cat.Omschrijving
+                          Categorie = cat.Omschrijving,
+                          Activiteit_ID = act.ID
                       }).ToList();
             return actlist; 
         }
@@ -94,9 +95,9 @@ namespace Wcf
             {
                 Data.SubmitChanges();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                Data.SubmitChanges();
+                Console.WriteLine(e);
             }
         }
 
@@ -111,9 +112,9 @@ namespace Wcf
                 Data.SubmitChanges();
             }
 
-            catch (Exception)
+             catch (Exception e)
             {
-                Data.SubmitChanges();
+                Console.WriteLine(e);
             }
         }
 
@@ -132,10 +133,31 @@ namespace Wcf
                 Data.SubmitChanges();
             }
 
-            catch (Exception)
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
+
+        void IService.DeleteActivity(int id)
+        {
+            var delete = from act in Data.Tbl_Activiteitens where act.ID == id select act;
+
+            foreach (var del in delete)
+            {
+                Data.Tbl_Activiteitens.DeleteOnSubmit(del);
+            }
+
+            try
             {
                 Data.SubmitChanges();
             }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
         }
     }
 }

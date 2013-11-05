@@ -55,6 +55,12 @@
   <wsdl:message name="IService_AddCategory_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddCategoryResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_DeleteActivity_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteActivity" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteActivity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteActivityResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="GetUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetUser" message="tns:IService_GetUser_InputMessage" />
@@ -87,6 +93,10 @@
     <wsdl:operation name="AddCategory">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/AddCategory" message="tns:IService_AddCategory_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/AddCategoryResponse" message="tns:IService_AddCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteActivity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DeleteActivity" message="tns:IService_DeleteActivity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DeleteActivityResponse" message="tns:IService_DeleteActivity_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -156,6 +166,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddCategory">
       <soap:operation soapAction="http://tempuri.org/IService/AddCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteActivity">
+      <soap:operation soapAction="http://tempuri.org/IService/DeleteActivity" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
