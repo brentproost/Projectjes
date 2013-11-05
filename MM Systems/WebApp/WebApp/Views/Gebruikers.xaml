@@ -17,31 +17,31 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Voornaam"></TextBlock>
-                    <TextBox x:Name="txtVoornaam" Width="100"></TextBox>
+                    <TextBox TextInputStart="txt_TextInputStart" x:Name="txtVoornaam" Width="100"></TextBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Adres"></TextBlock>
-                    <TextBox  x:Name="txtAdres" Width="100"></TextBox>
+                    <TextBox TextInputStart="txt_TextInputStart" x:Name="txtAdres" Width="100"></TextBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Nummer"></TextBlock>
-                    <TextBox x:Name="txtNummer" Width="100"></TextBox>
+                    <TextBox TextInputStart="txt_TextInputStart" x:Name="txtNummer" Width="100"></TextBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Plaats"></TextBlock>
-                    <TextBox x:Name="txtPlaats" Width="100"></TextBox>
+                    <TextBox TextInputStart="txt_TextInputStart" x:Name="txtPlaats" Width="100"></TextBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Postcode"></TextBlock>
-                    <TextBox x:Name="txtPostcode" Width="100"></TextBox>
+                    <TextBox TextInputStart="txt_TextInputStart" x:Name="txtPostcode" Width="100"></TextBox>
                         </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock  Text="Gebruikersnaam"></TextBlock>
-                    <TextBox x:Name="txtgebruikersnaam" Width="100"></TextBox>
+                    <TextBox TextInputStart="txt_TextInputStart" x:Name="txtgebruikersnaam" Width="100"></TextBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Paswoord"></TextBlock>
-                    <TextBox x:Name="txtpasw" Width="100"></TextBox>
+                    <TextBox TextInputStart="txt_TextInputStart" x:Name="txtpasw" Width="100"></TextBox>
                     </StackPanel>
                 <Button HorizontalAlignment="Center" x:Name="btnsubmit" Content="Submit" Click="btnsubmit_Click_1"></Button>
                 </StackPanel>
