@@ -169,6 +169,9 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Resource Include="icon-delete.png" />
+    <Resource Include="icon-user.jpg" />
+    <Resource Include="icon-addactivity.jpg" />
+    <Resource Include="icon-addcategory.jpg" />
     <Content Include="ServiceReferences.ClientConfig" />
     <None Include="Service References\ServiceReference\Service.wsdl" />
     <None Include="Service References\ServiceReference\Service.xsd">

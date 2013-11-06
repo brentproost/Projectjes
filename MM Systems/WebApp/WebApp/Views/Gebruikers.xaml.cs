@@ -24,7 +24,7 @@ namespace WebApp.Views
 
         void UpdateDataGrid()
         {
-            dg_Gebruikers.ItemsSource = null;
+            gridd.ItemsSource = null;
             ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
             client.GetAllUsersAsync();
             client.GetAllUsersCompleted += client_GetAllUsersCompleted;
@@ -33,7 +33,7 @@ namespace WebApp.Views
 
         void client_GetAllUsersCompleted(object sender, ServiceReference.GetAllUsersCompletedEventArgs e)
         {
-            dg_Gebruikers.ItemsSource = e.Result.ToList();
+             gridd.ItemsSource = e.Result.ToList();
         }
 
         void client_AddUserCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
@@ -48,7 +48,7 @@ namespace WebApp.Views
             btnsubmit.Content = "een momentje aub, gebruiker wordt toegevoegd...";
             ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
 
-            client.AddUserAsync(txtNaam.Text, txtVoornaam.Text, txtAdres.Text, Convert.ToInt16(txtNummer.Text), txtPlaats.Text, Convert.ToInt16(txtPostcode.Text), txtgebruikersnaam.Text, MD5Core.GetHashString(txtpasw.Text));
+            client.AddUserAsync(txtNaam.Text, txtVoornaam.Text, txtAdres.Text, Convert.ToInt16(txtNummer.Text), txtPlaats.Text, Convert.ToInt16(txtPostcode.Text), txtgebruikersnaam.Text, MD5Core.GetHashString(txtpasw.Password));
             client.AddUserCompleted += client_AddUserCompleted;
             txtNaam.Text = "";
             txtVoornaam.Text = "";
@@ -57,12 +57,25 @@ namespace WebApp.Views
             txtPlaats.Text = "";
             txtPostcode.Text = "";
             txtgebruikersnaam.Text = "";
-            txtpasw.Text = "";
+            txtpasw.Password = "";
         }
 
         private void txt_TextInputStart(object sender, TextCompositionEventArgs e)
         {
             btnsubmit.Content = "Submit";
+        }
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+            client.DeleteUserAsync((Convert.ToInt32((((Image)sender).Tag).ToString())));
+            client.DeleteUserCompleted += client_DeleteUserCompleted;
+        }
+
+        void client_DeleteUserCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            MessageBox.Show("gebruiker verwijderd");
+            UpdateDataGrid();
         }
     }
 }

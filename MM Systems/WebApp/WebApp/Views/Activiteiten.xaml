@@ -14,14 +14,14 @@
                 <sdk:DataGridTemplateColumn Header="Activiteit" Width="SizeToCells" IsReadOnly="True">
                     <sdk:DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Activiteit, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+                            <TextBlock Text="{Binding Activiteit}"></TextBlock>
                         </DataTemplate>
                     </sdk:DataGridTemplateColumn.CellTemplate>
                 </sdk:DataGridTemplateColumn>
                 <sdk:DataGridTemplateColumn Header="Categorie" Width="SizeToCells" IsReadOnly="True">
                     <sdk:DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Categorie, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+                            <TextBlock Text="{Binding Categorie}"></TextBlock>
                         </DataTemplate>
                     </sdk:DataGridTemplateColumn.CellTemplate>
                 </sdk:DataGridTemplateColumn>

@@ -162,7 +162,25 @@ namespace Wcf
             {
                 Console.WriteLine(e);
             }
+        }
 
+        void IService.DeleteUser(int id)
+        {
+            var delete = from usr in Data.Tbl_Users where usr.ID == id select usr;
+
+            foreach (var del in delete)
+            {
+                Data.Tbl_Users.DeleteOnSubmit(del);
+            }
+
+            try
+            {
+                Data.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
     }
 }

@@ -39,5 +39,8 @@ namespace Wcf
         [OperationContract]
         void DeleteActivity(int id);
 
+        [OperationContract]
+        void DeleteUser(int id);
+
     }
 }

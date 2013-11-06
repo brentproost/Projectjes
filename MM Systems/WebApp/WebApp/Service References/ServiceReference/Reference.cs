@@ -333,6 +333,11 @@ namespace WebApp.ServiceReference {
         System.IAsyncResult BeginDeleteActivity(int id, System.AsyncCallback callback, object asyncState);
         
         void EndDeleteActivity(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/DeleteUser", ReplyAction="http://tempuri.org/IService/DeleteUserResponse")]
+        System.IAsyncResult BeginDeleteUser(int id, System.AsyncCallback callback, object asyncState);
+        
+        void EndDeleteUser(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -492,6 +497,12 @@ namespace WebApp.ServiceReference {
         
         private System.Threading.SendOrPostCallback onDeleteActivityCompletedDelegate;
         
+        private BeginOperationDelegate onBeginDeleteUserDelegate;
+        
+        private EndOperationDelegate onEndDeleteUserDelegate;
+        
+        private System.Threading.SendOrPostCallback onDeleteUserCompletedDelegate;
+        
         private BeginOperationDelegate onBeginOpenDelegate;
         
         private EndOperationDelegate onEndOpenDelegate;
@@ -562,6 +573,8 @@ namespace WebApp.ServiceReference {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> AddCategoryCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> DeleteActivityCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> DeleteUserCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -989,6 +1002,51 @@ namespace WebApp.ServiceReference {
                         id}, this.onEndDeleteActivityDelegate, this.onDeleteActivityCompletedDelegate, userState);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult WebApp.ServiceReference.IService.BeginDeleteUser(int id, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginDeleteUser(id, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void WebApp.ServiceReference.IService.EndDeleteUser(System.IAsyncResult result) {
+            base.Channel.EndDeleteUser(result);
+        }
+        
+        private System.IAsyncResult OnBeginDeleteUser(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id = ((int)(inValues[0]));
+            return ((WebApp.ServiceReference.IService)(this)).BeginDeleteUser(id, callback, asyncState);
+        }
+        
+        private object[] OnEndDeleteUser(System.IAsyncResult result) {
+            ((WebApp.ServiceReference.IService)(this)).EndDeleteUser(result);
+            return null;
+        }
+        
+        private void OnDeleteUserCompleted(object state) {
+            if ((this.DeleteUserCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.DeleteUserCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void DeleteUserAsync(int id) {
+            this.DeleteUserAsync(id, null);
+        }
+        
+        public void DeleteUserAsync(int id, object userState) {
+            if ((this.onBeginDeleteUserDelegate == null)) {
+                this.onBeginDeleteUserDelegate = new BeginOperationDelegate(this.OnBeginDeleteUser);
+            }
+            if ((this.onEndDeleteUserDelegate == null)) {
+                this.onEndDeleteUserDelegate = new EndOperationDelegate(this.OnEndDeleteUser);
+            }
+            if ((this.onDeleteUserCompletedDelegate == null)) {
+                this.onDeleteUserCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDeleteUserCompleted);
+            }
+            base.InvokeAsync(this.onBeginDeleteUserDelegate, new object[] {
+                        id}, this.onEndDeleteUserDelegate, this.onDeleteUserCompletedDelegate, userState);
+        }
+        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -1182,6 +1240,18 @@ namespace WebApp.ServiceReference {
             public void EndDeleteActivity(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 base.EndInvoke("DeleteActivity", _args, result);
+            }
+            
+            public System.IAsyncResult BeginDeleteUser(int id, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = id;
+                System.IAsyncResult _result = base.BeginInvoke("DeleteUser", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndDeleteUser(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("DeleteUser", _args, result);
             }
         }
     }

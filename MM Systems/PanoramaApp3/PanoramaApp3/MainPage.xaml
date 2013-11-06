@@ -130,8 +130,6 @@
                 <ListBox Margin="0,0,-12,0" >
                     <StackPanel Orientation="Vertical" Width="400" Margin="0,0,0,17">
                         <TextBlock TextAlignment="Center">Activiteit</TextBlock>
-                        <toolkit:ListPicker ItemTemplate="{StaticResource CategoriesTemplate}" x:Name="lp_Categorieen"></toolkit:ListPicker>
-                        <toolkit:ListPicker ItemTemplate="{StaticResource ActivitiesTemplate}" x:Name="lp_Activiteiten"></toolkit:ListPicker>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition></ColumnDefinition>

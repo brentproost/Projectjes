@@ -7,7 +7,7 @@
            xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" x:Class="WebApp.Views.Gebruikers"
            mc:Ignorable="d"
            d:DesignWidth="640" d:DesignHeight="480"
-           Title="Gebruikers Page">
+           Title="Gebruikers">
     <Grid x:Name="LayoutRoot">
         <StackPanel>
                 <StackPanel Grid.Column="0">
@@ -41,13 +41,35 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Paswoord"></TextBlock>
-                    <TextBox TextInputStart="txt_TextInputStart" x:Name="txtpasw" Width="100"></TextBox>
+                    <PasswordBox TextInputStart="txt_TextInputStart" x:Name="txtpasw" Width="100"></PasswordBox>
                     </StackPanel>
                 <Button HorizontalAlignment="Center" x:Name="btnsubmit" Content="Submit" Click="btnsubmit_Click_1"></Button>
                 </StackPanel>
-            <sdk:DataGrid VerticalContentAlignment="Stretch" x:Name="dg_Gebruikers" ItemsSource="{Binding}"/>
+            <sdk:DataGrid AutoGenerateColumns="False" x:Name="gridd" ItemsSource="{Binding}">
+                <sdk:DataGrid.Columns>
+                    <sdk:DataGridTemplateColumn Header="Naam" Width="SizeToCells" IsReadOnly="True">
+                        <sdk:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Naam}"></TextBlock>
+                            </DataTemplate>
+                        </sdk:DataGridTemplateColumn.CellTemplate>
+                    </sdk:DataGridTemplateColumn>
+                    <sdk:DataGridTemplateColumn Header="Voornaam" Width="SizeToCells" IsReadOnly="True">
+                        <sdk:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Voornaam}"></TextBlock>
+                            </DataTemplate>
+                        </sdk:DataGridTemplateColumn.CellTemplate>
+                    </sdk:DataGridTemplateColumn>
+                    <sdk:DataGridTemplateColumn Width="SizeToCells" IsReadOnly="True">
+                        <sdk:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="/WebApp;component/icon-delete.png" Tag="{Binding ID}" MouseLeftButtonDown="Image_MouseLeftButtonDown"></Image>
+                            </DataTemplate>
+                        </sdk:DataGridTemplateColumn.CellTemplate>
+                    </sdk:DataGridTemplateColumn>
+                </sdk:DataGrid.Columns>
+            </sdk:DataGrid>
         </StackPanel>
-        
-
     </Grid>
 </navigation:Page>

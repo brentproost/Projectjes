@@ -12,17 +12,57 @@
 
             <StackPanel x:Name="ContentStackPanel">
 
-                <TextBlock x:Name="HeaderText" Style="{StaticResource HeaderTextStyle}" 
+                <TextBlock HorizontalAlignment="Center" x:Name="HeaderText" Style="{StaticResource HeaderTextStyle}" 
                                    Text="Homepage"/>
-                <Button x:Name="btn_AddUser" HorizontalAlignment="Center" Content="gebruiker toevoegen" Click="btn_AddUser_Click">  
-                </Button>
-                <Button x:Name="btn_AddActivity" HorizontalAlignment="Center" Content="activiteit toevoegen" Click="btn_AddActivity_Click">
-                </Button>
-                <Button x:Name="btn_AddCategory" HorizontalAlignment="Center" Content="Categorie toevoegen" Click="btn_AddCategory_Click">
-                </Button>
-
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <Border BorderThickness="1" BorderBrush="Gray" Width="200" Padding="0" Margin="0,0,10,0">
+                <Grid Width="200" x:Name="btn_GebruikerToevoegen" MouseLeftButtonDown="btn_GebruikerToevoegen_MouseLeftButtonDown" Cursor="Hand">
+                <StackPanel>
+                <Rectangle Width="200" Height="147">
+                    <Rectangle.Fill>
+                        <ImageBrush  ImageSource="/WebApp;component/icon-user.jpg"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+                    <Grid>
+                        <Rectangle Width="200" Height="53" Fill="White"/>
+                        <TextBlock HorizontalAlignment="Center" Text="Gebruiker toevoegen" VerticalAlignment="Center"></TextBlock>
+                    </Grid>
+                </StackPanel>
+                </Grid>
+                </Border>
+                    <Border Margin="0,0,10,0" BorderThickness="1" BorderBrush="Gray" Width="200">
+                        <Grid Width="200" x:Name="btn_Actiteittoevoegen"  Cursor="Hand" MouseLeftButtonDown="btn_Actiteittoevoegen_MouseLeftButtonDown">
+                            <StackPanel>
+                                <Rectangle Width="200" Height="147">
+                                    <Rectangle.Fill>
+                                        <ImageBrush  ImageSource="/WebApp;component/icon-addactivity.jpg"/>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <Grid>
+                                    <Rectangle Width="200" Height="53" Fill="White"/>
+                                    <TextBlock HorizontalAlignment="Center" Text="Activiteit toevoegen" VerticalAlignment="Center"></TextBlock>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <Border Margin="0,0,10,0" BorderThickness="1" BorderBrush="Gray" Width="200">
+                        <Grid Width="200" x:Name="btn_Categorietoevoegen"  Cursor="Hand" MouseLeftButtonDown="btn_Categorietoevoegen_MouseLeftButtonDown" >
+                            <StackPanel>
+                                <Rectangle Width="200" Height="147">
+                                    <Rectangle.Fill>
+                                        <ImageBrush ImageSource="/WebApp;component/icon-addcategory.jpg"/>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <Grid>
+                                    <Rectangle Width="200" Height="53" Fill="White"/>
+                                    <TextBlock HorizontalAlignment="Center" Text="Categorie toevoegen" VerticalAlignment="Center"></TextBlock>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </StackPanel>
             </StackPanel>
-
+            
         </ScrollViewer>
     </Grid>
 

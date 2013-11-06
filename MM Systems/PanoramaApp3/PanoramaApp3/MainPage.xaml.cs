@@ -59,7 +59,7 @@ namespace PanoramaApp3
         {
             if (e.Result != null)
             {
-                lp_Activiteiten.ItemsSource = e.Result;
+               // lp_Activiteiten.ItemsSource = e.Result;
             }
         }
 

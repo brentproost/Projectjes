@@ -50,5 +50,26 @@ namespace WebApp
             window.Closed += window_Closed;
             window.Show();
         }
+
+        private void btn_GebruikerToevoegen_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var window = new DialogBoxes.AddUser();
+            window.Closed += window_Closed;
+            window.Show();
+        }
+
+        private void btn_Actiteittoevoegen_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var window = new DialogBoxes.AddActivity();
+            window.Closed += window_Closed;
+            window.Show();
+        }
+
+        private void btn_Categorietoevoegen_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var window = new DialogBoxes.AddCategory();
+            window.Closed += window_Closed;
+            window.Show();
+        }
     }
 }
