@@ -418,9 +418,6 @@ C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Web
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.dll
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.pdb
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\XapCacheFile.xml
-<<<<<<< HEAD
-=======
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\DialogBoxes\AddCategory.g.cs
->>>>>>> refs/remotes/origin/master
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Activiteiten2.g.cs
