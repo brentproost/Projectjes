@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 ﻿<xapCache source="C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\WebApp.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="10/11/2013 16:49:43">
   <file source="C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.dll" archivePath="WebApp.dll" lastWriteTime="10/11/2013 16:49:43" />
   <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PasswordHashGen\Bin\Release\PasswordHashGen.dll" archivePath="PasswordHashGen.dll" lastWriteTime="4/11/2013 12:29:16" />
@@ -11,7 +10,7 @@
   <file source="C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\ReadMe.Coding4Fun.Toolkit.txt" archivePath="ReadMe.Coding4Fun.Toolkit.txt" lastWriteTime="7/11/2013 10:35:24" />
   <file source="C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="4/11/2013 8:48:09" />
   <file source="C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="10/11/2013 15:40:03" />
-=======
+
 ﻿<xapCache source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\WebApp.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="8-11-2013 20:13:39">
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.dll" archivePath="WebApp.dll" lastWriteTime="8-11-2013 20:13:38" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PasswordHashGen\Bin\Release\PasswordHashGen.dll" archivePath="PasswordHashGen.dll" lastWriteTime="4-11-2013 04:09:16" />
@@ -23,5 +22,4 @@
   <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Data.dll" archivePath="System.Windows.Data.dll" lastWriteTime="18-11-2011 16:40:20" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="5-11-2013 14:17:42" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="8-11-2013 20:13:38" />
->>>>>>> Stashed changes
 </xapCache>
