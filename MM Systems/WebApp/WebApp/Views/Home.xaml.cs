@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WebApp.Views;
 
 namespace WebApp
 {
@@ -18,6 +19,7 @@ namespace WebApp
         public Home()
         {
             InitializeComponent();
+            
         }
 
         // Executes when the user navigates to this page.

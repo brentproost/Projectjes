@@ -10,16 +10,17 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WebApp.Views;
 
 namespace WebApp
 {
-    public partial class MainPage : UserControl
+    public partial class MainPage 
     {
         
         public MainPage()
         {
             InitializeComponent();
-          
+            
         }
 
         // After the Frame navigates, ensure the HyperlinkButton representing the current page is selected

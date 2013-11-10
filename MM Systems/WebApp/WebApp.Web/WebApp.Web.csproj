@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ClientBin\WebApp.xap" />
+    <Content Include="ReadMe.Coding4Fun.Toolkit.txt" />
     <Content Include="Silverlight.js" />
     <Content Include="Web.config" />
     <Content Include="WebAppTestPage.aspx" />
@@ -68,6 +69,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

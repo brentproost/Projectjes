@@ -421,3 +421,5 @@ C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Xap
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\DialogBoxes\AddCategory.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Activiteiten2.g.cs
+C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\DialogBoxes\Login.g.cs
+C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\UserControl\Login.g.cs

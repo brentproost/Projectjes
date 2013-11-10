@@ -8,6 +8,7 @@
     Style="{StaticResource PageStyle}">
 
     <Grid x:Name="LayoutRoot">
+        
         <ScrollViewer x:Name="PageScrollViewer" Style="{StaticResource PageScrollViewerStyle}">
 
             <StackPanel x:Name="ContentStackPanel">
