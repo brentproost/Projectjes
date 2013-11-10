@@ -191,6 +191,8 @@ namespace WebApp.ServiceReference {
         
         private string CategorieField;
         
+        private int Categorie_IDField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Activiteit {
             get {
@@ -226,6 +228,19 @@ namespace WebApp.ServiceReference {
                 if ((object.ReferenceEquals(this.CategorieField, value) != true)) {
                     this.CategorieField = value;
                     this.RaisePropertyChanged("Categorie");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Categorie_ID {
+            get {
+                return this.Categorie_IDField;
+            }
+            set {
+                if ((this.Categorie_IDField.Equals(value) != true)) {
+                    this.Categorie_IDField = value;
+                    this.RaisePropertyChanged("Categorie_ID");
                 }
             }
         }
@@ -343,6 +358,11 @@ namespace WebApp.ServiceReference {
         System.IAsyncResult BeginDeleteUser(int id, System.AsyncCallback callback, object asyncState);
         
         void EndDeleteUser(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/AddGebruikersIngave", ReplyAction="http://tempuri.org/IService/AddGebruikersIngaveResponse")]
+        System.IAsyncResult BeginAddGebruikersIngave(int usrID, int actID, string dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState);
+        
+        void EndAddGebruikersIngave(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -533,6 +553,12 @@ namespace WebApp.ServiceReference {
         
         private System.Threading.SendOrPostCallback onDeleteUserCompletedDelegate;
         
+        private BeginOperationDelegate onBeginAddGebruikersIngaveDelegate;
+        
+        private EndOperationDelegate onEndAddGebruikersIngaveDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddGebruikersIngaveCompletedDelegate;
+        
         private BeginOperationDelegate onBeginOpenDelegate;
         
         private EndOperationDelegate onEndOpenDelegate;
@@ -607,6 +633,8 @@ namespace WebApp.ServiceReference {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> DeleteActivityCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> DeleteUserCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> AddGebruikersIngaveCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -1125,6 +1153,69 @@ namespace WebApp.ServiceReference {
                         id}, this.onEndDeleteUserDelegate, this.onDeleteUserCompletedDelegate, userState);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult WebApp.ServiceReference.IService.BeginAddGebruikersIngave(int usrID, int actID, string dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddGebruikersIngave(usrID, actID, dtmuurActiviteit, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void WebApp.ServiceReference.IService.EndAddGebruikersIngave(System.IAsyncResult result) {
+            base.Channel.EndAddGebruikersIngave(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddGebruikersIngave(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int usrID = ((int)(inValues[0]));
+            int actID = ((int)(inValues[1]));
+            string dtmuurActiviteit = ((string)(inValues[2]));
+            string commentaar = ((string)(inValues[3]));
+            int weersid = ((int)(inValues[4]));
+            int nachtrid = ((int)(inValues[5]));
+            int aantaluurgeslapen = ((int)(inValues[6]));
+            float vermoeidheid = ((float)(inValues[7]));
+            float belangrijkheid = ((float)(inValues[8]));
+            float tevredenheid = ((float)(inValues[9]));
+            return ((WebApp.ServiceReference.IService)(this)).BeginAddGebruikersIngave(usrID, actID, dtmuurActiviteit, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, callback, asyncState);
+        }
+        
+        private object[] OnEndAddGebruikersIngave(System.IAsyncResult result) {
+            ((WebApp.ServiceReference.IService)(this)).EndAddGebruikersIngave(result);
+            return null;
+        }
+        
+        private void OnAddGebruikersIngaveCompleted(object state) {
+            if ((this.AddGebruikersIngaveCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddGebruikersIngaveCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddGebruikersIngaveAsync(int usrID, int actID, string dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid) {
+            this.AddGebruikersIngaveAsync(usrID, actID, dtmuurActiviteit, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, null);
+        }
+        
+        public void AddGebruikersIngaveAsync(int usrID, int actID, string dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, object userState) {
+            if ((this.onBeginAddGebruikersIngaveDelegate == null)) {
+                this.onBeginAddGebruikersIngaveDelegate = new BeginOperationDelegate(this.OnBeginAddGebruikersIngave);
+            }
+            if ((this.onEndAddGebruikersIngaveDelegate == null)) {
+                this.onEndAddGebruikersIngaveDelegate = new EndOperationDelegate(this.OnEndAddGebruikersIngave);
+            }
+            if ((this.onAddGebruikersIngaveCompletedDelegate == null)) {
+                this.onAddGebruikersIngaveCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddGebruikersIngaveCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddGebruikersIngaveDelegate, new object[] {
+                        usrID,
+                        actID,
+                        dtmuurActiviteit,
+                        commentaar,
+                        weersid,
+                        nachtrid,
+                        aantaluurgeslapen,
+                        vermoeidheid,
+                        belangrijkheid,
+                        tevredenheid}, this.onEndAddGebruikersIngaveDelegate, this.onAddGebruikersIngaveCompletedDelegate, userState);
+        }
+        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -1343,6 +1434,27 @@ namespace WebApp.ServiceReference {
             public void EndDeleteUser(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 base.EndInvoke("DeleteUser", _args, result);
+            }
+            
+            public System.IAsyncResult BeginAddGebruikersIngave(int usrID, int actID, string dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[10];
+                _args[0] = usrID;
+                _args[1] = actID;
+                _args[2] = dtmuurActiviteit;
+                _args[3] = commentaar;
+                _args[4] = weersid;
+                _args[5] = nachtrid;
+                _args[6] = aantaluurgeslapen;
+                _args[7] = vermoeidheid;
+                _args[8] = belangrijkheid;
+                _args[9] = tevredenheid;
+                System.IAsyncResult _result = base.BeginInvoke("AddGebruikersIngave", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndAddGebruikersIngave(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("AddGebruikersIngave", _args, result);
             }
         }
     }

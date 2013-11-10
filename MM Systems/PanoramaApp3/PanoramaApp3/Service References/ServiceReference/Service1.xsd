@@ -32,6 +32,7 @@
       <xs:element minOccurs="0" name="Activiteit" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Activiteit_ID" type="xs:int" />
       <xs:element minOccurs="0" name="Categorie" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Categorie_ID" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Activities" nillable="true" type="tns:Activities" />
@@ -48,4 +49,30 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Tbl_Categorien" nillable="true" type="tns:Tbl_Categorien" />
+  <xs:complexType name="ArrayOfTbl_Weersomstandigheden">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tbl_Weersomstandigheden" nillable="true" type="tns:Tbl_Weersomstandigheden" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTbl_Weersomstandigheden" nillable="true" type="tns:ArrayOfTbl_Weersomstandigheden" />
+  <xs:complexType name="Tbl_Weersomstandigheden">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Omschrijving" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Tbl_Weersomstandigheden" nillable="true" type="tns:Tbl_Weersomstandigheden" />
+  <xs:complexType name="ArrayOfTbl_Schaal_Nachtrust">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tbl_Schaal_Nachtrust" nillable="true" type="tns:Tbl_Schaal_Nachtrust" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTbl_Schaal_Nachtrust" nillable="true" type="tns:ArrayOfTbl_Schaal_Nachtrust" />
+  <xs:complexType name="Tbl_Schaal_Nachtrust">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Omschrijving" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Tbl_Schaal_Nachtrust" nillable="true" type="tns:Tbl_Schaal_Nachtrust" />
 </xs:schema>

@@ -33,12 +33,6 @@ namespace Wcf
     partial void InsertTbl_Rechten(Tbl_Rechten instance);
     partial void UpdateTbl_Rechten(Tbl_Rechten instance);
     partial void DeleteTbl_Rechten(Tbl_Rechten instance);
-    partial void InsertTbl_Schaal(Tbl_Schaal instance);
-    partial void UpdateTbl_Schaal(Tbl_Schaal instance);
-    partial void DeleteTbl_Schaal(Tbl_Schaal instance);
-    partial void InsertTbl_Score(Tbl_Score instance);
-    partial void UpdateTbl_Score(Tbl_Score instance);
-    partial void DeleteTbl_Score(Tbl_Score instance);
     partial void InsertTbl_Weersomstandigheden(Tbl_Weersomstandigheden instance);
     partial void UpdateTbl_Weersomstandigheden(Tbl_Weersomstandigheden instance);
     partial void DeleteTbl_Weersomstandigheden(Tbl_Weersomstandigheden instance);
@@ -51,6 +45,12 @@ namespace Wcf
     partial void InsertTbl_Categorien(Tbl_Categorien instance);
     partial void UpdateTbl_Categorien(Tbl_Categorien instance);
     partial void DeleteTbl_Categorien(Tbl_Categorien instance);
+    partial void InsertTbl_GebruikersIngave(Tbl_GebruikersIngave instance);
+    partial void UpdateTbl_GebruikersIngave(Tbl_GebruikersIngave instance);
+    partial void DeleteTbl_GebruikersIngave(Tbl_GebruikersIngave instance);
+    partial void InsertTbl_Schaal_Nachtrust(Tbl_Schaal_Nachtrust instance);
+    partial void UpdateTbl_Schaal_Nachtrust(Tbl_Schaal_Nachtrust instance);
+    partial void DeleteTbl_Schaal_Nachtrust(Tbl_Schaal_Nachtrust instance);
     #endregion
 		
 		public DataClassesDataContext() : 
@@ -91,22 +91,6 @@ namespace Wcf
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_Schaal> Tbl_Schaals
-		{
-			get
-			{
-				return this.GetTable<Tbl_Schaal>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Tbl_Score> Tbl_Scores
-		{
-			get
-			{
-				return this.GetTable<Tbl_Score>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Tbl_Weersomstandigheden> Tbl_Weersomstandighedens
 		{
 			get
@@ -136,6 +120,22 @@ namespace Wcf
 			get
 			{
 				return this.GetTable<Tbl_Categorien>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_GebruikersIngave> Tbl_GebruikersIngaves
+		{
+			get
+			{
+				return this.GetTable<Tbl_GebruikersIngave>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_Schaal_Nachtrust> Tbl_Schaal_Nachtrusts
+		{
+			get
+			{
+				return this.GetTable<Tbl_Schaal_Nachtrust>();
 			}
 		}
 	}
@@ -225,418 +225,6 @@ namespace Wcf
 					this._Toestemming_Omschrijving = value;
 					this.SendPropertyChanged("Toestemming_Omschrijving");
 					this.OnToestemming_OmschrijvingChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Schaal")]
-	public partial class Tbl_Schaal : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _Omschrijving;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnOmschrijvingChanging(string value);
-    partial void OnOmschrijvingChanged();
-    #endregion
-		
-		public Tbl_Schaal()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Omschrijving", DbType="NChar(10)")]
-		public string Omschrijving
-		{
-			get
-			{
-				return this._Omschrijving;
-			}
-			set
-			{
-				if ((this._Omschrijving != value))
-				{
-					this.OnOmschrijvingChanging(value);
-					this.SendPropertyChanging();
-					this._Omschrijving = value;
-					this.SendPropertyChanged("Omschrijving");
-					this.OnOmschrijvingChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Scores")]
-	public partial class Tbl_Score : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private int _User_ID;
-		
-		private int _Activiteit_ID;
-		
-		private System.DateTime _Datum_Uur_Ingave;
-		
-		private System.DateTime _Datum_Uur_Activiteit;
-		
-		private string _Commentaar;
-		
-		private int _Weersomstandigheden_ID;
-		
-		private int _Schaal_Nachtrust_ID;
-		
-		private int _Aantal_Uren_Geslapen;
-		
-		private byte _Vermoeidheid;
-		
-		private byte _Belangrijkheid;
-		
-		private byte _Tevredenheid;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnUser_IDChanging(int value);
-    partial void OnUser_IDChanged();
-    partial void OnActiviteit_IDChanging(int value);
-    partial void OnActiviteit_IDChanged();
-    partial void OnDatum_Uur_IngaveChanging(System.DateTime value);
-    partial void OnDatum_Uur_IngaveChanged();
-    partial void OnDatum_Uur_ActiviteitChanging(System.DateTime value);
-    partial void OnDatum_Uur_ActiviteitChanged();
-    partial void OnCommentaarChanging(string value);
-    partial void OnCommentaarChanged();
-    partial void OnWeersomstandigheden_IDChanging(int value);
-    partial void OnWeersomstandigheden_IDChanged();
-    partial void OnSchaal_Nachtrust_IDChanging(int value);
-    partial void OnSchaal_Nachtrust_IDChanged();
-    partial void OnAantal_Uren_GeslapenChanging(int value);
-    partial void OnAantal_Uren_GeslapenChanged();
-    partial void OnVermoeidheidChanging(byte value);
-    partial void OnVermoeidheidChanged();
-    partial void OnBelangrijkheidChanging(byte value);
-    partial void OnBelangrijkheidChanged();
-    partial void OnTevredenheidChanging(byte value);
-    partial void OnTevredenheidChanged();
-    #endregion
-		
-		public Tbl_Score()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_ID", DbType="Int NOT NULL")]
-		public int User_ID
-		{
-			get
-			{
-				return this._User_ID;
-			}
-			set
-			{
-				if ((this._User_ID != value))
-				{
-					this.OnUser_IDChanging(value);
-					this.SendPropertyChanging();
-					this._User_ID = value;
-					this.SendPropertyChanged("User_ID");
-					this.OnUser_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Activiteit_ID", DbType="Int NOT NULL")]
-		public int Activiteit_ID
-		{
-			get
-			{
-				return this._Activiteit_ID;
-			}
-			set
-			{
-				if ((this._Activiteit_ID != value))
-				{
-					this.OnActiviteit_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Activiteit_ID = value;
-					this.SendPropertyChanged("Activiteit_ID");
-					this.OnActiviteit_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Datum_Uur_Ingave", DbType="DateTime NOT NULL")]
-		public System.DateTime Datum_Uur_Ingave
-		{
-			get
-			{
-				return this._Datum_Uur_Ingave;
-			}
-			set
-			{
-				if ((this._Datum_Uur_Ingave != value))
-				{
-					this.OnDatum_Uur_IngaveChanging(value);
-					this.SendPropertyChanging();
-					this._Datum_Uur_Ingave = value;
-					this.SendPropertyChanged("Datum_Uur_Ingave");
-					this.OnDatum_Uur_IngaveChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Datum_Uur_Activiteit", DbType="DateTime NOT NULL")]
-		public System.DateTime Datum_Uur_Activiteit
-		{
-			get
-			{
-				return this._Datum_Uur_Activiteit;
-			}
-			set
-			{
-				if ((this._Datum_Uur_Activiteit != value))
-				{
-					this.OnDatum_Uur_ActiviteitChanging(value);
-					this.SendPropertyChanging();
-					this._Datum_Uur_Activiteit = value;
-					this.SendPropertyChanged("Datum_Uur_Activiteit");
-					this.OnDatum_Uur_ActiviteitChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Commentaar", DbType="NChar(100) NOT NULL", CanBeNull=false)]
-		public string Commentaar
-		{
-			get
-			{
-				return this._Commentaar;
-			}
-			set
-			{
-				if ((this._Commentaar != value))
-				{
-					this.OnCommentaarChanging(value);
-					this.SendPropertyChanging();
-					this._Commentaar = value;
-					this.SendPropertyChanged("Commentaar");
-					this.OnCommentaarChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Weersomstandigheden_ID", DbType="Int NOT NULL")]
-		public int Weersomstandigheden_ID
-		{
-			get
-			{
-				return this._Weersomstandigheden_ID;
-			}
-			set
-			{
-				if ((this._Weersomstandigheden_ID != value))
-				{
-					this.OnWeersomstandigheden_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Weersomstandigheden_ID = value;
-					this.SendPropertyChanged("Weersomstandigheden_ID");
-					this.OnWeersomstandigheden_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Schaal_Nachtrust_ID", DbType="Int NOT NULL")]
-		public int Schaal_Nachtrust_ID
-		{
-			get
-			{
-				return this._Schaal_Nachtrust_ID;
-			}
-			set
-			{
-				if ((this._Schaal_Nachtrust_ID != value))
-				{
-					this.OnSchaal_Nachtrust_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Schaal_Nachtrust_ID = value;
-					this.SendPropertyChanged("Schaal_Nachtrust_ID");
-					this.OnSchaal_Nachtrust_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Aantal_Uren_Geslapen", DbType="Int NOT NULL")]
-		public int Aantal_Uren_Geslapen
-		{
-			get
-			{
-				return this._Aantal_Uren_Geslapen;
-			}
-			set
-			{
-				if ((this._Aantal_Uren_Geslapen != value))
-				{
-					this.OnAantal_Uren_GeslapenChanging(value);
-					this.SendPropertyChanging();
-					this._Aantal_Uren_Geslapen = value;
-					this.SendPropertyChanged("Aantal_Uren_Geslapen");
-					this.OnAantal_Uren_GeslapenChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vermoeidheid", DbType="TinyInt NOT NULL")]
-		public byte Vermoeidheid
-		{
-			get
-			{
-				return this._Vermoeidheid;
-			}
-			set
-			{
-				if ((this._Vermoeidheid != value))
-				{
-					this.OnVermoeidheidChanging(value);
-					this.SendPropertyChanging();
-					this._Vermoeidheid = value;
-					this.SendPropertyChanged("Vermoeidheid");
-					this.OnVermoeidheidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Belangrijkheid", DbType="TinyInt NOT NULL")]
-		public byte Belangrijkheid
-		{
-			get
-			{
-				return this._Belangrijkheid;
-			}
-			set
-			{
-				if ((this._Belangrijkheid != value))
-				{
-					this.OnBelangrijkheidChanging(value);
-					this.SendPropertyChanging();
-					this._Belangrijkheid = value;
-					this.SendPropertyChanged("Belangrijkheid");
-					this.OnBelangrijkheidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tevredenheid", DbType="TinyInt NOT NULL")]
-		public byte Tevredenheid
-		{
-			get
-			{
-				return this._Tevredenheid;
-			}
-			set
-			{
-				if ((this._Tevredenheid != value))
-				{
-					this.OnTevredenheidChanging(value);
-					this.SendPropertyChanging();
-					this._Tevredenheid = value;
-					this.SendPropertyChanged("Tevredenheid");
-					this.OnTevredenheidChanged();
 				}
 			}
 		}
@@ -1182,6 +770,418 @@ namespace Wcf
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Omschrijving", DbType="NChar(20) NOT NULL", CanBeNull=false)]
+		public string Omschrijving
+		{
+			get
+			{
+				return this._Omschrijving;
+			}
+			set
+			{
+				if ((this._Omschrijving != value))
+				{
+					this.OnOmschrijvingChanging(value);
+					this.SendPropertyChanging();
+					this._Omschrijving = value;
+					this.SendPropertyChanged("Omschrijving");
+					this.OnOmschrijvingChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_GebruikersIngave")]
+	public partial class Tbl_GebruikersIngave : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _User_ID;
+		
+		private int _Activiteit_ID;
+		
+		private System.DateTime _Datum_Uur_Ingave;
+		
+		private System.DateTime _Datum_Uur_Activiteit;
+		
+		private string _Commentaar;
+		
+		private int _Weersomstandigheden_ID;
+		
+		private int _Schaal_Nachtrust_ID;
+		
+		private int _Aantal_Uren_Geslapen;
+		
+		private float _Vermoeidheid;
+		
+		private float _Belangrijkheid;
+		
+		private float _Tevredenheid;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnUser_IDChanging(int value);
+    partial void OnUser_IDChanged();
+    partial void OnActiviteit_IDChanging(int value);
+    partial void OnActiviteit_IDChanged();
+    partial void OnDatum_Uur_IngaveChanging(System.DateTime value);
+    partial void OnDatum_Uur_IngaveChanged();
+    partial void OnDatum_Uur_ActiviteitChanging(System.DateTime value);
+    partial void OnDatum_Uur_ActiviteitChanged();
+    partial void OnCommentaarChanging(string value);
+    partial void OnCommentaarChanged();
+    partial void OnWeersomstandigheden_IDChanging(int value);
+    partial void OnWeersomstandigheden_IDChanged();
+    partial void OnSchaal_Nachtrust_IDChanging(int value);
+    partial void OnSchaal_Nachtrust_IDChanged();
+    partial void OnAantal_Uren_GeslapenChanging(int value);
+    partial void OnAantal_Uren_GeslapenChanged();
+    partial void OnVermoeidheidChanging(float value);
+    partial void OnVermoeidheidChanged();
+    partial void OnBelangrijkheidChanging(float value);
+    partial void OnBelangrijkheidChanged();
+    partial void OnTevredenheidChanging(float value);
+    partial void OnTevredenheidChanged();
+    #endregion
+		
+		public Tbl_GebruikersIngave()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User_ID", DbType="Int NOT NULL")]
+		public int User_ID
+		{
+			get
+			{
+				return this._User_ID;
+			}
+			set
+			{
+				if ((this._User_ID != value))
+				{
+					this.OnUser_IDChanging(value);
+					this.SendPropertyChanging();
+					this._User_ID = value;
+					this.SendPropertyChanged("User_ID");
+					this.OnUser_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Activiteit_ID", DbType="Int NOT NULL")]
+		public int Activiteit_ID
+		{
+			get
+			{
+				return this._Activiteit_ID;
+			}
+			set
+			{
+				if ((this._Activiteit_ID != value))
+				{
+					this.OnActiviteit_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Activiteit_ID = value;
+					this.SendPropertyChanged("Activiteit_ID");
+					this.OnActiviteit_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Datum_Uur_Ingave", DbType="DateTime NOT NULL")]
+		public System.DateTime Datum_Uur_Ingave
+		{
+			get
+			{
+				return this._Datum_Uur_Ingave;
+			}
+			set
+			{
+				if ((this._Datum_Uur_Ingave != value))
+				{
+					this.OnDatum_Uur_IngaveChanging(value);
+					this.SendPropertyChanging();
+					this._Datum_Uur_Ingave = value;
+					this.SendPropertyChanged("Datum_Uur_Ingave");
+					this.OnDatum_Uur_IngaveChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Datum_Uur_Activiteit", DbType="DateTime NOT NULL")]
+		public System.DateTime Datum_Uur_Activiteit
+		{
+			get
+			{
+				return this._Datum_Uur_Activiteit;
+			}
+			set
+			{
+				if ((this._Datum_Uur_Activiteit != value))
+				{
+					this.OnDatum_Uur_ActiviteitChanging(value);
+					this.SendPropertyChanging();
+					this._Datum_Uur_Activiteit = value;
+					this.SendPropertyChanged("Datum_Uur_Activiteit");
+					this.OnDatum_Uur_ActiviteitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Commentaar", DbType="NChar(100) NOT NULL", CanBeNull=false)]
+		public string Commentaar
+		{
+			get
+			{
+				return this._Commentaar;
+			}
+			set
+			{
+				if ((this._Commentaar != value))
+				{
+					this.OnCommentaarChanging(value);
+					this.SendPropertyChanging();
+					this._Commentaar = value;
+					this.SendPropertyChanged("Commentaar");
+					this.OnCommentaarChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Weersomstandigheden_ID", DbType="Int NOT NULL")]
+		public int Weersomstandigheden_ID
+		{
+			get
+			{
+				return this._Weersomstandigheden_ID;
+			}
+			set
+			{
+				if ((this._Weersomstandigheden_ID != value))
+				{
+					this.OnWeersomstandigheden_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Weersomstandigheden_ID = value;
+					this.SendPropertyChanged("Weersomstandigheden_ID");
+					this.OnWeersomstandigheden_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Schaal_Nachtrust_ID", DbType="Int NOT NULL")]
+		public int Schaal_Nachtrust_ID
+		{
+			get
+			{
+				return this._Schaal_Nachtrust_ID;
+			}
+			set
+			{
+				if ((this._Schaal_Nachtrust_ID != value))
+				{
+					this.OnSchaal_Nachtrust_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Schaal_Nachtrust_ID = value;
+					this.SendPropertyChanged("Schaal_Nachtrust_ID");
+					this.OnSchaal_Nachtrust_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Aantal_Uren_Geslapen", DbType="Int NOT NULL")]
+		public int Aantal_Uren_Geslapen
+		{
+			get
+			{
+				return this._Aantal_Uren_Geslapen;
+			}
+			set
+			{
+				if ((this._Aantal_Uren_Geslapen != value))
+				{
+					this.OnAantal_Uren_GeslapenChanging(value);
+					this.SendPropertyChanging();
+					this._Aantal_Uren_Geslapen = value;
+					this.SendPropertyChanged("Aantal_Uren_Geslapen");
+					this.OnAantal_Uren_GeslapenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vermoeidheid", DbType="Real NOT NULL")]
+		public float Vermoeidheid
+		{
+			get
+			{
+				return this._Vermoeidheid;
+			}
+			set
+			{
+				if ((this._Vermoeidheid != value))
+				{
+					this.OnVermoeidheidChanging(value);
+					this.SendPropertyChanging();
+					this._Vermoeidheid = value;
+					this.SendPropertyChanged("Vermoeidheid");
+					this.OnVermoeidheidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Belangrijkheid", DbType="Real NOT NULL")]
+		public float Belangrijkheid
+		{
+			get
+			{
+				return this._Belangrijkheid;
+			}
+			set
+			{
+				if ((this._Belangrijkheid != value))
+				{
+					this.OnBelangrijkheidChanging(value);
+					this.SendPropertyChanging();
+					this._Belangrijkheid = value;
+					this.SendPropertyChanged("Belangrijkheid");
+					this.OnBelangrijkheidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tevredenheid", DbType="Real NOT NULL")]
+		public float Tevredenheid
+		{
+			get
+			{
+				return this._Tevredenheid;
+			}
+			set
+			{
+				if ((this._Tevredenheid != value))
+				{
+					this.OnTevredenheidChanging(value);
+					this.SendPropertyChanging();
+					this._Tevredenheid = value;
+					this.SendPropertyChanged("Tevredenheid");
+					this.OnTevredenheidChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Schaal_Nachtrust")]
+	public partial class Tbl_Schaal_Nachtrust : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _Omschrijving;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnOmschrijvingChanging(string value);
+    partial void OnOmschrijvingChanged();
+    #endregion
+		
+		public Tbl_Schaal_Nachtrust()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Omschrijving", DbType="NChar(10)")]
 		public string Omschrijving
 		{
 			get

@@ -23,10 +23,5 @@
     <Imports>
       <Import moduleName="Diagnostics" />
     </Imports>
-    <Contents>
-      <Content destination=".\">
-        <SourceDirectory path="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\Wcf.Azure2\rcf\Release\WcfContent\" />
-      </Content>
-    </Contents>
   </WebRole>
 </ServiceDefinition>

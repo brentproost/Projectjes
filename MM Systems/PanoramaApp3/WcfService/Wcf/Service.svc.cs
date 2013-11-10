@@ -25,7 +25,7 @@ namespace Wcf
             return Data.Tbl_Users.ToList();
         }
 
-        ObservableCollection<Activities> IService.GetAllActivities()
+        List<Activities> IService.GetAllActivities()
         {
             List<Activities> actlist = new List<Activities>();
             //actlist = (from act in Data.Tbl_Activiteitens select new Activities() { OmschrijvingAct = act.Omschrijving}).ToList();
@@ -35,13 +35,10 @@ namespace Wcf
                        {
                            Activiteit = act.Omschrijving,
                            Categorie = cat.Omschrijving,
-                           Activiteit_ID = act.ID
+                           Activiteit_ID = act.ID,
+                           Categorie_ID = cat.Id
                        }).ToList();
-
-            var oc= new ObservableCollection<Activities>();
-            foreach (var item in actlist)
-                oc.Add(item);
-            return oc; 
+            return actlist; 
         }
         List<Tbl_User> IService.GetUser(int ID)
         {
@@ -186,6 +183,48 @@ namespace Wcf
             {
                 Console.WriteLine(e);
             }
+        }
+
+
+        void IService.AddGebruikersIngave(int usrID, int actID, DateTime datumuuringave, DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid)
+        {
+            Tbl_GebruikersIngave gebi = new Tbl_GebruikersIngave()
+            {
+                User_ID = usrID,
+                Activiteit_ID = actID,
+                Datum_Uur_Ingave = datumuuringave,
+                Datum_Uur_Activiteit = dtmuurActiviteit,
+                Commentaar = commentaar,
+                Weersomstandigheden_ID = weersid,
+                Schaal_Nachtrust_ID = nachtrid,
+                Aantal_Uren_Geslapen = aantaluurgeslapen,
+                Vermoeidheid = vermoeidheid,
+                Belangrijkheid = belangrijkheid,
+                Tevredenheid = tevredenheid
+            };
+
+            Data.Tbl_GebruikersIngaves.InsertOnSubmit(gebi);
+
+            try
+            {
+                Data.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            //transaction id aanmaken
+        }
+
+
+        List<Tbl_Weersomstandigheden> IService.GetAllWeersOmstandigheden()
+        {
+            return Data.Tbl_Weersomstandighedens.ToList();
+        }
+
+        List<Tbl_Schaal_Nachtrust> IService.GetNachtrustSchaal()
+        {
+            return Data.Tbl_Schaal_Nachtrusts.ToList();
         }
     }
 }

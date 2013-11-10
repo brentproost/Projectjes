@@ -191,6 +191,8 @@ namespace PanoramaApp3.ServiceReference {
         
         private string CategorieField;
         
+        private int Categorie_IDField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Activiteit {
             get {
@@ -230,6 +232,19 @@ namespace PanoramaApp3.ServiceReference {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Categorie_ID {
+            get {
+                return this.Categorie_IDField;
+            }
+            set {
+                if ((this.Categorie_IDField.Equals(value) != true)) {
+                    this.Categorie_IDField = value;
+                    this.RaisePropertyChanged("Categorie_ID");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -258,6 +273,96 @@ namespace PanoramaApp3.ServiceReference {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Omschrijving {
+            get {
+                return this.OmschrijvingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OmschrijvingField, value) != true)) {
+                    this.OmschrijvingField = value;
+                    this.RaisePropertyChanged("Omschrijving");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Tbl_Weersomstandigheden", Namespace="http://schemas.datacontract.org/2004/07/Wcf")]
+    public partial class Tbl_Weersomstandigheden : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int IDField;
+        
+        private string OmschrijvingField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Omschrijving {
+            get {
+                return this.OmschrijvingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OmschrijvingField, value) != true)) {
+                    this.OmschrijvingField = value;
+                    this.RaisePropertyChanged("Omschrijving");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Tbl_Schaal_Nachtrust", Namespace="http://schemas.datacontract.org/2004/07/Wcf")]
+    public partial class Tbl_Schaal_Nachtrust : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int IDField;
+        
+        private string OmschrijvingField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
                 }
             }
         }
@@ -333,6 +438,26 @@ namespace PanoramaApp3.ServiceReference {
         System.IAsyncResult BeginDeleteActivity(int id, System.AsyncCallback callback, object asyncState);
         
         void EndDeleteActivity(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/DeleteUser", ReplyAction="http://tempuri.org/IService/DeleteUserResponse")]
+        System.IAsyncResult BeginDeleteUser(int id, System.AsyncCallback callback, object asyncState);
+        
+        void EndDeleteUser(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/AddGebruikersIngave", ReplyAction="http://tempuri.org/IService/AddGebruikersIngaveResponse")]
+        System.IAsyncResult BeginAddGebruikersIngave(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState);
+        
+        void EndAddGebruikersIngave(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/GetAllWeersOmstandigheden", ReplyAction="http://tempuri.org/IService/GetAllWeersOmstandighedenResponse")]
+        System.IAsyncResult BeginGetAllWeersOmstandigheden(System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Weersomstandigheden> EndGetAllWeersOmstandigheden(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/GetNachtrustSchaal", ReplyAction="http://tempuri.org/IService/GetNachtrustSchaalResponse")]
+        System.IAsyncResult BeginGetNachtrustSchaal(System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Schaal_Nachtrust> EndGetNachtrustSchaal(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -436,6 +561,44 @@ namespace PanoramaApp3.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetAllWeersOmstandighedenCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetAllWeersOmstandighedenCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Weersomstandigheden> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Weersomstandigheden>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetNachtrustSchaalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetNachtrustSchaalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Schaal_Nachtrust> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Schaal_Nachtrust>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class ServiceClient : System.ServiceModel.ClientBase<PanoramaApp3.ServiceReference.IService>, PanoramaApp3.ServiceReference.IService {
         
         private BeginOperationDelegate onBeginGetUserDelegate;
@@ -491,6 +654,30 @@ namespace PanoramaApp3.ServiceReference {
         private EndOperationDelegate onEndDeleteActivityDelegate;
         
         private System.Threading.SendOrPostCallback onDeleteActivityCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginDeleteUserDelegate;
+        
+        private EndOperationDelegate onEndDeleteUserDelegate;
+        
+        private System.Threading.SendOrPostCallback onDeleteUserCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddGebruikersIngaveDelegate;
+        
+        private EndOperationDelegate onEndAddGebruikersIngaveDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddGebruikersIngaveCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetAllWeersOmstandighedenDelegate;
+        
+        private EndOperationDelegate onEndGetAllWeersOmstandighedenDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetAllWeersOmstandighedenCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetNachtrustSchaalDelegate;
+        
+        private EndOperationDelegate onEndGetNachtrustSchaalDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetNachtrustSchaalCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -562,6 +749,14 @@ namespace PanoramaApp3.ServiceReference {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> AddCategoryCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> DeleteActivityCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> DeleteUserCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> AddGebruikersIngaveCompleted;
+        
+        public event System.EventHandler<GetAllWeersOmstandighedenCompletedEventArgs> GetAllWeersOmstandighedenCompleted;
+        
+        public event System.EventHandler<GetNachtrustSchaalCompletedEventArgs> GetNachtrustSchaalCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -989,6 +1184,204 @@ namespace PanoramaApp3.ServiceReference {
                         id}, this.onEndDeleteActivityDelegate, this.onDeleteActivityCompletedDelegate, userState);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult PanoramaApp3.ServiceReference.IService.BeginDeleteUser(int id, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginDeleteUser(id, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void PanoramaApp3.ServiceReference.IService.EndDeleteUser(System.IAsyncResult result) {
+            base.Channel.EndDeleteUser(result);
+        }
+        
+        private System.IAsyncResult OnBeginDeleteUser(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id = ((int)(inValues[0]));
+            return ((PanoramaApp3.ServiceReference.IService)(this)).BeginDeleteUser(id, callback, asyncState);
+        }
+        
+        private object[] OnEndDeleteUser(System.IAsyncResult result) {
+            ((PanoramaApp3.ServiceReference.IService)(this)).EndDeleteUser(result);
+            return null;
+        }
+        
+        private void OnDeleteUserCompleted(object state) {
+            if ((this.DeleteUserCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.DeleteUserCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void DeleteUserAsync(int id) {
+            this.DeleteUserAsync(id, null);
+        }
+        
+        public void DeleteUserAsync(int id, object userState) {
+            if ((this.onBeginDeleteUserDelegate == null)) {
+                this.onBeginDeleteUserDelegate = new BeginOperationDelegate(this.OnBeginDeleteUser);
+            }
+            if ((this.onEndDeleteUserDelegate == null)) {
+                this.onEndDeleteUserDelegate = new EndOperationDelegate(this.OnEndDeleteUser);
+            }
+            if ((this.onDeleteUserCompletedDelegate == null)) {
+                this.onDeleteUserCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDeleteUserCompleted);
+            }
+            base.InvokeAsync(this.onBeginDeleteUserDelegate, new object[] {
+                        id}, this.onEndDeleteUserDelegate, this.onDeleteUserCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult PanoramaApp3.ServiceReference.IService.BeginAddGebruikersIngave(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddGebruikersIngave(usrID, actID, datumuuringave, dtmuurActiviteit, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void PanoramaApp3.ServiceReference.IService.EndAddGebruikersIngave(System.IAsyncResult result) {
+            base.Channel.EndAddGebruikersIngave(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddGebruikersIngave(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int usrID = ((int)(inValues[0]));
+            int actID = ((int)(inValues[1]));
+            System.DateTime datumuuringave = ((System.DateTime)(inValues[2]));
+            System.DateTime dtmuurActiviteit = ((System.DateTime)(inValues[3]));
+            string commentaar = ((string)(inValues[4]));
+            int weersid = ((int)(inValues[5]));
+            int nachtrid = ((int)(inValues[6]));
+            int aantaluurgeslapen = ((int)(inValues[7]));
+            float vermoeidheid = ((float)(inValues[8]));
+            float belangrijkheid = ((float)(inValues[9]));
+            float tevredenheid = ((float)(inValues[10]));
+            return ((PanoramaApp3.ServiceReference.IService)(this)).BeginAddGebruikersIngave(usrID, actID, datumuuringave, dtmuurActiviteit, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, callback, asyncState);
+        }
+        
+        private object[] OnEndAddGebruikersIngave(System.IAsyncResult result) {
+            ((PanoramaApp3.ServiceReference.IService)(this)).EndAddGebruikersIngave(result);
+            return null;
+        }
+        
+        private void OnAddGebruikersIngaveCompleted(object state) {
+            if ((this.AddGebruikersIngaveCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddGebruikersIngaveCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddGebruikersIngaveAsync(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid) {
+            this.AddGebruikersIngaveAsync(usrID, actID, datumuuringave, dtmuurActiviteit, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, null);
+        }
+        
+        public void AddGebruikersIngaveAsync(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, object userState) {
+            if ((this.onBeginAddGebruikersIngaveDelegate == null)) {
+                this.onBeginAddGebruikersIngaveDelegate = new BeginOperationDelegate(this.OnBeginAddGebruikersIngave);
+            }
+            if ((this.onEndAddGebruikersIngaveDelegate == null)) {
+                this.onEndAddGebruikersIngaveDelegate = new EndOperationDelegate(this.OnEndAddGebruikersIngave);
+            }
+            if ((this.onAddGebruikersIngaveCompletedDelegate == null)) {
+                this.onAddGebruikersIngaveCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddGebruikersIngaveCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddGebruikersIngaveDelegate, new object[] {
+                        usrID,
+                        actID,
+                        datumuuringave,
+                        dtmuurActiviteit,
+                        commentaar,
+                        weersid,
+                        nachtrid,
+                        aantaluurgeslapen,
+                        vermoeidheid,
+                        belangrijkheid,
+                        tevredenheid}, this.onEndAddGebruikersIngaveDelegate, this.onAddGebruikersIngaveCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult PanoramaApp3.ServiceReference.IService.BeginGetAllWeersOmstandigheden(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetAllWeersOmstandigheden(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Weersomstandigheden> PanoramaApp3.ServiceReference.IService.EndGetAllWeersOmstandigheden(System.IAsyncResult result) {
+            return base.Channel.EndGetAllWeersOmstandigheden(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetAllWeersOmstandigheden(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return ((PanoramaApp3.ServiceReference.IService)(this)).BeginGetAllWeersOmstandigheden(callback, asyncState);
+        }
+        
+        private object[] OnEndGetAllWeersOmstandigheden(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Weersomstandigheden> retVal = ((PanoramaApp3.ServiceReference.IService)(this)).EndGetAllWeersOmstandigheden(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetAllWeersOmstandighedenCompleted(object state) {
+            if ((this.GetAllWeersOmstandighedenCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetAllWeersOmstandighedenCompleted(this, new GetAllWeersOmstandighedenCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetAllWeersOmstandighedenAsync() {
+            this.GetAllWeersOmstandighedenAsync(null);
+        }
+        
+        public void GetAllWeersOmstandighedenAsync(object userState) {
+            if ((this.onBeginGetAllWeersOmstandighedenDelegate == null)) {
+                this.onBeginGetAllWeersOmstandighedenDelegate = new BeginOperationDelegate(this.OnBeginGetAllWeersOmstandigheden);
+            }
+            if ((this.onEndGetAllWeersOmstandighedenDelegate == null)) {
+                this.onEndGetAllWeersOmstandighedenDelegate = new EndOperationDelegate(this.OnEndGetAllWeersOmstandigheden);
+            }
+            if ((this.onGetAllWeersOmstandighedenCompletedDelegate == null)) {
+                this.onGetAllWeersOmstandighedenCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAllWeersOmstandighedenCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetAllWeersOmstandighedenDelegate, null, this.onEndGetAllWeersOmstandighedenDelegate, this.onGetAllWeersOmstandighedenCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult PanoramaApp3.ServiceReference.IService.BeginGetNachtrustSchaal(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetNachtrustSchaal(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Schaal_Nachtrust> PanoramaApp3.ServiceReference.IService.EndGetNachtrustSchaal(System.IAsyncResult result) {
+            return base.Channel.EndGetNachtrustSchaal(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetNachtrustSchaal(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return ((PanoramaApp3.ServiceReference.IService)(this)).BeginGetNachtrustSchaal(callback, asyncState);
+        }
+        
+        private object[] OnEndGetNachtrustSchaal(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Schaal_Nachtrust> retVal = ((PanoramaApp3.ServiceReference.IService)(this)).EndGetNachtrustSchaal(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetNachtrustSchaalCompleted(object state) {
+            if ((this.GetNachtrustSchaalCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetNachtrustSchaalCompleted(this, new GetNachtrustSchaalCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetNachtrustSchaalAsync() {
+            this.GetNachtrustSchaalAsync(null);
+        }
+        
+        public void GetNachtrustSchaalAsync(object userState) {
+            if ((this.onBeginGetNachtrustSchaalDelegate == null)) {
+                this.onBeginGetNachtrustSchaalDelegate = new BeginOperationDelegate(this.OnBeginGetNachtrustSchaal);
+            }
+            if ((this.onEndGetNachtrustSchaalDelegate == null)) {
+                this.onEndGetNachtrustSchaalDelegate = new EndOperationDelegate(this.OnEndGetNachtrustSchaal);
+            }
+            if ((this.onGetNachtrustSchaalCompletedDelegate == null)) {
+                this.onGetNachtrustSchaalCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetNachtrustSchaalCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetNachtrustSchaalDelegate, null, this.onEndGetNachtrustSchaalDelegate, this.onGetNachtrustSchaalCompletedDelegate, userState);
+        }
+        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -1182,6 +1575,64 @@ namespace PanoramaApp3.ServiceReference {
             public void EndDeleteActivity(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 base.EndInvoke("DeleteActivity", _args, result);
+            }
+            
+            public System.IAsyncResult BeginDeleteUser(int id, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = id;
+                System.IAsyncResult _result = base.BeginInvoke("DeleteUser", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndDeleteUser(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("DeleteUser", _args, result);
+            }
+            
+            public System.IAsyncResult BeginAddGebruikersIngave(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[11];
+                _args[0] = usrID;
+                _args[1] = actID;
+                _args[2] = datumuuringave;
+                _args[3] = dtmuurActiviteit;
+                _args[4] = commentaar;
+                _args[5] = weersid;
+                _args[6] = nachtrid;
+                _args[7] = aantaluurgeslapen;
+                _args[8] = vermoeidheid;
+                _args[9] = belangrijkheid;
+                _args[10] = tevredenheid;
+                System.IAsyncResult _result = base.BeginInvoke("AddGebruikersIngave", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndAddGebruikersIngave(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("AddGebruikersIngave", _args, result);
+            }
+            
+            public System.IAsyncResult BeginGetAllWeersOmstandigheden(System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[0];
+                System.IAsyncResult _result = base.BeginInvoke("GetAllWeersOmstandigheden", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Weersomstandigheden> EndGetAllWeersOmstandigheden(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Weersomstandigheden> _result = ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Weersomstandigheden>)(base.EndInvoke("GetAllWeersOmstandigheden", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginGetNachtrustSchaal(System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[0];
+                System.IAsyncResult _result = base.BeginInvoke("GetNachtrustSchaal", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Schaal_Nachtrust> EndGetNachtrustSchaal(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Schaal_Nachtrust> _result = ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_Schaal_Nachtrust>)(base.EndInvoke("GetNachtrustSchaal", _args, result)));
+                return _result;
             }
         }
     }

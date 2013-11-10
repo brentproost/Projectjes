@@ -10,14 +10,19 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using PanoramaApp3.Pages;
 using PanoramaApp3.ServiceReference;
+using Microsoft.Phone.Net.NetworkInformation;
 
 namespace PanoramaApp3
 {
     public partial class Page1 : PhoneApplicationPage
     {
         public Page1()
-        {
+        {   
             InitializeComponent();
+            if (NetworkInterface.GetIsNetworkAvailable() == false)
+            {
+                MessageBox.Show("Er is geen internetverbinding gevonden");
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

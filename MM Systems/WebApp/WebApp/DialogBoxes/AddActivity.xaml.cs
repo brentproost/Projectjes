@@ -27,8 +27,6 @@ namespace WebApp.DialogBoxes
 
         void client_GetAllCategoriesCompleted(object sender, ServiceReference.GetAllCategoriesCompletedEventArgs e)
         {
-           
-
             for (int i = 0; i < e.Result.Count; i++)
             {
                 cbitems.Add(e.Result[i].Omschrijving);

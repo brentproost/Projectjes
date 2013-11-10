@@ -16,5 +16,7 @@ namespace Wcf
         public string Activiteit { get; set; }
         [DataMember]
         public int Activiteit_ID { get; set; }
+        [DataMember]
+        public int Categorie_ID { get; set; }
     }
 }

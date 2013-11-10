@@ -12,11 +12,18 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using PanoramaApp3.ServiceReference;
+using System.Threading;
 
 namespace PanoramaApp3
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        List<string> cbitems = new List<string>();
+        List<int> cbtag = new List<int>();
+        List<int> weersomstandighedenids = new List<int>();
+        List<int> nachtrustids = new List<int>();
+        ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+        int activityid;
         // Constructor
         public MainPage()
         {
@@ -27,11 +34,43 @@ namespace PanoramaApp3
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
             if (User.ID != 0)
             {
-                ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
                 client.GetAllUsersCompleted += ClientOnGetAllUsersCompleted;
                 client.GetAllUsersAsync(User.ID);
+                client.GetAllCategoriesCompleted += serviceClient_GetAllCategoriesCompleted;
+                client.GetAllCategoriesAsync();
             }
-    }
+            try
+            {
+                client.GetNachtrustSchaalAsync();
+                client.GetNachtrustSchaalCompleted += client_GetNachtrustSchaalCompleted;
+                client.GetAllWeersOmstandighedenAsync();
+                client.GetAllWeersOmstandighedenCompleted += client_GetAllWeersOmstandighedenCompleted;
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        
+        }
+
+        void client_GetAllWeersOmstandighedenCompleted(object sender, GetAllWeersOmstandighedenCompletedEventArgs e)
+        {
+            lpweersomstandigheden.ItemsSource = e.Result.ToList();
+            for (int i = 0; i < e.Result.Count; i++)
+            {
+                weersomstandighedenids.Add(e.Result[i].ID);
+            }
+        }
+
+        void client_GetNachtrustSchaalCompleted(object sender, GetNachtrustSchaalCompletedEventArgs e)
+        {
+            lpnachtrust.ItemsSource = e.Result.ToList();
+            for (int i = 0; i < e.Result.Count; i++)
+            {
+                nachtrustids.Add(e.Result[i].ID);
+            }
+        }
 
         private void ClientOnGetAllUsersCompleted(object sender, GetAllUsersCompletedEventArgs getAllUsersCompletedEventArgs)
         {
@@ -48,19 +87,17 @@ namespace PanoramaApp3
             {
                 App.ViewModel.LoadData();
             }
-
-            ServiceReference.ServiceClient serviceClient = new ServiceReference.ServiceClient();
-
-            serviceClient.GetAllActivitiesCompleted += serviceClient_GetAllActivitiesCompleted;
-            serviceClient.GetAllActivitiesAsync();
         }
 
-        void serviceClient_GetAllActivitiesCompleted(object sender, ServiceReference.GetAllActivitiesCompletedEventArgs e)
+        void serviceClient_GetAllCategoriesCompleted(object sender, GetAllCategoriesCompletedEventArgs e)
         {
-            if (e.Result != null)
+            for (int i = 0; i < e.Result.Count; i++)
             {
-               // lp_Activiteiten.ItemsSource = e.Result;
+                cbitems.Add(e.Result[i].Omschrijving);
+                cbtag.Add(e.Result[i].Id);
             }
+
+            lp_Categorien.ItemsSource = cbitems;
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -82,7 +119,7 @@ namespace PanoramaApp3
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            PanoramaApp.DefaultItem = item3;
+            PanoramaApp.DefaultItem = item5;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -95,9 +132,65 @@ namespace PanoramaApp3
             NavigationService.Navigate(new Uri("/Pages/Graphs.xaml", UriKind.Relative));
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private void lp_Categorien_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            client.GetAllActivitiesAsync();
+            client.GetAllActivitiesCompleted += client_GetAllActivitiesCompleted;
+        }
+
+        void client_GetAllActivitiesCompleted(object sender, GetAllActivitiesCompletedEventArgs e)
+        {
+            List<int> activlistid = new List<int>();
+            List<string> activlistomschr = new List<string>();
+            if (lp_Categorien.SelectedIndex >= 0)
+            {
+                if (e.Result != null)
+                {
+                    foreach (var item in e.Result.ToList())
+                    {
+                        activlistid.Add(item.Categorie_ID);
+                        activlistomschr.Add(item.Activiteit);
+                    }
+                    var id = cbtag[lp_Categorien.SelectedIndex];
+
+                    var result = (from r in e.Result where r.Categorie_ID == id select new { r.Activiteit, r.Activiteit_ID }).ToList();
+
+                    lp_Activiteiten.ItemsSource = result;
+
+                    if (lp_Activiteiten.SelectedItem != null)
+                    {
+                        activityid = result[lp_Activiteiten.SelectedIndex].Activiteit_ID;
+                    }
+                }
+            }
+        }
+
+        void client_AddGebruikersIngaveCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            MessageBox.Show("Toegevoegd");
+        }
+
+        private void btn_ok_Click(object sender, RoutedEventArgs e)
+        {
+            PanoramaApp.DefaultItem = item4;
+        }
+
+        private void lp_Activiteiten_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            client.GetAllActivitiesAsync();
+            client.GetAllActivitiesCompleted += client_GetAllActivitiesCompleted;
+        }
+
+        private void btnok_Click(object sender, RoutedEventArgs e)
+        {
+            client.AddGebruikersIngaveAsync(User.ID, activityid, DateTime.Now, Convert.ToDateTime(dtuurActiviteit.Value), txt_Commentaar.Text,weersomstandighedenids[lpweersomstandigheden.SelectedIndex],nachtrustids[lpnachtrust.SelectedIndex], Convert.ToInt32(txtuurgeslapen.Text), (float)SliderVermoeidheid.Value, (float)SliderBelangrijk.Value, (float)SliderTevredenheid.Value);
+            client.AddGebruikersIngaveCompleted += client_AddGebruikersIngaveCompleted;
             PanoramaApp.DefaultItem = item1;
+        }
+
+        private void btnoknacht_Click(object sender, RoutedEventArgs e)
+        {
+            PanoramaApp.DefaultItem = item3;
         }
     }
 }

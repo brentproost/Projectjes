@@ -32,6 +32,7 @@
       <xs:element minOccurs="0" name="Activiteit" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Activiteit_ID" type="xs:int" />
       <xs:element minOccurs="0" name="Categorie" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Categorie_ID" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Activities" nillable="true" type="tns:Activities" />

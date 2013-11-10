@@ -21,7 +21,7 @@ namespace Wcf
         List<Tbl_User> GetUserInfo(int ID);
 
         [OperationContract]
-        ObservableCollection<Activities> GetAllActivities();
+        List<Activities> GetAllActivities();
 
         [OperationContract]
         List<Tbl_Categorien> GetAllCategories();
@@ -43,6 +43,15 @@ namespace Wcf
 
         [OperationContract]
         void DeleteUser(int id);
+
+        [OperationContract]
+        void AddGebruikersIngave(int usrID, int actID, DateTime datumuuringave, DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid);
+
+        [OperationContract]
+        List<Tbl_Weersomstandigheden> GetAllWeersOmstandigheden();
+
+        [OperationContract]
+        List<Tbl_Schaal_Nachtrust> GetNachtrustSchaal();
 
     }
 }

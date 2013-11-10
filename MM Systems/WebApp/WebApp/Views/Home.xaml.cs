@@ -73,5 +73,18 @@ namespace WebApp
             window.Closed += window_Closed;
             window.Show();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+
+            client.AddGebruikersIngaveAsync(1,1,"test","test",1,1,1,2,2,2);
+            client.AddGebruikersIngaveCompleted += client_AddGebruikersIngaveCompleted;
+        }
+
+        void client_AddGebruikersIngaveCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            MessageBox.Show("ja");
+        }
     }
 }

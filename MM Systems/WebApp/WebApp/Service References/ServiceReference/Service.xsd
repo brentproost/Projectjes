@@ -148,4 +148,25 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="AddGebruikersIngave">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="usrID" type="xs:int" />
+        <xs:element minOccurs="0" name="actID" type="xs:int" />
+        <xs:element minOccurs="0" name="dtmuurActiviteit" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="commentaar" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="weersid" type="xs:int" />
+        <xs:element minOccurs="0" name="nachtrid" type="xs:int" />
+        <xs:element minOccurs="0" name="aantaluurgeslapen" type="xs:int" />
+        <xs:element minOccurs="0" name="vermoeidheid" type="xs:float" />
+        <xs:element minOccurs="0" name="belangrijkheid" type="xs:float" />
+        <xs:element minOccurs="0" name="tevredenheid" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddGebruikersIngaveResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
