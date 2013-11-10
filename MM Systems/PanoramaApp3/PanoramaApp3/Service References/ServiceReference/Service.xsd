@@ -27,6 +27,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetUserInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetUserInfoResult" nillable="true" type="q3:ArrayOfTbl_User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetAllActivities">
     <xs:complexType>
       <xs:sequence />
@@ -35,7 +49,7 @@
   <xs:element name="GetAllActivitiesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetAllActivitiesResult" nillable="true" type="q3:ArrayOfActivities" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetAllActivitiesResult" nillable="true" type="q4:ArrayOfActivities" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -47,7 +61,7 @@
   <xs:element name="GetAllCategoriesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetAllCategoriesResult" nillable="true" type="q4:ArrayOfTbl_Categorien" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetAllCategoriesResult" nillable="true" type="q5:ArrayOfTbl_Categorien" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -164,7 +178,7 @@
   <xs:element name="GetAllWeersOmstandighedenResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetAllWeersOmstandighedenResult" nillable="true" type="q5:ArrayOfTbl_Weersomstandigheden" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetAllWeersOmstandighedenResult" nillable="true" type="q6:ArrayOfTbl_Weersomstandigheden" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -176,7 +190,7 @@
   <xs:element name="GetNachtrustSchaalResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetNachtrustSchaalResult" nillable="true" type="q6:ArrayOfTbl_Schaal_Nachtrust" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetNachtrustSchaalResult" nillable="true" type="q7:ArrayOfTbl_Schaal_Nachtrust" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

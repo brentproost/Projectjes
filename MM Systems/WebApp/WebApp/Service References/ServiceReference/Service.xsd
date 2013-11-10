@@ -153,7 +153,8 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="usrID" type="xs:int" />
         <xs:element minOccurs="0" name="actID" type="xs:int" />
-        <xs:element minOccurs="0" name="dtmuurActiviteit" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="datumuuringave" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtmuurActiviteit" type="xs:dateTime" />
         <xs:element minOccurs="0" name="commentaar" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="weersid" type="xs:int" />
         <xs:element minOccurs="0" name="nachtrid" type="xs:int" />
@@ -167,6 +168,30 @@
   <xs:element name="AddGebruikersIngaveResponse">
     <xs:complexType>
       <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllWeersOmstandigheden">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllWeersOmstandighedenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetAllWeersOmstandighedenResult" nillable="true" type="q6:ArrayOfTbl_Weersomstandigheden" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNachtrustSchaal">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNachtrustSchaalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetNachtrustSchaalResult" nillable="true" type="q7:ArrayOfTbl_Schaal_Nachtrust" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>

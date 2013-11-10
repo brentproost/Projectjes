@@ -300,6 +300,96 @@ namespace WebApp.ServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Tbl_Weersomstandigheden", Namespace="http://schemas.datacontract.org/2004/07/Wcf")]
+    public partial class Tbl_Weersomstandigheden : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int IDField;
+        
+        private string OmschrijvingField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Omschrijving {
+            get {
+                return this.OmschrijvingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OmschrijvingField, value) != true)) {
+                    this.OmschrijvingField = value;
+                    this.RaisePropertyChanged("Omschrijving");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Tbl_Schaal_Nachtrust", Namespace="http://schemas.datacontract.org/2004/07/Wcf")]
+    public partial class Tbl_Schaal_Nachtrust : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int IDField;
+        
+        private string OmschrijvingField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Omschrijving {
+            get {
+                return this.OmschrijvingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OmschrijvingField, value) != true)) {
+                    this.OmschrijvingField = value;
+                    this.RaisePropertyChanged("Omschrijving");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService")]
     public interface IService {
@@ -360,9 +450,19 @@ namespace WebApp.ServiceReference {
         void EndDeleteUser(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/AddGebruikersIngave", ReplyAction="http://tempuri.org/IService/AddGebruikersIngaveResponse")]
-        System.IAsyncResult BeginAddGebruikersIngave(int usrID, int actID, string dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginAddGebruikersIngave(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState);
         
         void EndAddGebruikersIngave(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/GetAllWeersOmstandigheden", ReplyAction="http://tempuri.org/IService/GetAllWeersOmstandighedenResponse")]
+        System.IAsyncResult BeginGetAllWeersOmstandigheden(System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Weersomstandigheden> EndGetAllWeersOmstandigheden(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/GetNachtrustSchaal", ReplyAction="http://tempuri.org/IService/GetNachtrustSchaalResponse")]
+        System.IAsyncResult BeginGetNachtrustSchaal(System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Schaal_Nachtrust> EndGetNachtrustSchaal(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -485,6 +585,44 @@ namespace WebApp.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetAllWeersOmstandighedenCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetAllWeersOmstandighedenCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Weersomstandigheden> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Weersomstandigheden>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetNachtrustSchaalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetNachtrustSchaalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Schaal_Nachtrust> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Schaal_Nachtrust>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class ServiceClient : System.ServiceModel.ClientBase<WebApp.ServiceReference.IService>, WebApp.ServiceReference.IService {
         
         private BeginOperationDelegate onBeginGetUserDelegate;
@@ -558,6 +696,18 @@ namespace WebApp.ServiceReference {
         private EndOperationDelegate onEndAddGebruikersIngaveDelegate;
         
         private System.Threading.SendOrPostCallback onAddGebruikersIngaveCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetAllWeersOmstandighedenDelegate;
+        
+        private EndOperationDelegate onEndGetAllWeersOmstandighedenDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetAllWeersOmstandighedenCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetNachtrustSchaalDelegate;
+        
+        private EndOperationDelegate onEndGetNachtrustSchaalDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetNachtrustSchaalCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -635,6 +785,10 @@ namespace WebApp.ServiceReference {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> DeleteUserCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> AddGebruikersIngaveCompleted;
+        
+        public event System.EventHandler<GetAllWeersOmstandighedenCompletedEventArgs> GetAllWeersOmstandighedenCompleted;
+        
+        public event System.EventHandler<GetNachtrustSchaalCompletedEventArgs> GetNachtrustSchaalCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -1154,8 +1308,8 @@ namespace WebApp.ServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult WebApp.ServiceReference.IService.BeginAddGebruikersIngave(int usrID, int actID, string dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginAddGebruikersIngave(usrID, actID, dtmuurActiviteit, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, callback, asyncState);
+        System.IAsyncResult WebApp.ServiceReference.IService.BeginAddGebruikersIngave(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddGebruikersIngave(usrID, actID, datumuuringave, dtmuurActiviteit, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1166,15 +1320,16 @@ namespace WebApp.ServiceReference {
         private System.IAsyncResult OnBeginAddGebruikersIngave(object[] inValues, System.AsyncCallback callback, object asyncState) {
             int usrID = ((int)(inValues[0]));
             int actID = ((int)(inValues[1]));
-            string dtmuurActiviteit = ((string)(inValues[2]));
-            string commentaar = ((string)(inValues[3]));
-            int weersid = ((int)(inValues[4]));
-            int nachtrid = ((int)(inValues[5]));
-            int aantaluurgeslapen = ((int)(inValues[6]));
-            float vermoeidheid = ((float)(inValues[7]));
-            float belangrijkheid = ((float)(inValues[8]));
-            float tevredenheid = ((float)(inValues[9]));
-            return ((WebApp.ServiceReference.IService)(this)).BeginAddGebruikersIngave(usrID, actID, dtmuurActiviteit, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, callback, asyncState);
+            System.DateTime datumuuringave = ((System.DateTime)(inValues[2]));
+            System.DateTime dtmuurActiviteit = ((System.DateTime)(inValues[3]));
+            string commentaar = ((string)(inValues[4]));
+            int weersid = ((int)(inValues[5]));
+            int nachtrid = ((int)(inValues[6]));
+            int aantaluurgeslapen = ((int)(inValues[7]));
+            float vermoeidheid = ((float)(inValues[8]));
+            float belangrijkheid = ((float)(inValues[9]));
+            float tevredenheid = ((float)(inValues[10]));
+            return ((WebApp.ServiceReference.IService)(this)).BeginAddGebruikersIngave(usrID, actID, datumuuringave, dtmuurActiviteit, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, callback, asyncState);
         }
         
         private object[] OnEndAddGebruikersIngave(System.IAsyncResult result) {
@@ -1189,11 +1344,11 @@ namespace WebApp.ServiceReference {
             }
         }
         
-        public void AddGebruikersIngaveAsync(int usrID, int actID, string dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid) {
-            this.AddGebruikersIngaveAsync(usrID, actID, dtmuurActiviteit, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, null);
+        public void AddGebruikersIngaveAsync(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid) {
+            this.AddGebruikersIngaveAsync(usrID, actID, datumuuringave, dtmuurActiviteit, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, null);
         }
         
-        public void AddGebruikersIngaveAsync(int usrID, int actID, string dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, object userState) {
+        public void AddGebruikersIngaveAsync(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, object userState) {
             if ((this.onBeginAddGebruikersIngaveDelegate == null)) {
                 this.onBeginAddGebruikersIngaveDelegate = new BeginOperationDelegate(this.OnBeginAddGebruikersIngave);
             }
@@ -1206,6 +1361,7 @@ namespace WebApp.ServiceReference {
             base.InvokeAsync(this.onBeginAddGebruikersIngaveDelegate, new object[] {
                         usrID,
                         actID,
+                        datumuuringave,
                         dtmuurActiviteit,
                         commentaar,
                         weersid,
@@ -1214,6 +1370,94 @@ namespace WebApp.ServiceReference {
                         vermoeidheid,
                         belangrijkheid,
                         tevredenheid}, this.onEndAddGebruikersIngaveDelegate, this.onAddGebruikersIngaveCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult WebApp.ServiceReference.IService.BeginGetAllWeersOmstandigheden(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetAllWeersOmstandigheden(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Weersomstandigheden> WebApp.ServiceReference.IService.EndGetAllWeersOmstandigheden(System.IAsyncResult result) {
+            return base.Channel.EndGetAllWeersOmstandigheden(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetAllWeersOmstandigheden(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return ((WebApp.ServiceReference.IService)(this)).BeginGetAllWeersOmstandigheden(callback, asyncState);
+        }
+        
+        private object[] OnEndGetAllWeersOmstandigheden(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Weersomstandigheden> retVal = ((WebApp.ServiceReference.IService)(this)).EndGetAllWeersOmstandigheden(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetAllWeersOmstandighedenCompleted(object state) {
+            if ((this.GetAllWeersOmstandighedenCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetAllWeersOmstandighedenCompleted(this, new GetAllWeersOmstandighedenCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetAllWeersOmstandighedenAsync() {
+            this.GetAllWeersOmstandighedenAsync(null);
+        }
+        
+        public void GetAllWeersOmstandighedenAsync(object userState) {
+            if ((this.onBeginGetAllWeersOmstandighedenDelegate == null)) {
+                this.onBeginGetAllWeersOmstandighedenDelegate = new BeginOperationDelegate(this.OnBeginGetAllWeersOmstandigheden);
+            }
+            if ((this.onEndGetAllWeersOmstandighedenDelegate == null)) {
+                this.onEndGetAllWeersOmstandighedenDelegate = new EndOperationDelegate(this.OnEndGetAllWeersOmstandigheden);
+            }
+            if ((this.onGetAllWeersOmstandighedenCompletedDelegate == null)) {
+                this.onGetAllWeersOmstandighedenCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAllWeersOmstandighedenCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetAllWeersOmstandighedenDelegate, null, this.onEndGetAllWeersOmstandighedenDelegate, this.onGetAllWeersOmstandighedenCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult WebApp.ServiceReference.IService.BeginGetNachtrustSchaal(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetNachtrustSchaal(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Schaal_Nachtrust> WebApp.ServiceReference.IService.EndGetNachtrustSchaal(System.IAsyncResult result) {
+            return base.Channel.EndGetNachtrustSchaal(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetNachtrustSchaal(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return ((WebApp.ServiceReference.IService)(this)).BeginGetNachtrustSchaal(callback, asyncState);
+        }
+        
+        private object[] OnEndGetNachtrustSchaal(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Schaal_Nachtrust> retVal = ((WebApp.ServiceReference.IService)(this)).EndGetNachtrustSchaal(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetNachtrustSchaalCompleted(object state) {
+            if ((this.GetNachtrustSchaalCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetNachtrustSchaalCompleted(this, new GetNachtrustSchaalCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetNachtrustSchaalAsync() {
+            this.GetNachtrustSchaalAsync(null);
+        }
+        
+        public void GetNachtrustSchaalAsync(object userState) {
+            if ((this.onBeginGetNachtrustSchaalDelegate == null)) {
+                this.onBeginGetNachtrustSchaalDelegate = new BeginOperationDelegate(this.OnBeginGetNachtrustSchaal);
+            }
+            if ((this.onEndGetNachtrustSchaalDelegate == null)) {
+                this.onEndGetNachtrustSchaalDelegate = new EndOperationDelegate(this.OnEndGetNachtrustSchaal);
+            }
+            if ((this.onGetNachtrustSchaalCompletedDelegate == null)) {
+                this.onGetNachtrustSchaalCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetNachtrustSchaalCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetNachtrustSchaalDelegate, null, this.onEndGetNachtrustSchaalDelegate, this.onGetNachtrustSchaalCompletedDelegate, userState);
         }
         
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
@@ -1436,18 +1680,19 @@ namespace WebApp.ServiceReference {
                 base.EndInvoke("DeleteUser", _args, result);
             }
             
-            public System.IAsyncResult BeginAddGebruikersIngave(int usrID, int actID, string dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[10];
+            public System.IAsyncResult BeginAddGebruikersIngave(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[11];
                 _args[0] = usrID;
                 _args[1] = actID;
-                _args[2] = dtmuurActiviteit;
-                _args[3] = commentaar;
-                _args[4] = weersid;
-                _args[5] = nachtrid;
-                _args[6] = aantaluurgeslapen;
-                _args[7] = vermoeidheid;
-                _args[8] = belangrijkheid;
-                _args[9] = tevredenheid;
+                _args[2] = datumuuringave;
+                _args[3] = dtmuurActiviteit;
+                _args[4] = commentaar;
+                _args[5] = weersid;
+                _args[6] = nachtrid;
+                _args[7] = aantaluurgeslapen;
+                _args[8] = vermoeidheid;
+                _args[9] = belangrijkheid;
+                _args[10] = tevredenheid;
                 System.IAsyncResult _result = base.BeginInvoke("AddGebruikersIngave", _args, callback, asyncState);
                 return _result;
             }
@@ -1455,6 +1700,30 @@ namespace WebApp.ServiceReference {
             public void EndAddGebruikersIngave(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 base.EndInvoke("AddGebruikersIngave", _args, result);
+            }
+            
+            public System.IAsyncResult BeginGetAllWeersOmstandigheden(System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[0];
+                System.IAsyncResult _result = base.BeginInvoke("GetAllWeersOmstandigheden", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Weersomstandigheden> EndGetAllWeersOmstandigheden(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Weersomstandigheden> _result = ((System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Weersomstandigheden>)(base.EndInvoke("GetAllWeersOmstandigheden", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginGetNachtrustSchaal(System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[0];
+                System.IAsyncResult _result = base.BeginInvoke("GetNachtrustSchaal", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Schaal_Nachtrust> EndGetNachtrustSchaal(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Schaal_Nachtrust> _result = ((System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Schaal_Nachtrust>)(base.EndInvoke("GetNachtrustSchaal", _args, result)));
+                return _result;
             }
         }
     }
