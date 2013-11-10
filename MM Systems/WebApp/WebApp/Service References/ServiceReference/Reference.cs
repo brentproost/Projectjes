@@ -299,6 +299,11 @@ namespace WebApp.ServiceReference {
         
         System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_User> EndGetAllUsers(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/GetUserInfo", ReplyAction="http://tempuri.org/IService/GetUserInfoResponse")]
+        System.IAsyncResult BeginGetUserInfo(int ID, System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_User> EndGetUserInfo(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/GetAllActivities", ReplyAction="http://tempuri.org/IService/GetAllActivitiesResponse")]
         System.IAsyncResult BeginGetAllActivities(System.AsyncCallback callback, object asyncState);
         
@@ -384,6 +389,25 @@ namespace WebApp.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetUserInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetUserInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_User> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_User>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class GetAllActivitiesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -454,6 +478,12 @@ namespace WebApp.ServiceReference {
         private EndOperationDelegate onEndGetAllUsersDelegate;
         
         private System.Threading.SendOrPostCallback onGetAllUsersCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetUserInfoDelegate;
+        
+        private EndOperationDelegate onEndGetUserInfoDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetUserInfoCompletedDelegate;
         
         private BeginOperationDelegate onBeginGetAllActivitiesDelegate;
         
@@ -559,6 +589,8 @@ namespace WebApp.ServiceReference {
         public event System.EventHandler<GetUserCompletedEventArgs> GetUserCompleted;
         
         public event System.EventHandler<GetAllUsersCompletedEventArgs> GetAllUsersCompleted;
+        
+        public event System.EventHandler<GetUserInfoCompletedEventArgs> GetUserInfoCompleted;
         
         public event System.EventHandler<GetAllActivitiesCompletedEventArgs> GetAllActivitiesCompleted;
         
@@ -668,6 +700,52 @@ namespace WebApp.ServiceReference {
                 this.onGetAllUsersCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAllUsersCompleted);
             }
             base.InvokeAsync(this.onBeginGetAllUsersDelegate, null, this.onEndGetAllUsersDelegate, this.onGetAllUsersCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult WebApp.ServiceReference.IService.BeginGetUserInfo(int ID, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetUserInfo(ID, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_User> WebApp.ServiceReference.IService.EndGetUserInfo(System.IAsyncResult result) {
+            return base.Channel.EndGetUserInfo(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetUserInfo(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int ID = ((int)(inValues[0]));
+            return ((WebApp.ServiceReference.IService)(this)).BeginGetUserInfo(ID, callback, asyncState);
+        }
+        
+        private object[] OnEndGetUserInfo(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_User> retVal = ((WebApp.ServiceReference.IService)(this)).EndGetUserInfo(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetUserInfoCompleted(object state) {
+            if ((this.GetUserInfoCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetUserInfoCompleted(this, new GetUserInfoCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetUserInfoAsync(int ID) {
+            this.GetUserInfoAsync(ID, null);
+        }
+        
+        public void GetUserInfoAsync(int ID, object userState) {
+            if ((this.onBeginGetUserInfoDelegate == null)) {
+                this.onBeginGetUserInfoDelegate = new BeginOperationDelegate(this.OnBeginGetUserInfo);
+            }
+            if ((this.onEndGetUserInfoDelegate == null)) {
+                this.onEndGetUserInfoDelegate = new EndOperationDelegate(this.OnEndGetUserInfo);
+            }
+            if ((this.onGetUserInfoCompletedDelegate == null)) {
+                this.onGetUserInfoCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetUserInfoCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetUserInfoDelegate, new object[] {
+                        ID}, this.onEndGetUserInfoDelegate, this.onGetUserInfoCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1145,6 +1223,19 @@ namespace WebApp.ServiceReference {
             public System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_User> EndGetAllUsers(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_User> _result = ((System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_User>)(base.EndInvoke("GetAllUsers", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginGetUserInfo(int ID, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = ID;
+                System.IAsyncResult _result = base.BeginInvoke("GetUserInfo", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_User> EndGetUserInfo(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_User> _result = ((System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_User>)(base.EndInvoke("GetUserInfo", _args, result)));
                 return _result;
             }
             

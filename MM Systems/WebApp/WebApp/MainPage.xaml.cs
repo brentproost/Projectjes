@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
@@ -31,16 +32,23 @@ namespace WebApp
                 HyperlinkButton hb = child as HyperlinkButton;
                 if (hb != null && hb.NavigateUri != null)
                 {
-                    if (hb.NavigateUri.ToString().Equals(e.Uri.ToString()))
-                    {
-                        VisualStateManager.GoToState(hb, "ActiveLink", true);
-                    }
-                    else
-                    {
-                        VisualStateManager.GoToState(hb, "InactiveLink", true);
-                    }
+                    
+                        if (hb.NavigateUri.ToString().Equals(e.Uri.ToString()))
+                        {
+                            VisualStateManager.GoToState(hb, "ActiveLink", true);
+                        }
+                        else
+                        {
+                            VisualStateManager.GoToState(hb, "InactiveLink", true);
+                        }
+                    
                 }
             }
+        }
+
+        private void Afmelden(object sender, RoutedEventArgs e)
+        {
+           // Home.login.Visibility = Visibility.Visible;
         }
 
         // If an error occurs during navigation, show an error window
@@ -50,5 +58,6 @@ namespace WebApp
             ChildWindow errorWin = new ErrorWindow(e.Uri);
             errorWin.Show();
         }
+        
     }
 }

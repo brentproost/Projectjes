@@ -61,7 +61,12 @@ namespace Wcf
         {
             return Data.Tbl_Users.ToList();
         }
-
+        List<Tbl_User> IService.GetUserInfo(int ID)
+        {
+            IEnumerable<Tbl_User> result = Data.Tbl_Users.Where(a => a.ID == ID);
+            List<Tbl_User> r = result.ToList();
+            return r;
+        }
         int IService.SigninUser(string uname, string pass)
         {
             try
