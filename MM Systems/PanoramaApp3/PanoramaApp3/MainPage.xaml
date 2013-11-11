@@ -112,14 +112,14 @@
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
                         <!--Replace rectangle with image-->
                         <StackPanel Width="311">
-                            <toolkit:DatePicker x:Name="dtuurActiviteit" ValueStringFormat="{}{0:dd-MM-yyyy}"></toolkit:DatePicker>
+                            <toolkit:DatePicker x:Name="dtuurActiviteit" ValueStringFormat="{}{0:dd-MM-yyyy}" Loaded="dtuurActiviteit_Loaded"></toolkit:DatePicker>
                             <StackPanel Orientation="Horizontal">
-                                <TextBox Text="0">
-
-                                </TextBox>
-                                <TextBlock Margin="0,20,0,0" TextAlignment="Center">tot</TextBlock>
-                                <toolkit:TimePicker ValueStringFormat="{}{0:HH}"></toolkit:TimePicker>
+                                <TextBox x:Name="txthour1" Text="0" InputScope="Number" TextChanged="txthour1_TextChanged"/>
+                                <TextBlock Margin="0,20,0,0" TextAlignment="Center">uur tot</TextBlock>
+                                <TextBox x:Name="txthour2" IsEnabled="False" Text="0" InputScope="Number"/>
+                                <TextBlock Margin="0,20,0,0" TextAlignment="Center">uur</TextBlock>
                             </StackPanel>
+                            <toolkit:TimePicker />
                             <Button Content="ok" Click="Button_Click"></Button>
                         </StackPanel>
                     </StackPanel>
@@ -144,7 +144,7 @@
                         </toolkit:ListPicker.ItemTemplate>
                     </toolkit:ListPicker>
                     <TextBlock Text="Aantal uur geslapen"/>
-                    <TextBox x:Name="txtuurgeslapen" MinWidth="70" HorizontalAlignment="Left" />
+                    <TextBox InputScope="Number" x:Name="txtuurgeslapen" Text="0" HorizontalAlignment="Left" />
                 </StackPanel>
             </controls:PanoramaItem>
             <controls:PanoramaItem x:Name="item3">

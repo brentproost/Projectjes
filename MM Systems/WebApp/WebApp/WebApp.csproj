@@ -94,6 +94,7 @@
     <Compile Include="DialogBoxes\AddUser.xaml.cs">
       <DependentUpon>AddUser.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Public_Informatie_Gebruiker.cs" />
     <Compile Include="Service References\ServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,12 +120,19 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Resultaten.xaml.cs">
+      <DependentUpon>Resultaten.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\Resultaten.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Resource Include="Assets\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -176,6 +184,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\ServiceReference\WebApp.ServiceReference.Tbl_GebruikersIngave.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference\WebApp.ServiceReference.Tbl_Schaal_Nachtrust.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -186,6 +197,7 @@
     <Resource Include="icon-user.jpg" />
     <Resource Include="icon-addactivity.jpg" />
     <Resource Include="icon-addcategory.jpg" />
+    <Resource Include="icon-inspect.png" />
     <Content Include="ReadMe.Coding4Fun.Toolkit.txt" />
     <Content Include="ServiceReferences.ClientConfig" />
     <None Include="Service References\ServiceReference\Service.wsdl" />

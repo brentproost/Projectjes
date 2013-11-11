@@ -390,6 +390,231 @@ namespace WebApp.ServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Tbl_GebruikersIngave", Namespace="http://schemas.datacontract.org/2004/07/Wcf")]
+    public partial class Tbl_GebruikersIngave : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int Aantal_Uren_GeslapenField;
+        
+        private int Activiteit_IDField;
+        
+        private System.TimeSpan Beginuur_ActiviteitField;
+        
+        private float BelangrijkheidField;
+        
+        private string CommentaarField;
+        
+        private System.DateTime Datum_Uur_ActiviteitField;
+        
+        private System.DateTime Datum_Uur_IngaveField;
+        
+        private System.TimeSpan Einduur_ActiviteitField;
+        
+        private int IDField;
+        
+        private int Schaal_Nachtrust_IDField;
+        
+        private float TevredenheidField;
+        
+        private int User_IDField;
+        
+        private float VermoeidheidField;
+        
+        private int Weersomstandigheden_IDField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Aantal_Uren_Geslapen {
+            get {
+                return this.Aantal_Uren_GeslapenField;
+            }
+            set {
+                if ((this.Aantal_Uren_GeslapenField.Equals(value) != true)) {
+                    this.Aantal_Uren_GeslapenField = value;
+                    this.RaisePropertyChanged("Aantal_Uren_Geslapen");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Activiteit_ID {
+            get {
+                return this.Activiteit_IDField;
+            }
+            set {
+                if ((this.Activiteit_IDField.Equals(value) != true)) {
+                    this.Activiteit_IDField = value;
+                    this.RaisePropertyChanged("Activiteit_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.TimeSpan Beginuur_Activiteit {
+            get {
+                return this.Beginuur_ActiviteitField;
+            }
+            set {
+                if ((this.Beginuur_ActiviteitField.Equals(value) != true)) {
+                    this.Beginuur_ActiviteitField = value;
+                    this.RaisePropertyChanged("Beginuur_Activiteit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float Belangrijkheid {
+            get {
+                return this.BelangrijkheidField;
+            }
+            set {
+                if ((this.BelangrijkheidField.Equals(value) != true)) {
+                    this.BelangrijkheidField = value;
+                    this.RaisePropertyChanged("Belangrijkheid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Commentaar {
+            get {
+                return this.CommentaarField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CommentaarField, value) != true)) {
+                    this.CommentaarField = value;
+                    this.RaisePropertyChanged("Commentaar");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Datum_Uur_Activiteit {
+            get {
+                return this.Datum_Uur_ActiviteitField;
+            }
+            set {
+                if ((this.Datum_Uur_ActiviteitField.Equals(value) != true)) {
+                    this.Datum_Uur_ActiviteitField = value;
+                    this.RaisePropertyChanged("Datum_Uur_Activiteit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Datum_Uur_Ingave {
+            get {
+                return this.Datum_Uur_IngaveField;
+            }
+            set {
+                if ((this.Datum_Uur_IngaveField.Equals(value) != true)) {
+                    this.Datum_Uur_IngaveField = value;
+                    this.RaisePropertyChanged("Datum_Uur_Ingave");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.TimeSpan Einduur_Activiteit {
+            get {
+                return this.Einduur_ActiviteitField;
+            }
+            set {
+                if ((this.Einduur_ActiviteitField.Equals(value) != true)) {
+                    this.Einduur_ActiviteitField = value;
+                    this.RaisePropertyChanged("Einduur_Activiteit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Schaal_Nachtrust_ID {
+            get {
+                return this.Schaal_Nachtrust_IDField;
+            }
+            set {
+                if ((this.Schaal_Nachtrust_IDField.Equals(value) != true)) {
+                    this.Schaal_Nachtrust_IDField = value;
+                    this.RaisePropertyChanged("Schaal_Nachtrust_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float Tevredenheid {
+            get {
+                return this.TevredenheidField;
+            }
+            set {
+                if ((this.TevredenheidField.Equals(value) != true)) {
+                    this.TevredenheidField = value;
+                    this.RaisePropertyChanged("Tevredenheid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int User_ID {
+            get {
+                return this.User_IDField;
+            }
+            set {
+                if ((this.User_IDField.Equals(value) != true)) {
+                    this.User_IDField = value;
+                    this.RaisePropertyChanged("User_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float Vermoeidheid {
+            get {
+                return this.VermoeidheidField;
+            }
+            set {
+                if ((this.VermoeidheidField.Equals(value) != true)) {
+                    this.VermoeidheidField = value;
+                    this.RaisePropertyChanged("Vermoeidheid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Weersomstandigheden_ID {
+            get {
+                return this.Weersomstandigheden_IDField;
+            }
+            set {
+                if ((this.Weersomstandigheden_IDField.Equals(value) != true)) {
+                    this.Weersomstandigheden_IDField = value;
+                    this.RaisePropertyChanged("Weersomstandigheden_ID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService")]
     public interface IService {
@@ -450,7 +675,7 @@ namespace WebApp.ServiceReference {
         void EndDeleteUser(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/AddGebruikersIngave", ReplyAction="http://tempuri.org/IService/AddGebruikersIngaveResponse")]
-        System.IAsyncResult BeginAddGebruikersIngave(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginAddGebruikersIngave(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, System.TimeSpan beginuur, System.TimeSpan einduur, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState);
         
         void EndAddGebruikersIngave(System.IAsyncResult result);
         
@@ -463,6 +688,11 @@ namespace WebApp.ServiceReference {
         System.IAsyncResult BeginGetNachtrustSchaal(System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Schaal_Nachtrust> EndGetNachtrustSchaal(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/GetIngave_Gebruiker", ReplyAction="http://tempuri.org/IService/GetIngave_GebruikerResponse")]
+        System.IAsyncResult BeginGetIngave_Gebruiker(int gebruikersid, System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_GebruikersIngave> EndGetIngave_Gebruiker(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -623,6 +853,25 @@ namespace WebApp.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetIngave_GebruikerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetIngave_GebruikerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_GebruikersIngave> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_GebruikersIngave>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class ServiceClient : System.ServiceModel.ClientBase<WebApp.ServiceReference.IService>, WebApp.ServiceReference.IService {
         
         private BeginOperationDelegate onBeginGetUserDelegate;
@@ -709,6 +958,12 @@ namespace WebApp.ServiceReference {
         
         private System.Threading.SendOrPostCallback onGetNachtrustSchaalCompletedDelegate;
         
+        private BeginOperationDelegate onBeginGetIngave_GebruikerDelegate;
+        
+        private EndOperationDelegate onEndGetIngave_GebruikerDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetIngave_GebruikerCompletedDelegate;
+        
         private BeginOperationDelegate onBeginOpenDelegate;
         
         private EndOperationDelegate onEndOpenDelegate;
@@ -789,6 +1044,8 @@ namespace WebApp.ServiceReference {
         public event System.EventHandler<GetAllWeersOmstandighedenCompletedEventArgs> GetAllWeersOmstandighedenCompleted;
         
         public event System.EventHandler<GetNachtrustSchaalCompletedEventArgs> GetNachtrustSchaalCompleted;
+        
+        public event System.EventHandler<GetIngave_GebruikerCompletedEventArgs> GetIngave_GebruikerCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -1308,8 +1565,8 @@ namespace WebApp.ServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult WebApp.ServiceReference.IService.BeginAddGebruikersIngave(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginAddGebruikersIngave(usrID, actID, datumuuringave, dtmuurActiviteit, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, callback, asyncState);
+        System.IAsyncResult WebApp.ServiceReference.IService.BeginAddGebruikersIngave(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, System.TimeSpan beginuur, System.TimeSpan einduur, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddGebruikersIngave(usrID, actID, datumuuringave, dtmuurActiviteit, beginuur, einduur, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1322,14 +1579,16 @@ namespace WebApp.ServiceReference {
             int actID = ((int)(inValues[1]));
             System.DateTime datumuuringave = ((System.DateTime)(inValues[2]));
             System.DateTime dtmuurActiviteit = ((System.DateTime)(inValues[3]));
-            string commentaar = ((string)(inValues[4]));
-            int weersid = ((int)(inValues[5]));
-            int nachtrid = ((int)(inValues[6]));
-            int aantaluurgeslapen = ((int)(inValues[7]));
-            float vermoeidheid = ((float)(inValues[8]));
-            float belangrijkheid = ((float)(inValues[9]));
-            float tevredenheid = ((float)(inValues[10]));
-            return ((WebApp.ServiceReference.IService)(this)).BeginAddGebruikersIngave(usrID, actID, datumuuringave, dtmuurActiviteit, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, callback, asyncState);
+            System.TimeSpan beginuur = ((System.TimeSpan)(inValues[4]));
+            System.TimeSpan einduur = ((System.TimeSpan)(inValues[5]));
+            string commentaar = ((string)(inValues[6]));
+            int weersid = ((int)(inValues[7]));
+            int nachtrid = ((int)(inValues[8]));
+            int aantaluurgeslapen = ((int)(inValues[9]));
+            float vermoeidheid = ((float)(inValues[10]));
+            float belangrijkheid = ((float)(inValues[11]));
+            float tevredenheid = ((float)(inValues[12]));
+            return ((WebApp.ServiceReference.IService)(this)).BeginAddGebruikersIngave(usrID, actID, datumuuringave, dtmuurActiviteit, beginuur, einduur, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, callback, asyncState);
         }
         
         private object[] OnEndAddGebruikersIngave(System.IAsyncResult result) {
@@ -1344,11 +1603,11 @@ namespace WebApp.ServiceReference {
             }
         }
         
-        public void AddGebruikersIngaveAsync(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid) {
-            this.AddGebruikersIngaveAsync(usrID, actID, datumuuringave, dtmuurActiviteit, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, null);
+        public void AddGebruikersIngaveAsync(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, System.TimeSpan beginuur, System.TimeSpan einduur, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid) {
+            this.AddGebruikersIngaveAsync(usrID, actID, datumuuringave, dtmuurActiviteit, beginuur, einduur, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, null);
         }
         
-        public void AddGebruikersIngaveAsync(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, object userState) {
+        public void AddGebruikersIngaveAsync(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, System.TimeSpan beginuur, System.TimeSpan einduur, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, object userState) {
             if ((this.onBeginAddGebruikersIngaveDelegate == null)) {
                 this.onBeginAddGebruikersIngaveDelegate = new BeginOperationDelegate(this.OnBeginAddGebruikersIngave);
             }
@@ -1363,6 +1622,8 @@ namespace WebApp.ServiceReference {
                         actID,
                         datumuuringave,
                         dtmuurActiviteit,
+                        beginuur,
+                        einduur,
                         commentaar,
                         weersid,
                         nachtrid,
@@ -1458,6 +1719,52 @@ namespace WebApp.ServiceReference {
                 this.onGetNachtrustSchaalCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetNachtrustSchaalCompleted);
             }
             base.InvokeAsync(this.onBeginGetNachtrustSchaalDelegate, null, this.onEndGetNachtrustSchaalDelegate, this.onGetNachtrustSchaalCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult WebApp.ServiceReference.IService.BeginGetIngave_Gebruiker(int gebruikersid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetIngave_Gebruiker(gebruikersid, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_GebruikersIngave> WebApp.ServiceReference.IService.EndGetIngave_Gebruiker(System.IAsyncResult result) {
+            return base.Channel.EndGetIngave_Gebruiker(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetIngave_Gebruiker(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int gebruikersid = ((int)(inValues[0]));
+            return ((WebApp.ServiceReference.IService)(this)).BeginGetIngave_Gebruiker(gebruikersid, callback, asyncState);
+        }
+        
+        private object[] OnEndGetIngave_Gebruiker(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_GebruikersIngave> retVal = ((WebApp.ServiceReference.IService)(this)).EndGetIngave_Gebruiker(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetIngave_GebruikerCompleted(object state) {
+            if ((this.GetIngave_GebruikerCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetIngave_GebruikerCompleted(this, new GetIngave_GebruikerCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetIngave_GebruikerAsync(int gebruikersid) {
+            this.GetIngave_GebruikerAsync(gebruikersid, null);
+        }
+        
+        public void GetIngave_GebruikerAsync(int gebruikersid, object userState) {
+            if ((this.onBeginGetIngave_GebruikerDelegate == null)) {
+                this.onBeginGetIngave_GebruikerDelegate = new BeginOperationDelegate(this.OnBeginGetIngave_Gebruiker);
+            }
+            if ((this.onEndGetIngave_GebruikerDelegate == null)) {
+                this.onEndGetIngave_GebruikerDelegate = new EndOperationDelegate(this.OnEndGetIngave_Gebruiker);
+            }
+            if ((this.onGetIngave_GebruikerCompletedDelegate == null)) {
+                this.onGetIngave_GebruikerCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetIngave_GebruikerCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetIngave_GebruikerDelegate, new object[] {
+                        gebruikersid}, this.onEndGetIngave_GebruikerDelegate, this.onGetIngave_GebruikerCompletedDelegate, userState);
         }
         
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
@@ -1680,19 +1987,21 @@ namespace WebApp.ServiceReference {
                 base.EndInvoke("DeleteUser", _args, result);
             }
             
-            public System.IAsyncResult BeginAddGebruikersIngave(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[11];
+            public System.IAsyncResult BeginAddGebruikersIngave(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, System.TimeSpan beginuur, System.TimeSpan einduur, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[13];
                 _args[0] = usrID;
                 _args[1] = actID;
                 _args[2] = datumuuringave;
                 _args[3] = dtmuurActiviteit;
-                _args[4] = commentaar;
-                _args[5] = weersid;
-                _args[6] = nachtrid;
-                _args[7] = aantaluurgeslapen;
-                _args[8] = vermoeidheid;
-                _args[9] = belangrijkheid;
-                _args[10] = tevredenheid;
+                _args[4] = beginuur;
+                _args[5] = einduur;
+                _args[6] = commentaar;
+                _args[7] = weersid;
+                _args[8] = nachtrid;
+                _args[9] = aantaluurgeslapen;
+                _args[10] = vermoeidheid;
+                _args[11] = belangrijkheid;
+                _args[12] = tevredenheid;
                 System.IAsyncResult _result = base.BeginInvoke("AddGebruikersIngave", _args, callback, asyncState);
                 return _result;
             }
@@ -1723,6 +2032,19 @@ namespace WebApp.ServiceReference {
             public System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Schaal_Nachtrust> EndGetNachtrustSchaal(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Schaal_Nachtrust> _result = ((System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Schaal_Nachtrust>)(base.EndInvoke("GetNachtrustSchaal", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginGetIngave_Gebruiker(int gebruikersid, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = gebruikersid;
+                System.IAsyncResult _result = base.BeginInvoke("GetIngave_Gebruiker", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_GebruikersIngave> EndGetIngave_Gebruiker(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_GebruikersIngave> _result = ((System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_GebruikersIngave>)(base.EndInvoke("GetIngave_Gebruiker", _args, result)));
                 return _result;
             }
         }

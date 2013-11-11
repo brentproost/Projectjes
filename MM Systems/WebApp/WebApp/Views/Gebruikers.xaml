@@ -68,6 +68,17 @@
                             </DataTemplate>
                         </sdk:DataGridTemplateColumn.CellTemplate>
                     </sdk:DataGridTemplateColumn>
+                    <sdk:DataGridTemplateColumn Width="SizeToCells" IsReadOnly="True">
+                        <sdk:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <HyperlinkButton Tag="{Binding ID}" NavigateUri="/Resultaten" TargetName="ContentFrame" Click="HyperlinkButton_Click">
+                                    <HyperlinkButton.Content>
+                                        <Image Source="/WebApp;component/icon-inspect.png"></Image>
+                                    </HyperlinkButton.Content>
+                                </HyperlinkButton>
+                            </DataTemplate>
+                        </sdk:DataGridTemplateColumn.CellTemplate>
+                    </sdk:DataGridTemplateColumn>
                 </sdk:DataGrid.Columns>
             </sdk:DataGrid>
         </StackPanel>

@@ -426,3 +426,4 @@ C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Web
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Activiteiten2.g.cs
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\UC\Login.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\UC\Login.g.cs
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Resultaten.g.cs

@@ -186,7 +186,7 @@ namespace Wcf
         }
 
 
-        void IService.AddGebruikersIngave(int usrID, int actID, DateTime datumuuringave, DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid)
+        void IService.AddGebruikersIngave(int usrID, int actID, DateTime datumuuringave, DateTime dtmuurActiviteit, TimeSpan beginuur, TimeSpan einduur, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid)
         {
             Tbl_GebruikersIngave gebi = new Tbl_GebruikersIngave()
             {
@@ -194,6 +194,8 @@ namespace Wcf
                 Activiteit_ID = actID,
                 Datum_Uur_Ingave = datumuuringave,
                 Datum_Uur_Activiteit = dtmuurActiviteit,
+                Beginuur_Activiteit = beginuur,
+                Einduur_Activiteit = einduur,
                 Commentaar = commentaar,
                 Weersomstandigheden_ID = weersid,
                 Schaal_Nachtrust_ID = nachtrid,
@@ -225,6 +227,13 @@ namespace Wcf
         List<Tbl_Schaal_Nachtrust> IService.GetNachtrustSchaal()
         {
             return Data.Tbl_Schaal_Nachtrusts.ToList();
+        }
+
+
+
+        List<Tbl_GebruikersIngave> IService.GetIngave_Gebruiker(int gebruikersid)
+        {
+            return (from i in Data.Tbl_GebruikersIngaves where i.User_ID == gebruikersid select i).ToList();
         }
     }
 }

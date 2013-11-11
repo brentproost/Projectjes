@@ -51,6 +51,8 @@ namespace PanoramaApp3
             {
                 MessageBox.Show(e.Message);
             }
+
+            txthour1.Text = DateTime.Now.Hour.ToString();
         
         }
 
@@ -183,7 +185,7 @@ namespace PanoramaApp3
 
         private void btnok_Click(object sender, RoutedEventArgs e)
         {
-            client.AddGebruikersIngaveAsync(User.ID, activityid, DateTime.Now, Convert.ToDateTime(dtuurActiviteit.Value), txt_Commentaar.Text,weersomstandighedenids[lpweersomstandigheden.SelectedIndex],nachtrustids[lpnachtrust.SelectedIndex], Convert.ToInt32(txtuurgeslapen.Text), (float)SliderVermoeidheid.Value, (float)SliderBelangrijk.Value, (float)SliderTevredenheid.Value);
+            client.AddGebruikersIngaveAsync(User.ID, activityid, DateTime.Now, Convert.ToDateTime(dtuurActiviteit.Value), new TimeSpan(Convert.ToInt32(txthour1.Text),0,0),new TimeSpan(Convert.ToInt32(txthour2.Text),0,0),txt_Commentaar.Text, weersomstandighedenids[lpweersomstandigheden.SelectedIndex], nachtrustids[lpnachtrust.SelectedIndex], Convert.ToInt32(txtuurgeslapen.Text), (float)SliderVermoeidheid.Value, (float)SliderBelangrijk.Value, (float)SliderTevredenheid.Value);
             client.AddGebruikersIngaveCompleted += client_AddGebruikersIngaveCompleted;
             PanoramaApp.DefaultItem = item1;
         }
@@ -191,6 +193,17 @@ namespace PanoramaApp3
         private void btnoknacht_Click(object sender, RoutedEventArgs e)
         {
             PanoramaApp.DefaultItem = item3;
+        }
+
+        private void txthour1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(txthour1.Text != "")
+            txthour2.Text = (Convert.ToInt32(txthour1.Text) + 1).ToString();
+        }
+
+        private void dtuurActiviteit_Loaded(object sender, RoutedEventArgs e)
+        {
+            dtuurActiviteit.Value = DateTime.Now;
         }
     }
 }

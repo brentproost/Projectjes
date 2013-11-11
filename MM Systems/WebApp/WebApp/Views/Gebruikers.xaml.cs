@@ -77,5 +77,10 @@ namespace WebApp.Views
             MessageBox.Show("gebruiker verwijderd");
             UpdateDataGrid();
         }
+
+        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            Public_Informatie_Gebruiker.id = Convert.ToInt32((((HyperlinkButton)sender)).Tag);
+        }
     }
 }

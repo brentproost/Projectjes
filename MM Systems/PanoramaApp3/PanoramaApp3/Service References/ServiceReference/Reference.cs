@@ -450,7 +450,7 @@ namespace PanoramaApp3.ServiceReference {
         void EndDeleteUser(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/AddGebruikersIngave", ReplyAction="http://tempuri.org/IService/AddGebruikersIngaveResponse")]
-        System.IAsyncResult BeginAddGebruikersIngave(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginAddGebruikersIngave(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, System.TimeSpan beginuur, System.TimeSpan einduur, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState);
         
         void EndAddGebruikersIngave(System.IAsyncResult result);
         
@@ -1308,8 +1308,8 @@ namespace PanoramaApp3.ServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult PanoramaApp3.ServiceReference.IService.BeginAddGebruikersIngave(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginAddGebruikersIngave(usrID, actID, datumuuringave, dtmuurActiviteit, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, callback, asyncState);
+        System.IAsyncResult PanoramaApp3.ServiceReference.IService.BeginAddGebruikersIngave(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, System.TimeSpan beginuur, System.TimeSpan einduur, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddGebruikersIngave(usrID, actID, datumuuringave, dtmuurActiviteit, beginuur, einduur, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1322,14 +1322,16 @@ namespace PanoramaApp3.ServiceReference {
             int actID = ((int)(inValues[1]));
             System.DateTime datumuuringave = ((System.DateTime)(inValues[2]));
             System.DateTime dtmuurActiviteit = ((System.DateTime)(inValues[3]));
-            string commentaar = ((string)(inValues[4]));
-            int weersid = ((int)(inValues[5]));
-            int nachtrid = ((int)(inValues[6]));
-            int aantaluurgeslapen = ((int)(inValues[7]));
-            float vermoeidheid = ((float)(inValues[8]));
-            float belangrijkheid = ((float)(inValues[9]));
-            float tevredenheid = ((float)(inValues[10]));
-            return ((PanoramaApp3.ServiceReference.IService)(this)).BeginAddGebruikersIngave(usrID, actID, datumuuringave, dtmuurActiviteit, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, callback, asyncState);
+            System.TimeSpan beginuur = ((System.TimeSpan)(inValues[4]));
+            System.TimeSpan einduur = ((System.TimeSpan)(inValues[5]));
+            string commentaar = ((string)(inValues[6]));
+            int weersid = ((int)(inValues[7]));
+            int nachtrid = ((int)(inValues[8]));
+            int aantaluurgeslapen = ((int)(inValues[9]));
+            float vermoeidheid = ((float)(inValues[10]));
+            float belangrijkheid = ((float)(inValues[11]));
+            float tevredenheid = ((float)(inValues[12]));
+            return ((PanoramaApp3.ServiceReference.IService)(this)).BeginAddGebruikersIngave(usrID, actID, datumuuringave, dtmuurActiviteit, beginuur, einduur, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, callback, asyncState);
         }
         
         private object[] OnEndAddGebruikersIngave(System.IAsyncResult result) {
@@ -1344,11 +1346,11 @@ namespace PanoramaApp3.ServiceReference {
             }
         }
         
-        public void AddGebruikersIngaveAsync(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid) {
-            this.AddGebruikersIngaveAsync(usrID, actID, datumuuringave, dtmuurActiviteit, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, null);
+        public void AddGebruikersIngaveAsync(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, System.TimeSpan beginuur, System.TimeSpan einduur, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid) {
+            this.AddGebruikersIngaveAsync(usrID, actID, datumuuringave, dtmuurActiviteit, beginuur, einduur, commentaar, weersid, nachtrid, aantaluurgeslapen, vermoeidheid, belangrijkheid, tevredenheid, null);
         }
         
-        public void AddGebruikersIngaveAsync(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, object userState) {
+        public void AddGebruikersIngaveAsync(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, System.TimeSpan beginuur, System.TimeSpan einduur, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, object userState) {
             if ((this.onBeginAddGebruikersIngaveDelegate == null)) {
                 this.onBeginAddGebruikersIngaveDelegate = new BeginOperationDelegate(this.OnBeginAddGebruikersIngave);
             }
@@ -1363,6 +1365,8 @@ namespace PanoramaApp3.ServiceReference {
                         actID,
                         datumuuringave,
                         dtmuurActiviteit,
+                        beginuur,
+                        einduur,
                         commentaar,
                         weersid,
                         nachtrid,
@@ -1680,19 +1684,21 @@ namespace PanoramaApp3.ServiceReference {
                 base.EndInvoke("DeleteUser", _args, result);
             }
             
-            public System.IAsyncResult BeginAddGebruikersIngave(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[11];
+            public System.IAsyncResult BeginAddGebruikersIngave(int usrID, int actID, System.DateTime datumuuringave, System.DateTime dtmuurActiviteit, System.TimeSpan beginuur, System.TimeSpan einduur, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[13];
                 _args[0] = usrID;
                 _args[1] = actID;
                 _args[2] = datumuuringave;
                 _args[3] = dtmuurActiviteit;
-                _args[4] = commentaar;
-                _args[5] = weersid;
-                _args[6] = nachtrid;
-                _args[7] = aantaluurgeslapen;
-                _args[8] = vermoeidheid;
-                _args[9] = belangrijkheid;
-                _args[10] = tevredenheid;
+                _args[4] = beginuur;
+                _args[5] = einduur;
+                _args[6] = commentaar;
+                _args[7] = weersid;
+                _args[8] = nachtrid;
+                _args[9] = aantaluurgeslapen;
+                _args[10] = vermoeidheid;
+                _args[11] = belangrijkheid;
+                _args[12] = tevredenheid;
                 System.IAsyncResult _result = base.BeginInvoke("AddGebruikersIngave", _args, callback, asyncState);
                 return _result;
             }

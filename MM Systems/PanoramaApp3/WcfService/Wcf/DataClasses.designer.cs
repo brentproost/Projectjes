@@ -45,12 +45,12 @@ namespace Wcf
     partial void InsertTbl_Categorien(Tbl_Categorien instance);
     partial void UpdateTbl_Categorien(Tbl_Categorien instance);
     partial void DeleteTbl_Categorien(Tbl_Categorien instance);
-    partial void InsertTbl_GebruikersIngave(Tbl_GebruikersIngave instance);
-    partial void UpdateTbl_GebruikersIngave(Tbl_GebruikersIngave instance);
-    partial void DeleteTbl_GebruikersIngave(Tbl_GebruikersIngave instance);
     partial void InsertTbl_Schaal_Nachtrust(Tbl_Schaal_Nachtrust instance);
     partial void UpdateTbl_Schaal_Nachtrust(Tbl_Schaal_Nachtrust instance);
     partial void DeleteTbl_Schaal_Nachtrust(Tbl_Schaal_Nachtrust instance);
+    partial void InsertTbl_GebruikersIngave(Tbl_GebruikersIngave instance);
+    partial void UpdateTbl_GebruikersIngave(Tbl_GebruikersIngave instance);
+    partial void DeleteTbl_GebruikersIngave(Tbl_GebruikersIngave instance);
     #endregion
 		
 		public DataClassesDataContext() : 
@@ -123,19 +123,19 @@ namespace Wcf
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_GebruikersIngave> Tbl_GebruikersIngaves
-		{
-			get
-			{
-				return this.GetTable<Tbl_GebruikersIngave>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Tbl_Schaal_Nachtrust> Tbl_Schaal_Nachtrusts
 		{
 			get
 			{
 				return this.GetTable<Tbl_Schaal_Nachtrust>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_GebruikersIngave> Tbl_GebruikersIngaves
+		{
+			get
+			{
+				return this.GetTable<Tbl_GebruikersIngave>();
 			}
 		}
 	}
@@ -810,6 +810,92 @@ namespace Wcf
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Schaal_Nachtrust")]
+	public partial class Tbl_Schaal_Nachtrust : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _Omschrijving;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnOmschrijvingChanging(string value);
+    partial void OnOmschrijvingChanged();
+    #endregion
+		
+		public Tbl_Schaal_Nachtrust()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Omschrijving", DbType="NChar(10)")]
+		public string Omschrijving
+		{
+			get
+			{
+				return this._Omschrijving;
+			}
+			set
+			{
+				if ((this._Omschrijving != value))
+				{
+					this.OnOmschrijvingChanging(value);
+					this.SendPropertyChanging();
+					this._Omschrijving = value;
+					this.SendPropertyChanged("Omschrijving");
+					this.OnOmschrijvingChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_GebruikersIngave")]
 	public partial class Tbl_GebruikersIngave : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -825,6 +911,10 @@ namespace Wcf
 		private System.DateTime _Datum_Uur_Ingave;
 		
 		private System.DateTime _Datum_Uur_Activiteit;
+		
+		private System.TimeSpan _Beginuur_Activiteit;
+		
+		private System.TimeSpan _Einduur_Activiteit;
 		
 		private string _Commentaar;
 		
@@ -854,6 +944,10 @@ namespace Wcf
     partial void OnDatum_Uur_IngaveChanged();
     partial void OnDatum_Uur_ActiviteitChanging(System.DateTime value);
     partial void OnDatum_Uur_ActiviteitChanged();
+    partial void OnBeginuur_ActiviteitChanging(System.TimeSpan value);
+    partial void OnBeginuur_ActiviteitChanged();
+    partial void OnEinduur_ActiviteitChanging(System.TimeSpan value);
+    partial void OnEinduur_ActiviteitChanged();
     partial void OnCommentaarChanging(string value);
     partial void OnCommentaarChanged();
     partial void OnWeersomstandigheden_IDChanging(int value);
@@ -955,7 +1049,7 @@ namespace Wcf
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Datum_Uur_Activiteit", DbType="DateTime NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Datum_Uur_Activiteit", DbType="Date NOT NULL")]
 		public System.DateTime Datum_Uur_Activiteit
 		{
 			get
@@ -971,6 +1065,46 @@ namespace Wcf
 					this._Datum_Uur_Activiteit = value;
 					this.SendPropertyChanged("Datum_Uur_Activiteit");
 					this.OnDatum_Uur_ActiviteitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Beginuur_Activiteit", DbType="Time NOT NULL")]
+		public System.TimeSpan Beginuur_Activiteit
+		{
+			get
+			{
+				return this._Beginuur_Activiteit;
+			}
+			set
+			{
+				if ((this._Beginuur_Activiteit != value))
+				{
+					this.OnBeginuur_ActiviteitChanging(value);
+					this.SendPropertyChanging();
+					this._Beginuur_Activiteit = value;
+					this.SendPropertyChanged("Beginuur_Activiteit");
+					this.OnBeginuur_ActiviteitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Einduur_Activiteit", DbType="Time NOT NULL")]
+		public System.TimeSpan Einduur_Activiteit
+		{
+			get
+			{
+				return this._Einduur_Activiteit;
+			}
+			set
+			{
+				if ((this._Einduur_Activiteit != value))
+				{
+					this.OnEinduur_ActiviteitChanging(value);
+					this.SendPropertyChanging();
+					this._Einduur_Activiteit = value;
+					this.SendPropertyChanged("Einduur_Activiteit");
+					this.OnEinduur_ActiviteitChanged();
 				}
 			}
 		}
@@ -1111,92 +1245,6 @@ namespace Wcf
 					this._Tevredenheid = value;
 					this.SendPropertyChanged("Tevredenheid");
 					this.OnTevredenheidChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Schaal_Nachtrust")]
-	public partial class Tbl_Schaal_Nachtrust : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _Omschrijving;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnOmschrijvingChanging(string value);
-    partial void OnOmschrijvingChanged();
-    #endregion
-		
-		public Tbl_Schaal_Nachtrust()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Omschrijving", DbType="NChar(10)")]
-		public string Omschrijving
-		{
-			get
-			{
-				return this._Omschrijving;
-			}
-			set
-			{
-				if ((this._Omschrijving != value))
-				{
-					this.OnOmschrijvingChanging(value);
-					this.SendPropertyChanging();
-					this._Omschrijving = value;
-					this.SendPropertyChanged("Omschrijving");
-					this.OnOmschrijvingChanged();
 				}
 			}
 		}

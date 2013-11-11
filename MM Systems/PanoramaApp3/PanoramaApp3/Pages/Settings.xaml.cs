@@ -11,17 +11,21 @@ using Microsoft.Phone.Shell;
 using PanoramaApp3.Pages;
 using PanoramaApp3.ServiceReference;
 using Microsoft.Phone.Net.NetworkInformation;
+using Microsoft.Phone.Tasks;
 
 namespace PanoramaApp3
 {
     public partial class Page1 : PhoneApplicationPage
-    {
-        public Page1()
+    {    
+       public Page1()
         {   
             InitializeComponent();
             if (NetworkInterface.GetIsNetworkAvailable() == false)
             {
                 MessageBox.Show("Er is geen internetverbinding gevonden");
+                ConnectionSettingsTask connectionSettingsTask = new ConnectionSettingsTask();
+                connectionSettingsTask.ConnectionSettingsType = ConnectionSettingsType.WiFi;
+                connectionSettingsTask.Show();
             }
         }
 
