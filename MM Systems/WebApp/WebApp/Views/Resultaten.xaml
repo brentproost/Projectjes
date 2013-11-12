@@ -10,7 +10,11 @@
            Title="Resultaten Page">
     <Grid x:Name="LayoutRoot">
         <StackPanel>
-            <TextBox x:Name="txtid" HorizontalAlignment="Left" MinWidth="100"></TextBox>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="txtid" HorizontalAlignment="Left" MinWidth="100"/>
+                <Button x:Name="btn_ChangeUser" Content="Change user" Click="btn_ChangeUser_Click"></Button>
+                <TextBlock x:Name="txt_Naam_Voornaam"/>
+            </StackPanel>
             <sdk:DataGrid x:Name="dg_Ingaven" ItemsSource="{Binding}" />
         </StackPanel>
     </Grid>

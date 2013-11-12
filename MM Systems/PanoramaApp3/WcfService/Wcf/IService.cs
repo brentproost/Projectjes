@@ -17,6 +17,7 @@ namespace Wcf
 
         [OperationContract]
         List<Tbl_User> GetAllUsers();
+
         [OperationContract]
         List<Tbl_User> GetUserInfo(int ID);
 

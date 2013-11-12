@@ -9,19 +9,19 @@
     Style="{StaticResource PageStyle}">
 
     <Grid x:Name="LayoutRoot">
-        <sdk:DataGrid AutoGenerateColumns="False" x:Name="gridd" ItemsSource="{Binding}">
+        <sdk:DataGrid AutoGenerateColumns="False" x:Name="gridd" ItemsSource="{Binding}" >
             <sdk:DataGrid.Columns>
                 <sdk:DataGridTemplateColumn Header="Activiteit" Width="SizeToCells" IsReadOnly="True">
                     <sdk:DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Activiteit}"></TextBlock>
+                            <TextBlock Text="{Binding Activiteit, Mode=TwoWay}"></TextBlock>
                         </DataTemplate>
                     </sdk:DataGridTemplateColumn.CellTemplate>
                 </sdk:DataGridTemplateColumn>
                 <sdk:DataGridTemplateColumn Header="Categorie" Width="SizeToCells" IsReadOnly="True">
                     <sdk:DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Categorie}"></TextBlock>
+                            <TextBlock Text="{Binding Categorie, Mode=TwoWay}"></TextBlock>
                         </DataTemplate>
                     </sdk:DataGridTemplateColumn.CellTemplate>
                 </sdk:DataGridTemplateColumn>

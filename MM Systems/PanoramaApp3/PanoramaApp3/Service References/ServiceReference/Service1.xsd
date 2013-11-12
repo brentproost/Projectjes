@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Wcf" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Wcf" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Wcf" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Wcf" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://mmsystemsservice.cloudapp.net/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="ArrayOfTbl_User">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Tbl_User" nillable="true" type="tns:Tbl_User" />
@@ -75,4 +76,29 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Tbl_Schaal_Nachtrust" nillable="true" type="tns:Tbl_Schaal_Nachtrust" />
+  <xs:complexType name="ArrayOfTbl_GebruikersIngave">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tbl_GebruikersIngave" nillable="true" type="tns:Tbl_GebruikersIngave" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTbl_GebruikersIngave" nillable="true" type="tns:ArrayOfTbl_GebruikersIngave" />
+  <xs:complexType name="Tbl_GebruikersIngave">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aantal_Uren_Geslapen" type="xs:int" />
+      <xs:element minOccurs="0" name="Activiteit_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Beginuur_Activiteit" type="ser:duration" />
+      <xs:element minOccurs="0" name="Belangrijkheid" type="xs:float" />
+      <xs:element minOccurs="0" name="Commentaar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Datum_Uur_Activiteit" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Datum_Uur_Ingave" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Einduur_Activiteit" type="ser:duration" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Schaal_Nachtrust_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Tevredenheid" type="xs:float" />
+      <xs:element minOccurs="0" name="User_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Vermoeidheid" type="xs:float" />
+      <xs:element minOccurs="0" name="Weersomstandigheden_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Tbl_GebruikersIngave" nillable="true" type="tns:Tbl_GebruikersIngave" />
 </xs:schema>

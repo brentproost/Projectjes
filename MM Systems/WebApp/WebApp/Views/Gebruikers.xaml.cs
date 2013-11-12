@@ -16,6 +16,8 @@ namespace WebApp.Views
 {
     public partial class Gebruikers : Page
     {
+        ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+
         public Gebruikers()
         {
             InitializeComponent();
@@ -25,7 +27,6 @@ namespace WebApp.Views
         void UpdateDataGrid()
         {
             gridd.ItemsSource = null;
-            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
             client.GetAllUsersAsync();
             client.GetAllUsersCompleted += client_GetAllUsersCompleted;
         }
@@ -46,7 +47,6 @@ namespace WebApp.Views
         {
 
             btnsubmit.Content = "een momentje aub, gebruiker wordt toegevoegd...";
-            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
 
             client.AddUserAsync(txtNaam.Text, txtVoornaam.Text, txtAdres.Text, Convert.ToInt16(txtNummer.Text), txtPlaats.Text, Convert.ToInt16(txtPostcode.Text), txtgebruikersnaam.Text, MD5Core.GetHashString(txtpasw.Password));
             client.AddUserCompleted += client_AddUserCompleted;
@@ -67,9 +67,12 @@ namespace WebApp.Views
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
-            client.DeleteUserAsync((Convert.ToInt32((((Image)sender).Tag).ToString())));
-            client.DeleteUserCompleted += client_DeleteUserCompleted;
+            MessageBoxResult msbResult = MessageBox.Show("De ingaven van deze gebruiker worden ook verwijderd! Weet u zeker dat u deze gebruiker wil verwijderen?", "titel", MessageBoxButton.OKCancel);
+            if (msbResult == MessageBoxResult.OK)
+            {
+                client.DeleteUserAsync((Convert.ToInt32((((Image)sender).Tag).ToString())));
+                client.DeleteUserCompleted += client_DeleteUserCompleted;
+            }
         }
 
         void client_DeleteUserCompleted(object sender, AsyncCompletedEventArgs e)
@@ -80,7 +83,7 @@ namespace WebApp.Views
 
         private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
         {
-            Public_Informatie_Gebruiker.id = Convert.ToInt32((((HyperlinkButton)sender)).Tag);
+            Public_Informatie_Gebruiker.id = Convert.ToInt32((((HyperlinkButton)sender)).Tag);           
         }
     }
 }

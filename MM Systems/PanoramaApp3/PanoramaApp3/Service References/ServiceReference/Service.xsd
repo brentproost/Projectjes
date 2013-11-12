@@ -197,4 +197,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetIngave_Gebruiker">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gebruikersid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIngave_GebruikerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetIngave_GebruikerResult" nillable="true" type="q10:ArrayOfTbl_GebruikersIngave" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

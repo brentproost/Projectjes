@@ -12,11 +12,14 @@ namespace Wcf
     {
         [DataMember]
         public string Categorie { get; set; }
+
         [DataMember]
         public string Activiteit { get; set; }
+
         [DataMember]
-        public int Activiteit_ID { get; set; }
+        public int Activiteit_ID{ get; set; }
+
         [DataMember]
-        public int Categorie_ID { get; set; }
+        public int Categorie_ID{ get; set; }
     }
 }

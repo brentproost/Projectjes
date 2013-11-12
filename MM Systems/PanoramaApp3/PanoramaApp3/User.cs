@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Microsoft.Phone.Net.NetworkInformation;
+using Microsoft.Phone.Tasks;
+using System;
 using System.Collections.Generic;
 using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Text;
+using System.Windows;
 
 namespace PanoramaApp3
 {
@@ -21,6 +24,13 @@ namespace PanoramaApp3
 
         public static IsolatedStorageSettings Settings =
             System.IO.IsolatedStorage.IsolatedStorageSettings.ApplicationSettings;
-        
+
+        public static bool CheckNetworkConnection()
+        {
+            if (NetworkInterface.NetworkInterfaceType == Microsoft.Phone.Net.NetworkInformation.NetworkInterfaceType.None)
+                return false;
+            else
+                return true;
+        }
     }
 }

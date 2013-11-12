@@ -16,13 +16,14 @@ using Microsoft.Phone.Tasks;
 namespace PanoramaApp3
 {
     public partial class Page1 : PhoneApplicationPage
-    {    
+    {
        public Page1()
         {   
             InitializeComponent();
-            if (NetworkInterface.GetIsNetworkAvailable() == false)
+
+            if (!User.CheckNetworkConnection())
             {
-                MessageBox.Show("Er is geen internetverbinding gevonden");
+                MessageBox.Show("Er is geen netwerkverbinding gevonden");
                 ConnectionSettingsTask connectionSettingsTask = new ConnectionSettingsTask();
                 connectionSettingsTask.ConnectionSettingsType = ConnectionSettingsType.WiFi;
                 connectionSettingsTask.Show();

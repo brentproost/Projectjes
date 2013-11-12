@@ -140,6 +140,9 @@
     <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Tbl_Categorien.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Tbl_GebruikersIngave.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Tbl_Schaal_Nachtrust.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

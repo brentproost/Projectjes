@@ -14,5 +14,7 @@ namespace WebApp
     public static class Public_Informatie_Gebruiker
     {
         public static int id { get; set; }
+        public static string Naam { get; set; }
+        public static string Voornaam { get; set; }
     }
 }

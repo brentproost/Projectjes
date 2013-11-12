@@ -150,10 +150,16 @@ namespace Wcf
         void IService.DeleteActivity(int id)
         {
             var delete = from act in Data.Tbl_Activiteitens where act.ID == id select act;
+            var deleteingavenmetactivity = from i in Data.Tbl_GebruikersIngaves where i.Activiteit_ID == id select i;
 
             foreach (var del in delete)
             {
                 Data.Tbl_Activiteitens.DeleteOnSubmit(del);
+            }
+
+            foreach (var ing in deleteingavenmetactivity)
+            {
+                Data.Tbl_GebruikersIngaves.DeleteOnSubmit(ing);
             }
 
             try
@@ -169,10 +175,16 @@ namespace Wcf
         void IService.DeleteUser(int id)
         {
             var delete = from usr in Data.Tbl_Users where usr.ID == id select usr;
+            var deleteingavengebruiker = from ing in Data.Tbl_GebruikersIngaves where ing.User_ID == id select ing;
 
             foreach (var del in delete)
             {
                 Data.Tbl_Users.DeleteOnSubmit(del);
+            }
+
+            foreach (var i in deleteingavengebruiker)
+            {
+                Data.Tbl_GebruikersIngaves.DeleteOnSubmit(i);
             }
 
             try
