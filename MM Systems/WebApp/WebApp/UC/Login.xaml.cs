@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+using System.Windows.Media;
 using System.Windows.Navigation;
 using WebApp.ServiceReference;
 
@@ -13,7 +15,6 @@ namespace WebApp.UC
 {
     public partial class Login: UserControl
     {
-
         public Login()
         {
             InitializeComponent();
@@ -46,7 +47,7 @@ namespace WebApp.UC
                 User.ID = 0;
             }
         }
-
+        
         void client_GetUserInfoCompleted(object sender, GetUserInfoCompletedEventArgs e)
         {
             if (e.Result != null)
@@ -54,7 +55,10 @@ namespace WebApp.UC
                 if (e.Result[0].Rechten_ID == 1)
                 {
                     MessageBox.Show("Je bent nu ingelogd");
-                    Visibility = Visibility.Collapsed;
+                    Popup p = this.Parent as Popup;
+                    p.IsOpen = false;
+                    txtPassword.Password = "";
+                    txtUsername.Text = "";
                 }
                 else
                 {
@@ -65,6 +69,14 @@ namespace WebApp.UC
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             Visibility = Visibility.Collapsed;
+        }
+
+        private void txtPassword_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Enter)
+            {
+                Login_Click(this,e);
+            }
         }
     }
 }

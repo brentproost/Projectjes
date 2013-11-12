@@ -14,7 +14,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 
     <Grid x:Name="LayoutRoot">
 
-        <login:Login x:Name="login" Visibility="Visible"></login:Login>
+        <!--<login:Login x:Name="login" Visibility="Visible"></login:Login>-->
 
         <ScrollViewer x:Name="PageScrollViewer" Style="{StaticResource PageScrollViewerStyle}">
             <StackPanel x:Name="ContentStackPanel">

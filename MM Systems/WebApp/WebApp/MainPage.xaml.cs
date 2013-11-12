@@ -11,19 +11,38 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WebApp.UC;
 using WebApp.Views;
+using System.Windows.Controls.Primitives;
 
 namespace WebApp
 {
     public partial class MainPage 
     {
-        
+        public Popup p;
+
         public MainPage()
         {
             InitializeComponent();
-            
+            NavigationGrid.Visibility= Visibility.Collapsed;
+            showPopup();
+            p.Closed += p_Closed;
         }
 
+        void p_Closed(object sender, EventArgs e)
+        {
+            NavigationGrid.Visibility = Visibility.Visible;
+            this.ContentFrame.Navigate(new Uri("/Home", UriKind.Relative));
+        }
+        private void showPopup()
+        {
+            p = new Popup();
+            p.Child = new Login();
+            p.VerticalOffset = 768/2;
+            p.HorizontalOffset = 1024/2;
+            p.IsOpen = true;   
+            
+        }
         // After the Frame navigates, ensure the HyperlinkButton representing the current page is selected
         private void ContentFrame_Navigated(object sender, NavigationEventArgs e)
         {
@@ -48,7 +67,9 @@ namespace WebApp
 
         private void Afmelden(object sender, RoutedEventArgs e)
         {
-           // Home.login.Visibility = Visibility.Visible;
+            NavigationGrid.Visibility = Visibility.Collapsed;
+            this.ContentFrame.Navigate(new Uri("/empty",UriKind.Relative));
+            p.IsOpen = true;
         }
 
         // If an error occurs during navigation, show an error window
