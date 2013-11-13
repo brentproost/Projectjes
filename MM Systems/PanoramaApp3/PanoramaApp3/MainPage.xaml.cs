@@ -18,6 +18,7 @@ namespace PanoramaApp3
 {
     public partial class MainPage : PhoneApplicationPage
     {
+
         List<string> cbitems = new List<string>();
         List<int> cbtag = new List<int>();
         List<int> weersomstandighedenids = new List<int>();
