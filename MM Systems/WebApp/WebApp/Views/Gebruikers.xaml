@@ -47,7 +47,7 @@
                 </StackPanel>
             <sdk:DataGrid AutoGenerateColumns="False" x:Name="gridd" ItemsSource="{Binding}">
                 <sdk:DataGrid.Columns>
-                    <sdk:DataGridTemplateColumn Header="Naam" Width="SizeToCells" IsReadOnly="True">
+                    <sdk:DataGridTemplateColumn Header="Naam" Width="Auto" IsReadOnly="True">
                         <sdk:DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Naam}"></TextBlock>
@@ -61,17 +61,24 @@
                             </DataTemplate>
                         </sdk:DataGridTemplateColumn.CellTemplate>
                     </sdk:DataGridTemplateColumn>
-                    <sdk:DataGridTemplateColumn Width="SizeToCells" IsReadOnly="True">
+                    <sdk:DataGridTemplateColumn Header="Aantal Ingaven" Width="Auto" IsReadOnly="True">
                         <sdk:DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Image Source="/WebApp;component/icon-delete.png" Tag="{Binding ID}" MouseLeftButtonDown="Image_MouseLeftButtonDown"></Image>
+                                <TextBlock Text="{Binding AantalIngaven}"></TextBlock>
                             </DataTemplate>
                         </sdk:DataGridTemplateColumn.CellTemplate>
                     </sdk:DataGridTemplateColumn>
                     <sdk:DataGridTemplateColumn Width="SizeToCells" IsReadOnly="True">
                         <sdk:DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <HyperlinkButton Tag="{Binding ID}" NavigateUri="/Resultaten" TargetName="ContentFrame" Click="HyperlinkButton_Click">
+                                <Image Source="/WebApp;component/icon-delete.png" Tag="{Binding Id}" MouseLeftButtonDown="Image_MouseLeftButtonDown"></Image>
+                            </DataTemplate>
+                        </sdk:DataGridTemplateColumn.CellTemplate>
+                    </sdk:DataGridTemplateColumn>
+                    <sdk:DataGridTemplateColumn Width="SizeToCells" IsReadOnly="True">
+                        <sdk:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <HyperlinkButton Tag="{Binding Id}" NavigateUri="/Resultaten" TargetName="ContentFrame" Click="HyperlinkButton_Click">
                                     <HyperlinkButton.Content>
                                         <Image Source="/WebApp;component/icon-inspect.png"></Image>
                                     </HyperlinkButton.Content>

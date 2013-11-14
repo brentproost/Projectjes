@@ -16,7 +16,7 @@ namespace Wcf
         List<Tbl_User> GetUser(int ID);
 
         [OperationContract]
-        List<Tbl_User> GetAllUsers();
+        List<User> GetAllUsers();
 
         [OperationContract]
         List<Tbl_User> GetUserInfo(int ID);
@@ -56,6 +56,5 @@ namespace Wcf
 
         [OperationContract]
         List<Tbl_GebruikersIngave> GetIngave_Gebruiker(int gebruikersid);
-
     }
 }

@@ -22,6 +22,28 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Tbl_User" nillable="true" type="tns:Tbl_User" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AantalIngaven" type="xs:int" />
+      <xs:element minOccurs="0" name="Adres" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gebruikersnaam" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Naam" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nummer" type="xs:int" />
+      <xs:element minOccurs="0" name="Paswoord" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Plaats" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Postcode" type="xs:int" />
+      <xs:element minOccurs="0" name="Rechten_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Voornaam" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
   <xs:complexType name="ArrayOfActivities">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Activities" nillable="true" type="tns:Activities" />

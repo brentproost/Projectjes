@@ -8,8 +8,8 @@
 
     <Grid>
         <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Opacity="0.75" Fill="#FF8A8A8A" />
-        <Border  Width="400" Height="160" BorderBrush="White" BorderThickness="1">
-            <Grid Margin="30">
+        <Border HorizontalAlignment="Center"  Width="400" Height="160" BorderBrush="White" BorderThickness="1">
+            <Grid HorizontalAlignment="Center" Margin="30">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />

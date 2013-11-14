@@ -200,6 +200,9 @@
     <None Include="Service References\ServiceReference\WebApp.ServiceReference.Tbl_Weersomstandigheden.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference\WebApp.ServiceReference.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <Resource Include="icon-delete.png" />
     <Resource Include="icon-user.jpg" />
     <Resource Include="icon-addactivity.jpg" />
