@@ -7,7 +7,8 @@
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls2="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800" 
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -119,7 +120,12 @@
                                 <TextBox x:Name="txthour2" IsEnabled="False" Text="0" InputScope="Number"/>
                                 <TextBlock Margin="0,20,0,0" TextAlignment="Center">uur</TextBlock>
                             </StackPanel>
-                            <toolkit:TimePicker />
+                            <StackPanel Orientation="Horizontal">
+                                <controls2:TimeSpanPicker Step="0:15" ValueStringFormat="{}{0:h}:{0:m}"/>
+                                <TextBlock Margin="0,20,0,0" TextAlignment="Center">uur tot</TextBlock>
+                                <controls2:TimeSpanPicker Step="0:15" ValueStringFormat="{}{0:h}:{0:m}"/>
+                                <TextBlock Margin="0,20,0,0" TextAlignment="Center">uur</TextBlock>
+                            </StackPanel>
                             <Button Content="ok" Click="Button_Click"></Button>
                         </StackPanel>
                     </StackPanel>
@@ -184,7 +190,7 @@
                                         <RowDefinition Height="1*"></RowDefinition>
                                     </Grid.RowDefinitions>
                                     <TextBlock HorizontalAlignment="Center" Grid.Row="0" Text="niet moe"></TextBlock>
-                                    <Slider Grid.Row="1" Orientation="Vertical" x:Name="SliderVermoeidheid" Minimum="0" Maximum ="100" Style="{StaticResource SliderStyle1}"></Slider>
+                                    <Slider Grid.Row="1"  Orientation="Vertical" x:Name="SliderVermoeidheid" Minimum="0" Maximum ="100" Style="{StaticResource SliderStyle1}"></Slider>
                                     <TextBlock HorizontalAlignment="Center" Grid.Row="2" Text="uitgeput"></TextBlock>
                                 </Grid>
                                 <Grid Grid.Column="0">
