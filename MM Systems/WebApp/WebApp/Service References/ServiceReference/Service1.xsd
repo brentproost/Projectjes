@@ -40,6 +40,7 @@
       <xs:element minOccurs="0" name="Plaats" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Postcode" type="xs:int" />
       <xs:element minOccurs="0" name="Rechten_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Rechten_Omschrijving" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Voornaam" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

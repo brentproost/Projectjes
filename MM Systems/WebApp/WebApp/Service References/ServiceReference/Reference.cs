@@ -205,6 +205,8 @@ namespace WebApp.ServiceReference {
         
         private int Rechten_IDField;
         
+        private string Rechten_OmschrijvingField;
+        
         private string VoornaamField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -333,6 +335,19 @@ namespace WebApp.ServiceReference {
                 if ((this.Rechten_IDField.Equals(value) != true)) {
                     this.Rechten_IDField = value;
                     this.RaisePropertyChanged("Rechten_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Rechten_Omschrijving {
+            get {
+                return this.Rechten_OmschrijvingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Rechten_OmschrijvingField, value) != true)) {
+                    this.Rechten_OmschrijvingField = value;
+                    this.RaisePropertyChanged("Rechten_Omschrijving");
                 }
             }
         }

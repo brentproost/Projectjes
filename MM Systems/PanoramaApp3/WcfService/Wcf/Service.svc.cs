@@ -74,8 +74,15 @@ namespace Wcf
                             Gebruikersnaam = grp.Key.Gebruikersnaam,
                             Paswoord = grp.Key.Paswoord,
                             Rechten_ID = grp.Key.Rechten_ID,
-                            AantalIngaven = grp.Count()
+                            AantalIngaven = grp.Count(t => t.User_ID != null)
                        }).ToList();
+
+            List<string> rechtenomschrijving = (from u in userlist join r in Data.Tbl_Rechtens on u.Rechten_ID equals r.ID select r.Omschrijving).ToList();
+
+            for (int i = 0; i < userlist.Count; i++)
+            {
+                userlist[i].Rechten_Omschrijving = rechtenomschrijving[i];
+            }
 
             return userlist;
         }

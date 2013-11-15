@@ -17,6 +17,7 @@ namespace Wcf
         public string Gebruikersnaam { get; set; }
         public string Paswoord { get; set; }
         public int Rechten_ID { get; set; }
+        public string Rechten_Omschrijving { get; set; }
         public int AantalIngaven { get; set; }
     }
 }
