@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Navigation;
+using System.IO;
 
 namespace WebApp.Views
 {
@@ -27,7 +28,7 @@ namespace WebApp.Views
         {
             Public_Informatie_Gebruiker.Voornaam = e.Result[0].Voornaam.Replace(" ", string.Empty);
             Public_Informatie_Gebruiker.Naam = e.Result[0].Naam.Replace(" ", string.Empty);
-            
+
             if (Public_Informatie_Gebruiker.Voornaam != null && Public_Informatie_Gebruiker.Naam != null)
             {
                 txt_Naam_Voornaam.Text = "Informatie over: " + Public_Informatie_Gebruiker.Voornaam.ToString() + " " + Public_Informatie_Gebruiker.Naam.ToString();
@@ -37,7 +38,7 @@ namespace WebApp.Views
         void client_GetIngave_GebruikerCompleted(object sender, ServiceReference.GetIngave_GebruikerCompletedEventArgs e)
         {
             dg_Ingaven.ItemsSource = null;
-            dg_Ingaven.ItemsSource = e.Result;
+            dg_Ingaven.ItemsSource = e.Result.ToList();
         }
 
         // Executes when the user navigates to this page.
@@ -58,5 +59,64 @@ namespace WebApp.Views
             UpdateUserInfo();
         }
 
+        private void btn_export_Click(object sender, RoutedEventArgs e)
+        {
+            string data = ExportDataGrid(dg_Ingaven);
+            SaveFileDialog sfd = new SaveFileDialog()
+            {
+                DefaultExt = "csv",
+                Filter = "CSV Files (*.csv)|*.csv|All files (*.*)|*.*",
+                FilterIndex = 1
+            };
+            if (sfd.ShowDialog() == true)
+            {
+                using (Stream stream = sfd.OpenFile())
+                {
+                    using (StreamWriter writer = new StreamWriter(stream))
+                    {
+                        writer.Write(data);
+                        writer.Close();
+                    }
+                    stream.Close();
+                }
+            }
+        }
+
+        public String ExportDataGrid(DataGrid grid)
+        {
+            string colPath;
+            System.Reflection.PropertyInfo propInfo;
+            System.Windows.Data.Binding binding;
+            System.Text.StringBuilder strBuilder = new System.Text.StringBuilder();
+            System.Collections.IList source = (grid.ItemsSource as System.Collections.IList);
+            if (source == null)
+                return "";
+
+            foreach (Object data in source)
+            {
+                foreach (DataGridColumn col in grid.Columns)
+                {
+                    if (col is DataGridBoundColumn)
+                    {
+                        binding = (col as DataGridBoundColumn).Binding;
+                        colPath = binding.Path.Path;
+                        propInfo = data.GetType().GetProperty(colPath);
+                        if (propInfo != null)
+                        {
+                            strBuilder.Append(propInfo.GetValue(data, null).ToString());
+                            strBuilder.Append(";");
+                        }
+                    }
+
+                }
+                strBuilder.Append("\r\n");
+            }
+
+
+            return strBuilder.ToString();
+        }
     }
+
 }
+
+

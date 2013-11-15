@@ -600,7 +600,7 @@ namespace WebApp.ServiceReference {
         
         private string CommentaarField;
         
-        private System.DateTime Datum_Uur_ActiviteitField;
+        private string Datum_Uur_ActiviteitField;
         
         private System.DateTime Datum_Uur_IngaveField;
         
@@ -684,12 +684,12 @@ namespace WebApp.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Datum_Uur_Activiteit {
+        public string Datum_Uur_Activiteit {
             get {
                 return this.Datum_Uur_ActiviteitField;
             }
             set {
-                if ((this.Datum_Uur_ActiviteitField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.Datum_Uur_ActiviteitField, value) != true)) {
                     this.Datum_Uur_ActiviteitField = value;
                     this.RaisePropertyChanged("Datum_Uur_Activiteit");
                 }

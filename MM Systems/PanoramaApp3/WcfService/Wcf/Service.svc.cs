@@ -61,6 +61,7 @@ namespace Wcf
                         join i in Data.Tbl_GebruikersIngaves on u.ID equals i.User_ID
                         into Joined
                         from p in Joined.DefaultIfEmpty()
+                        //left join ^
                        group p by new { u.ID, u.Naam, u.Voornaam, u.Adres, u.Nummer, u.Plaats, u.Postcode, u.Gebruikersnaam, u.Paswoord, u.Rechten_ID }
                        into grp select new User()
                        {
@@ -232,7 +233,7 @@ namespace Wcf
                 User_ID = usrID,
                 Activiteit_ID = actID,
                 Datum_Uur_Ingave = datumuuringave,
-                Datum_Uur_Activiteit = dtmuurActiviteit,
+                Datum_Uur_Activiteit = String.Format("{0:M/d/yyyy}", new DateTime(dtmuurActiviteit.Day, dtmuurActiviteit.Month, dtmuurActiviteit.Year)),
                 Beginuur_Activiteit = beginuur,
                 Einduur_Activiteit = einduur,
                 Commentaar = commentaar,

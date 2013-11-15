@@ -112,7 +112,7 @@
       <xs:element minOccurs="0" name="Beginuur_Activiteit" type="ser:duration" />
       <xs:element minOccurs="0" name="Belangrijkheid" type="xs:float" />
       <xs:element minOccurs="0" name="Commentaar" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Datum_Uur_Activiteit" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Datum_Uur_Activiteit" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Datum_Uur_Ingave" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Einduur_Activiteit" type="ser:duration" />
       <xs:element minOccurs="0" name="ID" type="xs:int" />

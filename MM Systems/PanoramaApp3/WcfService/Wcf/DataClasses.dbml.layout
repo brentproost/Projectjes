@@ -38,10 +38,10 @@
         <elementListCompartment Id="0269bb0e-61f0-431b-9c56-5b8abdacce1d" absoluteBounds="0.51500000000000012, 1.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="8b985cda-b1b1-4c73-8749-5108adc1c2eb" absoluteBounds="3.75, 0.625, 2, 3.5016097005208326">
+    <classShape Id="600943d9-a918-42f5-80b5-e5c59925c732" absoluteBounds="4, 1, 2, 3.5016097005208326">
       <DataClassMoniker Name="/DataClassesDataContext/Tbl_GebruikersIngave" />
       <nestedChildShapes>
-        <elementListCompartment Id="f28c3f5c-bc81-4de6-babf-78e8aea037c3" absoluteBounds="3.765, 1.085, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="075aeb0f-845a-4920-aad0-ea5e1e456fc4" absoluteBounds="4.015, 1.46, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

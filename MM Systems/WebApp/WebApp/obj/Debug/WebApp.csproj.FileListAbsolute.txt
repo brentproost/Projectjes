@@ -209,6 +209,9 @@ C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\XapCacheF
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\PasswordHashGen.dll
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\PasswordHashGen.pdb
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\DialogBoxes\AddCategory.g.cs
+C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\UC\Login.g.cs
+C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Resultaten.g.cs
+C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\empty.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\WebApp.dll
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\WebApp.pdb
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\AppManifest.xaml
@@ -407,9 +410,12 @@ C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\ru\
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\zh-Hans\System.Windows.Controls.Navigation.resources.dll
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\zh-Hant\System.Windows.Controls.Navigation.resources.dll
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\App.g.cs
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\empty.g.cs
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Resultaten.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\DialogBoxes\AddActivity.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\DialogBoxes\AddCategory.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\DialogBoxes\AddUser.g.cs
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\UC\Login.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\ErrorWindow.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Activiteiten.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Gebruikers.g.cs
@@ -419,10 +425,3 @@ C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Web
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.dll
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.pdb
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\XapCacheFile.xml
-C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\UC\Login.g.cs
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\UC\Login.g.cs
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Resultaten.g.cs
-C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Resultaten.g.cs
-C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\empty.g.cs
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\empty.g.cs
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
