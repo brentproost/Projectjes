@@ -15,78 +15,18 @@
                 <Button x:Name="btn_ChangeUser" Content="Change user" Click="btn_ChangeUser_Click"></Button>
                 <TextBlock x:Name="txt_Naam_Voornaam"/>
             </StackPanel>
-            <sdk:DataGrid x:Name="dg_Ingaven" ItemsSource="{Binding}">
+            <sdk:DataGrid AutoGenerateColumns="False" x:Name="dg_Ingaven" ItemsSource="{Binding}">
                 <sdk:DataGrid.Columns>
-                    <sdk:DataGridTemplateColumn Header="ID">
-                        <sdk:DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding ID}" />
-                            </DataTemplate>
-                        </sdk:DataGridTemplateColumn.CellTemplate>   
-                    </sdk:DataGridTemplateColumn>
-                    <sdk:DataGridTemplateColumn Header="Ingave uur en datum">
-                        <sdk:DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Datum_Uur_Ingave}" />
-                            </DataTemplate>
-                        </sdk:DataGridTemplateColumn.CellTemplate>
-                    </sdk:DataGridTemplateColumn>
-                    <sdk:DataGridTemplateColumn Header="Datum activiteit">
-                        <sdk:DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Datum_Uur_Activiteit}" />
-                            </DataTemplate>
-                        </sdk:DataGridTemplateColumn.CellTemplate>
-                    </sdk:DataGridTemplateColumn>
-                    <sdk:DataGridTemplateColumn Header="Beginuur">
-                        <sdk:DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Beginuur_Activiteit}" />
-                            </DataTemplate>
-                        </sdk:DataGridTemplateColumn.CellTemplate>
-                    </sdk:DataGridTemplateColumn>
-                    <sdk:DataGridTemplateColumn Header="Einduur">
-                        <sdk:DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Einduur_Activiteit}" />
-                            </DataTemplate>
-                        </sdk:DataGridTemplateColumn.CellTemplate>
-                    </sdk:DataGridTemplateColumn>
-                    <sdk:DataGridTemplateColumn Header="Commentaar">
-                        <sdk:DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock TextWrapping="Wrap" Text="{Binding Commentaar}" />
-                            </DataTemplate>
-                        </sdk:DataGridTemplateColumn.CellTemplate>
-                    </sdk:DataGridTemplateColumn>
-                    <sdk:DataGridTemplateColumn Header="Aantal uur geslapen">
-                        <sdk:DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock TextWrapping="Wrap" Text="{Binding Aantal_Uren_Geslapen}" />
-                            </DataTemplate>
-                        </sdk:DataGridTemplateColumn.CellTemplate>
-                    </sdk:DataGridTemplateColumn>
-                    <sdk:DataGridTemplateColumn Header="Vermoeidheid">
-                        <sdk:DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock TextWrapping="Wrap" Text="{Binding Vermoeidheid}" />
-                            </DataTemplate>
-                        </sdk:DataGridTemplateColumn.CellTemplate>
-                    </sdk:DataGridTemplateColumn>
-                    <sdk:DataGridTemplateColumn Header="Belangrijkheid">
-                        <sdk:DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock TextWrapping="Wrap" Text="{Binding Belangrijkheid}" />
-                            </DataTemplate>
-                        </sdk:DataGridTemplateColumn.CellTemplate>
-                    </sdk:DataGridTemplateColumn>
-                    <sdk:DataGridTemplateColumn Header="Tevredenheid">
-                        <sdk:DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock TextWrapping="Wrap" Text="{Binding Tevredenheid}" />
-                            </DataTemplate>
-                        </sdk:DataGridTemplateColumn.CellTemplate>
-                    </sdk:DataGridTemplateColumn>
+                    <sdk:DataGridTextColumn Header="Ingave_ID" Binding="{Binding ID}" />                   
+                    <sdk:DataGridTextColumn Header="Ingave uur en datum" Binding="{Binding Datum_Uur_Ingave}" />                     
+                    <sdk:DataGridTextColumn Header="Datum activiteit" Binding="{Binding Datum_Uur_Activiteit}"/>
+                    <sdk:DataGridTextColumn Header="Beginuur" Binding="{Binding Beginuur_Activiteit}"/>
+                    <sdk:DataGridTextColumn Header="Einduur" Binding="{Binding Einduur_Activiteit}"/>
+                    <sdk:DataGridTextColumn Header="Commentaar" Binding="{Binding Commentaar}"/>
+                    <sdk:DataGridTextColumn Header="Aantal uur geslapen" Binding="{Binding Aantal_Uren_Geslapen}"/>
+                    <sdk:DataGridTextColumn Header="Vermoeidheid" Binding="{Binding Vermoeidheid}"/>
+                    <sdk:DataGridTextColumn Header="Belangrijkheid" Binding="{Binding Belangrijkheid}"/>
+                    <sdk:DataGridTextColumn Header="Tevredenheid" Binding="{Binding Tevredenheid}"/>
                 </sdk:DataGrid.Columns>
             </sdk:DataGrid>
             <Button x:Name="btn_export" Click="btn_export_Click">Export To Excel</Button>

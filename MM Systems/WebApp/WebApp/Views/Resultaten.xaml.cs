@@ -92,6 +92,14 @@ namespace WebApp.Views
             if (source == null)
                 return "";
 
+            for (int i = 0; i < grid.Columns.Count; i++)
+            {
+                strBuilder.Append(grid.Columns[i].Header.ToString());
+                strBuilder.Append(";");
+            }
+
+            strBuilder.Append("\r\n");
+
             foreach (Object data in source)
             {
                 foreach (DataGridColumn col in grid.Columns)
@@ -107,16 +115,12 @@ namespace WebApp.Views
                             strBuilder.Append(";");
                         }
                     }
-
                 }
                 strBuilder.Append("\r\n");
             }
-
-
-            return strBuilder.ToString();
+            return strBuilder.ToString().Replace(" ", string.Empty);
         }
     }
-
 }
 
 
