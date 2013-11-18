@@ -13,6 +13,7 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using PanoramaApp3.ServiceReference;
 using System.Threading;
+using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
 namespace PanoramaApp3
 {
