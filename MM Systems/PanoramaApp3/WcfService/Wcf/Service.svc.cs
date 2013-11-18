@@ -233,7 +233,7 @@ namespace Wcf
                 User_ID = usrID,
                 Activiteit_ID = actID,
                 Datum_Uur_Ingave = datumuuringave,
-                Datum_Uur_Activiteit = String.Format("{0:M/d/yyyy}", new DateTime(dtmuurActiviteit.Day, dtmuurActiviteit.Month, dtmuurActiviteit.Year)),
+                Datum_Uur_Activiteit = dtmuurActiviteit.Day+"-" + dtmuurActiviteit.Month+"-"+dtmuurActiviteit.Year,
                 Beginuur_Activiteit = beginuur,
                 Einduur_Activiteit = einduur,
                 Commentaar = commentaar,
@@ -255,7 +255,6 @@ namespace Wcf
             {
                 Console.WriteLine(e);
             }
-            //transaction id aanmaken
         }
 
         //Functie om de Weersomstandigheden op te vragen
