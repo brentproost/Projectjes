@@ -182,6 +182,201 @@ namespace PanoramaApp3.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://schemas.datacontract.org/2004/07/Wcf")]
+    public partial class User : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int AantalIngavenField;
+        
+        private string AdresField;
+        
+        private string GebruikersnaamField;
+        
+        private int IdField;
+        
+        private string NaamField;
+        
+        private int NummerField;
+        
+        private string PaswoordField;
+        
+        private string PlaatsField;
+        
+        private int PostcodeField;
+        
+        private int Rechten_IDField;
+        
+        private string Rechten_OmschrijvingField;
+        
+        private string VoornaamField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AantalIngaven {
+            get {
+                return this.AantalIngavenField;
+            }
+            set {
+                if ((this.AantalIngavenField.Equals(value) != true)) {
+                    this.AantalIngavenField = value;
+                    this.RaisePropertyChanged("AantalIngaven");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Adres {
+            get {
+                return this.AdresField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AdresField, value) != true)) {
+                    this.AdresField = value;
+                    this.RaisePropertyChanged("Adres");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Gebruikersnaam {
+            get {
+                return this.GebruikersnaamField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GebruikersnaamField, value) != true)) {
+                    this.GebruikersnaamField = value;
+                    this.RaisePropertyChanged("Gebruikersnaam");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Naam {
+            get {
+                return this.NaamField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NaamField, value) != true)) {
+                    this.NaamField = value;
+                    this.RaisePropertyChanged("Naam");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Nummer {
+            get {
+                return this.NummerField;
+            }
+            set {
+                if ((this.NummerField.Equals(value) != true)) {
+                    this.NummerField = value;
+                    this.RaisePropertyChanged("Nummer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Paswoord {
+            get {
+                return this.PaswoordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaswoordField, value) != true)) {
+                    this.PaswoordField = value;
+                    this.RaisePropertyChanged("Paswoord");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Plaats {
+            get {
+                return this.PlaatsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlaatsField, value) != true)) {
+                    this.PlaatsField = value;
+                    this.RaisePropertyChanged("Plaats");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Postcode {
+            get {
+                return this.PostcodeField;
+            }
+            set {
+                if ((this.PostcodeField.Equals(value) != true)) {
+                    this.PostcodeField = value;
+                    this.RaisePropertyChanged("Postcode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Rechten_ID {
+            get {
+                return this.Rechten_IDField;
+            }
+            set {
+                if ((this.Rechten_IDField.Equals(value) != true)) {
+                    this.Rechten_IDField = value;
+                    this.RaisePropertyChanged("Rechten_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Rechten_Omschrijving {
+            get {
+                return this.Rechten_OmschrijvingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Rechten_OmschrijvingField, value) != true)) {
+                    this.Rechten_OmschrijvingField = value;
+                    this.RaisePropertyChanged("Rechten_Omschrijving");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Voornaam {
+            get {
+                return this.VoornaamField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VoornaamField, value) != true)) {
+                    this.VoornaamField = value;
+                    this.RaisePropertyChanged("Voornaam");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Activities", Namespace="http://schemas.datacontract.org/2004/07/Wcf")]
     public partial class Activities : object, System.ComponentModel.INotifyPropertyChanged {
         
@@ -405,7 +600,7 @@ namespace PanoramaApp3.ServiceReference {
         
         private string CommentaarField;
         
-        private System.DateTime Datum_Uur_ActiviteitField;
+        private string Datum_Uur_ActiviteitField;
         
         private System.DateTime Datum_Uur_IngaveField;
         
@@ -489,12 +684,12 @@ namespace PanoramaApp3.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Datum_Uur_Activiteit {
+        public string Datum_Uur_Activiteit {
             get {
                 return this.Datum_Uur_ActiviteitField;
             }
             set {
-                if ((this.Datum_Uur_ActiviteitField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.Datum_Uur_ActiviteitField, value) != true)) {
                     this.Datum_Uur_ActiviteitField = value;
                     this.RaisePropertyChanged("Datum_Uur_Activiteit");
                 }
@@ -627,7 +822,7 @@ namespace PanoramaApp3.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/GetAllUsers", ReplyAction="http://tempuri.org/IService/GetAllUsersResponse")]
         System.IAsyncResult BeginGetAllUsers(System.AsyncCallback callback, object asyncState);
         
-        System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> EndGetAllUsers(System.IAsyncResult result);
+        System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.User> EndGetAllUsers(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/GetUserInfo", ReplyAction="http://tempuri.org/IService/GetUserInfoResponse")]
         System.IAsyncResult BeginGetUserInfo(int ID, System.AsyncCallback callback, object asyncState);
@@ -729,10 +924,10 @@ namespace PanoramaApp3.ServiceReference {
             this.results = results;
         }
         
-        public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> Result {
+        public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.User> Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User>)(this.results[0]));
+                return ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.User>)(this.results[0]));
             }
         }
     }
@@ -1103,7 +1298,7 @@ namespace PanoramaApp3.ServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> PanoramaApp3.ServiceReference.IService.EndGetAllUsers(System.IAsyncResult result) {
+        System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.User> PanoramaApp3.ServiceReference.IService.EndGetAllUsers(System.IAsyncResult result) {
             return base.Channel.EndGetAllUsers(result);
         }
         
@@ -1112,7 +1307,7 @@ namespace PanoramaApp3.ServiceReference {
         }
         
         private object[] OnEndGetAllUsers(System.IAsyncResult result) {
-            System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> retVal = ((PanoramaApp3.ServiceReference.IService)(this)).EndGetAllUsers(result);
+            System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.User> retVal = ((PanoramaApp3.ServiceReference.IService)(this)).EndGetAllUsers(result);
             return new object[] {
                     retVal};
         }
@@ -1862,9 +2057,9 @@ namespace PanoramaApp3.ServiceReference {
                 return _result;
             }
             
-            public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> EndGetAllUsers(System.IAsyncResult result) {
+            public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.User> EndGetAllUsers(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User> _result = ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.Tbl_User>)(base.EndInvoke("GetAllUsers", _args, result)));
+                System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.User> _result = ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.User>)(base.EndInvoke("GetAllUsers", _args, result)));
                 return _result;
             }
             

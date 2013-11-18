@@ -29,7 +29,16 @@
                     <sdk:DataGridTextColumn Header="Tevredenheid" Binding="{Binding Tevredenheid}"/>
                 </sdk:DataGrid.Columns>
             </sdk:DataGrid>
-            <Button x:Name="btn_export" Click="btn_export_Click">Export To Excel</Button>
+            <Button HorizontalAlignment="Center" x:Name="btn_export" Click="btn_export_Click">
+                <Button.ContentTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image VerticalAlignment="Center"  Source="/WebApp;component/export.png" Stretch="None" ></Image>
+                            <TextBlock VerticalAlignment="Center" Text="Export to Excel"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </Button.ContentTemplate>
+            </Button>
         </StackPanel>
     </Grid>
 </navigation:Page>

@@ -208,6 +208,7 @@
     <Resource Include="icon-addactivity.jpg" />
     <Resource Include="icon-addcategory.jpg" />
     <Resource Include="icon-inspect.png" />
+    <Resource Include="export.png" />
     <Content Include="ReadMe.Coding4Fun.Toolkit.txt" />
     <Content Include="ServiceReferences.ClientConfig" />
     <None Include="Service References\ServiceReference\Service.wsdl" />
