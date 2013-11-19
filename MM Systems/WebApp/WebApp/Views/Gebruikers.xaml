@@ -47,69 +47,15 @@
                 </StackPanel>
             <sdk:DataGrid AutoGenerateColumns="False" x:Name="gridd" ItemsSource="{Binding}">
                 <sdk:DataGrid.Columns>
-                    <sdk:DataGridTemplateColumn Header="Naam" Width="Auto" IsReadOnly="True">
-                        <sdk:DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Naam}"></TextBlock>
-                            </DataTemplate>
-                        </sdk:DataGridTemplateColumn.CellTemplate>
-                    </sdk:DataGridTemplateColumn>
-                    <sdk:DataGridTemplateColumn Header="Voornaam" Width="SizeToCells" IsReadOnly="True">
-                        <sdk:DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Voornaam}"></TextBlock>
-                            </DataTemplate>
-                        </sdk:DataGridTemplateColumn.CellTemplate>
-                    </sdk:DataGridTemplateColumn>
-                    <sdk:DataGridTemplateColumn Header="Adres" Width="Auto" IsReadOnly="True">
-                        <sdk:DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Adres}"></TextBlock>
-                            </DataTemplate>
-                        </sdk:DataGridTemplateColumn.CellTemplate>
-                    </sdk:DataGridTemplateColumn>
-                    <sdk:DataGridTemplateColumn Header="Nummer" Width="Auto" IsReadOnly="True">
-                        <sdk:DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Nummer}"></TextBlock>
-                            </DataTemplate>
-                        </sdk:DataGridTemplateColumn.CellTemplate>
-                    </sdk:DataGridTemplateColumn>
-                    <sdk:DataGridTemplateColumn Header="Postcode" Width="Auto" IsReadOnly="True">
-                        <sdk:DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Postcode}"></TextBlock>
-                            </DataTemplate>
-                        </sdk:DataGridTemplateColumn.CellTemplate>
-                    </sdk:DataGridTemplateColumn>
-                    <sdk:DataGridTemplateColumn Header="Plaats" Width="Auto" IsReadOnly="True">
-                        <sdk:DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Plaats}"></TextBlock>
-                            </DataTemplate>
-                        </sdk:DataGridTemplateColumn.CellTemplate>
-                    </sdk:DataGridTemplateColumn>
-                    <sdk:DataGridTemplateColumn Header="Gebruikersnaam" Width="Auto" IsReadOnly="True">
-                        <sdk:DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Gebruikersnaam}"></TextBlock>
-                            </DataTemplate>
-                        </sdk:DataGridTemplateColumn.CellTemplate>
-                    </sdk:DataGridTemplateColumn>
-                    <sdk:DataGridTemplateColumn Header="Soort Gebruiker" Width="Auto" IsReadOnly="True">
-                        <sdk:DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Rechten_Omschrijving}"></TextBlock>
-                            </DataTemplate>
-                        </sdk:DataGridTemplateColumn.CellTemplate>
-                    </sdk:DataGridTemplateColumn>
-                    <sdk:DataGridTemplateColumn Header="Aantal Ingaven" Width="Auto" IsReadOnly="True">
-                        <sdk:DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding AantalIngaven}"></TextBlock>
-                            </DataTemplate>
-                        </sdk:DataGridTemplateColumn.CellTemplate>
-                    </sdk:DataGridTemplateColumn>
+                    <sdk:DataGridTextColumn Binding="{Binding Naam}" Header="Naam"/>
+                    <sdk:DataGridTextColumn Binding="{Binding Voornaam}" Header="Voornaam"/>
+                    <sdk:DataGridTextColumn Binding="{Binding Adres}" Header="Adres"/>
+                    <sdk:DataGridTextColumn Binding="{Binding Nummer}" Header="Nummer"/>
+                    <sdk:DataGridTextColumn Binding="{Binding Postcode}" Header="Postcode"/>
+                    <sdk:DataGridTextColumn Binding="{Binding Plaats}" Header="Plaats"/>
+                    <sdk:DataGridTextColumn Binding="{Binding Gebruikersnaam}" Header="Gebruikersnaam"/>
+                    <sdk:DataGridTextColumn Binding="{Binding Rechten_Omschrijving}" Header="Soort Gebruiker"/>
+                    <sdk:DataGridTextColumn Binding="{Binding AantalIngaven}" Header="Aantal Ingaven"/>
                     <sdk:DataGridTemplateColumn Width="SizeToCells" IsReadOnly="True">
                         <sdk:DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

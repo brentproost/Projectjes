@@ -7,4 +7,3 @@ C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp.Web\bin\WebAp
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp.Web\bin\WebApp.Web.pdb
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp.Web\obj\Debug\WebApp.Web.dll
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp.Web\obj\Debug\WebApp.Web.pdb
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp.Web\obj\Debug\WebApp.Web.csprojResolveAssemblyReference.cache
