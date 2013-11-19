@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.Web", "WebApp.Web\WebApp.Web.csproj", "{13E90557-8C21-400B-8EA0-3832654CCFB3}"
 EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "WebApp.Web.Azure", "WebApp.Web.Azure\WebApp.Web.Azure.ccproj", "{DA2A5E7B-B3E9-4414-BB86-0DD30E6F05CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{13E90557-8C21-400B-8EA0-3832654CCFB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13E90557-8C21-400B-8EA0-3832654CCFB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13E90557-8C21-400B-8EA0-3832654CCFB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA2A5E7B-B3E9-4414-BB86-0DD30E6F05CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA2A5E7B-B3E9-4414-BB86-0DD30E6F05CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA2A5E7B-B3E9-4414-BB86-0DD30E6F05CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA2A5E7B-B3E9-4414-BB86-0DD30E6F05CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
