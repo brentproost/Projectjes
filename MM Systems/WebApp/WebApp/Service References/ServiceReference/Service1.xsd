@@ -1,127 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Wcf" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Wcf" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://mmsystemsservice.cloudapp.net/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Wcf" />
   <xs:import schemaLocation="http://mmsystemsservice.cloudapp.net/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:complexType name="ArrayOfTbl_User">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tbl_User" nillable="true" type="tns:Tbl_User" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfTbl_User" nillable="true" type="tns:ArrayOfTbl_User" />
-  <xs:complexType name="Tbl_User">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Adres" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Gebruikersnaam" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ID" type="xs:int" />
-      <xs:element minOccurs="0" name="Naam" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Nummer" type="xs:int" />
-      <xs:element minOccurs="0" name="Paswoord" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Plaats" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Postcode" type="xs:int" />
-      <xs:element minOccurs="0" name="Rechten_ID" type="xs:int" />
-      <xs:element minOccurs="0" name="Voornaam" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Tbl_User" nillable="true" type="tns:Tbl_User" />
-  <xs:complexType name="ArrayOfUser">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
-  <xs:complexType name="User">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="AantalIngaven" type="xs:int" />
-      <xs:element minOccurs="0" name="Adres" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Gebruikersnaam" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="Naam" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Nummer" type="xs:int" />
-      <xs:element minOccurs="0" name="Paswoord" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Plaats" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Postcode" type="xs:int" />
-      <xs:element minOccurs="0" name="Rechten_ID" type="xs:int" />
-      <xs:element minOccurs="0" name="Rechten_Omschrijving" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Voornaam" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="User" nillable="true" type="tns:User" />
-  <xs:complexType name="ArrayOfActivities">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Activities" nillable="true" type="tns:Activities" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfActivities" nillable="true" type="tns:ArrayOfActivities" />
-  <xs:complexType name="Activities">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Activiteit" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Activiteit_ID" type="xs:int" />
-      <xs:element minOccurs="0" name="Categorie" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Categorie_ID" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Activities" nillable="true" type="tns:Activities" />
-  <xs:complexType name="ArrayOfTbl_Categorien">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tbl_Categorien" nillable="true" type="tns:Tbl_Categorien" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfTbl_Categorien" nillable="true" type="tns:ArrayOfTbl_Categorien" />
-  <xs:complexType name="Tbl_Categorien">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="Omschrijving" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Tbl_Categorien" nillable="true" type="tns:Tbl_Categorien" />
-  <xs:complexType name="ArrayOfTbl_Weersomstandigheden">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tbl_Weersomstandigheden" nillable="true" type="tns:Tbl_Weersomstandigheden" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfTbl_Weersomstandigheden" nillable="true" type="tns:ArrayOfTbl_Weersomstandigheden" />
-  <xs:complexType name="Tbl_Weersomstandigheden">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="ID" type="xs:int" />
-      <xs:element minOccurs="0" name="Omschrijving" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Tbl_Weersomstandigheden" nillable="true" type="tns:Tbl_Weersomstandigheden" />
-  <xs:complexType name="ArrayOfTbl_Schaal_Nachtrust">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tbl_Schaal_Nachtrust" nillable="true" type="tns:Tbl_Schaal_Nachtrust" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfTbl_Schaal_Nachtrust" nillable="true" type="tns:ArrayOfTbl_Schaal_Nachtrust" />
-  <xs:complexType name="Tbl_Schaal_Nachtrust">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="ID" type="xs:int" />
-      <xs:element minOccurs="0" name="Omschrijving" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Tbl_Schaal_Nachtrust" nillable="true" type="tns:Tbl_Schaal_Nachtrust" />
-  <xs:complexType name="ArrayOfTbl_GebruikersIngave">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tbl_GebruikersIngave" nillable="true" type="tns:Tbl_GebruikersIngave" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfTbl_GebruikersIngave" nillable="true" type="tns:ArrayOfTbl_GebruikersIngave" />
-  <xs:complexType name="Tbl_GebruikersIngave">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Aantal_Uren_Geslapen" type="xs:int" />
-      <xs:element minOccurs="0" name="Activiteit_ID" type="xs:int" />
-      <xs:element minOccurs="0" name="Beginuur_Activiteit" type="ser:duration" />
-      <xs:element minOccurs="0" name="Belangrijkheid" type="xs:float" />
-      <xs:element minOccurs="0" name="Commentaar" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Datum_Uur_Activiteit" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Datum_Uur_Ingave" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Einduur_Activiteit" type="ser:duration" />
-      <xs:element minOccurs="0" name="ID" type="xs:int" />
-      <xs:element minOccurs="0" name="Schaal_Nachtrust_ID" type="xs:int" />
-      <xs:element minOccurs="0" name="Tevredenheid" type="xs:float" />
-      <xs:element minOccurs="0" name="User_ID" type="xs:int" />
-      <xs:element minOccurs="0" name="Vermoeidheid" type="xs:float" />
-      <xs:element minOccurs="0" name="Weersomstandigheden_ID" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Tbl_GebruikersIngave" nillable="true" type="tns:Tbl_GebruikersIngave" />
+  <xs:element name="GetUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetUserResult" nillable="true" type="q1:ArrayOfTbl_User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUsers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetAllUsersResult" nillable="true" type="q2:ArrayOfUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetUserInfoResult" nillable="true" type="q3:ArrayOfTbl_User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllActivities">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllActivitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetAllActivitiesResult" nillable="true" type="q4:ArrayOfActivities" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllCategories">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetAllCategoriesResult" nillable="true" type="q5:ArrayOfTbl_Categorien" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SigninUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SigninUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SigninUserResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="naam" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="voornaam" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="adres" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nummer" type="xs:int" />
+        <xs:element minOccurs="0" name="plaats" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="postcode" type="xs:int" />
+        <xs:element minOccurs="0" name="gebruikersn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pasw" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddActivity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="omschr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="catid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddActivityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="omschr" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCategoryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteActivity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteActivityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddGebruikersIngave">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="usrID" type="xs:int" />
+        <xs:element minOccurs="0" name="actID" type="xs:int" />
+        <xs:element minOccurs="0" name="datumuuringave" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtmuurActiviteit" type="xs:dateTime" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="beginuur" type="q6:duration" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="einduur" type="q7:duration" />
+        <xs:element minOccurs="0" name="commentaar" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="weersid" type="xs:int" />
+        <xs:element minOccurs="0" name="nachtrid" type="xs:int" />
+        <xs:element minOccurs="0" name="aantaluurgeslapen" type="xs:int" />
+        <xs:element minOccurs="0" name="vermoeidheid" type="xs:float" />
+        <xs:element minOccurs="0" name="belangrijkheid" type="xs:float" />
+        <xs:element minOccurs="0" name="tevredenheid" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddGebruikersIngaveResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllWeersOmstandigheden">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllWeersOmstandighedenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetAllWeersOmstandighedenResult" nillable="true" type="q8:ArrayOfTbl_Weersomstandigheden" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNachtrustSchaal">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNachtrustSchaalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetNachtrustSchaalResult" nillable="true" type="q9:ArrayOfTbl_Schaal_Nachtrust" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIngave_Gebruiker">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gebruikersid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIngave_GebruikerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetIngave_GebruikerResult" nillable="true" type="q10:ArrayOfTbl_GebruikersIngave" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteLog">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteLogResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
