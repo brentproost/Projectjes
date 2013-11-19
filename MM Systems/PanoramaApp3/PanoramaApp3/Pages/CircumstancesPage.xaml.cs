@@ -65,10 +65,10 @@ namespace PanoramaApp3.Pages
         {
             InputDatabase.WeersomstandighedenIDs = lpweersomstandigheden.SelectedIndex;
         }
-
-        private void Txtuurgeslapen_OnTextChanged(object sender, TextChangedEventArgs e)
+        private void Txtuurgeslapen_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<TimeSpan> e)
         {
-            InputDatabase.UrenSlaap = Convert.ToInt32(txtuurgeslapen.Text);
+            TimeSpan t = TimeSpan.Parse(txtuurgeslapen.Value.ToString());
+            InputDatabase.UrenSlaap = Convert.ToInt32(t.Hours);
         }
     }
 }

@@ -66,7 +66,6 @@ C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Deb
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\CommentPage.g.cs
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\DatePage.g.cs
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\Graphs.g.cs
-C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\reminderAlarm.g.cs
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\Settings.g.cs
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\LoginUserControl.g.cs
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.g.resources
