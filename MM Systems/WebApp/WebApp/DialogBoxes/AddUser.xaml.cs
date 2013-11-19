@@ -25,7 +25,7 @@ namespace WebApp.DialogBoxes
 
             ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
 
-            client.AddUserAsync(btnNaam.Text, btnVoornaam.Text, btnAdres.Text, Convert.ToInt16(btnNummer.Text), btnPlaats.Text, Convert.ToInt16(btnPostcode.Text), btngebruikersnaam.Text, btnpasw.Text);
+            client.AddUserAsync(btnNaam.Text, btnVoornaam.Text, btnAdres.Text, Convert.ToInt16(btnNummer.Text), btnPlaats.Text, Convert.ToInt16(btnPostcode.Text), btngebruikersnaam.Text, MD5Core.GetHashString(btnpasw.Text));
             client.AddUserCompleted += client_AddUserCompleted;
             client.CloseAsync();
         }
