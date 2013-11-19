@@ -31,7 +31,7 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel>
                 <TextBlock Text="Nachtrust"/>
-                <toolkit:ListPicker x:Name="lpnachtrust" ItemsSource="{Binding}">
+                <toolkit:ListPicker x:Name="lpnachtrust" ItemsSource="{Binding}" SelectionChanged="Lpnachtrust_OnSelectionChanged">
                     <toolkit:ListPicker.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Omschrijving}"></TextBlock>
@@ -39,7 +39,7 @@
                     </toolkit:ListPicker.ItemTemplate>
                 </toolkit:ListPicker>
                 <TextBlock Text="Weersomstandigheden"></TextBlock>
-                <toolkit:ListPicker x:Name="lpweersomstandigheden" ItemsSource="{Binding}">
+                <toolkit:ListPicker x:Name="lpweersomstandigheden" ItemsSource="{Binding}" SelectionChanged="Lpweersomstandigheden_OnSelectionChanged">
                     <toolkit:ListPicker.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Omschrijving}"></TextBlock>
@@ -47,7 +47,8 @@
                     </toolkit:ListPicker.ItemTemplate>
                 </toolkit:ListPicker>
                 <TextBlock Text="Aantal uur geslapen"/>
-                <TextBox InputScope="Number" x:Name="txtuurgeslapen" Text="0" HorizontalAlignment="Left" />
+                <TextBox InputScope="Number" x:Name="txtuurgeslapen" Text="0" HorizontalAlignment="Left" TextChanged="Txtuurgeslapen_OnTextChanged"/>
+                <Button Content="Oke" Click="ButtonBase_OnClick"></Button>
             </StackPanel>
         </Grid>
     </Grid>

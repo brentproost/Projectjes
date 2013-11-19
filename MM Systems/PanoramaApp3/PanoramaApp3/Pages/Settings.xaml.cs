@@ -64,7 +64,14 @@ namespace PanoramaApp3
             {
                 MessageBox.Show("Je bent nu ingelogd");//"Welkom " + r[0].Naam + " " + r[0].Voornaam + "!"; moet zoiets komen bekijk Service.svc.cs
                 User.ID = e.Result;
-                User.Settings.Add("ID",User.ID);
+                if (User.Settings.Contains("ID") == false)
+                {
+                    User.Settings.Add("ID", User.ID);
+                }
+                else
+                {
+                    User.Settings["ID"] = User.ID;
+                }
                 Uri nUri = new Uri("/MainPage.xaml", UriKind.Relative);
                 ((App)Application.Current).RootFrame.Navigate(nUri);
             }

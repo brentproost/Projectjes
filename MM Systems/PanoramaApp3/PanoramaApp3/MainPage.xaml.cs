@@ -19,13 +19,13 @@ namespace PanoramaApp3
 {
     public partial class MainPage : PhoneApplicationPage
     {
-
+/*
         List<string> cbitems = new List<string>();
         List<int> cbtag = new List<int>();
         List<int> weersomstandighedenids = new List<int>();
         List<int> nachtrustids = new List<int>();
         ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
-        int activityid;
+        int activityid;*/
         // Constructor
         public MainPage()
         {
@@ -34,11 +34,8 @@ namespace PanoramaApp3
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
-            if (User.ID != 0)
+            /*if (User.ID != 0)
             {
-                client.GetAllUsersCompleted += ClientOnGetAllUsersCompleted;
-                client.GetAllUsersAsync(User.ID);
-
                 client.GetAllCategoriesCompleted += serviceClient_GetAllCategoriesCompleted;
                 client.GetAllCategoriesAsync();
             }
@@ -55,10 +52,10 @@ namespace PanoramaApp3
                 MessageBox.Show(e.Message);
             }
 
-            txthour1.Text = DateTime.Now.Hour.ToString();
+            txthour1.Text = DateTime.Now.Hour.ToString();*/
         
         }
-
+/*
         void client_GetAllWeersOmstandighedenCompleted(object sender, GetAllWeersOmstandighedenCompletedEventArgs e)
         {
             lpweersomstandigheden.ItemsSource = e.Result.ToList();
@@ -75,15 +72,7 @@ namespace PanoramaApp3
             {
                 nachtrustids.Add(e.Result[i].ID);
             }
-        }
-
-        private void ClientOnGetAllUsersCompleted(object sender, GetAllUsersCompletedEventArgs getAllUsersCompletedEventArgs)
-        {
-            if (getAllUsersCompletedEventArgs.Result != null)
-            {
-                //item1.Header ="Welkom "+ getAllUsersCompletedEventArgs.Result[User.ID].Voornaam;
-            }
-        }
+        }*/
 
         // Load data for the ViewModel Items
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
@@ -93,7 +82,7 @@ namespace PanoramaApp3
                 App.ViewModel.LoadData();
             }
         }
-
+/*
         void serviceClient_GetAllCategoriesCompleted(object sender, GetAllCategoriesCompletedEventArgs e)
         {
             for (int i = 0; i < e.Result.Count; i++)
@@ -106,29 +95,18 @@ namespace PanoramaApp3
 
             client.GetAllActivitiesCompleted += client_GetAllActivitiesCompleted;
                  client.GetAllActivitiesAsync();
-        }
-
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            NavigatedTo(2);
-        }
-        public void NavigatedTo(int e)
-        {
-            PanoramaApp.DefaultItem = "item2"/*"item"+e*/;
-
-        }
-
+        }*/
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            PanoramaApp.DefaultItem = item2;
+            //PanoramaApp.DefaultItem = item2;
             //NavigatedTo(2);
-
+            NavigationService.Navigate(new Uri("/Pages/DatePage.xaml", UriKind.Relative));
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        /*private void Button_Click(object sender, RoutedEventArgs e)
         {
             PanoramaApp.DefaultItem = item5;
-        }
+        }*/
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -140,7 +118,7 @@ namespace PanoramaApp3
             NavigationService.Navigate(new Uri("/Pages/Graphs.xaml", UriKind.Relative));
         }
 
-        private void lp_Categorien_SelectionChanged(object sender, SelectionChangedEventArgs e)
+       /* private void lp_Categorien_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             lp_Activiteiten.SelectionChanged-= lp_Activiteiten_SelectionChanged;
             lp_Categorien.SelectionChanged -= lp_Categorien_SelectionChanged;   
@@ -221,6 +199,6 @@ namespace PanoramaApp3
         private void dtuurActiviteit_Loaded(object sender, RoutedEventArgs e)
         {
             dtuurActiviteit.Value = DateTime.Now;
-        }
+        }*/
     }
 }
