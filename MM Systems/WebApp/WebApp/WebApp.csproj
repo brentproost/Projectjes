@@ -94,6 +94,7 @@
     <Compile Include="DialogBoxes\AddUser.xaml.cs">
       <DependentUpon>AddUser.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Export.cs" />
     <Compile Include="Public_Informatie_Gebruiker.cs" />
     <Compile Include="Service References\ServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -184,33 +185,6 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
-    <None Include="Service References\ServiceReference\Service.disco" />
-    <None Include="Service References\ServiceReference\configuration91.svcinfo" />
-    <None Include="Service References\ServiceReference\configuration.svcinfo" />
-    <None Include="Service References\ServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\ServiceReference\WebApp.ServiceReference.Tbl_GebruikersIngave.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReference\WebApp.ServiceReference.Tbl_Schaal_Nachtrust.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReference\WebApp.ServiceReference.Tbl_Weersomstandigheden.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReference\WebApp.ServiceReference.User.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <Resource Include="icon-delete.png" />
-    <Resource Include="icon-user.jpg" />
-    <Resource Include="icon-addactivity.jpg" />
-    <Resource Include="icon-addcategory.jpg" />
-    <Resource Include="icon-inspect.png" />
-    <Resource Include="export.png" />
-    <Content Include="ReadMe.Coding4Fun.Toolkit.txt" />
-    <Content Include="ServiceReferences.ClientConfig" />
     <None Include="Service References\ServiceReference\Service.wsdl" />
     <None Include="Service References\ServiceReference\Service.xsd">
       <SubType>Designer</SubType>
@@ -227,9 +201,37 @@
     <None Include="Service References\ServiceReference\WebApp.ServiceReference.Tbl_Categorien.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference\WebApp.ServiceReference.Tbl_GebruikersIngave.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\WebApp.ServiceReference.Tbl_Schaal_Nachtrust.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference\WebApp.ServiceReference.Tbl_User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference\WebApp.ServiceReference.Tbl_Weersomstandigheden.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\WebApp.ServiceReference.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <Resource Include="icon-delete.png" />
+    <Resource Include="icon-user.jpg" />
+    <Resource Include="icon-addactivity.jpg" />
+    <Resource Include="icon-addcategory.jpg" />
+    <Resource Include="icon-inspect.png" />
+    <Resource Include="export.png" />
+    <None Include="Properties\OutOfBrowserSettings.xml" />
+    <Content Include="ReadMe.Coding4Fun.Toolkit.txt" />
+    <None Include="Service References\ServiceReference\Service.disco" />
+    <None Include="Service References\ServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReference\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

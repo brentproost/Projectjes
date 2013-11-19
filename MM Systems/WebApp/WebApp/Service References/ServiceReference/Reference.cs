@@ -888,6 +888,11 @@ namespace WebApp.ServiceReference {
         System.IAsyncResult BeginGetIngave_Gebruiker(int gebruikersid, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_GebruikersIngave> EndGetIngave_Gebruiker(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/WriteLog", ReplyAction="http://tempuri.org/IService/WriteLogResponse")]
+        System.IAsyncResult BeginWriteLog(System.AsyncCallback callback, object asyncState);
+        
+        void EndWriteLog(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1159,6 +1164,12 @@ namespace WebApp.ServiceReference {
         
         private System.Threading.SendOrPostCallback onGetIngave_GebruikerCompletedDelegate;
         
+        private BeginOperationDelegate onBeginWriteLogDelegate;
+        
+        private EndOperationDelegate onEndWriteLogDelegate;
+        
+        private System.Threading.SendOrPostCallback onWriteLogCompletedDelegate;
+        
         private BeginOperationDelegate onBeginOpenDelegate;
         
         private EndOperationDelegate onEndOpenDelegate;
@@ -1241,6 +1252,8 @@ namespace WebApp.ServiceReference {
         public event System.EventHandler<GetNachtrustSchaalCompletedEventArgs> GetNachtrustSchaalCompleted;
         
         public event System.EventHandler<GetIngave_GebruikerCompletedEventArgs> GetIngave_GebruikerCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> WriteLogCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -1962,6 +1975,49 @@ namespace WebApp.ServiceReference {
                         gebruikersid}, this.onEndGetIngave_GebruikerDelegate, this.onGetIngave_GebruikerCompletedDelegate, userState);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult WebApp.ServiceReference.IService.BeginWriteLog(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginWriteLog(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void WebApp.ServiceReference.IService.EndWriteLog(System.IAsyncResult result) {
+            base.Channel.EndWriteLog(result);
+        }
+        
+        private System.IAsyncResult OnBeginWriteLog(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return ((WebApp.ServiceReference.IService)(this)).BeginWriteLog(callback, asyncState);
+        }
+        
+        private object[] OnEndWriteLog(System.IAsyncResult result) {
+            ((WebApp.ServiceReference.IService)(this)).EndWriteLog(result);
+            return null;
+        }
+        
+        private void OnWriteLogCompleted(object state) {
+            if ((this.WriteLogCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.WriteLogCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void WriteLogAsync() {
+            this.WriteLogAsync(null);
+        }
+        
+        public void WriteLogAsync(object userState) {
+            if ((this.onBeginWriteLogDelegate == null)) {
+                this.onBeginWriteLogDelegate = new BeginOperationDelegate(this.OnBeginWriteLog);
+            }
+            if ((this.onEndWriteLogDelegate == null)) {
+                this.onEndWriteLogDelegate = new EndOperationDelegate(this.OnEndWriteLog);
+            }
+            if ((this.onWriteLogCompletedDelegate == null)) {
+                this.onWriteLogCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnWriteLogCompleted);
+            }
+            base.InvokeAsync(this.onBeginWriteLogDelegate, null, this.onEndWriteLogDelegate, this.onWriteLogCompletedDelegate, userState);
+        }
+        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -2241,6 +2297,17 @@ namespace WebApp.ServiceReference {
                 object[] _args = new object[0];
                 System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_GebruikersIngave> _result = ((System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_GebruikersIngave>)(base.EndInvoke("GetIngave_Gebruiker", _args, result)));
                 return _result;
+            }
+            
+            public System.IAsyncResult BeginWriteLog(System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[0];
+                System.IAsyncResult _result = base.BeginInvoke("WriteLog", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndWriteLog(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("WriteLog", _args, result);
             }
         }
     }

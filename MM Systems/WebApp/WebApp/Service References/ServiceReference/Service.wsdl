@@ -97,6 +97,12 @@
   <wsdl:message name="IService_GetIngave_Gebruiker_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetIngave_GebruikerResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_WriteLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteLog" />
+  </wsdl:message>
+  <wsdl:message name="IService_WriteLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteLogResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="GetUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetUser" message="tns:IService_GetUser_InputMessage" />
@@ -157,6 +163,10 @@
     <wsdl:operation name="GetIngave_Gebruiker">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetIngave_Gebruiker" message="tns:IService_GetIngave_Gebruiker_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetIngave_GebruikerResponse" message="tns:IService_GetIngave_Gebruiker_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/WriteLog" message="tns:IService_WriteLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/WriteLogResponse" message="tns:IService_WriteLog_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -289,6 +299,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetIngave_Gebruiker">
       <soap:operation soapAction="http://tempuri.org/IService/GetIngave_Gebruiker" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteLog">
+      <soap:operation soapAction="http://tempuri.org/IService/WriteLog" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

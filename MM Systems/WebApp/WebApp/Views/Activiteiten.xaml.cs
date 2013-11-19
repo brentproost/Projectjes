@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ServiceModel;
 using System.ComponentModel;
+using System.IO;
 
 namespace WebApp
 {
@@ -49,6 +50,23 @@ namespace WebApp
         void client_DeleteActivityCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
             MessageBox.Show("activiteit verwijderd");
+            string path = "log.txt";
+            if (!File.Exists(path))
+            {
+                // Create a file to write to. 
+                using (StreamWriter sw = File.CreateText(path))
+                {
+                    sw.WriteLine("Hello");
+                    sw.WriteLine("And");
+                    sw.WriteLine("Welcome");
+                }
+            }
+     
+            else
+            {
+                File.AppendAllText("log.txt", "test");
+            }
+
             UpdateDataGrid();
         }
     }
