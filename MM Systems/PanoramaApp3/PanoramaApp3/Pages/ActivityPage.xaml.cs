@@ -14,6 +14,7 @@ namespace PanoramaApp3.Pages
 {
     public partial class ActivityPage : PhoneApplicationPage
     {
+        
         List<string> cbitems = new List<string>();
         List<int> cbtag = new List<int>();
         ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
