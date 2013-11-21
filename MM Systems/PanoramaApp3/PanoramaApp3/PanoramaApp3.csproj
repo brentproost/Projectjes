@@ -83,15 +83,24 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Database\ConnectDataBase.cs" />
+    <Compile Include="Classes\InputDatabase.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ActivityPage.xaml.cs">
+      <DependentUpon>ActivityPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CircumstancesPage.xaml.cs">
+      <DependentUpon>CircumstancesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CommentPage.xaml.cs">
+      <DependentUpon>CommentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DatePage.xaml.cs">
+      <DependentUpon>DatePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Graphs.xaml.cs">
       <DependentUpon>Graphs.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\reminderAlarm.xaml.cs">
-      <DependentUpon>reminderAlarm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
@@ -105,7 +114,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
+    <Compile Include="Classes\User.cs" />
     <Compile Include="ViewModels\DateViewModel.cs" />
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -119,11 +128,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Graphs.xaml">
+    <Page Include="Pages\ActivityPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\reminderAlarm.xaml">
+    <Page Include="Pages\CircumstancesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CommentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Graphs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

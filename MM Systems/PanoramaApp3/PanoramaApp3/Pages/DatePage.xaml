@@ -29,22 +29,16 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" HorizontalAlignment="Center">
             <ListBox Margin="0,0,-12,0" >
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
                     <!--Replace rectangle with image-->
                     <StackPanel Width="311">
-                        <toolkit:DatePicker x:Name="dtuurActiviteit" ValueStringFormat="{}{0:dd-MM-yyyy}" Loaded="dtuurActiviteit_Loaded"></toolkit:DatePicker>
+                        <toolkit:DatePicker x:Name="dtuurActiviteit" ValueStringFormat="{}{0:dd-MM-yyyy}" ValueChanged="DtuurActiviteit_OnValueChanged"></toolkit:DatePicker>
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="txthour1" Text="0" InputScope="Number" TextChanged="txthour1_TextChanged"/>
+                            <controls2:TimeSpanPicker x:Name="txthour1" Step="0:15" ValueStringFormat="{}{0:h}:{0:m}" ValueChanged="Txthour1_OnValueChanged"/>
                             <TextBlock Margin="0,20,0,0" TextAlignment="Center">uur tot</TextBlock>
-                            <TextBox x:Name="txthour2" IsEnabled="False" Text="0" InputScope="Number"/>
-                            <TextBlock Margin="0,20,0,0" TextAlignment="Center">uur</TextBlock>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <controls2:TimeSpanPicker Step="0:15" ValueStringFormat="{}{0:h}:{0:m}"/>
-                            <TextBlock Margin="0,20,0,0" TextAlignment="Center">uur tot</TextBlock>
-                            <controls2:TimeSpanPicker Step="0:15" ValueStringFormat="{}{0:h}:{0:m}"/>
+                            <controls2:TimeSpanPicker x:Name="txthour2" Step="0:15" ValueStringFormat="{}{0:h}:{0:m}"/>
                             <TextBlock Margin="0,20,0,0" TextAlignment="Center">uur</TextBlock>
                         </StackPanel>
                         <Button Content="ok" Click="Button_Click"></Button>

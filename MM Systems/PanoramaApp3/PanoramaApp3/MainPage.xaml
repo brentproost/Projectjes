@@ -15,103 +15,44 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
-    <phone:PhoneApplicationPage.Resources>
-        <DataTemplate x:Key="ActivitiesTemplate">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Margin="10" Text="{Binding Omschrijving}"></TextBlock>
-            </StackPanel>
-        </DataTemplate>
-        <ControlTemplate x:Key="PhoneSimpleRepeatButton" TargetType="RepeatButton">
-            <Rectangle Fill="Transparent"/>
-        </ControlTemplate>
-        <ControlTemplate x:Key="ThumbControlTemplate1" TargetType="Thumb">
-            <Rectangle Fill="{StaticResource PhoneForegroundBrush}"  Height="60" Width="50" />
-        </ControlTemplate>
-
-        <Style x:Key="SliderStyle1" TargetType="Slider">
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="BorderBrush" Value="Transparent"/>
-            <Setter Property="Maximum" Value="10"/>
-            <Setter Property="Minimum" Value="0"/>
-            <Setter Property="Value" Value="0"/>
-            <Setter Property="Background" Value="{StaticResource PhoneContrastBackgroundBrush}"/>
-            <Setter Property="Foreground" Value="{StaticResource PhoneAccentBrush}"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Slider">
-                        <Grid Background="Transparent">
-                            <VisualStateManager.VisualStateGroups>
-                            </VisualStateManager.VisualStateGroups>
-                            <Grid x:Name="HorizontalTemplate" Margin="{StaticResource PhoneHorizontalMargin}">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="0"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Rectangle x:Name="HorizontalTrack" Grid.ColumnSpan="3" Fill="{TemplateBinding Background}" Height="12" IsHitTestVisible="False" Margin="0,22,0,50" Opacity="0.2"/>
-                                <Rectangle x:Name="HorizontalFill" Grid.Column="0" Fill="{TemplateBinding Foreground}" Height="12" IsHitTestVisible="False" Margin="0,22,0,50"/>
-                                <RepeatButton x:Name="HorizontalTrackLargeChangeDecreaseRepeatButton" Grid.Column="0" IsTabStop="False" Template="{StaticResource PhoneSimpleRepeatButton}"/>
-                                <RepeatButton x:Name="HorizontalTrackLargeChangeIncreaseRepeatButton" Grid.Column="2" IsTabStop="False" Template="{StaticResource PhoneSimpleRepeatButton}"/>
-                                <Thumb x:Name="HorizontalThumb" Grid.Column="1" Margin="-1,0,0,30" RenderTransformOrigin="0.5,0.5" Template="{StaticResource ThumbControlTemplate1}" Width="1">
-                                    <Thumb.RenderTransform>
-                                        <ScaleTransform ScaleY="1" ScaleX="32"/>
-                                    </Thumb.RenderTransform>
-                                </Thumb>
-                            </Grid>
-                            <Grid x:Name="VerticalTemplate" Margin="{StaticResource PhoneVerticalMargin}">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="0"/>
-                                    <RowDefinition Height="Auto"/>
-                                </Grid.RowDefinitions>
-                                <Rectangle x:Name="VerticalTrack" Fill="{TemplateBinding Background}" IsHitTestVisible="False" Margin="12,0" Opacity="0.2" Grid.RowSpan="3" Width="12"/>
-                                <Rectangle x:Name="VerticalFill" Fill="{TemplateBinding Foreground}" IsHitTestVisible="False" Margin="12,0" Grid.Row="2" Width="12"/>
-                                <RepeatButton x:Name="VerticalTrackLargeChangeDecreaseRepeatButton" IsTabStop="False" Grid.Row="0" Template="{StaticResource PhoneSimpleRepeatButton}"/>
-                                <RepeatButton x:Name="VerticalTrackLargeChangeIncreaseRepeatButton" IsTabStop="False" Grid.Row="2" Template="{StaticResource PhoneSimpleRepeatButton}"/>
-                                <Thumb x:Name="VerticalThumb" Height="1" Margin="0,-1,0,0" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Template="{StaticResource ThumbControlTemplate1}">
-                                    <Thumb.RenderTransform>
-                                        <ScaleTransform ScaleY="32" ScaleX="1"/>
-                                    </Thumb.RenderTransform>
-                                </Thumb>
-                            </Grid>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </phone:PhoneApplicationPage.Resources>
-
-
-    <!--LayoutRoot is the root grid where all page content is placed-->
+    
     <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <!--Panorama control-->
-        <controls:Panorama x:Name="PanoramaApp" Title="my application" Margin="-10,0,10,0">
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="Begin" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+        <!--LayoutRoot is the root grid where all page content is placed-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Background="Transparent" Margin="0,50,0,0" HorizontalAlignment="Center">
 
-            <!--Panorama item one-->
-            <controls:PanoramaItem Name="item1" >
+            <!--Panorama control-->
+            <!--<controls:Panorama x:Name="PanoramaApp" Title="my application" Margin="-10,0,10,0">
 
-                <!--Double line list with text wrapping-->
-                <ListBox Margin="0,0,-12,0">
-                    <StackPanel Margin="0,0,0,17" Width="432">
-                        <Button Content="Nieuwe invoer" Margin="12,-14,12,0" Click="ButtonBase_OnClick"/>
-                        <TextBlock Text="Nieuwe data ingeven van een activiteit" TextWrapping="Wrap" Margin="25,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                        <Button Content="Grafieken" Margin="12,-14,12,0" Click="Button_Click_2" />
-                        <TextBlock Text="Grafieken van vorige data bekijken" TextWrapping="Wrap" Margin="25,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                        <Button Content="Instellingen" Margin="12,-14,12,0" Click="Button_Click_1" />
-                        <TextBlock Text="Log je uit of verander andere instellingen" TextWrapping="Wrap" Margin="25,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                        <TextBlock x:Name="txt_user"></TextBlock>
-                    </StackPanel>
-                </ListBox>
-            </controls:PanoramaItem>
+            ~1~Panorama item one@1@
+            <controls:PanoramaItem Name="item1" >-->
 
-            <!--Panorama item two-->
-            <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
-            <controls:PanoramaItem Name="item2" Header="second item">
-                <!--Double line list with image placeholder and text wrapping-->
+            <!--Double line list with text wrapping-->
+            <ListBox Margin="0,0,-12,0">
+                <StackPanel Margin="0,0,0,17" Width="432">
+                    <Button Content="Nieuwe invoer" Margin="12,-14,12,0" Click="ButtonBase_OnClick"/>
+                    <TextBlock Text="Nieuwe data ingeven van een activiteit" TextWrapping="Wrap" Margin="25,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                    <Button Content="Grafieken" Margin="12,-14,12,0" Click="Button_Click_2" />
+                    <TextBlock Text="Grafieken van vorige data bekijken" TextWrapping="Wrap" Margin="25,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                    <Button Content="Instellingen" Margin="12,-14,12,0" Click="Button_Click_1" />
+                    <TextBlock Text="Log je uit of verander andere instellingen" TextWrapping="Wrap" Margin="25,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                    <TextBlock x:Name="txt_user"></TextBlock>
+                </StackPanel>
+            </ListBox>
+            <!--    </controls:PanoramaItem>-->
+
+            <!--<controls:PanoramaItem Name="item2" Header="second item">
                 <ListBox Margin="0,0,-12,0" >
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
-                        <!--Replace rectangle with image-->
                         <StackPanel Width="311">
                             <toolkit:DatePicker x:Name="dtuurActiviteit" ValueStringFormat="{}{0:dd-MM-yyyy}" Loaded="dtuurActiviteit_Loaded"></toolkit:DatePicker>
                             <StackPanel Orientation="Horizontal">
@@ -154,7 +95,6 @@
                 </StackPanel>
             </controls:PanoramaItem>
             <controls:PanoramaItem x:Name="item3">
-                <!--Double line list with image placeholder and text wrapping-->
                 <ListBox Margin="0,0,-12,0" >
                     <StackPanel Orientation="Vertical" Width="400" Height="570" Margin="0,0,0,17">
                         <TextBlock TextAlignment="Center">Activiteit</TextBlock>
@@ -237,8 +177,9 @@
                     <TextBox x:Name="txt_Commentaar" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" MinHeight="300" />
                     <Button x:Name="btnok" Content="ok" Click="btnok_Click"></Button>
                 </StackPanel>
-            </controls:PanoramaItem>
+            </controls:PanoramaItem>-->
 
-        </controls:Panorama>
+            <!--  </controls:Panorama>-->
+        </Grid>
     </Grid>
 </phone:PhoneApplicationPage>

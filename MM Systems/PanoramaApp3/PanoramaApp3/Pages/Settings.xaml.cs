@@ -20,7 +20,7 @@ namespace PanoramaApp3
        public Page1()
         {   
             InitializeComponent();
-
+            this.BackKeyPress += Page1_BackKeyPress;
             if (!User.CheckNetworkConnection())
             {
                 MessageBox.Show("Er is geen netwerkverbinding gevonden");
@@ -30,13 +30,26 @@ namespace PanoramaApp3
             }
         }
 
+       void Page1_BackKeyPress(object sender, System.ComponentModel.CancelEventArgs e)
+       {
+           if (User.ID == 0)
+           {
+               if (NavigationService.CanGoBack)
+               {
+                   while (NavigationService.RemoveBackEntry() != null)
+                   {
+                       NavigationService.RemoveBackEntry();
+                   }
+               }
+           }
+       }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var luc = new WindowsPhoneControl1(); // Customer user control with Login UI
 
             MessagePrompt messagePrompt = new MessagePrompt(); // Coding4Fun extensible MessagePrompt
             messagePrompt.IsCancelVisible = true; // Show cancel button
-
             messagePrompt.Body = luc; // Add user control as body of MessagePrompt
             messagePrompt.Completed += (str, res) => // Handler for MessagePrompt user action
             {
@@ -47,10 +60,16 @@ namespace PanoramaApp3
                 }
                 else
                 {
-                    ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
-                    client.SigninUserCompleted += client_SigninUserCompleted;
-                    client.SigninUserAsync(luc.Username, MD5Core.GetHashString(luc.Password));
-
+                    if (luc.Username != null)
+                    {
+                        ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+                        client.SigninUserCompleted += client_SigninUserCompleted;
+                        client.SigninUserAsync(luc.Username, MD5Core.GetHashString(luc.Password));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Geen username ingegeven");
+                    }
                     //MessageBox.Show(string.Format("Username: {0}, Password: {1}", luc.Username, luc.Password));
                 }
             };
@@ -64,7 +83,14 @@ namespace PanoramaApp3
             {
                 MessageBox.Show("Je bent nu ingelogd");//"Welkom " + r[0].Naam + " " + r[0].Voornaam + "!"; moet zoiets komen bekijk Service.svc.cs
                 User.ID = e.Result;
-                User.Settings.Add("ID",User.ID);
+                if (User.Settings.Contains("ID") == false)
+                {
+                    User.Settings.Add("ID", User.ID);
+                }
+                else
+                {
+                    User.Settings["ID"] = User.ID;
+                }
                 Uri nUri = new Uri("/MainPage.xaml", UriKind.Relative);
                 ((App)Application.Current).RootFrame.Navigate(nUri);
             }
@@ -77,6 +103,7 @@ namespace PanoramaApp3
 
         private void Logoff_OnClick(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("Je bent nu uitgelogd");
             User.ID = 0;
             User.Settings["ID"] = User.ID;
         }
