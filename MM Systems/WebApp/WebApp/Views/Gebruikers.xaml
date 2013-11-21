@@ -53,6 +53,7 @@
                 </Button.ContentTemplate>
             </Button>
                 <Button x:Name="btn_exportall" HorizontalAlignment="Center" Click="btn_exportall_Click">Export all</Button>
+                <TextBlock Name="Tb_dir" Text="directory" HorizontalAlignment="Center"></TextBlock>
             </StackPanel>
         </StackPanel>
     </Grid>

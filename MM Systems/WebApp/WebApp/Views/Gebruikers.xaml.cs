@@ -12,11 +12,14 @@ using System.Windows.Shapes;
 using System.Windows.Navigation;
 using System.ComponentModel;
 using System.IO;
+using Microsoft.CSharp;
+using WebApp.DialogBoxes.FolderDialog;
 
 namespace WebApp.Views
 {
     public partial class Gebruikers : Page
     {
+        FolderDialog fd = new FolderDialog();
         ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
         DataGrid multiexport = new DataGrid();
         public Gebruikers()
@@ -66,7 +69,13 @@ namespace WebApp.Views
 
         private void btn_exportall_Click(object sender, RoutedEventArgs e)
         {
-            
+            fd.Show();
+            fd.Closed+=fd_Closed;
+        }
+
+        void fd_Closed(object sender, EventArgs e)
+        {
+            Tb_dir.Text = fd.SelectedFolderPath;
         }
     }
 }
