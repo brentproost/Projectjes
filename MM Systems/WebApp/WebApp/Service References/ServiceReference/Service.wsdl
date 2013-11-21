@@ -7,12 +7,6 @@
       <xsd:import schemaLocation="http://mmsystemsservice.cloudapp.net/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Wcf" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IService_GetUser_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetUser" />
-  </wsdl:message>
-  <wsdl:message name="IService_GetUser_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetUserResponse" />
-  </wsdl:message>
   <wsdl:message name="IService_GetAllUsers_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllUsers" />
   </wsdl:message>
@@ -97,17 +91,7 @@
   <wsdl:message name="IService_GetIngave_Gebruiker_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetIngave_GebruikerResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_WriteLog_InputMessage">
-    <wsdl:part name="parameters" element="tns:WriteLog" />
-  </wsdl:message>
-  <wsdl:message name="IService_WriteLog_OutputMessage">
-    <wsdl:part name="parameters" element="tns:WriteLogResponse" />
-  </wsdl:message>
   <wsdl:portType name="IService">
-    <wsdl:operation name="GetUser">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetUser" message="tns:IService_GetUser_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetUserResponse" message="tns:IService_GetUser_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="GetAllUsers">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAllUsers" message="tns:IService_GetAllUsers_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetAllUsersResponse" message="tns:IService_GetAllUsers_OutputMessage" />
@@ -164,22 +148,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetIngave_Gebruiker" message="tns:IService_GetIngave_Gebruiker_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetIngave_GebruikerResponse" message="tns:IService_GetIngave_Gebruiker_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="WriteLog">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/WriteLog" message="tns:IService_WriteLog_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/WriteLogResponse" message="tns:IService_WriteLog_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetUser">
-      <soap:operation soapAction="http://tempuri.org/IService/GetUser" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="GetAllUsers">
       <soap:operation soapAction="http://tempuri.org/IService/GetAllUsers" style="document" />
       <wsdl:input>
@@ -299,15 +270,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetIngave_Gebruiker">
       <soap:operation soapAction="http://tempuri.org/IService/GetIngave_Gebruiker" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="WriteLog">
-      <soap:operation soapAction="http://tempuri.org/IService/WriteLog" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

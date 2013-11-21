@@ -17,171 +17,6 @@ namespace WebApp.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Tbl_User", Namespace="http://schemas.datacontract.org/2004/07/Wcf")]
-    public partial class Tbl_User : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string AdresField;
-        
-        private string GebruikersnaamField;
-        
-        private int IDField;
-        
-        private string NaamField;
-        
-        private int NummerField;
-        
-        private string PaswoordField;
-        
-        private string PlaatsField;
-        
-        private int PostcodeField;
-        
-        private int Rechten_IDField;
-        
-        private string VoornaamField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Adres {
-            get {
-                return this.AdresField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AdresField, value) != true)) {
-                    this.AdresField = value;
-                    this.RaisePropertyChanged("Adres");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Gebruikersnaam {
-            get {
-                return this.GebruikersnaamField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.GebruikersnaamField, value) != true)) {
-                    this.GebruikersnaamField = value;
-                    this.RaisePropertyChanged("Gebruikersnaam");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Naam {
-            get {
-                return this.NaamField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NaamField, value) != true)) {
-                    this.NaamField = value;
-                    this.RaisePropertyChanged("Naam");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Nummer {
-            get {
-                return this.NummerField;
-            }
-            set {
-                if ((this.NummerField.Equals(value) != true)) {
-                    this.NummerField = value;
-                    this.RaisePropertyChanged("Nummer");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Paswoord {
-            get {
-                return this.PaswoordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PaswoordField, value) != true)) {
-                    this.PaswoordField = value;
-                    this.RaisePropertyChanged("Paswoord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Plaats {
-            get {
-                return this.PlaatsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlaatsField, value) != true)) {
-                    this.PlaatsField = value;
-                    this.RaisePropertyChanged("Plaats");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Postcode {
-            get {
-                return this.PostcodeField;
-            }
-            set {
-                if ((this.PostcodeField.Equals(value) != true)) {
-                    this.PostcodeField = value;
-                    this.RaisePropertyChanged("Postcode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Rechten_ID {
-            get {
-                return this.Rechten_IDField;
-            }
-            set {
-                if ((this.Rechten_IDField.Equals(value) != true)) {
-                    this.Rechten_IDField = value;
-                    this.RaisePropertyChanged("Rechten_ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Voornaam {
-            get {
-                return this.VoornaamField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.VoornaamField, value) != true)) {
-                    this.VoornaamField = value;
-                    this.RaisePropertyChanged("Voornaam");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://schemas.datacontract.org/2004/07/Wcf")]
     public partial class User : object, System.ComponentModel.INotifyPropertyChanged {
         
@@ -348,6 +183,171 @@ namespace WebApp.ServiceReference {
                 if ((object.ReferenceEquals(this.Rechten_OmschrijvingField, value) != true)) {
                     this.Rechten_OmschrijvingField = value;
                     this.RaisePropertyChanged("Rechten_Omschrijving");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Voornaam {
+            get {
+                return this.VoornaamField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VoornaamField, value) != true)) {
+                    this.VoornaamField = value;
+                    this.RaisePropertyChanged("Voornaam");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Tbl_User", Namespace="http://schemas.datacontract.org/2004/07/Wcf")]
+    public partial class Tbl_User : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string AdresField;
+        
+        private string GebruikersnaamField;
+        
+        private int IDField;
+        
+        private string NaamField;
+        
+        private int NummerField;
+        
+        private string PaswoordField;
+        
+        private string PlaatsField;
+        
+        private int PostcodeField;
+        
+        private int Rechten_IDField;
+        
+        private string VoornaamField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Adres {
+            get {
+                return this.AdresField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AdresField, value) != true)) {
+                    this.AdresField = value;
+                    this.RaisePropertyChanged("Adres");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Gebruikersnaam {
+            get {
+                return this.GebruikersnaamField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GebruikersnaamField, value) != true)) {
+                    this.GebruikersnaamField = value;
+                    this.RaisePropertyChanged("Gebruikersnaam");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Naam {
+            get {
+                return this.NaamField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NaamField, value) != true)) {
+                    this.NaamField = value;
+                    this.RaisePropertyChanged("Naam");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Nummer {
+            get {
+                return this.NummerField;
+            }
+            set {
+                if ((this.NummerField.Equals(value) != true)) {
+                    this.NummerField = value;
+                    this.RaisePropertyChanged("Nummer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Paswoord {
+            get {
+                return this.PaswoordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaswoordField, value) != true)) {
+                    this.PaswoordField = value;
+                    this.RaisePropertyChanged("Paswoord");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Plaats {
+            get {
+                return this.PlaatsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlaatsField, value) != true)) {
+                    this.PlaatsField = value;
+                    this.RaisePropertyChanged("Plaats");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Postcode {
+            get {
+                return this.PostcodeField;
+            }
+            set {
+                if ((this.PostcodeField.Equals(value) != true)) {
+                    this.PostcodeField = value;
+                    this.RaisePropertyChanged("Postcode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Rechten_ID {
+            get {
+                return this.Rechten_IDField;
+            }
+            set {
+                if ((this.Rechten_IDField.Equals(value) != true)) {
+                    this.Rechten_IDField = value;
+                    this.RaisePropertyChanged("Rechten_ID");
                 }
             }
         }
@@ -814,11 +814,6 @@ namespace WebApp.ServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService")]
     public interface IService {
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/GetUser", ReplyAction="http://tempuri.org/IService/GetUserResponse")]
-        System.IAsyncResult BeginGetUser(int ID, System.AsyncCallback callback, object asyncState);
-        
-        System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_User> EndGetUser(System.IAsyncResult result);
-        
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/GetAllUsers", ReplyAction="http://tempuri.org/IService/GetAllUsersResponse")]
         System.IAsyncResult BeginGetAllUsers(System.AsyncCallback callback, object asyncState);
         
@@ -888,34 +883,10 @@ namespace WebApp.ServiceReference {
         System.IAsyncResult BeginGetIngave_Gebruiker(int gebruikersid, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_GebruikersIngave> EndGetIngave_Gebruiker(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/WriteLog", ReplyAction="http://tempuri.org/IService/WriteLogResponse")]
-        System.IAsyncResult BeginWriteLog(System.AsyncCallback callback, object asyncState);
-        
-        void EndWriteLog(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IServiceChannel : WebApp.ServiceReference.IService, System.ServiceModel.IClientChannel {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_User> Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_User>)(this.results[0]));
-            }
-        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1074,12 +1045,6 @@ namespace WebApp.ServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class ServiceClient : System.ServiceModel.ClientBase<WebApp.ServiceReference.IService>, WebApp.ServiceReference.IService {
         
-        private BeginOperationDelegate onBeginGetUserDelegate;
-        
-        private EndOperationDelegate onEndGetUserDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetUserCompletedDelegate;
-        
         private BeginOperationDelegate onBeginGetAllUsersDelegate;
         
         private EndOperationDelegate onEndGetAllUsersDelegate;
@@ -1164,12 +1129,6 @@ namespace WebApp.ServiceReference {
         
         private System.Threading.SendOrPostCallback onGetIngave_GebruikerCompletedDelegate;
         
-        private BeginOperationDelegate onBeginWriteLogDelegate;
-        
-        private EndOperationDelegate onEndWriteLogDelegate;
-        
-        private System.Threading.SendOrPostCallback onWriteLogCompletedDelegate;
-        
         private BeginOperationDelegate onBeginOpenDelegate;
         
         private EndOperationDelegate onEndOpenDelegate;
@@ -1223,8 +1182,6 @@ namespace WebApp.ServiceReference {
             }
         }
         
-        public event System.EventHandler<GetUserCompletedEventArgs> GetUserCompleted;
-        
         public event System.EventHandler<GetAllUsersCompletedEventArgs> GetAllUsersCompleted;
         
         public event System.EventHandler<GetUserInfoCompletedEventArgs> GetUserInfoCompleted;
@@ -1253,57 +1210,9 @@ namespace WebApp.ServiceReference {
         
         public event System.EventHandler<GetIngave_GebruikerCompletedEventArgs> GetIngave_GebruikerCompleted;
         
-        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> WriteLogCompleted;
-        
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult WebApp.ServiceReference.IService.BeginGetUser(int ID, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetUser(ID, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_User> WebApp.ServiceReference.IService.EndGetUser(System.IAsyncResult result) {
-            return base.Channel.EndGetUser(result);
-        }
-        
-        private System.IAsyncResult OnBeginGetUser(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int ID = ((int)(inValues[0]));
-            return ((WebApp.ServiceReference.IService)(this)).BeginGetUser(ID, callback, asyncState);
-        }
-        
-        private object[] OnEndGetUser(System.IAsyncResult result) {
-            System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_User> retVal = ((WebApp.ServiceReference.IService)(this)).EndGetUser(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetUserCompleted(object state) {
-            if ((this.GetUserCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetUserCompleted(this, new GetUserCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetUserAsync(int ID) {
-            this.GetUserAsync(ID, null);
-        }
-        
-        public void GetUserAsync(int ID, object userState) {
-            if ((this.onBeginGetUserDelegate == null)) {
-                this.onBeginGetUserDelegate = new BeginOperationDelegate(this.OnBeginGetUser);
-            }
-            if ((this.onEndGetUserDelegate == null)) {
-                this.onEndGetUserDelegate = new EndOperationDelegate(this.OnEndGetUser);
-            }
-            if ((this.onGetUserCompletedDelegate == null)) {
-                this.onGetUserCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetUserCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetUserDelegate, new object[] {
-                        ID}, this.onEndGetUserDelegate, this.onGetUserCompletedDelegate, userState);
-        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.IAsyncResult WebApp.ServiceReference.IService.BeginGetAllUsers(System.AsyncCallback callback, object asyncState) {
@@ -1975,49 +1884,6 @@ namespace WebApp.ServiceReference {
                         gebruikersid}, this.onEndGetIngave_GebruikerDelegate, this.onGetIngave_GebruikerCompletedDelegate, userState);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult WebApp.ServiceReference.IService.BeginWriteLog(System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginWriteLog(callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void WebApp.ServiceReference.IService.EndWriteLog(System.IAsyncResult result) {
-            base.Channel.EndWriteLog(result);
-        }
-        
-        private System.IAsyncResult OnBeginWriteLog(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return ((WebApp.ServiceReference.IService)(this)).BeginWriteLog(callback, asyncState);
-        }
-        
-        private object[] OnEndWriteLog(System.IAsyncResult result) {
-            ((WebApp.ServiceReference.IService)(this)).EndWriteLog(result);
-            return null;
-        }
-        
-        private void OnWriteLogCompleted(object state) {
-            if ((this.WriteLogCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.WriteLogCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void WriteLogAsync() {
-            this.WriteLogAsync(null);
-        }
-        
-        public void WriteLogAsync(object userState) {
-            if ((this.onBeginWriteLogDelegate == null)) {
-                this.onBeginWriteLogDelegate = new BeginOperationDelegate(this.OnBeginWriteLog);
-            }
-            if ((this.onEndWriteLogDelegate == null)) {
-                this.onEndWriteLogDelegate = new EndOperationDelegate(this.OnEndWriteLog);
-            }
-            if ((this.onWriteLogCompletedDelegate == null)) {
-                this.onWriteLogCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnWriteLogCompleted);
-            }
-            base.InvokeAsync(this.onBeginWriteLogDelegate, null, this.onEndWriteLogDelegate, this.onWriteLogCompletedDelegate, userState);
-        }
-        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -2092,19 +1958,6 @@ namespace WebApp.ServiceReference {
             
             public ServiceClientChannel(System.ServiceModel.ClientBase<WebApp.ServiceReference.IService> client) : 
                     base(client) {
-            }
-            
-            public System.IAsyncResult BeginGetUser(int ID, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
-                _args[0] = ID;
-                System.IAsyncResult _result = base.BeginInvoke("GetUser", _args, callback, asyncState);
-                return _result;
-            }
-            
-            public System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_User> EndGetUser(System.IAsyncResult result) {
-                object[] _args = new object[0];
-                System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_User> _result = ((System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_User>)(base.EndInvoke("GetUser", _args, result)));
-                return _result;
             }
             
             public System.IAsyncResult BeginGetAllUsers(System.AsyncCallback callback, object asyncState) {
@@ -2297,17 +2150,6 @@ namespace WebApp.ServiceReference {
                 object[] _args = new object[0];
                 System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_GebruikersIngave> _result = ((System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_GebruikersIngave>)(base.EndInvoke("GetIngave_Gebruiker", _args, result)));
                 return _result;
-            }
-            
-            public System.IAsyncResult BeginWriteLog(System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[0];
-                System.IAsyncResult _result = base.BeginInvoke("WriteLog", _args, callback, asyncState);
-                return _result;
-            }
-            
-            public void EndWriteLog(System.IAsyncResult result) {
-                object[] _args = new object[0];
-                base.EndInvoke("WriteLog", _args, result);
             }
         }
     }

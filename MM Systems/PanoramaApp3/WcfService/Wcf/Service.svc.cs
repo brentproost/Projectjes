@@ -38,22 +38,6 @@ namespace Wcf
             return actlist; 
         }
 
-        //Functie vraagt aan de hand van een gegeven ID userinformatie over deze persoon op.
-        List<Tbl_User> IService.GetUser(int ID)
-        {
-            try
-            {
-                IEnumerable<Tbl_User> result = Data.Tbl_Users.Where(a => a.ID == ID);
-                List<Tbl_User> user = result.ToList();
-                return user;
-            }
-            catch (Exception)
-            {
-                
-                throw;
-            }
-        }
-
         //Functie om alle users op te vragen met alle bijhorende informatie en deze als een lijst van de klasse 'User' terug te geven, 
         //er wordt ook bijgehouden hoeveel ingaven deze persoon al gedaan heeft.
         List<User> IService.GetAllUsers()

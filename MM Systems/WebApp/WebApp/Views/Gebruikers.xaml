@@ -10,41 +10,6 @@
            Title="Gebruikers">
     <Grid x:Name="LayoutRoot">
         <StackPanel>
-                <StackPanel Grid.Column="0">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Naam"></TextBlock>
-                    <TextBox x:Name="txtNaam" Width="100" TextInputStart="txt_TextInputStart"></TextBox>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Voornaam"></TextBlock>
-                    <TextBox TextInputStart="txt_TextInputStart" x:Name="txtVoornaam" Width="100"></TextBox>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Adres"></TextBlock>
-                    <TextBox TextInputStart="txt_TextInputStart" x:Name="txtAdres" Width="100"></TextBox>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Nummer"></TextBlock>
-                    <TextBox TextInputStart="txt_TextInputStart" x:Name="txtNummer" Width="100"></TextBox>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Plaats"></TextBlock>
-                    <TextBox TextInputStart="txt_TextInputStart" x:Name="txtPlaats" Width="100"></TextBox>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Postcode"></TextBlock>
-                    <TextBox TextInputStart="txt_TextInputStart" x:Name="txtPostcode" Width="100"></TextBox>
-                        </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock  Text="Gebruikersnaam"></TextBlock>
-                    <TextBox TextInputStart="txt_TextInputStart" x:Name="txtgebruikersnaam" Width="100"></TextBox>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Paswoord"></TextBlock>
-                    <PasswordBox TextInputStart="txt_TextInputStart" x:Name="txtpasw" Width="100"></PasswordBox>
-                    </StackPanel>
-                <Button HorizontalAlignment="Center" x:Name="btnsubmit" Content="Submit" Click="btnsubmit_Click_1"></Button>
-                </StackPanel>
             <sdk:DataGrid AutoGenerateColumns="False" x:Name="gridd" ItemsSource="{Binding}">
                 <sdk:DataGrid.Columns>
                     <sdk:DataGridTextColumn Binding="{Binding Naam}" Header="Naam"/>
@@ -56,14 +21,14 @@
                     <sdk:DataGridTextColumn Binding="{Binding Gebruikersnaam}" Header="Gebruikersnaam"/>
                     <sdk:DataGridTextColumn Binding="{Binding Rechten_Omschrijving}" Header="Soort Gebruiker"/>
                     <sdk:DataGridTextColumn Binding="{Binding AantalIngaven}" Header="Aantal Ingaven"/>
-                    <sdk:DataGridTemplateColumn Width="SizeToCells" IsReadOnly="True">
+                    <sdk:DataGridTemplateColumn Header="" Width="SizeToCells" IsReadOnly="True">
                         <sdk:DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Image Source="/WebApp;component/icon-delete.png" Tag="{Binding Id}" MouseLeftButtonDown="Image_MouseLeftButtonDown"></Image>
                             </DataTemplate>
                         </sdk:DataGridTemplateColumn.CellTemplate>
                     </sdk:DataGridTemplateColumn>
-                    <sdk:DataGridTemplateColumn Width="SizeToCells" IsReadOnly="True">
+                    <sdk:DataGridTemplateColumn Header="" Width="SizeToCells" IsReadOnly="True">
                         <sdk:DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <HyperlinkButton Tag="{Binding Id}" NavigateUri="/Resultaten" TargetName="ContentFrame" Click="HyperlinkButton_Click">
@@ -76,6 +41,19 @@
                     </sdk:DataGridTemplateColumn>
                 </sdk:DataGrid.Columns>
             </sdk:DataGrid>
+            <StackPanel Orientation="Vertical">
+            <Button HorizontalAlignment="Center" x:Name="btn_export" Margin="263,0,262,0" Click="btn_export_Click">
+                <Button.ContentTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image VerticalAlignment="Center"  Source="/WebApp;component/export.png" Stretch="None" />
+                            <TextBlock VerticalAlignment="Center" Text="Export to Excel"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </Button.ContentTemplate>
+            </Button>
+                <Button x:Name="btn_exportall" HorizontalAlignment="Center" Click="btn_exportall_Click">Export all</Button>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </navigation:Page>

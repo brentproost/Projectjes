@@ -38,9 +38,9 @@ namespace WebApp
         {
             p = new Popup();
             p.Child = new Login();
-            p.HorizontalAlignment = HorizontalAlignment.Center;
-            p.VerticalOffset = 768/2;
-            p.HorizontalOffset = 1024/2;
+
+            p.VerticalOffset = 768 / 2;
+            p.HorizontalOffset = 1024 / 2;
             p.IsOpen = true;   
             
         }

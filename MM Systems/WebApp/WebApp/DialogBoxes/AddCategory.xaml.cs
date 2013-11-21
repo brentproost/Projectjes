@@ -36,7 +36,7 @@ namespace WebApp.DialogBoxes
 
         void client_AddCategoryCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
-            MessageBox.Show("test");
+            MessageBox.Show("Categorie toegevoegd");
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

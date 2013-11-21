@@ -41,33 +41,21 @@ namespace WebApp
 
         private void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
-            client.DeleteActivityCompleted += client_DeleteActivityCompleted;
-            client.DeleteActivityAsync(Convert.ToInt32((((Image)sender).Tag).ToString()));
+               MessageBoxResult msbResult = MessageBox.Show("De ingaven met deze activiteit worden ook verwijderd! Weet u zeker dat u deze activiteit wilt verwijderen?", "Verwijder", MessageBoxButton.OKCancel);
+               if (msbResult == MessageBoxResult.OK)
+               {
+                   ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+                   client.DeleteActivityCompleted += client_DeleteActivityCompleted;
+                   client.DeleteActivityAsync(Convert.ToInt32((((Image)sender).Tag).ToString()));
+               }
             
         }
 
         void client_DeleteActivityCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
-            MessageBox.Show("activiteit verwijderd");
-            string path = "log.txt";
-            if (!File.Exists(path))
-            {
-                // Create a file to write to. 
-                using (StreamWriter sw = File.CreateText(path))
-                {
-                    sw.WriteLine("Hello");
-                    sw.WriteLine("And");
-                    sw.WriteLine("Welcome");
-                }
-            }
-     
-            else
-            {
-                File.AppendAllText("log.txt", "test");
-            }
-
-            UpdateDataGrid();
+         
+                MessageBox.Show("activiteit verwijderd");
+                UpdateDataGrid();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Windows;
@@ -14,9 +15,17 @@ namespace WebApp
 {
     public class Export
     {
+        public string ExportMultiple(DataGrid datagrid)
+        {
+            return ExportDataGrid(datagrid);
+        }
+
         public Export(DataGrid datagrid)
         {
             string data = ExportDataGrid(datagrid);
+            
+ 
+
             SaveFileDialog sfd = new SaveFileDialog()
             {
                 DefaultExt = "csv",
@@ -35,6 +44,10 @@ namespace WebApp
                     stream.Close();
                 }
             }
+        }
+
+        public Export()
+        {
         }
 
         public String ExportDataGrid(DataGrid grid)

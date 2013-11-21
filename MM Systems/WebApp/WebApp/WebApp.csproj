@@ -25,12 +25,14 @@
     <TestPageFileName>WebAppTestPage.html</TestPageFileName>
     <CreateTestPage>true</CreateTestPage>
     <ValidateXaml>true</ValidateXaml>
-    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <EnableOutOfBrowser>true</EnableOutOfBrowser>
     <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
     <UsePlatformExtensions>false</UsePlatformExtensions>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
     <LinkedServerProject>
     </LinkedServerProject>
+    <InBrowserSettingsFile>Properties\InBrowserSettings.xml</InBrowserSettingsFile>
+    <RequireInBrowserElevation>true</RequireInBrowserElevation>
   </PropertyGroup>
   <!-- This property group is only here to support building this project using the 
        MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
@@ -94,6 +96,10 @@
     <Compile Include="DialogBoxes\AddUser.xaml.cs">
       <DependentUpon>AddUser.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DialogBoxes\FolderDialog.xaml.cs">
+      <DependentUpon>FolderDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DialogResult.cs" />
     <Compile Include="Export.cs" />
     <Compile Include="Public_Informatie_Gebruiker.cs" />
     <Compile Include="Service References\ServiceReference\Reference.cs">
@@ -133,6 +139,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="DialogBoxes\FolderDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\empty.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -223,6 +233,9 @@
     <Resource Include="icon-inspect.png" />
     <Resource Include="export.png" />
     <None Include="Properties\OutOfBrowserSettings.xml" />
+    <Resource Include="icon-check.png" />
+    <Resource Include="icon-checkfalse.png" />
+    <None Include="Properties\InBrowserSettings.xml" />
     <Content Include="ReadMe.Coding4Fun.Toolkit.txt" />
     <None Include="Service References\ServiceReference\Service.disco" />
     <None Include="Service References\ServiceReference\configuration91.svcinfo" />
