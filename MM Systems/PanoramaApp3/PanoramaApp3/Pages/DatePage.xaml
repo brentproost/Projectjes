@@ -30,7 +30,6 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" HorizontalAlignment="Center">
-            <ListBox Margin="0,0,-12,0" >
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
                     <!--Replace rectangle with image-->
                     <StackPanel Width="311">
@@ -44,7 +43,6 @@
                         <Button Content="ok" Click="Button_Click"></Button>
                     </StackPanel>
                 </StackPanel>
-            </ListBox>
         </Grid>
     </Grid>
 

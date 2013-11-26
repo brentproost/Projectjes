@@ -20,6 +20,12 @@ namespace WebApp.Views
         public Weeromstandigheden()
         {
             InitializeComponent();
+            UpdateDataGrid();
+        }
+
+        void UpdateDataGrid()
+        {
+            dg_weers.ItemsSource = null;
             client.GetAllWeersOmstandighedenAsync();
             client.GetAllWeersOmstandighedenCompleted += client_GetAllWeersOmstandighedenCompleted;
         }
@@ -43,6 +49,7 @@ namespace WebApp.Views
         void client_DeleteWeersomstandigheidCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
             MessageBox.Show("Weersomstandigheid verwijderd");
+            UpdateDataGrid();
         }
 
     }

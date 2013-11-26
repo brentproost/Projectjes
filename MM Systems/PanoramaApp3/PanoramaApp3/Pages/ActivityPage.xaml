@@ -97,7 +97,6 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <ListBox Margin="0,0,-12,0" >
                 <StackPanel Orientation="Vertical" Width="400" Height="570" Margin="0,0,0,17">
                     <TextBlock TextAlignment="Center">Activiteit</TextBlock>
                     <Grid>
@@ -170,8 +169,6 @@
                         </StackPanel>
                     </Grid>
                 </StackPanel>
-
-            </ListBox>
         </Grid>
     </Grid>
 
