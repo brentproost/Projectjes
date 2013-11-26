@@ -81,5 +81,12 @@ namespace WebApp
         {
             MessageBox.Show("ja");
         }
+
+        private void btn_Weertoevoegen_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            var window = new DialogBoxes.AddWeersomstandigheid();
+            window.Closed += window_Closed;
+            window.Show();
+        }
     }
 }

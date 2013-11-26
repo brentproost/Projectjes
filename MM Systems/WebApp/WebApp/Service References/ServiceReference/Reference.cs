@@ -880,9 +880,24 @@ namespace WebApp.ServiceReference {
         System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_Schaal_Nachtrust> EndGetNachtrustSchaal(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/GetIngave_Gebruiker", ReplyAction="http://tempuri.org/IService/GetIngave_GebruikerResponse")]
-        System.IAsyncResult BeginGetIngave_Gebruiker(int gebruikersid, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGetIngave_Gebruiker(System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_GebruikersIngave> EndGetIngave_Gebruiker(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/AddWeersomstandigheden", ReplyAction="http://tempuri.org/IService/AddWeersomstandighedenResponse")]
+        System.IAsyncResult BeginAddWeersomstandigheden(string omschr, System.AsyncCallback callback, object asyncState);
+        
+        void EndAddWeersomstandigheden(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/DeleteCategory", ReplyAction="http://tempuri.org/IService/DeleteCategoryResponse")]
+        System.IAsyncResult BeginDeleteCategory(int id, System.AsyncCallback callback, object asyncState);
+        
+        void EndDeleteCategory(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/DeleteWeersomstandigheid", ReplyAction="http://tempuri.org/IService/DeleteWeersomstandigheidResponse")]
+        System.IAsyncResult BeginDeleteWeersomstandigheid(int id, System.AsyncCallback callback, object asyncState);
+        
+        void EndDeleteWeersomstandigheid(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1129,6 +1144,24 @@ namespace WebApp.ServiceReference {
         
         private System.Threading.SendOrPostCallback onGetIngave_GebruikerCompletedDelegate;
         
+        private BeginOperationDelegate onBeginAddWeersomstandighedenDelegate;
+        
+        private EndOperationDelegate onEndAddWeersomstandighedenDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddWeersomstandighedenCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginDeleteCategoryDelegate;
+        
+        private EndOperationDelegate onEndDeleteCategoryDelegate;
+        
+        private System.Threading.SendOrPostCallback onDeleteCategoryCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginDeleteWeersomstandigheidDelegate;
+        
+        private EndOperationDelegate onEndDeleteWeersomstandigheidDelegate;
+        
+        private System.Threading.SendOrPostCallback onDeleteWeersomstandigheidCompletedDelegate;
+        
         private BeginOperationDelegate onBeginOpenDelegate;
         
         private EndOperationDelegate onEndOpenDelegate;
@@ -1209,6 +1242,12 @@ namespace WebApp.ServiceReference {
         public event System.EventHandler<GetNachtrustSchaalCompletedEventArgs> GetNachtrustSchaalCompleted;
         
         public event System.EventHandler<GetIngave_GebruikerCompletedEventArgs> GetIngave_GebruikerCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> AddWeersomstandighedenCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> DeleteCategoryCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> DeleteWeersomstandigheidCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -1839,8 +1878,8 @@ namespace WebApp.ServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult WebApp.ServiceReference.IService.BeginGetIngave_Gebruiker(int gebruikersid, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetIngave_Gebruiker(gebruikersid, callback, asyncState);
+        System.IAsyncResult WebApp.ServiceReference.IService.BeginGetIngave_Gebruiker(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetIngave_Gebruiker(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1849,8 +1888,7 @@ namespace WebApp.ServiceReference {
         }
         
         private System.IAsyncResult OnBeginGetIngave_Gebruiker(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int gebruikersid = ((int)(inValues[0]));
-            return ((WebApp.ServiceReference.IService)(this)).BeginGetIngave_Gebruiker(gebruikersid, callback, asyncState);
+            return ((WebApp.ServiceReference.IService)(this)).BeginGetIngave_Gebruiker(callback, asyncState);
         }
         
         private object[] OnEndGetIngave_Gebruiker(System.IAsyncResult result) {
@@ -1866,11 +1904,11 @@ namespace WebApp.ServiceReference {
             }
         }
         
-        public void GetIngave_GebruikerAsync(int gebruikersid) {
-            this.GetIngave_GebruikerAsync(gebruikersid, null);
+        public void GetIngave_GebruikerAsync() {
+            this.GetIngave_GebruikerAsync(null);
         }
         
-        public void GetIngave_GebruikerAsync(int gebruikersid, object userState) {
+        public void GetIngave_GebruikerAsync(object userState) {
             if ((this.onBeginGetIngave_GebruikerDelegate == null)) {
                 this.onBeginGetIngave_GebruikerDelegate = new BeginOperationDelegate(this.OnBeginGetIngave_Gebruiker);
             }
@@ -1880,8 +1918,142 @@ namespace WebApp.ServiceReference {
             if ((this.onGetIngave_GebruikerCompletedDelegate == null)) {
                 this.onGetIngave_GebruikerCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetIngave_GebruikerCompleted);
             }
-            base.InvokeAsync(this.onBeginGetIngave_GebruikerDelegate, new object[] {
-                        gebruikersid}, this.onEndGetIngave_GebruikerDelegate, this.onGetIngave_GebruikerCompletedDelegate, userState);
+            base.InvokeAsync(this.onBeginGetIngave_GebruikerDelegate, null, this.onEndGetIngave_GebruikerDelegate, this.onGetIngave_GebruikerCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult WebApp.ServiceReference.IService.BeginAddWeersomstandigheden(string omschr, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddWeersomstandigheden(omschr, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void WebApp.ServiceReference.IService.EndAddWeersomstandigheden(System.IAsyncResult result) {
+            base.Channel.EndAddWeersomstandigheden(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddWeersomstandigheden(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string omschr = ((string)(inValues[0]));
+            return ((WebApp.ServiceReference.IService)(this)).BeginAddWeersomstandigheden(omschr, callback, asyncState);
+        }
+        
+        private object[] OnEndAddWeersomstandigheden(System.IAsyncResult result) {
+            ((WebApp.ServiceReference.IService)(this)).EndAddWeersomstandigheden(result);
+            return null;
+        }
+        
+        private void OnAddWeersomstandighedenCompleted(object state) {
+            if ((this.AddWeersomstandighedenCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddWeersomstandighedenCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddWeersomstandighedenAsync(string omschr) {
+            this.AddWeersomstandighedenAsync(omschr, null);
+        }
+        
+        public void AddWeersomstandighedenAsync(string omschr, object userState) {
+            if ((this.onBeginAddWeersomstandighedenDelegate == null)) {
+                this.onBeginAddWeersomstandighedenDelegate = new BeginOperationDelegate(this.OnBeginAddWeersomstandigheden);
+            }
+            if ((this.onEndAddWeersomstandighedenDelegate == null)) {
+                this.onEndAddWeersomstandighedenDelegate = new EndOperationDelegate(this.OnEndAddWeersomstandigheden);
+            }
+            if ((this.onAddWeersomstandighedenCompletedDelegate == null)) {
+                this.onAddWeersomstandighedenCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddWeersomstandighedenCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddWeersomstandighedenDelegate, new object[] {
+                        omschr}, this.onEndAddWeersomstandighedenDelegate, this.onAddWeersomstandighedenCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult WebApp.ServiceReference.IService.BeginDeleteCategory(int id, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginDeleteCategory(id, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void WebApp.ServiceReference.IService.EndDeleteCategory(System.IAsyncResult result) {
+            base.Channel.EndDeleteCategory(result);
+        }
+        
+        private System.IAsyncResult OnBeginDeleteCategory(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id = ((int)(inValues[0]));
+            return ((WebApp.ServiceReference.IService)(this)).BeginDeleteCategory(id, callback, asyncState);
+        }
+        
+        private object[] OnEndDeleteCategory(System.IAsyncResult result) {
+            ((WebApp.ServiceReference.IService)(this)).EndDeleteCategory(result);
+            return null;
+        }
+        
+        private void OnDeleteCategoryCompleted(object state) {
+            if ((this.DeleteCategoryCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.DeleteCategoryCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void DeleteCategoryAsync(int id) {
+            this.DeleteCategoryAsync(id, null);
+        }
+        
+        public void DeleteCategoryAsync(int id, object userState) {
+            if ((this.onBeginDeleteCategoryDelegate == null)) {
+                this.onBeginDeleteCategoryDelegate = new BeginOperationDelegate(this.OnBeginDeleteCategory);
+            }
+            if ((this.onEndDeleteCategoryDelegate == null)) {
+                this.onEndDeleteCategoryDelegate = new EndOperationDelegate(this.OnEndDeleteCategory);
+            }
+            if ((this.onDeleteCategoryCompletedDelegate == null)) {
+                this.onDeleteCategoryCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDeleteCategoryCompleted);
+            }
+            base.InvokeAsync(this.onBeginDeleteCategoryDelegate, new object[] {
+                        id}, this.onEndDeleteCategoryDelegate, this.onDeleteCategoryCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult WebApp.ServiceReference.IService.BeginDeleteWeersomstandigheid(int id, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginDeleteWeersomstandigheid(id, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void WebApp.ServiceReference.IService.EndDeleteWeersomstandigheid(System.IAsyncResult result) {
+            base.Channel.EndDeleteWeersomstandigheid(result);
+        }
+        
+        private System.IAsyncResult OnBeginDeleteWeersomstandigheid(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id = ((int)(inValues[0]));
+            return ((WebApp.ServiceReference.IService)(this)).BeginDeleteWeersomstandigheid(id, callback, asyncState);
+        }
+        
+        private object[] OnEndDeleteWeersomstandigheid(System.IAsyncResult result) {
+            ((WebApp.ServiceReference.IService)(this)).EndDeleteWeersomstandigheid(result);
+            return null;
+        }
+        
+        private void OnDeleteWeersomstandigheidCompleted(object state) {
+            if ((this.DeleteWeersomstandigheidCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.DeleteWeersomstandigheidCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void DeleteWeersomstandigheidAsync(int id) {
+            this.DeleteWeersomstandigheidAsync(id, null);
+        }
+        
+        public void DeleteWeersomstandigheidAsync(int id, object userState) {
+            if ((this.onBeginDeleteWeersomstandigheidDelegate == null)) {
+                this.onBeginDeleteWeersomstandigheidDelegate = new BeginOperationDelegate(this.OnBeginDeleteWeersomstandigheid);
+            }
+            if ((this.onEndDeleteWeersomstandigheidDelegate == null)) {
+                this.onEndDeleteWeersomstandigheidDelegate = new EndOperationDelegate(this.OnEndDeleteWeersomstandigheid);
+            }
+            if ((this.onDeleteWeersomstandigheidCompletedDelegate == null)) {
+                this.onDeleteWeersomstandigheidCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDeleteWeersomstandigheidCompleted);
+            }
+            base.InvokeAsync(this.onBeginDeleteWeersomstandigheidDelegate, new object[] {
+                        id}, this.onEndDeleteWeersomstandigheidDelegate, this.onDeleteWeersomstandigheidCompletedDelegate, userState);
         }
         
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
@@ -2139,9 +2311,8 @@ namespace WebApp.ServiceReference {
                 return _result;
             }
             
-            public System.IAsyncResult BeginGetIngave_Gebruiker(int gebruikersid, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
-                _args[0] = gebruikersid;
+            public System.IAsyncResult BeginGetIngave_Gebruiker(System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[0];
                 System.IAsyncResult _result = base.BeginInvoke("GetIngave_Gebruiker", _args, callback, asyncState);
                 return _result;
             }
@@ -2150,6 +2321,42 @@ namespace WebApp.ServiceReference {
                 object[] _args = new object[0];
                 System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_GebruikersIngave> _result = ((System.Collections.ObjectModel.ObservableCollection<WebApp.ServiceReference.Tbl_GebruikersIngave>)(base.EndInvoke("GetIngave_Gebruiker", _args, result)));
                 return _result;
+            }
+            
+            public System.IAsyncResult BeginAddWeersomstandigheden(string omschr, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = omschr;
+                System.IAsyncResult _result = base.BeginInvoke("AddWeersomstandigheden", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndAddWeersomstandigheden(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("AddWeersomstandigheden", _args, result);
+            }
+            
+            public System.IAsyncResult BeginDeleteCategory(int id, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = id;
+                System.IAsyncResult _result = base.BeginInvoke("DeleteCategory", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndDeleteCategory(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("DeleteCategory", _args, result);
+            }
+            
+            public System.IAsyncResult BeginDeleteWeersomstandigheid(int id, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = id;
+                System.IAsyncResult _result = base.BeginInvoke("DeleteWeersomstandigheid", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndDeleteWeersomstandigheid(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("DeleteWeersomstandigheid", _args, result);
             }
         }
     }

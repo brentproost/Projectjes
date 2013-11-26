@@ -18,6 +18,8 @@ namespace WebApp
 {
     public partial class About : Page
     {
+        ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+
         public About()
         {
             InitializeComponent();
@@ -32,11 +34,16 @@ namespace WebApp
         void UpdateDataGrid()
         {
             gridd.ItemsSource = null;
-
-            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
-
-            client.GetAllActivitiesCompleted += client_GetAllActivitiesCompleted;
+            dg_categorien.ItemsSource = null;
             client.GetAllActivitiesAsync();
+            client.GetAllActivitiesCompleted += client_GetAllActivitiesCompleted;
+            client.GetAllCategoriesAsync();
+            client.GetAllCategoriesCompleted += client_GetAllCategoriesCompleted;
+        }
+
+        void client_GetAllCategoriesCompleted(object sender, ServiceReference.GetAllCategoriesCompletedEventArgs e)
+        {
+            dg_categorien.ItemsSource = e.Result.ToList();
         }
 
         private void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -44,9 +51,8 @@ namespace WebApp
                MessageBoxResult msbResult = MessageBox.Show("De ingaven met deze activiteit worden ook verwijderd! Weet u zeker dat u deze activiteit wilt verwijderen?", "Verwijder", MessageBoxButton.OKCancel);
                if (msbResult == MessageBoxResult.OK)
                {
-                   ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
-                   client.DeleteActivityCompleted += client_DeleteActivityCompleted;
                    client.DeleteActivityAsync(Convert.ToInt32((((Image)sender).Tag).ToString()));
+                   client.DeleteActivityCompleted += client_DeleteActivityCompleted;
                }
             
         }
@@ -56,6 +62,22 @@ namespace WebApp
          
                 MessageBox.Show("activiteit verwijderd");
                 UpdateDataGrid();
+        }
+
+        private void Image_MouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
+        {
+            MessageBoxResult msbResult = MessageBox.Show("De ingaven met deze categorie worden ook verwijderd! Weet u zeker dat u deze activiteit wilt verwijderen?", "Verwijder", MessageBoxButton.OKCancel);
+            if (msbResult == MessageBoxResult.OK)
+            {
+                client.DeleteCategoryAsync(Convert.ToInt32((((Image)sender).Tag).ToString()));
+                client.DeleteCategoryCompleted += client_DeleteCategoryCompleted;
+            }            
+        }
+
+        void client_DeleteCategoryCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            MessageBox.Show("categorie verwijderd");
+            UpdateDataGrid();
         }
     }
 }

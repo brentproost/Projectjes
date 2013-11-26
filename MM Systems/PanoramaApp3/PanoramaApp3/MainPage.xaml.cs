@@ -34,6 +34,7 @@ namespace PanoramaApp3
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
+           
             /*if (User.ID != 0)
             {
                 client.GetAllCategoriesCompleted += serviceClient_GetAllCategoriesCompleted;

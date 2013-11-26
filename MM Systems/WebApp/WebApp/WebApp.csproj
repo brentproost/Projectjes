@@ -118,6 +118,9 @@
     <Compile Include="DialogBoxes\AddUser.xaml.cs">
       <DependentUpon>AddUser.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DialogBoxes\AddWeersomstandigheid.xaml.cs">
+      <DependentUpon>AddWeersomstandigheid.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DialogBoxes\FolderDialog\DoubleClickHelper.cs" />
     <Compile Include="DialogBoxes\FolderDialog\Drive.cs" />
     <Compile Include="DialogBoxes\FolderDialog\Folder.cs" />
@@ -164,6 +167,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="DialogBoxes\AddWeersomstandigheid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DialogBoxes\FolderDialog\FolderDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -220,6 +227,30 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
+    <Resource Include="icon-delete.png" />
+    <Resource Include="icon-user.jpg" />
+    <Resource Include="icon-addactivity.jpg" />
+    <Resource Include="icon-addcategory.jpg" />
+    <Resource Include="icon-inspect.png" />
+    <Resource Include="export.png" />
+    <None Include="Properties\OutOfBrowserSettings.xml" />
+    <Resource Include="icon-check.png" />
+    <Resource Include="icon-checkfalse.png" />
+    <None Include="Properties\InBrowserSettings.xml" />
+    <Resource Include="DialogBoxes\FolderDialog\Assets\drive.png" />
+    <Resource Include="DialogBoxes\FolderDialog\Assets\folder.png" />
+    <Resource Include="DialogBoxes\FolderDialog\Assets\back.png" />
+    <Resource Include="DialogBoxes\FolderDialog\Assets\mc.png" />
+    <Resource Include="iconweersomstandigheden.jpg" />
+    <Content Include="ReadMe.Coding4Fun.Toolkit.txt" />
+    <None Include="Service References\ServiceReference\Service.disco" />
+    <None Include="Service References\ServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReference\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig" />
     <None Include="Service References\ServiceReference\Service.wsdl" />
     <None Include="Service References\ServiceReference\Service.xsd">
       <SubType>Designer</SubType>
@@ -251,29 +282,7 @@
     <None Include="Service References\ServiceReference\WebApp.ServiceReference.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <Resource Include="icon-delete.png" />
-    <Resource Include="icon-user.jpg" />
-    <Resource Include="icon-addactivity.jpg" />
-    <Resource Include="icon-addcategory.jpg" />
-    <Resource Include="icon-inspect.png" />
-    <Resource Include="export.png" />
-    <None Include="Properties\OutOfBrowserSettings.xml" />
-    <Resource Include="icon-check.png" />
-    <Resource Include="icon-checkfalse.png" />
-    <None Include="Properties\InBrowserSettings.xml" />
-    <Resource Include="DialogBoxes\FolderDialog\Assets\drive.png" />
-    <Resource Include="DialogBoxes\FolderDialog\Assets\folder.png" />
-    <Resource Include="DialogBoxes\FolderDialog\Assets\back.png" />
-    <Resource Include="DialogBoxes\FolderDialog\Assets\mc.png" />
-    <Content Include="ReadMe.Coding4Fun.Toolkit.txt" />
-    <None Include="Service References\ServiceReference\Service.disco" />
-    <None Include="Service References\ServiceReference\configuration91.svcinfo" />
-    <None Include="Service References\ServiceReference\configuration.svcinfo" />
-    <None Include="Service References\ServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <Content Include="ServiceReferences.ClientConfig" />
+    <None Include="ServiceReferences.ClientConfigOLD" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

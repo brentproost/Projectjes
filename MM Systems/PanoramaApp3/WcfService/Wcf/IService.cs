@@ -52,6 +52,15 @@ namespace Wcf
         List<Tbl_Schaal_Nachtrust> GetNachtrustSchaal();
 
         [OperationContract]
-        List<Tbl_GebruikersIngave> GetIngave_Gebruiker(int gebruikersid);
+        List<Tbl_GebruikersIngave> GetIngave_Gebruiker();
+
+        [OperationContract]
+        void AddWeersomstandigheden(string omschr);
+
+        [OperationContract]
+        void DeleteCategory(int id);
+
+        [OperationContract]
+        void DeleteWeersomstandigheid(int id);
     }
 }

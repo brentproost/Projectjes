@@ -16,6 +16,7 @@ namespace WebApp.Views
 {
     public partial class Resultaten : Page
     {
+        
         ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
         public Resultaten()
         {
@@ -37,7 +38,7 @@ namespace WebApp.Views
 
         void UpdateUserInfo()
         {
-            client.GetIngave_GebruikerAsync(Convert.ToInt16(txtid.Text));
+            client.GetIngave_GebruikerAsync();
             client.GetIngave_GebruikerCompleted += client_GetIngave_GebruikerCompleted;
             client.GetUserInfoAsync(Convert.ToInt16(txtid.Text));
             client.GetUserInfoCompleted += client_GetUserInfoCompleted;
@@ -45,8 +46,10 @@ namespace WebApp.Views
 
         void client_GetUserInfoCompleted(object sender, ServiceReference.GetUserInfoCompletedEventArgs e)
         {
-            Public_Informatie_Gebruiker.Voornaam = e.Result[0].Voornaam.Replace(" ", string.Empty);
-            Public_Informatie_Gebruiker.Naam = e.Result[0].Naam.Replace(" ", string.Empty);
+            var resultaat = (from i in e.Result where i.ID == Convert.ToInt16(txtid.Text) select i).ToList();
+
+            Public_Informatie_Gebruiker.Voornaam = resultaat[0].Voornaam.Replace(" ", string.Empty);
+            Public_Informatie_Gebruiker.Naam = resultaat[0].Naam.Replace(" ", string.Empty);
 
             if (Public_Informatie_Gebruiker.Voornaam != null && Public_Informatie_Gebruiker.Naam != null)
             {

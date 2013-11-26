@@ -23,8 +23,6 @@ namespace WebApp
         public Export(DataGrid datagrid)
         {
             string data = ExportDataGrid(datagrid);
-            
- 
 
             SaveFileDialog sfd = new SaveFileDialog()
             {
@@ -34,15 +32,34 @@ namespace WebApp
             };
             if (sfd.ShowDialog() == true)
             {
-                using (Stream stream = sfd.OpenFile())
+                try
                 {
-                    using (StreamWriter writer = new StreamWriter(stream))
+                    using (Stream stream = sfd.OpenFile())
                     {
-                        writer.Write(data);
-                        writer.Close();
+                        using (StreamWriter writer = new StreamWriter(stream))
+                        {
+                            writer.Write(data);
+                            writer.Close();
+                        }
+                        stream.Close();
                     }
-                    stream.Close();
                 }
+                catch (Exception except)
+                {
+                    MessageBox.Show(except.Message);
+                }
+
+            }
+        }
+
+        public Export(DataGrid datagrid, string directory, string filename)
+        {
+            string data = ExportDataGrid(datagrid);
+
+            using (StreamWriter writer = new StreamWriter(@"" + directory + "/" + filename))
+            {
+                writer.Write(data);
+                writer.Close();
             }
         }
 
@@ -79,7 +96,8 @@ namespace WebApp
                         propInfo = data.GetType().GetProperty(colPath);
                         if (propInfo != null)
                         {
-                            strBuilder.Append(propInfo.GetValue(data, null).ToString());
+                            string propi = propInfo.GetValue(data, null).ToString();
+                            strBuilder.Append(propi.Replace("\r", ""));
                             strBuilder.Append(";");
                         }
                     }

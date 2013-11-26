@@ -22,6 +22,9 @@ namespace WebApp.Views
         FolderDialog fd = new FolderDialog();
         ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
         DataGrid multiexport = new DataGrid();
+        List<string> bestandsnaam = new List<string>();
+        List<int> gebruikersids = new List<int>();
+
         public Gebruikers()
         {
             InitializeComponent();
@@ -75,7 +78,43 @@ namespace WebApp.Views
 
         void fd_Closed(object sender, EventArgs e)
         {
-            Tb_dir.Text = fd.SelectedFolderPath;
+            client.GetAllUsersAsync();
+            client.GetAllUsersCompleted+=client_GetAllUsersCompletedids;
+        }
+
+        void client_GetAllUsersCompletedids(object sender, ServiceReference.GetAllUsersCompletedEventArgs e)
+        {
+            foreach (var item in e.Result)
+            {
+                gebruikersids.Add(item.Id);
+                bestandsnaam.Add(item.Naam.Replace(" ", "") + "_" + item.Voornaam.Replace(" ", "") + "_" + DateTime.Now.Date.ToString("MMMM-dd-yyyy")+".csv");
+            }
+            client.GetIngave_GebruikerAsync();
+            client.GetIngave_GebruikerCompleted += client_GetIngave_GebruikerCompleted;
+        }
+
+        void client_GetIngave_GebruikerCompleted(object sender, ServiceReference.GetIngave_GebruikerCompletedEventArgs e)
+        {
+            int count = 0;
+            foreach (var item in gebruikersids)
+            {
+                var list = from i in e.Result where i.User_ID == item select i;
+                inv_datagrid.ItemsSource = list.ToList();
+                Export ex = new Export(inv_datagrid, fd.SelectedFolderPath, bestandsnaam[count]);
+                count ++;
+            }
+        }
+
+        private void btn_export_allin_one_file_Click(object sender, RoutedEventArgs e)
+        {
+            client.GetIngave_GebruikerAsync();
+            client.GetIngave_GebruikerCompleted += client_GetIngave_GebruikerCompletedonefile;
+        }
+
+        void client_GetIngave_GebruikerCompletedonefile(object sender, ServiceReference.GetIngave_GebruikerCompletedEventArgs e)
+        { 
+            inv_datagrid.ItemsSource = e.Result.ToList();
+            Export exportallonefile = new Export(inv_datagrid);
         }
     }
 }

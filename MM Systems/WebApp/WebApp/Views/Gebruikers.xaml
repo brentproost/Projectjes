@@ -42,19 +42,51 @@
                 </sdk:DataGrid.Columns>
             </sdk:DataGrid>
             <StackPanel Orientation="Vertical">
-            <Button HorizontalAlignment="Center" x:Name="btn_export" Margin="263,0,262,0" Click="btn_export_Click">
-                <Button.ContentTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <Image VerticalAlignment="Center"  Source="/WebApp;component/export.png" Stretch="None" />
-                            <TextBlock VerticalAlignment="Center" Text="Export to Excel"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </Button.ContentTemplate>
-            </Button>
-                <Button x:Name="btn_exportall" HorizontalAlignment="Center" Click="btn_exportall_Click">Export all</Button>
-                <TextBlock Name="Tb_dir" Text="directory" HorizontalAlignment="Center"></TextBlock>
+                <Button HorizontalAlignment="Left"  x:Name="btn_export" Click="btn_export_Click">
+                    <Button.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image VerticalAlignment="Center"  Source="/WebApp;component/export.png" Stretch="None" />
+                                <TextBlock VerticalAlignment="Center" Text="Exporteer bovenstaande tabel naar Excel"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Button.ContentTemplate>
+                </Button>
+                <Button x:Name="btn_exportall" HorizontalAlignment="Left" Click="btn_exportall_Click">
+                    <Button.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image VerticalAlignment="Center" Source="/WebApp;component/export.png" Stretch="None" />
+                                <TextBlock VerticalAlignment="Center" Text="Exporteer resultaten in afzonderlijke bestanden naar Excel"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Button.ContentTemplate>
+                </Button>
+                <Button x:Name="btn_export_allin_one_file" HorizontalAlignment="Left" Click="btn_export_allin_one_file_Click">
+                    <Button.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image VerticalAlignment="Center" Source="/WebApp;component/export.png" Stretch="None" />
+                                <TextBlock VerticalAlignment="Center" Text="Exporteer resultaten in één bestand"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Button.ContentTemplate>
+                </Button>
             </StackPanel>
         </StackPanel>
+        <sdk:DataGrid AutoGenerateColumns="False" x:Name="inv_datagrid" Visibility="Collapsed" ItemsSource="{Binding}">
+            <sdk:DataGrid.Columns>
+                <sdk:DataGridTextColumn Header="Ingave_ID" Binding="{Binding ID}" />
+                <sdk:DataGridTextColumn Header="Ingave uur en datum" Binding="{Binding Datum_Uur_Ingave}" />
+                <sdk:DataGridTextColumn Header="Datum activiteit" Binding="{Binding Datum_Uur_Activiteit}"/>
+                <sdk:DataGridTextColumn Header="Beginuur" Binding="{Binding Beginuur_Activiteit}"/>
+                <sdk:DataGridTextColumn Header="Einduur" Binding="{Binding Einduur_Activiteit}"/>
+                <sdk:DataGridTextColumn Header="Commentaar" Binding="{Binding Commentaar}"/>
+                <sdk:DataGridTextColumn Header="Aantal uur geslapen" Binding="{Binding Aantal_Uren_Geslapen}"/>
+                <sdk:DataGridTextColumn Header="Vermoeidheid" Binding="{Binding Vermoeidheid}"/>
+                <sdk:DataGridTextColumn Header="Belangrijkheid" Binding="{Binding Belangrijkheid}"/>
+                <sdk:DataGridTextColumn Header="Tevredenheid" Binding="{Binding Tevredenheid}"/>
+            </sdk:DataGrid.Columns>
+        </sdk:DataGrid>
     </Grid>
 </navigation:Page>

@@ -159,6 +159,22 @@ namespace Wcf
             }
         }
 
+        void IService.AddWeersomstandigheden(string omschr)
+        {
+            Tbl_Weersomstandigheden cat = new Tbl_Weersomstandigheden() { Omschrijving = omschr };
+            Data.Tbl_Weersomstandighedens.InsertOnSubmit(cat);
+
+            try
+            {
+                Data.SubmitChanges();
+            }
+
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
         //Functie om een Activiteit te verwijderen, de ingaven in Tbl_GebruikersIngave die deze activiteit bevat worden ook verwijderd
         void IService.DeleteActivity(int id)
         {
@@ -256,14 +272,67 @@ namespace Wcf
         }
 
         //Functie om de ingaven per gebruiker op te vragen
-        List<Tbl_GebruikersIngave> IService.GetIngave_Gebruiker(int gebruikersid)
+        List<Tbl_GebruikersIngave> IService.GetIngave_Gebruiker()
         {
-            return (from i in Data.Tbl_GebruikersIngaves where i.User_ID == gebruikersid select i).ToList();
+            return Data.Tbl_GebruikersIngaves.ToList();
         }
 
         List<Tbl_User> IService.GetUserInfo(int ID)
         {
             return (from i in Data.Tbl_Users where i.ID == ID select i).ToList();
+        }
+
+        void IService.DeleteCategory(int id)
+        {
+            var delete = from cat in Data.Tbl_Categoriens where cat.Id == id select cat;
+            var activiteiten = (from act in Data.Tbl_Activiteitens where act.Categorie_ID == id select act).ToList();
+
+            foreach (var act in activiteiten)
+            {
+                var deleteingavenmetactivity = from i in Data.Tbl_GebruikersIngaves where i.Activiteit_ID == act.ID select i;
+                foreach (var ing in deleteingavenmetactivity)
+                {
+                    Data.Tbl_GebruikersIngaves.DeleteOnSubmit(ing);
+                    Data.SubmitChanges();
+                }
+            }
+
+            foreach (var act in activiteiten)
+            {
+                Data.Tbl_Activiteitens.DeleteOnSubmit(act);
+                Data.SubmitChanges();
+            }
+
+            foreach (var del in delete)
+            {
+                Data.Tbl_Categoriens.DeleteOnSubmit(del);
+                Data.SubmitChanges();
+            }
+        }
+
+        void IService.DeleteWeersomstandigheid(int id)
+        {
+            var delete = from wrs in Data.Tbl_Weersomstandighedens where wrs.ID == id select wrs;
+            var ingavenmetweersomstandigheid = from i in Data.Tbl_GebruikersIngaves where i.Weersomstandigheden_ID == id select i;
+
+            foreach (var ing in ingavenmetweersomstandigheid)
+            {
+                Data.Tbl_GebruikersIngaves.DeleteOnSubmit(ing);
+            }
+
+            foreach (var del in delete)
+            {
+                Data.Tbl_Weersomstandighedens.DeleteOnSubmit(del);
+            }
+
+            try
+            {
+                Data.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
     }
 }

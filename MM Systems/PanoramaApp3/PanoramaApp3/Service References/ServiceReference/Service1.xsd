@@ -2,20 +2,6 @@
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://mmsystemsservice.cloudapp.net/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Wcf" />
   <xs:import schemaLocation="http://mmsystemsservice.cloudapp.net/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:element name="GetUser">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetUserResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetUserResult" nillable="true" type="q1:ArrayOfTbl_User" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="GetAllUsers">
     <xs:complexType>
       <xs:sequence />
@@ -24,7 +10,7 @@
   <xs:element name="GetAllUsersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetAllUsersResult" nillable="true" type="q2:ArrayOfUser" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetAllUsersResult" nillable="true" type="q1:ArrayOfUser" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -38,7 +24,7 @@
   <xs:element name="GetUserInfoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetUserInfoResult" nillable="true" type="q3:ArrayOfTbl_User" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetUserInfoResult" nillable="true" type="q2:ArrayOfTbl_User" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -50,7 +36,7 @@
   <xs:element name="GetAllActivitiesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetAllActivitiesResult" nillable="true" type="q4:ArrayOfActivities" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetAllActivitiesResult" nillable="true" type="q3:ArrayOfActivities" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -62,7 +48,7 @@
   <xs:element name="GetAllCategoriesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetAllCategoriesResult" nillable="true" type="q5:ArrayOfTbl_Categorien" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetAllCategoriesResult" nillable="true" type="q4:ArrayOfTbl_Categorien" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -156,8 +142,8 @@
         <xs:element minOccurs="0" name="actID" type="xs:int" />
         <xs:element minOccurs="0" name="datumuuringave" type="xs:dateTime" />
         <xs:element minOccurs="0" name="dtmuurActiviteit" type="xs:dateTime" />
-        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="beginuur" type="q6:duration" />
-        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="einduur" type="q7:duration" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="beginuur" type="q5:duration" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="einduur" type="q6:duration" />
         <xs:element minOccurs="0" name="commentaar" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="weersid" type="xs:int" />
         <xs:element minOccurs="0" name="nachtrid" type="xs:int" />
@@ -181,7 +167,7 @@
   <xs:element name="GetAllWeersOmstandighedenResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetAllWeersOmstandighedenResult" nillable="true" type="q8:ArrayOfTbl_Weersomstandigheden" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetAllWeersOmstandighedenResult" nillable="true" type="q7:ArrayOfTbl_Weersomstandigheden" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -193,7 +179,7 @@
   <xs:element name="GetNachtrustSchaalResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetNachtrustSchaalResult" nillable="true" type="q9:ArrayOfTbl_Schaal_Nachtrust" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetNachtrustSchaalResult" nillable="true" type="q8:ArrayOfTbl_Schaal_Nachtrust" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -207,7 +193,7 @@
   <xs:element name="GetIngave_GebruikerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetIngave_GebruikerResult" nillable="true" type="q10:ArrayOfTbl_GebruikersIngave" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Wcf" minOccurs="0" name="GetIngave_GebruikerResult" nillable="true" type="q9:ArrayOfTbl_GebruikersIngave" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

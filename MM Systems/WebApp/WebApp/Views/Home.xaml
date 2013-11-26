@@ -67,6 +67,21 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                             </StackPanel>
                         </Grid>
                     </Border>
+                    <Border Margin="0,0,10,0" BorderThickness="1" BorderBrush="Gray" Width="200">
+                        <Grid Width="200" x:Name="btn_Weertoevoegen"  Cursor="Hand" MouseLeftButtonUp="btn_Weertoevoegen_MouseLeftButtonUp" >
+                            <StackPanel>
+                                <Rectangle Width="200" Height="147">
+                                    <Rectangle.Fill>
+                                        <ImageBrush ImageSource="/WebApp;component/iconweersomstandigheden.jpg" Stretch="None"/>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <Grid>
+                                    <Rectangle Width="200" Height="53" Fill="White"/>
+                                    <TextBlock HorizontalAlignment="Center" Text="Weersomstandigheid toevoegen" VerticalAlignment="Center"></TextBlock>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
                 </StackPanel>
             </StackPanel>
 

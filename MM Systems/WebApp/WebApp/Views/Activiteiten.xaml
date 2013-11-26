@@ -9,7 +9,13 @@
     Style="{StaticResource PageStyle}">
 
     <Grid x:Name="LayoutRoot">
-        <sdk:DataGrid AutoGenerateColumns="False" x:Name="gridd" ItemsSource="{Binding}" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Orientation="Vertical">
+        <TextBlock Text="Activiteiten"></TextBlock>
+        <sdk:DataGrid Margin="0 0 10 10" AutoGenerateColumns="False" x:Name="gridd" ItemsSource="{Binding}" >
             <sdk:DataGrid.Columns>
                 <sdk:DataGridTextColumn Header="Activiteit" Binding="{Binding Activiteit}"/>
                 <sdk:DataGridTextColumn Header="Categorie" Binding="{Binding Categorie}"/>
@@ -22,6 +28,22 @@
                 </sdk:DataGridTemplateColumn>
             </sdk:DataGrid.Columns>
         </sdk:DataGrid>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Orientation="Vertical">
+            <TextBlock Text="Categorien"></TextBlock>
+            <sdk:DataGrid Margin="0 0 10 10" ItemsSource="{Binding}" x:Name="dg_categorien" AutoGenerateColumns="False">
+                <sdk:DataGrid.Columns>
+                    <sdk:DataGridTextColumn Binding="{Binding Omschrijving}" Header="Naam"/>
+                    <sdk:DataGridTemplateColumn Width="SizeToCells" IsReadOnly="True">
+                        <sdk:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="/WebApp;component/icon-delete.png" Tag="{Binding Id}" MouseLeftButtonUp="Image_MouseLeftButtonUp_1" ></Image>
+                            </DataTemplate>
+                        </sdk:DataGridTemplateColumn.CellTemplate>
+                    </sdk:DataGridTemplateColumn>
+                </sdk:DataGrid.Columns>
+            </sdk:DataGrid>
+        </StackPanel>
     </Grid>
 
 </navigation:Page>
