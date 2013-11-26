@@ -108,5 +108,11 @@ namespace PanoramaApp3
             User.Settings["ID"] = User.ID;
         }
 
+        private void scheduler_Click(object sender, RoutedEventArgs e)
+        {
+            Uri nUri = new Uri("/Pages/ScheduledAgent.xaml", UriKind.Relative);
+            ((App)Application.Current).RootFrame.Navigate(nUri);
+        }
+
     }
 }
