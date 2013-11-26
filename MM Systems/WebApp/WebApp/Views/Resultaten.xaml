@@ -23,10 +23,12 @@
                     <sdk:DataGridTextColumn Header="Beginuur" Binding="{Binding Beginuur_Activiteit}"/>
                     <sdk:DataGridTextColumn Header="Einduur" Binding="{Binding Einduur_Activiteit}"/>
                     <sdk:DataGridTextColumn Header="Commentaar" Binding="{Binding Commentaar}"/>
+                    <sdk:DataGridTextColumn Header="Weersomstandigheden_ID" Binding="{Binding Weersomstandigheden_ID}"/>
                     <sdk:DataGridTextColumn Header="Aantal uur geslapen" Binding="{Binding Aantal_Uren_Geslapen}"/>
                     <sdk:DataGridTextColumn Header="Vermoeidheid" Binding="{Binding Vermoeidheid}"/>
                     <sdk:DataGridTextColumn Header="Belangrijkheid" Binding="{Binding Belangrijkheid}"/>
                     <sdk:DataGridTextColumn Header="Tevredenheid" Binding="{Binding Tevredenheid}"/>
+                    <sdk:DataGridTextColumn Header="ActiviteitID" Binding="{Binding Activiteit_ID}"/>
                 </sdk:DataGrid.Columns>
             </sdk:DataGrid>
             <Button HorizontalAlignment="Center" x:Name="btn_export" Click="btn_export_Click">

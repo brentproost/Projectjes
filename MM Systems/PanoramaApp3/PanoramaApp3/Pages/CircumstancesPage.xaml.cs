@@ -53,6 +53,7 @@ namespace PanoramaApp3.Pages
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
+            InputDatabase.WeersomstandighedenIDs = weersomstandighedenids[lpweersomstandigheden.SelectedIndex];
             NavigationService.Navigate(new Uri("/Pages/ActivityPage.xaml", UriKind.Relative));
         }
 
@@ -61,10 +62,6 @@ namespace PanoramaApp3.Pages
             InputDatabase.NachtrustIDs = lpnachtrust.SelectedIndex;
         }
 
-        private void Lpweersomstandigheden_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            InputDatabase.WeersomstandighedenIDs = lpweersomstandigheden.SelectedIndex;
-        }
         private void Txtuurgeslapen_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<TimeSpan> e)
         {
             TimeSpan t = TimeSpan.Parse(txtuurgeslapen.Value.ToString());

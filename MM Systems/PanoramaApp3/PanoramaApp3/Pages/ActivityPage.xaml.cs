@@ -77,7 +77,6 @@ namespace PanoramaApp3.Pages
             lp_Categorien.SelectionChanged -= lp_Categorien_SelectionChanged;
             client.GetAllActivitiesCompleted += client_GetAllActivitiesCompleted;
             client.GetAllActivitiesAsync();
-            InputDatabase.ActivityID=(lp_Activiteiten.SelectedItem as Activities).Activiteit_ID;
 
         }
         private void lp_Categorien_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -91,6 +90,7 @@ namespace PanoramaApp3.Pages
 
         private void btn_ok_Click(object sender, RoutedEventArgs e)
         {
+            InputDatabase.ActivityID = (lp_Activiteiten.SelectedItem as Activities).Activiteit_ID;
             NavigationService.Navigate(new Uri("/Pages/CommentPage.xaml", UriKind.Relative));
         }
 

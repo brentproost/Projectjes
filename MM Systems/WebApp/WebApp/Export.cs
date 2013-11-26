@@ -97,7 +97,7 @@ namespace WebApp
                         if (propInfo != null)
                         {
                             string propi = propInfo.GetValue(data, null).ToString();
-                            strBuilder.Append(propi.Replace("\r", ""));
+                            strBuilder.Append(propi.Replace("\r", " "));
                             strBuilder.Append(";");
                         }
                     }
