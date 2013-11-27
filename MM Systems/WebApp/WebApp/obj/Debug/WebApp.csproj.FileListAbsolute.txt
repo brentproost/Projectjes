@@ -427,7 +427,6 @@ C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\ko\
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\ru\System.Windows.Controls.Navigation.resources.dll
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\zh-Hans\System.Windows.Controls.Navigation.resources.dll
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\zh-Hant\System.Windows.Controls.Navigation.resources.dll
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\App.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\DialogBoxes\AddWeersomstandigheid.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\DialogBoxes\FolderDialog\FolderDialog.g.cs

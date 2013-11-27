@@ -18,10 +18,9 @@ namespace PanoramaApp3.Pages
         List<string> cbitems = new List<string>();
         List<int> cbtag = new List<int>();
         ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
-        int activityid;
+
         public ActivityPage()
         {
-            
             InitializeComponent();
             if (User.ID != 0)
             {
@@ -44,48 +43,17 @@ namespace PanoramaApp3.Pages
         }
         void client_GetAllActivitiesCompleted(object sender, GetAllActivitiesCompletedEventArgs e)
         {
-            List<int> activlistid = new List<int>();
-            List<string> activlistomschr = new List<string>();
+            lp_Activiteiten.ItemsSource = null;
             if (lp_Categorien.SelectedIndex >= 0)
             {
                 if (e.Result != null)
                 {
-                    foreach (var item in e.Result.ToList())
-                    {
-                        activlistid.Add(item.Categorie_ID);
-                        activlistomschr.Add(item.Activiteit);
-                    }
                     var id = cbtag[lp_Categorien.SelectedIndex];
-
                     var result = (from r in e.Result where r.Categorie_ID == id select r).ToList();
 
                     lp_Activiteiten.ItemsSource = result;
-
-                    if (lp_Activiteiten.SelectedItem != null)
-                    {
-                        activityid = result[lp_Activiteiten.SelectedIndex].Activiteit_ID;
-
-                        lp_Activiteiten.SelectionChanged += lp_Activiteiten_SelectionChanged;
-                        lp_Categorien.SelectionChanged += lp_Categorien_SelectionChanged;
-                    }
                 }
             }
-        }
-        private void lp_Activiteiten_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            lp_Activiteiten.SelectionChanged -= lp_Activiteiten_SelectionChanged;
-            lp_Categorien.SelectionChanged -= lp_Categorien_SelectionChanged;
-            client.GetAllActivitiesCompleted += client_GetAllActivitiesCompleted;
-            client.GetAllActivitiesAsync();
-
-        }
-        private void lp_Categorien_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            lp_Activiteiten.SelectionChanged -= lp_Activiteiten_SelectionChanged;
-            lp_Categorien.SelectionChanged -= lp_Categorien_SelectionChanged;
-            client.GetAllActivitiesCompleted += client_GetAllActivitiesCompleted;
-            client.GetAllActivitiesAsync();
-
         }
 
         private void btn_ok_Click(object sender, RoutedEventArgs e)
@@ -107,6 +75,18 @@ namespace PanoramaApp3.Pages
         private void SliderTevredenheid_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             InputDatabase.Tevredenheid = (float) SliderTevredenheid.Value;
+        }
+
+        private void lp_Categorien_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            client.GetAllActivitiesCompleted += client_GetAllActivitiesCompleted;
+            client.GetAllActivitiesAsync();
+        }
+
+        private void lp_Categorien_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            client.GetAllActivitiesAsync();
+            client.GetAllActivitiesCompleted+=client_GetAllActivitiesCompleted;
         }
     }
 }

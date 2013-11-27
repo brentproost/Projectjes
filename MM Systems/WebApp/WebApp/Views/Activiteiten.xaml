@@ -10,11 +10,16 @@
 
     <Grid x:Name="LayoutRoot">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="0.1*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" Orientation="Vertical">
-        <TextBlock Text="Activiteiten"></TextBlock>
+            <Border BorderThickness="3" Background="AliceBlue">
+                <TextBlock TextWrapping="Wrap" Text="Hieronder bevinden zich de activiteiten. U kan er ook zelf extra toevoegen op de homepage.
+                           Door op het kruisje te klikken verwijderd u de bijhorende activiteit."></TextBlock>
+            </Border>
+            <TextBlock FontSize="20" Text="Activiteiten"></TextBlock>
         <sdk:DataGrid Margin="0 0 10 10" AutoGenerateColumns="False" x:Name="gridd" ItemsSource="{Binding}" >
             <sdk:DataGrid.Columns>
                 <sdk:DataGridTextColumn Header="Activiteit" Binding="{Binding Activiteit}"/>
@@ -29,8 +34,12 @@
             </sdk:DataGrid.Columns>
         </sdk:DataGrid>
         </StackPanel>
-        <StackPanel Grid.Column="1" Orientation="Vertical">
-            <TextBlock Text="Categorien"></TextBlock>
+        <StackPanel Grid.Column="2" Orientation="Vertical">
+            <Border BorderThickness="3" Background="AliceBlue">
+            <TextBlock TextWrapping="Wrap" Text="Hieronder bevinden zich de categorieën. U kan er ook zelf extra toevoegen op de homepage.
+                       Door op het kruisje te klikken verwijderd u de bijhorende categorie."></TextBlock>
+            </Border>
+            <TextBlock FontSize="20" Text="Categorieën"></TextBlock>
             <sdk:DataGrid Margin="0 0 10 10" ItemsSource="{Binding}" x:Name="dg_categorien" AutoGenerateColumns="False">
                 <sdk:DataGrid.Columns>
                     <sdk:DataGridTextColumn Binding="{Binding Omschrijving}" Header="Naam"/>

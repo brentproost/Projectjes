@@ -107,9 +107,8 @@
                         </Grid.RowDefinitions>
                         <StackPanel>
                             <TextBlock Text="Categorie"></TextBlock>
-                            <toolkit:ListPicker Margin="10 0 0 0" ItemsSource="{Binding}"  x:Name="lp_Categorien" >
-                            </toolkit:ListPicker>
-                            <TextBlock Text="Activiteit"></TextBlock>
+                            <toolkit:ListPicker Margin="10 0 0 0" ItemsSource="{Binding}"  x:Name="lp_Categorien" SelectionChanged="lp_Categorien_SelectionChanged" />
+                        <TextBlock Text="Activiteit"></TextBlock>
                             <toolkit:ListPicker Margin="10 0 0 0" ItemsSource="{Binding}" x:Name="lp_Activiteiten" IsEnabled="True" >
                                 <toolkit:ListPicker.ItemTemplate>
                                     <DataTemplate>
