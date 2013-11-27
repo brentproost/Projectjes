@@ -90,6 +90,7 @@ namespace PanoramaApp3.Pages
 
         private void btn_ok_Click(object sender, RoutedEventArgs e)
         {
+            InputDatabase.ActivityID = (lp_Activiteiten.SelectedItem as Activities).Activiteit_ID;
             NavigationService.Navigate(new Uri("/Pages/CommentPage.xaml", UriKind.Relative));
         }
 

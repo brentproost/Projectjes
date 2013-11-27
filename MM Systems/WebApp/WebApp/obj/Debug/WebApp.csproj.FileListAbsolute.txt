@@ -427,10 +427,13 @@ C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\ko\
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\ru\System.Windows.Controls.Navigation.resources.dll
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\zh-Hans\System.Windows.Controls.Navigation.resources.dll
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\zh-Hant\System.Windows.Controls.Navigation.resources.dll
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\App.g.cs
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\DialogBoxes\AddWeersomstandigheid.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\DialogBoxes\FolderDialog\FolderDialog.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\empty.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Resultaten.g.cs
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Weeromstandigheden.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\DialogBoxes\AddActivity.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\DialogBoxes\AddCategory.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\DialogBoxes\AddUser.g.cs
@@ -444,5 +447,3 @@ C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Web
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.dll
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.pdb
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\XapCacheFile.xml
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\DialogBoxes\AddWeersomstandigheid.g.cs
