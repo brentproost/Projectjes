@@ -73,14 +73,17 @@ namespace CheckUserInput
                 }
                 else
                 {
-                    ShellToast toast = new ShellToast();
-                    Mutex mutex = new Mutex(true, "ScheduledAgentData");
-                    mutex.WaitOne();
-                    IsolatedStorageSettings setting = IsolatedStorageSettings.ApplicationSettings;
-                    toast.Title = "ms patient";
-                    mutex.ReleaseMutex();
-                    toast.Content = "U heeft nog geen data ingevoerd vandaag";
-                    toast.Show();
+                    if (DateTime.Now.Hour >= 16)
+                    {
+                        ShellToast toast = new ShellToast();
+                        Mutex mutex = new Mutex(true, "ScheduledAgentData");
+                        mutex.WaitOne();
+                        IsolatedStorageSettings setting = IsolatedStorageSettings.ApplicationSettings;
+                        toast.Title = "ms patient";
+                        mutex.ReleaseMutex();
+                        toast.Content = "U heeft nog geen data ingevoerd vandaag";
+                        toast.Show();
+                    }
                 }
             }
             NotifyComplete();
