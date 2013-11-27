@@ -10,13 +10,13 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Navigation;
-using WebApp.ServiceReference;
 
 namespace WebApp.Views
 {
-    public partial class empty : Page
+    public partial class Login : Page
     {
-        public empty()
+        ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+        public Login()
         {
             InitializeComponent();
         }
@@ -25,13 +25,13 @@ namespace WebApp.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
         }
+
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            ServiceClient client = new ServiceClient();
             string userName = txtUsername.Text;
             string passWord = txtPassword.Password;
-            client.SigninUserCompleted += client_SigninUserCompleted;
             client.SigninUserAsync(userName, MD5Core.GetHashString(passWord));
+            client.SigninUserCompleted += client_SigninUserCompleted;
         }
 
         void client_SigninUserCompleted(object sender, ServiceReference.SigninUserCompletedEventArgs e)
@@ -41,7 +41,6 @@ namespace WebApp.Views
                 User.ID = e.Result;
                 if (User.ID != 0)
                 {
-                    ServiceClient client = new ServiceClient();
                     client.GetUserInfoCompleted += client_GetUserInfoCompleted;
                     client.GetUserInfoAsync(User.ID);
                 }
@@ -53,16 +52,18 @@ namespace WebApp.Views
             }
         }
 
-        void client_GetUserInfoCompleted(object sender, GetUserInfoCompletedEventArgs e)
+        void client_GetUserInfoCompleted(object sender, ServiceReference.GetUserInfoCompletedEventArgs e)
         {
             if (e.Result != null)
             {
+                grid_Login.Visibility = Visibility.Collapsed;
                 if (e.Result[0].Rechten_ID == 1)
                 {
                     MessageBox.Show("Je bent nu ingelogd");
                     txtPassword.Password = "";
                     txtUsername.Text = "";
                     User.ID = e.Result[0].ID;
+
                     if (User.Settings.Contains("ID") == false)
                     {
                         User.Settings.Add("ID", User.ID);
@@ -81,6 +82,7 @@ namespace WebApp.Views
                 }
             }
         }
+
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             Visibility = Visibility.Collapsed;
@@ -93,5 +95,6 @@ namespace WebApp.Views
                 Login_Click(this, e);
             }
         }
+
     }
 }

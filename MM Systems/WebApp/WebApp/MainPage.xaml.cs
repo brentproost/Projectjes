@@ -26,7 +26,6 @@ namespace WebApp
             InitializeComponent();
             NavigationGrid.Visibility= Visibility.Collapsed;
             Loaded += MainPage_Loaded;
-            
         }
 
         void MainPage_Loaded(object sender, RoutedEventArgs e)
@@ -41,39 +40,42 @@ namespace WebApp
             }
             if (User.ID == 0)
             {
-                this.ContentFrame.Navigate(new Uri("/empty", UriKind.Relative));
+                this.ContentFrame.Navigate(new Uri("/Login", UriKind.Relative));
             }
             else
             {
                 this.ContentFrame.Navigate(new Uri("/Home", UriKind.Relative));
                 NavigationGrid.Visibility = Visibility.Visible;
-
             }
         }
         
         // After the Frame navigates, ensure the HyperlinkButton representing the current page is selected
         private void ContentFrame_Navigated(object sender, NavigationEventArgs e)
         {
-            if (User.ID != 0)
+            if (User.ID == 0)
             {
+                this.ContentFrame.Navigate(new Uri("/Login", UriKind.Relative));
+                NavigationGrid.Visibility = Visibility.Collapsed;
+            }
+            else
                 NavigationGrid.Visibility = Visibility.Visible;
-            }
-            foreach (UIElement child in LinksStackPanel.Children)
-            {
-                HyperlinkButton hb = child as HyperlinkButton;
-                if (hb != null && hb.NavigateUri != null)
-                {
-                    
-                        if (hb.NavigateUri.ToString().Equals(e.Uri.ToString()))
-                        {
-                            VisualStateManager.GoToState(hb, "ActiveLink", true);
-                        }
-                        else
-                        {
-                            VisualStateManager.GoToState(hb, "InactiveLink", true);
-                        }     
-                }
-            }
+
+            //foreach (UIElement child in LinksStackPanel.Children)
+            //{
+            //    HyperlinkButton hb = child as HyperlinkButton;
+            //    if (hb != null && hb.NavigateUri != null)
+            //    {
+
+            //        if (hb.NavigateUri.ToString().Equals(e.Uri.ToString()))
+            //        {
+            //            VisualStateManager.GoToState(hb, "ActiveLink", true);
+            //        }
+            //        else
+            //        {
+            //            VisualStateManager.GoToState(hb, "InactiveLink", true);
+            //        }
+            //    }
+            //}
         }
 
         private void Afmelden(object sender, RoutedEventArgs e)
@@ -81,7 +83,7 @@ namespace WebApp
             NavigationGrid.Visibility = Visibility.Collapsed;
             User.ID = 0;
             User.Settings["ID"] = User.ID;
-            this.ContentFrame.Navigate(new Uri("/empty",UriKind.Relative));
+            this.ContentFrame.Navigate(new Uri("/Login",UriKind.Relative));
             
         }
 
