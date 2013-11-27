@@ -22,8 +22,8 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="Settings" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="AppName" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="Aanmelden" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -35,7 +35,7 @@
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>            
             <Button x:Name="Login" Grid.Row="0" Content="Login" Height="72" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Click="Button_Click" />
-            <Button x:Name="Logoff" Grid.Row="1" Content="Log Out" Height="72" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Click="Logoff_OnClick" />
+            <Button Visibility="Collapsed" x:Name="Logoff" Grid.Row="1" Content="Log Out" Height="72" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Click="Logoff_OnClick" />
             <Button x:Name="scheduler" Grid.Row="3" Content="sched" Height="72" Click="scheduler_Click"></Button>
             </Grid>
             
