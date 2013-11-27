@@ -7,7 +7,7 @@
     d:DesignHeight="180" d:DesignWidth="500">
 
     <Grid>
-        <Border HorizontalAlignment="Center" BorderBrush="White" BorderThickness="1">
+        <Border HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="1">
             <Grid HorizontalAlignment="Center" Margin="30">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />

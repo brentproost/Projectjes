@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Net;
 using System.ServiceModel;
 using System.Windows;
+using System.Windows.Browser;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -19,34 +21,43 @@ namespace WebApp
 {
     public partial class MainPage 
     {
-        public Popup p;
-
         public MainPage()
         {
             InitializeComponent();
             NavigationGrid.Visibility= Visibility.Collapsed;
-            showPopup();
-            p.Closed += p_Closed;
-        }
-
-        void p_Closed(object sender, EventArgs e)
-        {
-            NavigationGrid.Visibility = Visibility.Visible;
-            this.ContentFrame.Navigate(new Uri("/Home", UriKind.Relative));
-        }
-        private void showPopup()
-        {
-            p = new Popup();
-            p.Child = new Login();
-
-            p.VerticalOffset = 768 / 2;
-            p.HorizontalOffset = 1024 / 2;
-            p.IsOpen = true;   
+            Loaded += MainPage_Loaded;
             
         }
+
+        void MainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (IsolatedStorageSettings.ApplicationSettings.Contains("ID"))
+            {
+                User.ID = (int)User.Settings["ID"];
+            }
+            else
+            {
+                User.Settings.Add("ID", 0);
+            }
+            if (User.ID == 0)
+            {
+                this.ContentFrame.Navigate(new Uri("/empty", UriKind.Relative));
+            }
+            else
+            {
+                this.ContentFrame.Navigate(new Uri("/Home", UriKind.Relative));
+                NavigationGrid.Visibility = Visibility.Visible;
+
+            }
+        }
+        
         // After the Frame navigates, ensure the HyperlinkButton representing the current page is selected
         private void ContentFrame_Navigated(object sender, NavigationEventArgs e)
         {
+            if (User.ID != 0)
+            {
+                NavigationGrid.Visibility = Visibility.Visible;
+            }
             foreach (UIElement child in LinksStackPanel.Children)
             {
                 HyperlinkButton hb = child as HyperlinkButton;
@@ -68,8 +79,10 @@ namespace WebApp
         private void Afmelden(object sender, RoutedEventArgs e)
         {
             NavigationGrid.Visibility = Visibility.Collapsed;
+            User.ID = 0;
+            User.Settings["ID"] = User.ID;
             this.ContentFrame.Navigate(new Uri("/empty",UriKind.Relative));
-            p.IsOpen = true;
+            
         }
 
         // If an error occurs during navigation, show an error window

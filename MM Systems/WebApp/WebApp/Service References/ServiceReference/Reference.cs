@@ -898,6 +898,11 @@ namespace WebApp.ServiceReference {
         System.IAsyncResult BeginDeleteWeersomstandigheid(int id, System.AsyncCallback callback, object asyncState);
         
         void EndDeleteWeersomstandigheid(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/GetLatestInput", ReplyAction="http://tempuri.org/IService/GetLatestInputResponse")]
+        System.IAsyncResult BeginGetLatestInput(int UserId, System.AsyncCallback callback, object asyncState);
+        
+        System.DateTime EndGetLatestInput(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1058,6 +1063,25 @@ namespace WebApp.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetLatestInputCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetLatestInputCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.DateTime Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.DateTime)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class ServiceClient : System.ServiceModel.ClientBase<WebApp.ServiceReference.IService>, WebApp.ServiceReference.IService {
         
         private BeginOperationDelegate onBeginGetAllUsersDelegate;
@@ -1162,6 +1186,12 @@ namespace WebApp.ServiceReference {
         
         private System.Threading.SendOrPostCallback onDeleteWeersomstandigheidCompletedDelegate;
         
+        private BeginOperationDelegate onBeginGetLatestInputDelegate;
+        
+        private EndOperationDelegate onEndGetLatestInputDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetLatestInputCompletedDelegate;
+        
         private BeginOperationDelegate onBeginOpenDelegate;
         
         private EndOperationDelegate onEndOpenDelegate;
@@ -1248,6 +1278,8 @@ namespace WebApp.ServiceReference {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> DeleteCategoryCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> DeleteWeersomstandigheidCompleted;
+        
+        public event System.EventHandler<GetLatestInputCompletedEventArgs> GetLatestInputCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -2056,6 +2088,52 @@ namespace WebApp.ServiceReference {
                         id}, this.onEndDeleteWeersomstandigheidDelegate, this.onDeleteWeersomstandigheidCompletedDelegate, userState);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult WebApp.ServiceReference.IService.BeginGetLatestInput(int UserId, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetLatestInput(UserId, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.DateTime WebApp.ServiceReference.IService.EndGetLatestInput(System.IAsyncResult result) {
+            return base.Channel.EndGetLatestInput(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetLatestInput(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int UserId = ((int)(inValues[0]));
+            return ((WebApp.ServiceReference.IService)(this)).BeginGetLatestInput(UserId, callback, asyncState);
+        }
+        
+        private object[] OnEndGetLatestInput(System.IAsyncResult result) {
+            System.DateTime retVal = ((WebApp.ServiceReference.IService)(this)).EndGetLatestInput(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetLatestInputCompleted(object state) {
+            if ((this.GetLatestInputCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetLatestInputCompleted(this, new GetLatestInputCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetLatestInputAsync(int UserId) {
+            this.GetLatestInputAsync(UserId, null);
+        }
+        
+        public void GetLatestInputAsync(int UserId, object userState) {
+            if ((this.onBeginGetLatestInputDelegate == null)) {
+                this.onBeginGetLatestInputDelegate = new BeginOperationDelegate(this.OnBeginGetLatestInput);
+            }
+            if ((this.onEndGetLatestInputDelegate == null)) {
+                this.onEndGetLatestInputDelegate = new EndOperationDelegate(this.OnEndGetLatestInput);
+            }
+            if ((this.onGetLatestInputCompletedDelegate == null)) {
+                this.onGetLatestInputCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetLatestInputCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetLatestInputDelegate, new object[] {
+                        UserId}, this.onEndGetLatestInputDelegate, this.onGetLatestInputCompletedDelegate, userState);
+        }
+        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -2357,6 +2435,19 @@ namespace WebApp.ServiceReference {
             public void EndDeleteWeersomstandigheid(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 base.EndInvoke("DeleteWeersomstandigheid", _args, result);
+            }
+            
+            public System.IAsyncResult BeginGetLatestInput(int UserId, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = UserId;
+                System.IAsyncResult _result = base.BeginInvoke("GetLatestInput", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.DateTime EndGetLatestInput(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.DateTime _result = ((System.DateTime)(base.EndInvoke("GetLatestInput", _args, result)));
+                return _result;
             }
         }
     }
