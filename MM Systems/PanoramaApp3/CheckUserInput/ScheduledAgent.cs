@@ -79,7 +79,7 @@ namespace CheckUserInput
                     IsolatedStorageSettings setting = IsolatedStorageSettings.ApplicationSettings;
                     toast.Title = "ms patient";
                     mutex.ReleaseMutex();
-                    toast.Content = e.Result.ToShortDateString();
+                    toast.Content = "U heeft nog geen data ingevoerd vandaag";
                     toast.Show();
                 }
             }
