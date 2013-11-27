@@ -12,6 +12,8 @@ Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Wcf.Azure2", "Wcf.Azure2\Wc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswordHashGen", "PasswordHashGen\PasswordHashGen.csproj", "{A753DB32-277F-4F28-AF27-A39413BD9CA8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckUserInput", "CheckUserInput\CheckUserInput.csproj", "{3804942A-808F-411C-BA89-4562F06114D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{A753DB32-277F-4F28-AF27-A39413BD9CA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A753DB32-277F-4F28-AF27-A39413BD9CA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A753DB32-277F-4F28-AF27-A39413BD9CA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3804942A-808F-411C-BA89-4562F06114D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3804942A-808F-411C-BA89-4562F06114D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3804942A-808F-411C-BA89-4562F06114D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3804942A-808F-411C-BA89-4562F06114D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

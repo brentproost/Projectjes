@@ -62,5 +62,7 @@ namespace Wcf
 
         [OperationContract]
         void DeleteWeersomstandigheid(int id);
+        [OperationContract]
+        DateTime GetLatestInput(int UserId);
     }
 }

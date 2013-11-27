@@ -102,6 +102,9 @@
     <Compile Include="Pages\Graphs.xaml.cs">
       <DependentUpon>Graphs.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ScheduledAgent.xaml.cs">
+      <DependentUpon>ScheduledAgent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
@@ -148,6 +151,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ScheduledAgent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -160,29 +167,15 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\DataSources\CheckUserInput.ServiceReference.Activities.datasource" />
+    <None Include="Properties\DataSources\CheckUserInput.ServiceReference.Tbl_Categorien.datasource" />
+    <None Include="Properties\DataSources\CheckUserInput.ServiceReference.Tbl_GebruikersIngave.datasource" />
+    <None Include="Properties\DataSources\CheckUserInput.ServiceReference.Tbl_Schaal_Nachtrust.datasource" />
+    <None Include="Properties\DataSources\CheckUserInput.ServiceReference.Tbl_User.datasource" />
+    <None Include="Properties\DataSources\CheckUserInput.ServiceReference.Tbl_Weersomstandigheden.datasource" />
+    <None Include="Properties\DataSources\CheckUserInput.ServiceReference.User.datasource" />
     <None Include="Properties\WMAppManifest.xml" />
     <Content Include="ReadMe.Coding4Fun.Toolkit.txt" />
-    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Activities.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Tbl_Categorien.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Tbl_GebruikersIngave.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Tbl_Schaal_Nachtrust.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Tbl_User.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Tbl_Weersomstandigheden.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.User.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\ServiceReference\Service.disco" />
     <None Include="Service References\ServiceReference\configuration91.svcinfo" />
     <None Include="Service References\ServiceReference\configuration.svcinfo" />
@@ -220,6 +213,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CheckUserInput\CheckUserInput.csproj">
+      <Project>{3804942A-808F-411C-BA89-4562F06114D6}</Project>
+      <Name>CheckUserInput</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PasswordHashGen\PasswordHashGen.csproj">
       <Project>{A753DB32-277F-4F28-AF27-A39413BD9CA8}</Project>
       <Name>PasswordHashGen</Name>

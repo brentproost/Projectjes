@@ -334,5 +334,10 @@ namespace Wcf
                 Console.WriteLine(e);
             }
         }
+        DateTime IService.GetLatestInput(int UserId)
+        {
+            List<DateTime> activiteiten = (from i in Data.Tbl_GebruikersIngaves where i.User_ID == UserId select i.Datum_Uur_Ingave).OrderByDescending(c=>c.Date).ToList();
+            return activiteiten[0];
+        }
     }
 }
