@@ -17,17 +17,26 @@ namespace PanoramaApp3.Pages
         ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
         List<int> weersomstandighedenids = new List<int>();
         List<int> nachtrustids = new List<int>();
+        private ProgressIndicator _progressIndicator;
         public CircumstancesPage()
         {
             InitializeComponent();
+            _progressIndicator = new ProgressIndicator
+            {
+                IsIndeterminate = true,
+                Text = "Loading...",
+                IsVisible = true,
+            };
+            ButtonOk.IsEnabled = false;
+            SystemTray.SetIsVisible(this, true);
+            SystemTray.SetProgressIndicator(this, _progressIndicator);
+            SystemTray.SetOpacity(this, 1);
             try
             {
                 client.GetNachtrustSchaalCompleted += client_GetNachtrustSchaalCompleted;
                 client.GetNachtrustSchaalAsync();
                 client.GetAllWeersOmstandighedenCompleted += client_GetAllWeersOmstandighedenCompleted;
-                client.GetAllWeersOmstandighedenAsync();
-
-
+                client.GetAllWeersOmstandighedenAsync();                
             }
             catch (Exception e)
             {
@@ -41,6 +50,9 @@ namespace PanoramaApp3.Pages
             {
                 nachtrustids.Add(e.Result[i].ID);
             }
+            _progressIndicator.IsVisible = false;
+            SystemTray.SetIsVisible(this, false);
+            ButtonOk.IsEnabled = true;
         }
         void client_GetAllWeersOmstandighedenCompleted(object sender, GetAllWeersOmstandighedenCompletedEventArgs e)
         {
