@@ -18,10 +18,20 @@ namespace PanoramaApp3.Pages
         List<string> cbitems = new List<string>();
         List<int> cbtag = new List<int>();
         ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
-
+        private ProgressIndicator _progressIndicator;
         public ActivityPage()
         {
             InitializeComponent();
+            _progressIndicator = new ProgressIndicator
+            {
+                IsIndeterminate = true,
+                Text = "Loading...",
+                IsVisible = true,
+            };
+            btn_ok.IsEnabled = false;
+            SystemTray.SetIsVisible(this, true);
+            SystemTray.SetProgressIndicator(this, _progressIndicator);
+            SystemTray.SetOpacity(this, 1);
             if (User.ID != 0)
             {
                 client.GetAllCategoriesCompleted += serviceClient_GetAllCategoriesCompleted;
@@ -54,6 +64,9 @@ namespace PanoramaApp3.Pages
                     lp_Activiteiten.ItemsSource = result;
                 }
             }
+            _progressIndicator.IsVisible = false;
+            SystemTray.SetIsVisible(this, false);
+            btn_ok.IsEnabled = true;
         }
 
         private void btn_ok_Click(object sender, RoutedEventArgs e)

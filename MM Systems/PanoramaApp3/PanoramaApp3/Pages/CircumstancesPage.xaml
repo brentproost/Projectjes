@@ -48,7 +48,7 @@
                 </toolkit:ListPicker>
                 <TextBlock Text="Aantal uur geslapen"/>
                 <controls2:TimeSpanPicker x:Name="txtuurgeslapen" Step="1:00" ValueStringFormat="{}{0:h}" HorizontalAlignment="Left" ValueChanged="Txtuurgeslapen_OnValueChanged"/>
-                <Button Content="Oke" Click="ButtonBase_OnClick"></Button>
+                <Button x:Name="ButtonOk" Content="Oke" Click="ButtonBase_OnClick"></Button>
             </StackPanel>
         </Grid>
     </Grid>
