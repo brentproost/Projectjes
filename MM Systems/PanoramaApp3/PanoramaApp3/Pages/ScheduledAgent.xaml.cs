@@ -18,15 +18,23 @@ namespace PanoramaApp3.Pages
         public ScheduledAgent()
         {
             InitializeComponent();
-            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
-            client.GetLatestInputAsync(User.ID);
-            client.GetLatestInputCompleted += client_GetLatestInputCompleted;
+            Loaded += ScheduledAgent_Loaded;
         }
 
-        private void client_GetLatestInputCompleted(object sender, ServiceReference.GetLatestInputCompletedEventArgs e)
+        void ScheduledAgent_Loaded(object sender, RoutedEventArgs e)
         {
-                MessageBox.Show(e.Result.ToShortDateString());
+            if (ScheduledActionService.Find("ms")!= null)
+            {
+                StopTask.Visibility = Visibility.Visible;
+                StartTask.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                StopTask.Visibility = Visibility.Collapsed;
+                StartTask.Visibility = Visibility.Visible;
+            }
         }
+
 
         private void StartPeriodicTask()
         {
@@ -37,6 +45,9 @@ namespace PanoramaApp3.Pages
                 ScheduledActionService.Add(periodicTask);
                 ScheduledActionService.LaunchForTest("ms", TimeSpan.FromSeconds(3));
                 MessageBox.Show("Open the background agent success");
+                StopTask.Visibility = Visibility.Visible;
+                StartTask.Visibility = Visibility.Collapsed;
+                
             }
             catch (InvalidOperationException exception)
             {
@@ -54,7 +65,6 @@ namespace PanoramaApp3.Pages
                 }
                 else
                 {
-                    MessageBox.Show(exception.ToString());
                 }
             }
             catch (SchedulerServiceException)
@@ -68,6 +78,9 @@ namespace PanoramaApp3.Pages
             {
                 ScheduledActionService.Remove("ms");
                 MessageBox.Show("Turn off the background agent successfully");
+                StopTask.Visibility = Visibility.Collapsed;
+                StartTask.Visibility = Visibility.Visible;
+                
             }
             catch (InvalidOperationException exception)
             {

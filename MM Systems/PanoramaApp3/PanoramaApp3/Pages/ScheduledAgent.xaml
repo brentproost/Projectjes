@@ -28,8 +28,8 @@
 
         <!--ContentPanel - place additional content here-->
         <StackPanel Orientation="Vertical" x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Button Content="Open Task" Height="72" Name="StartTask" Width="200" Click="StartPeriodicTask_Click"/>
-            <Button Content="Turn Off Task" Height="72" Name="StopTask" Width="200" Click="StopPeriodicTask_Click"/>
+            <Button Content="Zet herinneringen aan" Height="72" Name="StartTask" Click="StartPeriodicTask_Click"/>
+            <Button Content="Zet herinneringen af" Height="72" Name="StopTask" Click="StopPeriodicTask_Click"/>
         </StackPanel>
     </Grid>
 
