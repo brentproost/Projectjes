@@ -17,9 +17,12 @@ namespace PanoramaApp3
 {
     public partial class Page1 : PhoneApplicationPage
     {
+       private ProgressIndicator _progressIndicator;
        public Page1()
         {   
+
             InitializeComponent();
+            
             this.BackKeyPress += Page1_BackKeyPress;
             if (!User.CheckNetworkConnection())
             {
@@ -79,6 +82,15 @@ namespace PanoramaApp3
                 {
                     if (luc.Username != null)
                     {
+                        _progressIndicator = new ProgressIndicator
+                        {
+                            IsIndeterminate = true,
+                            Text = "Trying to login...",
+                            IsVisible = true,
+                        };
+                        SystemTray.SetIsVisible(this, true);
+                        SystemTray.SetProgressIndicator(this, _progressIndicator);
+                        SystemTray.SetOpacity(this, 1);
                         ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
                         client.SigninUserCompleted += client_SigninUserCompleted;
                         client.SigninUserAsync(luc.Username, MD5Core.GetHashString(luc.Password));
@@ -96,6 +108,8 @@ namespace PanoramaApp3
         }
         void client_SigninUserCompleted(object sender, ServiceReference.SigninUserCompletedEventArgs e)
         {
+            _progressIndicator.IsVisible = false;
+            SystemTray.SetIsVisible(this, false);
             if (e.Result != 0)
             {
                 MessageBox.Show("Je bent nu ingelogd");//"Welkom " + r[0].Naam + " " + r[0].Voornaam + "!"; moet zoiets komen bekijk Service.svc.cs
