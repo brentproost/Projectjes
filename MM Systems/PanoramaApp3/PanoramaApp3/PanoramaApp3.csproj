@@ -105,8 +105,8 @@
     <Compile Include="Pages\ScheduledAgent.xaml.cs">
       <DependentUpon>ScheduledAgent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Settings.xaml.cs">
-      <DependentUpon>Settings.xaml</DependentUpon>
+    <Compile Include="Pages\Meldaan.xaml.cs">
+      <DependentUpon>Meldaan.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LoginUserControl.xaml.cs">
       <DependentUpon>LoginUserControl.xaml</DependentUpon>
@@ -155,7 +155,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Settings.xaml">
+    <Page Include="Pages\Meldaan.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -66,7 +66,7 @@ namespace WebApp
 
         private void Image_MouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
         {
-            MessageBoxResult msbResult = MessageBox.Show("De ingaven met deze categorie worden ook verwijderd! Weet u zeker dat u deze activiteit wilt verwijderen?", "Verwijder", MessageBoxButton.OKCancel);
+            MessageBoxResult msbResult = MessageBox.Show("De ingaven met deze categorie worden ook verwijderd, eveneens de bijhorende activiteiten! Weet u zeker dat u deze categorie wilt verwijderen?", "Verwijder", MessageBoxButton.OKCancel);
             if (msbResult == MessageBoxResult.OK)
             {
                 client.DeleteCategoryAsync(Convert.ToInt32((((Image)sender).Tag).ToString()));

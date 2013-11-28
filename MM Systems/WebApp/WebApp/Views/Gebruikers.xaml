@@ -10,6 +10,11 @@
            Title="Gebruikers">
     <Grid x:Name="LayoutRoot">
         <StackPanel>
+            <Border BorderThickness="3" Background="AliceBlue">
+                <TextBlock TextWrapping="Wrap" Text="Hieronder bevinden zich de gebruikers. U kan er ook zelf extra toevoegen op de homepage.
+                           Door op het kruisje te klikken verwijderd u de bijhorende gebruiker.
+                           De kolom 'Soort Gebruiker' geeft weer of deze kan inloggen op de webapplicatie."></TextBlock>
+            </Border>
             <sdk:DataGrid AutoGenerateColumns="False" x:Name="gridd" ItemsSource="{Binding}">
                 <sdk:DataGrid.Columns>
                     <sdk:DataGridTextColumn Binding="{Binding Naam}" Header="Naam"/>

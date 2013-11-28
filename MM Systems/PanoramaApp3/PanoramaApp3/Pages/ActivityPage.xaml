@@ -91,14 +91,12 @@
         </Grid.RowDefinitions>
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="Activiteit" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
                 <StackPanel Orientation="Vertical" Width="400" Height="570" Margin="0,0,0,17">
-                    <TextBlock TextAlignment="Center">Activiteit</TextBlock>
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"></RowDefinition>
@@ -107,9 +105,8 @@
                         </Grid.RowDefinitions>
                         <StackPanel>
                             <TextBlock Text="Categorie"></TextBlock>
-                            <toolkit:ListPicker Margin="10 0 0 0" ItemsSource="{Binding}"  x:Name="lp_Categorien" >
-                            </toolkit:ListPicker>
-                            <TextBlock Text="Activiteit"></TextBlock>
+                            <toolkit:ListPicker Margin="10 0 0 0" ItemsSource="{Binding}"  x:Name="lp_Categorien" SelectionChanged="lp_Categorien_SelectionChanged" />
+                        <TextBlock Text="Activiteit"></TextBlock>
                             <toolkit:ListPicker Margin="10 0 0 0" ItemsSource="{Binding}" x:Name="lp_Activiteiten" IsEnabled="True" >
                                 <toolkit:ListPicker.ItemTemplate>
                                     <DataTemplate>
