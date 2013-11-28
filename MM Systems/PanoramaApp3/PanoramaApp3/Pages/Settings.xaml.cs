@@ -28,8 +28,25 @@ namespace PanoramaApp3
                 connectionSettingsTask.ConnectionSettingsType = ConnectionSettingsType.WiFi;
                 connectionSettingsTask.Show();
             }
+            Loaded += Page1_Loaded;
         }
 
+       void Page1_Loaded(object sender, RoutedEventArgs e)
+       {
+           if (User.ID != 0)
+           {
+               Logoff.Visibility=Visibility.Visible;
+               scheduler.Visibility=Visibility.Visible;
+               Login.Visibility=Visibility.Collapsed;
+           }
+           else
+           {
+               Logoff.Visibility = Visibility.Collapsed;
+               scheduler.Visibility=Visibility.Collapsed;
+               Login.Visibility = Visibility.Visible;
+
+           }
+       }
        void Page1_BackKeyPress(object sender, System.ComponentModel.CancelEventArgs e)
        {
            if (User.ID == 0)
@@ -106,6 +123,7 @@ namespace PanoramaApp3
             MessageBox.Show("Je bent nu uitgelogd");
             User.ID = 0;
             User.Settings["ID"] = User.ID;
+            Page1_Loaded(sender, e);
         }
 
         private void scheduler_Click(object sender, RoutedEventArgs e)

@@ -10,6 +10,7 @@ namespace CheckUserInput
 {
     public class ScheduledAgent : ScheduledTaskAgent
     {
+        public int time { get; set; }
         public int ID { get; set; }
         public static IsolatedStorageSettings Settings =
             System.IO.IsolatedStorage.IsolatedStorageSettings.ApplicationSettings;
@@ -33,6 +34,7 @@ namespace CheckUserInput
             {
                 ID = (int)Settings["ID"];
             }
+            time = 17;
         }
 
         /// Code to execute on Unhandled Exceptions
@@ -73,7 +75,7 @@ namespace CheckUserInput
                 }
                 else
                 {
-                    if (DateTime.Now.Hour >= 16)
+                    if (DateTime.Now.Hour >= time && DateTime.Now.Hour <= (time-1) )
                     {
                         ShellToast toast = new ShellToast();
                         Mutex mutex = new Mutex(true, "ScheduledAgentData");

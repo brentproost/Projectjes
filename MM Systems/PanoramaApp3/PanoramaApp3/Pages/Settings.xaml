@@ -35,8 +35,8 @@
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>            
             <Button x:Name="Login" Grid.Row="0" Content="Login" Height="72" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Click="Button_Click" />
-            <Button Visibility="Collapsed" x:Name="Logoff" Grid.Row="1" Content="Log Out" Height="72" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Click="Logoff_OnClick" />
-            <Button x:Name="scheduler" Grid.Row="3" Content="sched" Height="72" Click="scheduler_Click"></Button>
+            <Button Visibility="Visible" x:Name="Logoff" Grid.Row="0" Content="Log Out" Height="72" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Click="Logoff_OnClick" />
+            <Button x:Name="scheduler" Grid.Row="1" Content="Herinneringen" Height="72" Click="scheduler_Click"></Button>
             </Grid>
             
         </Grid>

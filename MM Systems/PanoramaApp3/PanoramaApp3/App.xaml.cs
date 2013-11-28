@@ -89,7 +89,7 @@ namespace PanoramaApp3
             }
             if (User.ID == 0)
             {
-                Uri nUri = new Uri("/Pages/Meldaan.xaml", UriKind.Relative);
+                Uri nUri = new Uri("/Pages/Settings.xaml", UriKind.Relative);
                 ((App) Application.Current).RootFrame.Navigate(nUri);
             }
             else
