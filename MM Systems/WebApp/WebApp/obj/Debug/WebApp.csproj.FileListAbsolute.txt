@@ -211,7 +211,6 @@ C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\PasswordH
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\DialogBoxes\AddCategory.g.cs
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\UC\Login.g.cs
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Resultaten.g.cs
-C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\empty.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\WebApp.dll
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\WebApp.pdb
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\AppManifest.xaml
@@ -468,3 +467,4 @@ C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\DialogBox
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Weeromstandigheden.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Login.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
+C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Login.g.cs
