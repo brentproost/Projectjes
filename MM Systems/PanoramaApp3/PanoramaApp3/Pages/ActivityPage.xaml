@@ -128,7 +128,7 @@
                                     <RowDefinition Height="1*"></RowDefinition>
                                 </Grid.RowDefinitions>
                                 <TextBlock HorizontalAlignment="Center" Grid.Row="0" Text="niet moe"></TextBlock>
-                                <Slider Grid.Row="1"  Orientation="Vertical" x:Name="SliderVermoeidheid" Minimum="0" Maximum ="100" Style="{StaticResource SliderStyle1}" ValueChanged="SliderVermoeidheid_OnValueChanged"></Slider>
+                                <Slider Grid.Row="1"  Orientation="Vertical" LargeChange="0" x:Name="SliderVermoeidheid" Minimum="0" Maximum ="100" Style="{StaticResource SliderStyle1}" ValueChanged="SliderVermoeidheid_OnValueChanged" Tap="SliderVermoeidheid_Tap"></Slider>
                                 <TextBlock HorizontalAlignment="Center" Grid.Row="2" Text="uitgeput"></TextBlock>
                             </Grid>
                             <Grid Grid.Column="0">
@@ -147,7 +147,7 @@
                                     <RowDefinition Height="1*"></RowDefinition>
                                 </Grid.RowDefinitions>
                                 <TextBlock HorizontalAlignment="Center" Grid.Row="0" Text="niet belangrijk"></TextBlock>
-                                <Slider Grid.Row="1" Orientation="Vertical" x:Name="SliderBelangrijk" Minimum="0" Maximum ="100" Style="{StaticResource SliderStyle1}" ValueChanged="SliderBelangrijk_OnValueChanged"></Slider>
+                                <Slider Grid.Row="1" Orientation="Vertical" x:Name="SliderBelangrijk" Minimum="0" Maximum ="100" Style="{StaticResource SliderStyle1}" ValueChanged="SliderBelangrijk_OnValueChanged" Tap="SliderBelangrijk_Tap"></Slider>
                                 <TextBlock HorizontalAlignment="Center" Grid.Row="2" Text="heel belangrijk"></TextBlock>
                             </Grid>
                             <Grid Grid.Column="2">
@@ -157,7 +157,7 @@
                                     <RowDefinition Height="1*"></RowDefinition>
                                 </Grid.RowDefinitions>
                                 <TextBlock HorizontalAlignment="Center" Grid.Row="0" Text="niet tevreden"></TextBlock>
-                                <Slider Grid.Row="1" Orientation="Vertical" x:Name="SliderTevredenheid" Minimum="0" Maximum ="100" Style="{StaticResource SliderStyle1}" ValueChanged="SliderTevredenheid_OnValueChanged"></Slider>
+                                <Slider Grid.Row="1" Orientation="Vertical" x:Name="SliderTevredenheid" Minimum="0" Maximum ="100" Style="{StaticResource SliderStyle1}" ValueChanged="SliderTevredenheid_OnValueChanged" Tap="SliderTevredenheid_Tap"></Slider>
                                 <TextBlock HorizontalAlignment="Center" Grid.Row="2" Text="heel tevreden"></TextBlock>
                             </Grid>
                         </Grid>

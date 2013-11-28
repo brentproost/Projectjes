@@ -88,5 +88,72 @@ namespace PanoramaApp3.Pages
             client.GetAllActivitiesAsync();
             client.GetAllActivitiesCompleted+=client_GetAllActivitiesCompleted;
         }
+
+        private void SliderVermoeidheid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            double pos = 0;
+            if (SliderVermoeidheid.Orientation == System.Windows.Controls.Orientation.Horizontal)
+            {
+                pos = e.GetPosition(SliderVermoeidheid).X;
+                double width = SliderVermoeidheid.ActualWidth;
+
+                SliderVermoeidheid.Value = (pos / width) * SliderVermoeidheid.Maximum;
+
+            }
+            else
+            {
+                pos = e.GetPosition(SliderVermoeidheid).Y;
+                //MessageBox.Show(pos.ToString());
+
+                double height = SliderVermoeidheid.ActualHeight;
+                SliderVermoeidheid.Value = ((height-pos) / height) * SliderVermoeidheid.Maximum;
+
+            }
+
+        }
+        private void SliderBelangrijk_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            double pos = 0;
+            if (SliderBelangrijk.Orientation == System.Windows.Controls.Orientation.Horizontal)
+            {
+                pos = e.GetPosition(SliderBelangrijk).X;
+                double width = SliderBelangrijk.ActualWidth;
+
+                SliderBelangrijk.Value = (pos / width) * SliderBelangrijk.Maximum;
+
+            }
+            else
+            {
+                pos = e.GetPosition(SliderBelangrijk).Y;
+                //MessageBox.Show(pos.ToString());
+
+                double height = SliderBelangrijk.ActualHeight;
+                SliderBelangrijk.Value = ((height - pos) / height) * SliderBelangrijk.Maximum;
+
+            }
+
+        }
+        private void SliderTevredenheid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            double pos = 0;
+            if (SliderTevredenheid.Orientation == System.Windows.Controls.Orientation.Horizontal)
+            {
+                pos = e.GetPosition(SliderTevredenheid).X;
+                double width = SliderTevredenheid.ActualWidth;
+
+                SliderTevredenheid.Value = (pos / width) * SliderTevredenheid.Maximum;
+
+            }
+            else
+            {
+                pos = e.GetPosition(SliderTevredenheid).Y;
+                //MessageBox.Show(pos.ToString());
+
+                double height = SliderTevredenheid.ActualHeight;
+                SliderTevredenheid.Value = ((height - pos) / height) * SliderTevredenheid.Maximum;
+
+            }
+
+        }
     }
 }
