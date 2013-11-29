@@ -28,7 +28,8 @@ namespace WebApp.Views
         void client_GetIngave_GebruikerCompleted(object sender, ServiceReference.GetIngave_GebruikerCompletedEventArgs e)
         {
             dg_Ingaven.ItemsSource = null;
-            dg_Ingaven.ItemsSource = e.Result.ToList();
+            var output = from o in e.Result where o.User_ID == Convert.ToInt16(txtid.Text) select o;
+            dg_Ingaven.ItemsSource = output.ToList();
         }
 
         // Executes when the user navigates to this page.

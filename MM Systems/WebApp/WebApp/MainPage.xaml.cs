@@ -84,7 +84,6 @@ namespace WebApp
             User.ID = 0;
             User.Settings["ID"] = User.ID;
             this.ContentFrame.Navigate(new Uri("/Login",UriKind.Relative));
-            
         }
 
         // If an error occurs during navigation, show an error window
