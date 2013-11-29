@@ -27,10 +27,10 @@ namespace PanoramaApp3
 
         public static bool CheckNetworkConnection()
         {
-            if (NetworkInterface.NetworkInterfaceType == Microsoft.Phone.Net.NetworkInformation.NetworkInterfaceType.None)
-                return false;
-            else
+            if (NetworkInterface.GetIsNetworkAvailable())
                 return true;
+            else
+                return false;
         }
     }
 }

@@ -32,6 +32,7 @@ namespace PanoramaApp3
         {
             InitializeComponent();
             // Set the data context of the listbox control to the sample data
+            BackKeyPress += MainPage_BackKeyPress;
             DataContext = App.ViewModel;
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
            
@@ -55,6 +56,20 @@ namespace PanoramaApp3
 
             txthour1.Text = DateTime.Now.Hour.ToString();*/
         
+        }
+
+        void MainPage_BackKeyPress(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (User.ID != 0)
+            {
+                if (NavigationService.CanGoBack)
+                {
+                    while (NavigationService.RemoveBackEntry() != null)
+                    {
+                        NavigationService.RemoveBackEntry();
+                    }
+                }
+            }
         }
 /*
         void client_GetAllWeersOmstandighedenCompleted(object sender, GetAllWeersOmstandighedenCompletedEventArgs e)
