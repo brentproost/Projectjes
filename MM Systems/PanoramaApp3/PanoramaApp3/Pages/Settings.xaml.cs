@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Coding4Fun.Toolkit.Controls;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Scheduler;
 using Microsoft.Phone.Shell;
 using PanoramaApp3.Pages;
 using PanoramaApp3.ServiceReference;
@@ -17,12 +18,12 @@ namespace PanoramaApp3
 {
     public partial class Page1 : PhoneApplicationPage
     {
+       ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
        private ProgressIndicator _progressIndicator;
        public Page1()
         {   
 
             InitializeComponent();
-            
             this.BackKeyPress += Page1_BackKeyPress;
             if (!User.CheckNetworkConnection())
             {
@@ -31,7 +32,11 @@ namespace PanoramaApp3
                 connectionSettingsTask.ConnectionSettingsType = ConnectionSettingsType.WiFi;
                 connectionSettingsTask.Show();
             }
-            Loaded += Page1_Loaded;
+            else
+            {
+                Loaded += Page1_Loaded;
+            }
+            
         }
 
        void Page1_Loaded(object sender, RoutedEventArgs e)
@@ -80,7 +85,7 @@ namespace PanoramaApp3
                 }
                 else
                 {
-                    if (luc.Username != null)
+                    if (luc.Username != null && luc.Password != null)
                     {
                         _progressIndicator = new ProgressIndicator
                         {
@@ -91,7 +96,6 @@ namespace PanoramaApp3
                         SystemTray.SetIsVisible(this, true);
                         SystemTray.SetProgressIndicator(this, _progressIndicator);
                         SystemTray.SetOpacity(this, 1);
-                        ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
                         client.SigninUserCompleted += client_SigninUserCompleted;
                         client.SigninUserAsync(luc.Username, MD5Core.GetHashString(luc.Password));
                     }
@@ -137,6 +141,14 @@ namespace PanoramaApp3
             MessageBox.Show("Je bent nu uitgelogd");
             User.ID = 0;
             User.Settings["ID"] = User.ID;
+            try
+            {
+                ScheduledActionService.Remove("ms");
+            }
+            catch (InvalidOperationException exception)
+            {
+                
+            }
             Page1_Loaded(sender, e);
         }
 

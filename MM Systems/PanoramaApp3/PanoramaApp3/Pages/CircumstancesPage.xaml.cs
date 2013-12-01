@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Microsoft.Phone.Tasks;
 using PanoramaApp3.Classes;
 using PanoramaApp3.ServiceReference;
 
@@ -21,26 +22,37 @@ namespace PanoramaApp3.Pages
         public CircumstancesPage()
         {
             InitializeComponent();
-            _progressIndicator = new ProgressIndicator
+
+            if (!User.CheckNetworkConnection())
             {
-                IsIndeterminate = true,
-                Text = "Loading...",
-                IsVisible = true,
-            };
-            ButtonOk.IsEnabled = false;
-            SystemTray.SetIsVisible(this, true);
-            SystemTray.SetProgressIndicator(this, _progressIndicator);
-            SystemTray.SetOpacity(this, 1);
-            try
-            {
-                client.GetNachtrustSchaalCompleted += client_GetNachtrustSchaalCompleted;
-                client.GetNachtrustSchaalAsync();
-                client.GetAllWeersOmstandighedenCompleted += client_GetAllWeersOmstandighedenCompleted;
-                client.GetAllWeersOmstandighedenAsync();                
+                MessageBox.Show("Er is geen netwerkverbinding gevonden");
+                ConnectionSettingsTask connectionSettingsTask = new ConnectionSettingsTask();
+                connectionSettingsTask.ConnectionSettingsType = ConnectionSettingsType.WiFi;
+                connectionSettingsTask.Show();
             }
-            catch (Exception e)
+            else
             {
-                MessageBox.Show(e.Message);
+                _progressIndicator = new ProgressIndicator
+                    {
+                        IsIndeterminate = true,
+                        Text = "Loading...",
+                        IsVisible = true,
+                    };
+                ButtonOk.IsEnabled = false;
+                SystemTray.SetIsVisible(this, true);
+                SystemTray.SetProgressIndicator(this, _progressIndicator);
+                SystemTray.SetOpacity(this, 1);
+                try
+                {
+                    client.GetNachtrustSchaalCompleted += client_GetNachtrustSchaalCompleted;
+                    client.GetNachtrustSchaalAsync();
+                    client.GetAllWeersOmstandighedenCompleted += client_GetAllWeersOmstandighedenCompleted;
+                    client.GetAllWeersOmstandighedenAsync();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
             }
         }
         void client_GetNachtrustSchaalCompleted(object sender, GetNachtrustSchaalCompletedEventArgs e)
@@ -50,9 +62,6 @@ namespace PanoramaApp3.Pages
             {
                 nachtrustids.Add(e.Result[i].ID);
             }
-            _progressIndicator.IsVisible = false;
-            SystemTray.SetIsVisible(this, false);
-            ButtonOk.IsEnabled = true;
         }
         void client_GetAllWeersOmstandighedenCompleted(object sender, GetAllWeersOmstandighedenCompletedEventArgs e)
         {
@@ -61,6 +70,9 @@ namespace PanoramaApp3.Pages
             {
                 weersomstandighedenids.Add(e.Result[i].ID);
             }
+            _progressIndicator.IsVisible = false;
+            SystemTray.SetIsVisible(this, false);
+            ButtonOk.IsEnabled = true;
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)

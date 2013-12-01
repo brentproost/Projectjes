@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Microsoft.Phone.Tasks;
 using PanoramaApp3.Classes;
 using PanoramaApp3.ServiceReference;
 
@@ -22,20 +23,32 @@ namespace PanoramaApp3.Pages
         public ActivityPage()
         {
             InitializeComponent();
-            _progressIndicator = new ProgressIndicator
+            if (!User.CheckNetworkConnection())
             {
-                IsIndeterminate = true,
-                Text = "Loading...",
-                IsVisible = true,
-            };
-            btn_ok.IsEnabled = false;
-            SystemTray.SetIsVisible(this, true);
-            SystemTray.SetProgressIndicator(this, _progressIndicator);
-            SystemTray.SetOpacity(this, 1);
-            if (User.ID != 0)
+                MessageBox.Show("Er is geen netwerkverbinding gevonden");
+                ConnectionSettingsTask connectionSettingsTask = new ConnectionSettingsTask();
+                connectionSettingsTask.ConnectionSettingsType = ConnectionSettingsType.WiFi;
+                connectionSettingsTask.Show();
+            }
+            else
             {
-                client.GetAllCategoriesCompleted += serviceClient_GetAllCategoriesCompleted;
-                client.GetAllCategoriesAsync();
+
+
+                _progressIndicator = new ProgressIndicator
+                    {
+                        IsIndeterminate = true,
+                        Text = "Loading...",
+                        IsVisible = true,
+                    };
+                btn_ok.IsEnabled = false;
+                SystemTray.SetIsVisible(this, true);
+                SystemTray.SetProgressIndicator(this, _progressIndicator);
+                SystemTray.SetOpacity(this, 1);
+                if (User.ID != 0)
+                {
+                    client.GetAllCategoriesCompleted += serviceClient_GetAllCategoriesCompleted;
+                    client.GetAllCategoriesAsync();
+                }
             }
         }
         void serviceClient_GetAllCategoriesCompleted(object sender, GetAllCategoriesCompletedEventArgs e)
