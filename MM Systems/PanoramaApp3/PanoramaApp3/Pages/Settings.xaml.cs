@@ -141,11 +141,12 @@ namespace PanoramaApp3
             MessageBox.Show("Je bent nu uitgelogd");
             User.ID = 0;
             User.Settings["ID"] = User.ID;
-            try
+            if (ScheduledActionService.Find("ms")!=null)
+            if (ScheduledActionService.Find("ms")!=null)
             {
                 ScheduledActionService.Remove("ms");
             }
-            catch (InvalidOperationException exception)
+            else
             {
                 
             }
