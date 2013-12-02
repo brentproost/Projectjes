@@ -29,6 +29,7 @@ namespace WebApp.Views
         {
             InitializeComponent();
             UpdateDataGrid();
+
             if (App.Current.InstallState == InstallState.Installed && App.Current.IsRunningOutOfBrowser)
             {
                 btn_exportall.Visibility = Visibility.Visible;
@@ -83,8 +84,11 @@ namespace WebApp.Views
 
         void fd_Closed(object sender, EventArgs e)
         {
-            client.GetAllUsersAsync();
-            client.GetAllUsersCompleted+=client_GetAllUsersCompletedids;
+            if (fd.DialogResult == true)
+            {
+                client.GetAllUsersAsync();
+                client.GetAllUsersCompleted += client_GetAllUsersCompletedids;
+            }
         }
 
         void client_GetAllUsersCompletedids(object sender, ServiceReference.GetAllUsersCompletedEventArgs e)
