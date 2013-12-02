@@ -19,7 +19,7 @@
                               Source="/empty" Navigated="ContentFrame_Navigated" NavigationFailed="ContentFrame_NavigationFailed">
                 <navigation:Frame.UriMapper>
                   <uriMapper:UriMapper>
-                    <!--<uriMapper:UriMapping Uri="" MappedUri="/Views/Home.xaml"/>-->
+                    <!--<uriMapper:UriMapping Uri="/Gebruikers" MappedUri="/Views/Gebruikers.xaml"/>-->
                     <uriMapper:UriMapping Uri="/{pageName}" MappedUri="/Views/{pageName}.xaml"/>
                   </uriMapper:UriMapper>
                 </navigation:Frame.UriMapper>
@@ -51,7 +51,7 @@
                     <Rectangle x:Name="Divider2" Style="{StaticResource DividerStyle}"/>
 
                     <HyperlinkButton x:Name="Link3" Style="{StaticResource LinkStyle}" 
-                                     NavigateUri="/Gebruikers" TargetName="ContentFrame" Content="Gebruikers"/>
+                                     NavigateUri="/Geb" TargetName="ContentFrame" Content="Gebruikers"/>
                     <Rectangle x:Name="Divider4" Style="{StaticResource DividerStyle}"/>
 
                     <HyperlinkButton x:Name="Link5" Style="{StaticResource LinkStyle}" 

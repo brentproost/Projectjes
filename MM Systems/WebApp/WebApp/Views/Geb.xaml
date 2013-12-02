@@ -7,7 +7,8 @@
            xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" x:Class="WebApp.Views.Gebruikers"
            mc:Ignorable="d"
            d:DesignWidth="640" d:DesignHeight="480"
-           Title="Gebruikers">
+           Title="Gebruikers"
+    Loaded="Gebruikers_OnLoaded">
     <Grid x:Name="LayoutRoot">
         <StackPanel>
             <Border BorderThickness="3" Background="AliceBlue">
@@ -57,7 +58,7 @@
                         </DataTemplate>
                     </Button.ContentTemplate>
                 </Button>
-                <Button x:Name="btn_exportall" HorizontalAlignment="Left" Click="btn_exportall_Click">
+                <Button x:Name="btn_exportall" HorizontalAlignment="Left" Click="btn_exportall_Click" Visibility="Collapsed">
                     <Button.ContentTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
@@ -73,6 +74,16 @@
                             <StackPanel Orientation="Horizontal">
                                 <Image VerticalAlignment="Center" Source="/WebApp;component/export.png" Stretch="None" />
                                 <TextBlock VerticalAlignment="Center" Text="Exporteer resultaten in één bestand"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Button.ContentTemplate>
+                </Button>
+                <Button x:Name="Run_as_app" HorizontalAlignment="Left" Click="Run_as_app_OnClick">
+                    <Button.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image VerticalAlignment="Center" Source="/WebApp;component/export.png" Stretch="None" />
+                                <TextBlock VerticalAlignment="Center" Text="Start de pagina als applicatie. Hierdoor zijn er meer functies"/>
                             </StackPanel>
                         </DataTemplate>
                     </Button.ContentTemplate>
