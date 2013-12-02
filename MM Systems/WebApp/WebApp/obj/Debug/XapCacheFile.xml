@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<xapCache source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\WebApp.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="1-12-2013 15:26:43">
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.dll" archivePath="WebApp.dll" lastWriteTime="1-12-2013 15:26:42" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\Microsoft.CSharp.dll" archivePath="Microsoft.CSharp.dll" lastWriteTime="18-11-2011 16:40:20" />
@@ -18,4 +19,26 @@
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\ReadMe.Coding4Fun.Toolkit.txt" archivePath="ReadMe.Coding4Fun.Toolkit.txt" lastWriteTime="10-11-2013 16:55:51" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="26-11-2013 09:22:12" />
   <file source="C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="1-12-2013 15:26:04" />
+=======
+﻿<xapCache source="C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\WebApp.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="2/12/2013 9:38:34">
+  <file source="C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.dll" archivePath="WebApp.dll" lastWriteTime="2/12/2013 9:38:32" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\Microsoft.CSharp.dll" archivePath="Microsoft.CSharp.dll" lastWriteTime="18/11/2011 17:40:20" />
+  <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PasswordHashGen\Bin\Release\PasswordHashGen.dll" archivePath="PasswordHashGen.dll" lastWriteTime="26/11/2013 14:27:26" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.ComponentModel.DataAnnotations.dll" archivePath="System.ComponentModel.DataAnnotations.dll" lastWriteTime="18/11/2011 17:40:20" />
+  <file source="C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\packages\SilverlightToolkit-Data.4.2010.4\lib\sl4\System.Windows.Controls.Data.DataForm.Toolkit.dll" archivePath="System.Windows.Controls.Data.DataForm.Toolkit.dll" lastWriteTime="26/11/2013 12:57:06" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.Data.dll" archivePath="System.Windows.Controls.Data.dll" lastWriteTime="18/11/2011 17:40:20" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.Data.Input.dll" archivePath="System.Windows.Controls.Data.Input.dll" lastWriteTime="18/11/2011 17:40:20" />
+  <file source="C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\packages\SilverlightToolkit-Data.4.2010.4\lib\sl4\System.Windows.Controls.Data.Toolkit.dll" archivePath="System.Windows.Controls.Data.Toolkit.dll" lastWriteTime="26/11/2013 12:57:06" />
+  <file source="C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\packages\SilverlightToolkit-DataViz.4.2010.4\lib\sl4\System.Windows.Controls.DataVisualization.Toolkit.dll" archivePath="System.Windows.Controls.DataVisualization.Toolkit.dll" lastWriteTime="26/11/2013 12:57:06" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.dll" archivePath="System.Windows.Controls.dll" lastWriteTime="18/11/2011 17:40:20" />
+  <file source="C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\packages\SilverlightToolkit-Input.4.2010.4\lib\sl4\System.Windows.Controls.Input.Toolkit.dll" archivePath="System.Windows.Controls.Input.Toolkit.dll" lastWriteTime="26/11/2013 12:57:06" />
+  <file source="C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\packages\SilverlightToolkit-Layout.4.2010.4\lib\sl4\System.Windows.Controls.Layout.Toolkit.dll" archivePath="System.Windows.Controls.Layout.Toolkit.dll" lastWriteTime="26/11/2013 12:57:06" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.Navigation.dll" archivePath="System.Windows.Controls.Navigation.dll" lastWriteTime="18/11/2011 17:40:20" />
+  <file source="C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\packages\SilverlightToolkit-Theming.4.2010.4\lib\sl4\System.Windows.Controls.Theming.Toolkit.dll" archivePath="System.Windows.Controls.Theming.Toolkit.dll" lastWriteTime="26/11/2013 12:57:06" />
+  <file source="C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\packages\SilverlightToolkit-Core.4.2010.4\lib\sl4\System.Windows.Controls.Toolkit.dll" archivePath="System.Windows.Controls.Toolkit.dll" lastWriteTime="26/11/2013 12:57:06" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Data.dll" archivePath="System.Windows.Data.dll" lastWriteTime="18/11/2011 17:40:20" />
+  <file source="C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\ReadMe.Coding4Fun.Toolkit.txt" archivePath="ReadMe.Coding4Fun.Toolkit.txt" lastWriteTime="7/11/2013 10:35:24" />
+  <file source="C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="4/11/2013 8:48:09" />
+  <file source="C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="2/12/2013 9:24:14" />
+>>>>>>> ad9b8ff36d3e07ee6aa40ed958b5abb4a4529e06
 </xapCache>

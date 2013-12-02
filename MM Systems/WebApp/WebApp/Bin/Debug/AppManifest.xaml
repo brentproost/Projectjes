@@ -12,6 +12,9 @@
       <OutOfBrowserSettings.WindowSettings>
         <WindowSettings Title="WebApp Application" />
       </OutOfBrowserSettings.WindowSettings>
+      <OutOfBrowserSettings.SecuritySettings>
+        <SecuritySettings ElevatedPermissions="Required" />
+      </OutOfBrowserSettings.SecuritySettings>
       <OutOfBrowserSettings.Icons />
     </OutOfBrowserSettings>
   </Deployment.OutOfBrowserSettings>

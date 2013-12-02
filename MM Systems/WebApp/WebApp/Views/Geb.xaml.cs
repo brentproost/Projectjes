@@ -19,7 +19,7 @@ namespace WebApp.Views
 {
     public partial class Gebruikers : Page
     {
-        FolderDialog fd = new FolderDialog();
+        FolderDialog fd ;
         ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
         DataGrid multiexport = new DataGrid();
         List<string> bestandsnaam = new List<string>();
@@ -29,6 +29,11 @@ namespace WebApp.Views
         {
             InitializeComponent();
             UpdateDataGrid();
+            if (App.Current.InstallState == InstallState.Installed && App.Current.IsRunningOutOfBrowser)
+            {
+                btn_exportall.Visibility = Visibility.Visible;
+                Run_as_app.Visibility = Visibility.Collapsed;
+            }
         }
 
         void UpdateDataGrid()
@@ -115,6 +120,35 @@ namespace WebApp.Views
         { 
             inv_datagrid.ItemsSource = e.Result.ToList();
             Export exportallonefile = new Export(inv_datagrid);
+        }
+
+        private void Gebruikers_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            if (App.Current.InstallState == InstallState.Installed && App.Current.IsRunningOutOfBrowser)
+            {
+                fd = new FolderDialog();
+            }
+        }
+
+        private void Run_as_app_OnClick(object sender, RoutedEventArgs e)
+        {
+            App.Current.InstallStateChanged += (Current_InstallStateChanged);
+            if (App.Current.InstallState == InstallState.NotInstalled)
+            {
+                App.Current.Install();
+            }
+            else
+            {
+                MessageBox.Show("De applicatie is al geinstalleerd. Gelieve de applicatie via windows te openen");
+            }
+        }
+        void Current_InstallStateChanged(object sender, System.EventArgs e)
+        {
+            if (App.Current.InstallState == InstallState.Installed)
+            {
+                Run_as_app.IsEnabled = false;
+                Run_as_app.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

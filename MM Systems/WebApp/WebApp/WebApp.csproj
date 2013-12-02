@@ -145,8 +145,8 @@
     <Compile Include="Views\Activiteiten.xaml.cs">
       <DependentUpon>Activiteiten.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Gebruikers.xaml.cs">
-      <DependentUpon>Gebruikers.xaml</DependentUpon>
+    <Compile Include="Views\Geb.xaml.cs">
+      <DependentUpon>Geb.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
@@ -218,7 +218,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Gebruikers.xaml">
+    <Page Include="Views\Geb.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
