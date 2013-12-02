@@ -105,7 +105,7 @@ namespace WebApp.Views
         void client_GetIngave_GebruikerCompleted(object sender, ServiceReference.GetIngave_GebruikerCompletedEventArgs e)
         {
             int count = 0;
-            foreach (var item in gebruikersids)
+            foreach (var item in gebruikersids)//ge blijft hier iedere keer terug opnieuw een folder dialog aanroepen en folder dialog kunt ge alleen maar oproepen bij user interaction dus vb click event ni hier daarmee die errors
             {
                 var list = from i in e.Result where i.User_ID == item select i;
                 inv_datagrid.ItemsSource = list.ToList();
