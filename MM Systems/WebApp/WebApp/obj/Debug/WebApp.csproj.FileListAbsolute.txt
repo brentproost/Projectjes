@@ -224,7 +224,6 @@ C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Dia
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\UC\Login.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\ErrorWindow.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Activiteiten.g.cs
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Gebruikers.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Home.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\MainPage.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.g.resources
@@ -452,6 +451,9 @@ C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\App.g.cs
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\DialogBoxes\AddWeersomstandigheid.g.cs
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\DialogBoxes\FolderDialog\FolderDialog.g.cs
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Login.g.cs
+<<<<<<< HEAD
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Gebruikers.g.cs
+=======
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Resultaten.g.cs
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Weeromstandigheden.g.cs
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\DialogBoxes\AddActivity.g.cs
@@ -467,4 +469,9 @@ C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.dl
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.pdb
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\XapCacheFile.xml
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Geb.g.cs
+<<<<<<< HEAD
+>>>>>>> ad9b8ff36d3e07ee6aa40ed958b5abb4a4529e06
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Geb.g.cs
+=======
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
+>>>>>>> ea82ec1fb011566dc720bb506972cd0126648f2a

@@ -32,11 +32,6 @@ namespace WebApp.Views
             dg_Ingaven.ItemsSource = output.ToList();
         }
 
-        // Executes when the user navigates to this page.
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-        }
-
         void UpdateUserInfo()
         {
             client.GetIngave_GebruikerAsync();
