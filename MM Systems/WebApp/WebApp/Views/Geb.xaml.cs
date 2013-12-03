@@ -114,12 +114,12 @@ namespace WebApp.Views
         {
             client.GetIngave_GebruikerAsync();
             client.GetIngave_GebruikerCompleted += client_GetIngave_GebruikerCompletedonefile;
+            Export exportallonefile = new Export(inv_datagrid);
         }
 
         void client_GetIngave_GebruikerCompletedonefile(object sender, ServiceReference.GetIngave_GebruikerCompletedEventArgs e)
         { 
             inv_datagrid.ItemsSource = e.Result.ToList();
-            Export exportallonefile = new Export(inv_datagrid);
         }
 
         private void Gebruikers_OnLoaded(object sender, RoutedEventArgs e)
