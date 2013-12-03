@@ -29,6 +29,7 @@ namespace WebApp.Views
         {
             InitializeComponent();
             UpdateDataGrid();
+
             if (App.Current.InstallState == InstallState.Installed && App.Current.IsRunningOutOfBrowser)
             {
                 btn_exportall.Visibility = Visibility.Visible;
@@ -83,8 +84,11 @@ namespace WebApp.Views
 
         void fd_Closed(object sender, EventArgs e)
         {
-            client.GetAllUsersAsync();
-            client.GetAllUsersCompleted+=client_GetAllUsersCompletedids;
+            if (fd.DialogResult == true)
+            {
+                client.GetAllUsersAsync();
+                client.GetAllUsersCompleted += client_GetAllUsersCompletedids;
+            }
         }
 
         void client_GetAllUsersCompletedids(object sender, ServiceReference.GetAllUsersCompletedEventArgs e)
@@ -101,7 +105,7 @@ namespace WebApp.Views
         void client_GetIngave_GebruikerCompleted(object sender, ServiceReference.GetIngave_GebruikerCompletedEventArgs e)
         {
             int count = 0;
-            foreach (var item in gebruikersids)
+            foreach (var item in gebruikersids)//ge blijft hier iedere keer terug opnieuw een folder dialog aanroepen en folder dialog kunt ge alleen maar oproepen bij user interaction dus vb click event ni hier daarmee die errors
             {
                 var list = from i in e.Result where i.User_ID == item select i;
                 inv_datagrid.ItemsSource = list.ToList();
