@@ -49,7 +49,7 @@ namespace PanoramaApp3.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Windows.Application.LoadComponent(this, new System.Uri("/PanoramaApp3;component/Pages/Graphs.xaml", System.UriKind.Relative));
+            System.Windows.Application.LoadComponent(this, new System.Uri("/MS%20Patient;component/Pages/Graphs.xaml", System.UriKind.Relative));
             this.LayoutRoot = ((System.Windows.Controls.Grid)(this.FindName("LayoutRoot")));
         }
     }

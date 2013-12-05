@@ -13,12 +13,14 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using PanoramaApp3.Classes;
 
 namespace PanoramaApp3
 {
     public partial class App : Application
     {
         private static MainViewModel viewModel = null;
+        ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
 
         /// <summary>
         /// A static ViewModel used by the views to bind against.
@@ -97,8 +99,8 @@ namespace PanoramaApp3
                 Uri nUri = new Uri("/MainPage.xaml", UriKind.Relative);
                 ((App)Application.Current).RootFrame.Navigate(nUri);
             }
-
         }
+
 
         // Code to execute when the application is activated (brought to foreground)
         // This code will not execute when the application is first launched
