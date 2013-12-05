@@ -41,9 +41,6 @@ C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\obj\Release\Wcf.dll
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\obj\Release\Wcf.pdb
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\obj\Release\Wcf.csprojResolveAssemblyReference.cache
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\PasswordHashGen.dll
-C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\PasswordHashGen.pdb
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\Wcf.dll
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\Wcf.pdb
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\Microsoft.Data.Edm.dll
@@ -51,10 +48,8 @@ C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\M
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\Microsoft.WindowsAzure.Configuration.dll
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\Microsoft.WindowsAzure.Diagnostics.dll
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\Microsoft.WindowsAzure.Storage.dll
-C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\PasswordHashGen.dll
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\System.Spatial.dll
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\Microsoft.WindowsAzure.Diagnostics.StorageUtility.dll
-C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\PasswordHashGen.pdb
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\Microsoft.Data.Edm.xml
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\Microsoft.Data.OData.xml
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\Microsoft.WindowsAzure.Diagnostics.xml
@@ -90,3 +85,8 @@ C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\z
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\obj\Release\Wcf.csprojResolveAssemblyReference.cache
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\obj\Release\Wcf.dll
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\obj\Release\Wcf.pdb
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\obj\Release\Wcf.csprojResolveAssemblyReference.cache
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\PasswordHashGen.dll
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\PasswordHashGen.pdb
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\PasswordHashGen.dll
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\WcfService\Wcf\bin\PasswordHashGen.pdb

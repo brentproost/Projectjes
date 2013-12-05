@@ -53,7 +53,7 @@ namespace PanoramaApp3 {
                 return;
             }
             _contentLoaded = true;
-            System.Windows.Application.LoadComponent(this, new System.Uri("/PanoramaApp3;component/MainPage.xaml", System.UriKind.Relative));
+            System.Windows.Application.LoadComponent(this, new System.Uri("/MS%20Patient;component/MainPage.xaml", System.UriKind.Relative));
             this.LayoutRoot = ((System.Windows.Controls.Grid)(this.FindName("LayoutRoot")));
             this.ContentPanel = ((System.Windows.Controls.Grid)(this.FindName("ContentPanel")));
             this.txt_user = ((System.Windows.Controls.TextBlock)(this.FindName("txt_user")));

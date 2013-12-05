@@ -46,7 +46,7 @@ namespace PanoramaApp3 {
                 return;
             }
             _contentLoaded = true;
-            System.Windows.Application.LoadComponent(this, new System.Uri("/PanoramaApp3;component/App.xaml", System.UriKind.Relative));
+            System.Windows.Application.LoadComponent(this, new System.Uri("/MS%20Patient;component/App.xaml", System.UriKind.Relative));
         }
     }
 }

@@ -64,10 +64,4 @@
       <Column Name="Tevredenheid" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.Parameters" Member="Parameters">
-    <Type Name="Parameter">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Uur" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
 </Database>

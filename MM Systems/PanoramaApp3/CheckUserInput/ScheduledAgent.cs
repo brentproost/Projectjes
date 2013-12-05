@@ -37,11 +37,6 @@ namespace CheckUserInput
             time = 18;
         }
 
-        /*void client_GetHourCompleted(object sender, GetHourCompletedEventArgs e)
-        {
-            time = e.Result;
-        }*/
-
         /// Code to execute on Unhandled Exceptions
         private void ScheduledAgent_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
         {
@@ -65,7 +60,7 @@ namespace CheckUserInput
         {
             //TODO: Add code to perform your task in background
             taskt = task;
-            ServiceReference.ServiceClient client = new ServiceClient();
+            ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
             client.GetLatestInputAsync(ID);
             client.GetLatestInputCompleted += client_GetLatestInputCompleted;
             
@@ -80,19 +75,16 @@ namespace CheckUserInput
                 }
                 else
                 {
-                    if (time != null)
+                    if (DateTime.Now.Hour >= time && DateTime.Now.Hour <= (time+1) )
                     {
-                        if (DateTime.Now.Hour >= time && DateTime.Now.Hour <= (time + 1))
-                        {
-                            ShellToast toast = new ShellToast();
-                            Mutex mutex = new Mutex(true, "ScheduledAgentData");
-                            mutex.WaitOne();
-                            IsolatedStorageSettings setting = IsolatedStorageSettings.ApplicationSettings;
-                            toast.Title = "ms patient";
-                            mutex.ReleaseMutex();
-                            toast.Content = "U heeft nog geen data ingevoerd vandaag";
-                            toast.Show();
-                        }
+                        ShellToast toast = new ShellToast();
+                        Mutex mutex = new Mutex(true, "ScheduledAgentData");
+                        mutex.WaitOne();
+                        IsolatedStorageSettings setting = IsolatedStorageSettings.ApplicationSettings;
+                        toast.Title = "ms patient";
+                        mutex.ReleaseMutex();
+                        toast.Content = "U heeft nog geen data ingevoerd vandaag";
+                        toast.Show();
                     }
                 }
             }

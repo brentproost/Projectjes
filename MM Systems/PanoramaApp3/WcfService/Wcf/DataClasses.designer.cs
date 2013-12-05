@@ -51,9 +51,6 @@ namespace Wcf
     partial void InsertTbl_GebruikersIngave(Tbl_GebruikersIngave instance);
     partial void UpdateTbl_GebruikersIngave(Tbl_GebruikersIngave instance);
     partial void DeleteTbl_GebruikersIngave(Tbl_GebruikersIngave instance);
-    partial void InsertParameter(Parameter instance);
-    partial void UpdateParameter(Parameter instance);
-    partial void DeleteParameter(Parameter instance);
     #endregion
 		
 		public DataClassesDataContext() : 
@@ -139,14 +136,6 @@ namespace Wcf
 			get
 			{
 				return this.GetTable<Tbl_GebruikersIngave>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Parameter> Parameters
-		{
-			get
-			{
-				return this.GetTable<Parameter>();
 			}
 		}
 	}
@@ -1256,92 +1245,6 @@ namespace Wcf
 					this._Tevredenheid = value;
 					this.SendPropertyChanged("Tevredenheid");
 					this.OnTevredenheidChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Parameters")]
-	public partial class Parameter : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private int _Uur;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnUurChanging(int value);
-    partial void OnUurChanged();
-    #endregion
-		
-		public Parameter()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Uur", DbType="Int NOT NULL")]
-		public int Uur
-		{
-			get
-			{
-				return this._Uur;
-			}
-			set
-			{
-				if ((this._Uur != value))
-				{
-					this.OnUurChanging(value);
-					this.SendPropertyChanging();
-					this._Uur = value;
-					this.SendPropertyChanged("Uur");
-					this.OnUurChanged();
 				}
 			}
 		}
