@@ -21,6 +21,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 
                 <TextBlock HorizontalAlignment="Center" x:Name="HeaderText" Style="{StaticResource HeaderTextStyle}" 
                                    Text="Homepage"/>
+                <TextBlock Foreground="DarkRed" Text="Op de pagina Gebruikers kon je eerst niet alles opslaan als 1 bestand (knop beneden) dit is nu wel in orde."></TextBlock>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                     <Border BorderThickness="1" BorderBrush="Gray" Width="200" Padding="0" Margin="0,0,10,0">
                         <Grid Width="200" x:Name="btn_GebruikerToevoegen" MouseLeftButtonDown="btn_GebruikerToevoegen_MouseLeftButtonDown" Cursor="Hand">

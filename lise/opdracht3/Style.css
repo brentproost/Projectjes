@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* CSS Document */
+
+body {
+	margin-left:50px;
+	margin-right:200px;
+	margin-top:100px;
+	background-color:#969696;
+
+}
+h1 {
+	font-size:34px;
+	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	color:#A0D214;
+}
+h2 {
+	font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-size:16px;
+	color:#FFFFFF;
+}
+h3 {
+	font-size:18px;
+	font-style:italic;
+	color:#A0D214;
+}
+	
+	

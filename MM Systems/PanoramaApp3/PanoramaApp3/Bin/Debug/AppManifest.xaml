@@ -1,6 +1,11 @@
 ﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="MS Patient" EntryPointType="PanoramaApp3.App" RuntimeVersion="4.7.50308.0">
   <Deployment.Parts>
+<<<<<<< HEAD
+    <AssemblyPart x:Name="PanoramaApp3" Source="PanoramaApp3.dll" />
+    <AssemblyPart x:Name="AmCharts.Windows.QuickCharts.WP" Source="AmCharts.Windows.QuickCharts.WP.dll" />
+=======
     <AssemblyPart x:Name="MS Patient" Source="MS Patient.dll" />
+>>>>>>> aecc4260575bade3faa00950d4e443f178747df0
     <AssemblyPart x:Name="CheckUserInput" Source="CheckUserInput.dll" />
     <AssemblyPart x:Name="Coding4Fun.Toolkit.Audio" Source="Coding4Fun.Toolkit.Audio.dll" />
     <AssemblyPart x:Name="Coding4Fun.Toolkit.Controls" Source="Coding4Fun.Toolkit.Controls.dll" />
