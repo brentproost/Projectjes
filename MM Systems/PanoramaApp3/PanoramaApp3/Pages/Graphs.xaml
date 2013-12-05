@@ -7,6 +7,8 @@
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:chart="clr-namespace:AmCharts.Windows.QuickCharts;assembly=AmCharts.Windows.QuickCharts.WP"
+    xmlns:classes="clr-namespace:PanoramaApp3.Classes"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -20,7 +22,15 @@
 
             <!--Panorama item one-->
             <controls:PanoramaItem Header="Dagen">
-                <Grid/>
+                <Grid>
+                    <chart:SerialChart Foreground="White" PlotAreaBackground="Black" LegendVisibility="Visible" x:Name="chart_1" DataSource="{Binding linedata}" CategoryValueMemberPath="X" AxisForeground="White">
+                        <chart:SerialChart.Graphs>
+                            <chart:LineGraph Foreground="White" Brush="#FF30A2C7" BorderBrush="Gray" ValueMemberPath="Y_value_line1" Title="Vermoeidheid"/>
+                            <chart:LineGraph Foreground="White" Brush="#FFB83D3D" BorderBrush="Gray" ValueMemberPath="Y_value_line2" Title="Tevredenheid"/>
+                            <chart:LineGraph Foreground="White" Brush="#FFC0C730" BorderBrush="Gray" ValueMemberPath="Y_value_line3" Title="Belangrijkheid"/>
+                        </chart:SerialChart.Graphs>
+                    </chart:SerialChart>
+                </Grid>
             </controls:PanoramaItem>
 
             <!--Panorama item two-->
