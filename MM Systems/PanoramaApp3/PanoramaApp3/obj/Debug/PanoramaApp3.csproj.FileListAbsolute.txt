@@ -13,10 +13,47 @@ C:\Users\senne\Documents\Visual Studio 2012\Projects\PanoramaApp3\PanoramaApp3\o
 C:\Users\senne\Documents\Visual Studio 2012\Projects\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.pdb
 C:\Users\senne\documents\visual studio 2012\Projects\PanoramaApp3\PanoramaApp3\obj\Debug\XapCacheFile.xml
 C:\Users\senne\documents\visual studio 2012\Projects\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.csprojResolveAssemblyReference.cache
+<<<<<<< HEAD
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\ApplicationIcon.png
+=======
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\ApplicationIcon.png
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Background.png
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PanoramaApp3.dll
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PanoramaApp3.pdb
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\AppManifest.xaml
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PanoramaApp3.xap
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Coding4Fun.Toolkit.Audio.dll
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Coding4Fun.Toolkit.Controls.dll
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Coding4Fun.Toolkit.Net.dll
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Coding4Fun.Toolkit.Storage.dll
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Facebook.dll
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Microsoft.Phone.Controls.dll
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PasswordHashGen.dll
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PasswordHashGen.pdb
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Facebook.xml
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Microsoft.Phone.Controls.xml
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.csprojResolveAssemblyReference.cache
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\App.g.cs
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\MainPage.g.cs
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\ActivityPage.g.cs
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\CircumstancesPage.g.cs
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\CommentPage.g.cs
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\DatePage.g.cs
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\Graphs.g.cs
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\LoginUserControl.g.cs
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.g.resources
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.dll
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.pdb
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\XapCacheFile.xml
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\ScheduledAgent.g.cs
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\CheckUserInput.dll
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\CheckUserInput.pdb
+C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\Meldaan.g.cs
+>>>>>>> aecc4260575bade3faa00950d4e443f178747df0
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Background.png
-C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PanoramaApp3.dll
-C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PanoramaApp3.pdb
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\MS Patient.dll
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\MS Patient.pdb
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\AppManifest.xaml
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PanoramaApp3.xap
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\CheckUserInput.dll
@@ -43,9 +80,9 @@ C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Deb
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\ScheduledAgent.g.cs
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\Settings.g.cs
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\Pages\LoginUserControl.g.cs
-C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.g.resources
-C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.dll
-C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.pdb
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\MS Patient.g.resources
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\MS Patient.dll
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\MS Patient.pdb
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\XapCacheFile.xml
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\ApplicationIcon.png
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Background.png

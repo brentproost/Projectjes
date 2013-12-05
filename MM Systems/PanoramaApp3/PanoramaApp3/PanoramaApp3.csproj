@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PanoramaApp3</RootNamespace>
-    <AssemblyName>PanoramaApp3</AssemblyName>
+    <AssemblyName>MS Patient</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
     <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
@@ -179,6 +179,9 @@
     <None Include="Properties\DataSources\CheckUserInput.ServiceReference.Tbl_Weersomstandigheden.datasource" />
     <None Include="Properties\DataSources\CheckUserInput.ServiceReference.User.datasource" />
     <None Include="Properties\WMAppManifest.xml" />
+    <Content Include="MSLogo.png" />
+    <Content Include="ApplicationLogo.png" />
+    <Content Include="MSLogo2.png" />
     <Content Include="ReadMe.Coding4Fun.Toolkit.txt" />
     <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Activities.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -221,9 +224,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ApplicationIcon.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
