@@ -44,7 +44,7 @@ namespace PanoramaApp3.Pages
             {
                 ScheduledActionService.Add(periodicTask);
                 ScheduledActionService.LaunchForTest("ms", TimeSpan.FromSeconds(3));
-                MessageBox.Show("Open the background agent success");
+                MessageBox.Show("Herinnnering staan nu aan");
                 StopTask.Visibility = Visibility.Visible;
                 StartTask.Visibility = Visibility.Collapsed;
                 
@@ -53,15 +53,15 @@ namespace PanoramaApp3.Pages
             {
                 if (exception.Message.Contains("exists already"))
                 {
-                    MessageBox.Show("Since then the background agent success is already running");
+                    MessageBox.Show("De herinneringen staan al aan");
                 }
                 if (exception.Message.Contains("BNS Error: The action is disabled"))
                 {
-                    MessageBox.Show("Background processes for this application has been prohibited");
+                    MessageBox.Show("Herinneringen voor deze applicatie zijn niet ingeschakeld");
                 }
                 if (exception.Message.Contains("BNS Error: The maximum number of ScheduledActions of this type has already been added."))
                 {
-                    MessageBox.Show("You open the daemon has exceeded the hardware limitations");
+                    MessageBox.Show("Er zijn al te veel herinneringen ingeschakeld");
                 }
                 else
                 {
@@ -77,7 +77,7 @@ namespace PanoramaApp3.Pages
             try
             {
                 ScheduledActionService.Remove("ms");
-                MessageBox.Show("Turn off the background agent successfully");
+                MessageBox.Show("Herinneringen staan nu uit");
                 StopTask.Visibility = Visibility.Collapsed;
                 StartTask.Visibility = Visibility.Visible;
                 
@@ -86,7 +86,7 @@ namespace PanoramaApp3.Pages
             {
                 if (exception.Message.Contains("doesn't exist"))
                 {
-                    MessageBox.Show("Since then the background agent success is not running");
+                    MessageBox.Show("Herinneringen staan niet aan");
                 }
             }
             catch (SchedulerServiceException)

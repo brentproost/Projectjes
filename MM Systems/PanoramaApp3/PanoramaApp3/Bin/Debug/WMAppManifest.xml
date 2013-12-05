@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
-  <App xmlns="" ProductID="{a5da957d-e725-4f28-a852-9e7e44c5056d}" Title="PanoramaApp3" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="PanoramaApp3 author" Description="Sample description" Publisher="PanoramaApp3">
-    <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
+  <App xmlns="" ProductID="{a5da957d-e725-4f28-a852-9e7e44c5056d}" Title="MS Patient" RuntimeType="Silverlight" Version="1.5.0.0" Genre="apps.normal" Author="Brent Proost &amp; Senne Vande Sompele" Description="Sample description" Publisher="Brent Proost &amp; Senne Vande Sompele" BitsPerPixel="32">
+    <IconPath IsRelative="true" IsResource="false">MSLogo2.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_GAMERSERVICES" />
       <Capability Name="ID_CAP_IDENTITY_DEVICE" />
@@ -28,7 +28,7 @@
     <Tokens>
       <PrimaryToken TokenID="PanoramaApp3Token" TaskName="_default">
         <TemplateType5>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Background.png</BackgroundImageURI>
+          <BackgroundImageURI IsRelative="true" IsResource="false">MSLogo2.png</BackgroundImageURI>
           <Count>0</Count>
           <Title>PanoramaApp3</Title>
         </TemplateType5>
