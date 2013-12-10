@@ -469,12 +469,8 @@ C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\XapCacheF
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Geb.g.cs
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Geb.g.cs
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
-<<<<<<< HEAD
->>>>>>> ea82ec1fb011566dc720bb506972cd0126648f2a
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Settings.g.cs
-=======
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Settings.g.cs
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\obj\Debug\Views\Settings.g.cs
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\Lite.ExcelLibrary.dll
 C:\Users\senne\Documents\Projectjes\MM Systems\WebApp\WebApp\Bin\Debug\Lite.Library.dll
->>>>>>> 1d16a53e3da2584d5b43c4a4303e37047d2d3223
