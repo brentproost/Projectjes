@@ -20,6 +20,8 @@
   </Deployment.OutOfBrowserSettings>
   <Deployment.Parts>
     <AssemblyPart x:Name="WebApp" Source="WebApp.dll" />
+    <AssemblyPart x:Name="Lite.ExcelLibrary" Source="Lite.ExcelLibrary.dll" />
+    <AssemblyPart x:Name="Lite.Library" Source="Lite.Library.dll" />
     <AssemblyPart x:Name="Microsoft.CSharp" Source="Microsoft.CSharp.dll" />
     <AssemblyPart x:Name="PasswordHashGen" Source="PasswordHashGen.dll" />
     <AssemblyPart x:Name="System.ComponentModel.DataAnnotations" Source="System.ComponentModel.DataAnnotations.dll" />

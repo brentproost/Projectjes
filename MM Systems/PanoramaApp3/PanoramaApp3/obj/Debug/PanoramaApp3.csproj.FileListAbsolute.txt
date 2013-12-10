@@ -13,7 +13,10 @@ C:\Users\senne\Documents\Visual Studio 2012\Projects\PanoramaApp3\PanoramaApp3\o
 C:\Users\senne\Documents\Visual Studio 2012\Projects\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.pdb
 C:\Users\senne\documents\visual studio 2012\Projects\PanoramaApp3\PanoramaApp3\obj\Debug\XapCacheFile.xml
 C:\Users\senne\documents\visual studio 2012\Projects\PanoramaApp3\PanoramaApp3\obj\Debug\PanoramaApp3.csprojResolveAssemblyReference.cache
+<<<<<<< HEAD
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\ApplicationIcon.png
+=======
+>>>>>>> 1d16a53e3da2584d5b43c4a4303e37047d2d3223
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Background.png
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\MS Patient.dll
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\MS Patient.pdb
@@ -81,3 +84,4 @@ C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\o
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\MS Patient.dll
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\MS Patient.pdb
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\XapCacheFile.xml
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\AmCharts.Windows.QuickCharts.WP.dll

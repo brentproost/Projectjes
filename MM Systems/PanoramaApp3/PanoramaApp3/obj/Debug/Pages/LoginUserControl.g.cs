@@ -64,7 +64,7 @@ namespace PanoramaApp3.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Windows.Application.LoadComponent(this, new System.Uri("/PanoramaApp3;component/Pages/LoginUserControl.xaml", System.UriKind.Relative));
+            System.Windows.Application.LoadComponent(this, new System.Uri("/MS%20Patient;component/Pages/LoginUserControl.xaml", System.UriKind.Relative));
             this.LayoutRoot = ((System.Windows.Controls.Grid)(this.FindName("LayoutRoot")));
             this.TitlePanel = ((System.Windows.Controls.StackPanel)(this.FindName("TitlePanel")));
             this.PageTitle = ((System.Windows.Controls.TextBlock)(this.FindName("PageTitle")));

@@ -52,6 +52,7 @@ TestResult.xml
 *.pidb
 *.svclog
 *.scc
+/lise
 
 # Visual C++ cache files
 ipch/
