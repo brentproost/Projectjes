@@ -23,7 +23,7 @@
             <!--Panorama item one-->
             <controls:PanoramaItem Header="Dagen">
                 <Grid>
-                    <chart:SerialChart Foreground="White" PlotAreaBackground="Black" LegendVisibility="Visible" x:Name="chart_1" DataSource="{Binding linedata}" CategoryValueMemberPath="X" AxisForeground="White">
+                    <chart:SerialChart Foreground="White" PlotAreaBackground="Black" LegendVisibility="Visible" x:Name="chart_1" DataSource="{Binding linedata}" AxisForeground="White" CategoryValueMemberPath="X">
                         <chart:SerialChart.Graphs>
                             <chart:LineGraph Foreground="White" Brush="#FF30A2C7" BorderBrush="Gray" ValueMemberPath="Y_value_line1" Title="Vermoeidheid"/>
                             <chart:LineGraph Foreground="White" Brush="#FFB83D3D" BorderBrush="Gray" ValueMemberPath="Y_value_line2" Title="Tevredenheid"/>

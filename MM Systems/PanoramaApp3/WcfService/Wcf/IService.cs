@@ -64,5 +64,9 @@ namespace Wcf
         void DeleteWeersomstandigheid(int id);
         [OperationContract]
         DateTime GetLatestInput(int UserId);
+
+        [OperationContract]
+        List<GrafiekData> DagData(int UserId);
+
     }
 }

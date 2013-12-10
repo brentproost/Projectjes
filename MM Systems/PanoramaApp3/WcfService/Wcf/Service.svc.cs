@@ -339,5 +339,21 @@ namespace Wcf
             List<DateTime> activiteiten = (from i in Data.Tbl_GebruikersIngaves where i.User_ID == UserId select i.Datum_Uur_Ingave).OrderByDescending(c=>c.Date).ToList();
             return activiteiten[0];
         }
+
+
+        List<GrafiekData> IService.DagData(int UserId)
+        {
+            var dagendata = from d in Data.Tbl_GebruikersIngaves
+                where d.User_ID == UserId
+                select
+                    new GrafiekData()
+                    {
+                        X = d.Beginuur_Activiteit,
+                        Y_value_line1 = d.Vermoeidheid,
+                        Y_value_line2 = d.Tevredenheid,
+                        Y_value_line3 = d.Belangrijkheid
+                    };
+            return dagendata.ToList();
+        }
     }
 }

@@ -810,6 +810,81 @@ namespace PanoramaApp3.ServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GrafiekData", Namespace="http://schemas.datacontract.org/2004/07/Wcf")]
+    public partial class GrafiekData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.TimeSpan XField;
+        
+        private double Y_value_line1Field;
+        
+        private double Y_value_line2Field;
+        
+        private double Y_value_line3Field;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.TimeSpan X {
+            get {
+                return this.XField;
+            }
+            set {
+                if ((this.XField.Equals(value) != true)) {
+                    this.XField = value;
+                    this.RaisePropertyChanged("X");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Y_value_line1 {
+            get {
+                return this.Y_value_line1Field;
+            }
+            set {
+                if ((this.Y_value_line1Field.Equals(value) != true)) {
+                    this.Y_value_line1Field = value;
+                    this.RaisePropertyChanged("Y_value_line1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Y_value_line2 {
+            get {
+                return this.Y_value_line2Field;
+            }
+            set {
+                if ((this.Y_value_line2Field.Equals(value) != true)) {
+                    this.Y_value_line2Field = value;
+                    this.RaisePropertyChanged("Y_value_line2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Y_value_line3 {
+            get {
+                return this.Y_value_line3Field;
+            }
+            set {
+                if ((this.Y_value_line3Field.Equals(value) != true)) {
+                    this.Y_value_line3Field = value;
+                    this.RaisePropertyChanged("Y_value_line3");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService")]
     public interface IService {
@@ -903,6 +978,11 @@ namespace PanoramaApp3.ServiceReference {
         System.IAsyncResult BeginGetLatestInput(int UserId, System.AsyncCallback callback, object asyncState);
         
         System.DateTime EndGetLatestInput(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/DagData", ReplyAction="http://tempuri.org/IService/DagDataResponse")]
+        System.IAsyncResult BeginDagData(int UserId, System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> EndDagData(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1082,6 +1162,25 @@ namespace PanoramaApp3.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class DagDataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public DagDataCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class ServiceClient : System.ServiceModel.ClientBase<PanoramaApp3.ServiceReference.IService>, PanoramaApp3.ServiceReference.IService {
         
         private BeginOperationDelegate onBeginGetAllUsersDelegate;
@@ -1192,6 +1291,12 @@ namespace PanoramaApp3.ServiceReference {
         
         private System.Threading.SendOrPostCallback onGetLatestInputCompletedDelegate;
         
+        private BeginOperationDelegate onBeginDagDataDelegate;
+        
+        private EndOperationDelegate onEndDagDataDelegate;
+        
+        private System.Threading.SendOrPostCallback onDagDataCompletedDelegate;
+        
         private BeginOperationDelegate onBeginOpenDelegate;
         
         private EndOperationDelegate onEndOpenDelegate;
@@ -1280,6 +1385,8 @@ namespace PanoramaApp3.ServiceReference {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> DeleteWeersomstandigheidCompleted;
         
         public event System.EventHandler<GetLatestInputCompletedEventArgs> GetLatestInputCompleted;
+        
+        public event System.EventHandler<DagDataCompletedEventArgs> DagDataCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -2134,6 +2241,52 @@ namespace PanoramaApp3.ServiceReference {
                         UserId}, this.onEndGetLatestInputDelegate, this.onGetLatestInputCompletedDelegate, userState);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult PanoramaApp3.ServiceReference.IService.BeginDagData(int UserId, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginDagData(UserId, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> PanoramaApp3.ServiceReference.IService.EndDagData(System.IAsyncResult result) {
+            return base.Channel.EndDagData(result);
+        }
+        
+        private System.IAsyncResult OnBeginDagData(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int UserId = ((int)(inValues[0]));
+            return ((PanoramaApp3.ServiceReference.IService)(this)).BeginDagData(UserId, callback, asyncState);
+        }
+        
+        private object[] OnEndDagData(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> retVal = ((PanoramaApp3.ServiceReference.IService)(this)).EndDagData(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnDagDataCompleted(object state) {
+            if ((this.DagDataCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.DagDataCompleted(this, new DagDataCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void DagDataAsync(int UserId) {
+            this.DagDataAsync(UserId, null);
+        }
+        
+        public void DagDataAsync(int UserId, object userState) {
+            if ((this.onBeginDagDataDelegate == null)) {
+                this.onBeginDagDataDelegate = new BeginOperationDelegate(this.OnBeginDagData);
+            }
+            if ((this.onEndDagDataDelegate == null)) {
+                this.onEndDagDataDelegate = new EndOperationDelegate(this.OnEndDagData);
+            }
+            if ((this.onDagDataCompletedDelegate == null)) {
+                this.onDagDataCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDagDataCompleted);
+            }
+            base.InvokeAsync(this.onBeginDagDataDelegate, new object[] {
+                        UserId}, this.onEndDagDataDelegate, this.onDagDataCompletedDelegate, userState);
+        }
+        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -2447,6 +2600,19 @@ namespace PanoramaApp3.ServiceReference {
             public System.DateTime EndGetLatestInput(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 System.DateTime _result = ((System.DateTime)(base.EndInvoke("GetLatestInput", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginDagData(int UserId, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = UserId;
+                System.IAsyncResult _result = base.BeginInvoke("DagData", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> EndDagData(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> _result = ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData>)(base.EndInvoke("DagData", _args, result)));
                 return _result;
             }
         }
