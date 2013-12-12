@@ -66,7 +66,7 @@ namespace Wcf
         DateTime GetLatestInput(int UserId);
 
         [OperationContract]
-        List<GrafiekData> DagData(int UserId);
+        List<Tbl_GebruikersIngave> DagData(int UserId, DateTime datum);
 
     }
 }

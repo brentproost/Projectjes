@@ -9,6 +9,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:chart="clr-namespace:AmCharts.Windows.QuickCharts;assembly=AmCharts.Windows.QuickCharts.WP"
     xmlns:classes="clr-namespace:PanoramaApp3.Classes"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -23,13 +24,20 @@
             <!--Panorama item one-->
             <controls:PanoramaItem Header="Dagen">
                 <Grid>
-                    <chart:SerialChart Foreground="White" PlotAreaBackground="Black" LegendVisibility="Visible" x:Name="chart_1" DataSource="{Binding linedata}" AxisForeground="White" CategoryValueMemberPath="X">
+                   <Grid.RowDefinitions>
+                       <RowDefinition Height="9*"></RowDefinition>
+                        <RowDefinition Height="1.5*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <chart:SerialChart Foreground="White" PlotAreaBackground="Black" LegendVisibility="Visible" x:Name="chart" DataSource="{Binding linedata}" AxisForeground="White" CategoryValueMemberPath="X" MinimumValueGridStep="1" MinimumCategoryGridStep="65">
                         <chart:SerialChart.Graphs>
                             <chart:LineGraph Foreground="White" Brush="#FF30A2C7" BorderBrush="Gray" ValueMemberPath="Y_value_line1" Title="Vermoeidheid"/>
                             <chart:LineGraph Foreground="White" Brush="#FFB83D3D" BorderBrush="Gray" ValueMemberPath="Y_value_line2" Title="Tevredenheid"/>
                             <chart:LineGraph Foreground="White" Brush="#FFC0C730" BorderBrush="Gray" ValueMemberPath="Y_value_line3" Title="Belangrijkheid"/>
                         </chart:SerialChart.Graphs>
                     </chart:SerialChart>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <toolkit:DatePicker ValueStringFormat="{}{0:dd-MM-yyyy}" x:Name="dp_daggrafiek" VerticalAlignment="Center"></toolkit:DatePicker>
+                    </StackPanel>
                 </Grid>
             </controls:PanoramaItem>
 

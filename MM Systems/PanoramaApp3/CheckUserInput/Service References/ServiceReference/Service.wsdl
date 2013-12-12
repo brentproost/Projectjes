@@ -115,6 +115,12 @@
   <wsdl:message name="IService_GetLatestInput_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetLatestInputResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_DagData_InputMessage">
+    <wsdl:part name="parameters" element="tns:DagData" />
+  </wsdl:message>
+  <wsdl:message name="IService_DagData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DagDataResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="GetAllUsers">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAllUsers" message="tns:IService_GetAllUsers_InputMessage" />
@@ -187,6 +193,10 @@
     <wsdl:operation name="GetLatestInput">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetLatestInput" message="tns:IService_GetLatestInput_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetLatestInputResponse" message="tns:IService_GetLatestInput_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DagData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DagData" message="tns:IService_DagData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DagDataResponse" message="tns:IService_DagData_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -346,6 +356,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetLatestInput">
       <soap:operation soapAction="http://tempuri.org/IService/GetLatestInput" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DagData">
+      <soap:operation soapAction="http://tempuri.org/IService/DagData" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
