@@ -5,11 +5,13 @@ using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using CheckUserInput.ServiceReference;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
 using PanoramaApp3.Classes;
-using PanoramaApp3.ServiceReference;
+using GetAllActivitiesCompletedEventArgs = PanoramaApp3.ServiceReference.GetAllActivitiesCompletedEventArgs;
+using GetAllCategoriesCompletedEventArgs = PanoramaApp3.ServiceReference.GetAllCategoriesCompletedEventArgs;
 
 namespace PanoramaApp3.Pages
 {

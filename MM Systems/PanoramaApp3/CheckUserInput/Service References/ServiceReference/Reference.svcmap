@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dc61ad49-54c0-4532-855e-391ebe31adb8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8913e7d0-f156-4ff3-99df-b497e840d78a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -23,11 +23,11 @@
     <MetadataSource Address="http://MMSystemsService.cloudapp.net/Service.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Service.xsd" MetadataType="Schema" ID="6dc2732c-6f0e-48f7-bc01-65912c1745a2" SourceId="1" SourceUrl="http://mmsystemsservice.cloudapp.net/Service.svc?xsd=xsd2" />
-    <MetadataFile FileName="Service.wsdl" MetadataType="Wsdl" ID="d159f0ad-ed08-4266-92f1-bb26f1b08d8a" SourceId="1" SourceUrl="http://mmsystemsservice.cloudapp.net/Service.svc?wsdl" />
-    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="c4ceba10-002e-4f5a-8ad9-49475dac7677" SourceId="1" SourceUrl="http://mmsystemsservice.cloudapp.net/Service.svc?xsd=xsd0" />
-    <MetadataFile FileName="Service2.xsd" MetadataType="Schema" ID="6adc0dd0-8327-4fb6-984c-31f73d007be8" SourceId="1" SourceUrl="http://mmsystemsservice.cloudapp.net/Service.svc?xsd=xsd1" />
-    <MetadataFile FileName="Service.disco" MetadataType="Disco" ID="a1e7b77d-a845-48df-9bed-370a8bf86a9a" SourceId="1" SourceUrl="http://mmsystemsservice.cloudapp.net/Service.svc?disco" />
+    <MetadataFile FileName="Service.xsd" MetadataType="Schema" ID="5ce478f6-2d09-4962-a633-6c5115bbbd43" SourceId="1" SourceUrl="http://mmsystemsservice.cloudapp.net/Service.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service.wsdl" MetadataType="Wsdl" ID="2007f7d9-b883-4b1d-9bf7-260b072c3f3b" SourceId="1" SourceUrl="http://mmsystemsservice.cloudapp.net/Service.svc?wsdl" />
+    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="9dfa5c33-e571-431a-bb23-215757710eb3" SourceId="1" SourceUrl="http://mmsystemsservice.cloudapp.net/Service.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service2.xsd" MetadataType="Schema" ID="dc49de90-fac4-4ff2-85a7-ce147bef62f9" SourceId="1" SourceUrl="http://mmsystemsservice.cloudapp.net/Service.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service.disco" MetadataType="Disco" ID="890befd9-7511-49c5-85ef-7d7a6bb31297" SourceId="1" SourceUrl="http://mmsystemsservice.cloudapp.net/Service.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

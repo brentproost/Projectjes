@@ -25,7 +25,7 @@ namespace Wcf
         //Functie om alle activiteiten met de bijhorende categorie (id) weer te geven, deze worden opgeslagen als een lijst van objecten van de klasse 'Activities'
         List<Activities> IService.GetAllActivities()
         {
-            List<Activities> actlist = new List<Activities>();
+            var actlist = new List<Activities>();
             actlist = (from act in Data.Tbl_Activiteitens
                        join cat in Data.Tbl_Categoriens on act.Categorie_ID equals cat.Id
                        select new Activities()
@@ -35,34 +35,35 @@ namespace Wcf
                            Activiteit_ID = act.ID,
                            Categorie_ID = cat.Id
                        }).ToList();
-            return actlist; 
+            return actlist;
         }
 
         //Functie om alle users op te vragen met alle bijhorende informatie en deze als een lijst van de klasse 'User' terug te geven, 
         //er wordt ook bijgehouden hoeveel ingaven deze persoon al gedaan heeft.
         List<User> IService.GetAllUsers()
         {
-            List<User> userlist = new List<User>();
+            var userlist = new List<User>();
             userlist = (from u in Data.Tbl_Users
                         join i in Data.Tbl_GebruikersIngaves on u.ID equals i.User_ID
                         into Joined
                         from p in Joined.DefaultIfEmpty()
                         //left join ^
-                       group p by new { u.ID, u.Naam, u.Voornaam, u.Adres, u.Nummer, u.Plaats, u.Postcode, u.Gebruikersnaam, u.Paswoord, u.Rechten_ID }
-                       into grp select new User()
-                       {
-                            Id = grp.Key.ID,
-                            Naam = grp.Key.Naam,
-                            Voornaam = grp.Key.Voornaam,
-                            Adres = grp.Key.Adres,
-                            Nummer = grp.Key.Nummer,
-                            Plaats = grp.Key.Plaats,
-                            Postcode = grp.Key.Postcode,
-                            Gebruikersnaam = grp.Key.Gebruikersnaam,
-                            Paswoord = grp.Key.Paswoord,
-                            Rechten_ID = grp.Key.Rechten_ID,
-                            AantalIngaven = grp.Count(t => t.User_ID != null)
-                       }).ToList();
+                        group p by new { u.ID, u.Naam, u.Voornaam, u.Adres, u.Nummer, u.Plaats, u.Postcode, u.Gebruikersnaam, u.Paswoord, u.Rechten_ID }
+                            into grp
+                            select new User()
+                                {
+                                    Id = grp.Key.ID,
+                                    Naam = grp.Key.Naam,
+                                    Voornaam = grp.Key.Voornaam,
+                                    Adres = grp.Key.Adres,
+                                    Nummer = grp.Key.Nummer,
+                                    Plaats = grp.Key.Plaats,
+                                    Postcode = grp.Key.Postcode,
+                                    Gebruikersnaam = grp.Key.Gebruikersnaam,
+                                    Paswoord = grp.Key.Paswoord,
+                                    Rechten_ID = grp.Key.Rechten_ID,
+                                    AantalIngaven = grp.Count(t => t.User_ID != null)
+                                }).ToList();
 
             List<string> rechtenomschrijving = (from u in userlist join r in Data.Tbl_Rechtens on u.Rechten_ID equals r.ID select r.Omschrijving).ToList();
 
@@ -90,7 +91,7 @@ namespace Wcf
                 return 0;
             }
         }
-        
+
         //Functie om een record toe te voegen aan de tabel Tbl_Users
         void IService.AddUser(string naam, string voornaam, string adres, int nummer, string plaats, int postcode, string gebruikersn, string pasw)
         {
@@ -108,7 +109,7 @@ namespace Wcf
             };
 
             Data.Tbl_Users.InsertOnSubmit(usr);
-           
+
             try
             {
                 Data.SubmitChanges();
@@ -122,7 +123,7 @@ namespace Wcf
         //Functie om een record toe te voegen aan de tabel Tbl_Activiteiten
         void IService.AddActivity(string omschr, int catid)
         {
-            Tbl_Activiteiten act = new Tbl_Activiteiten{Omschrijving = omschr, Categorie_ID = catid};
+            Tbl_Activiteiten act = new Tbl_Activiteiten { Omschrijving = omschr, Categorie_ID = catid };
             Data.Tbl_Activiteitens.InsertOnSubmit(act);
 
             try
@@ -130,7 +131,7 @@ namespace Wcf
                 Data.SubmitChanges();
             }
 
-             catch (Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e);
             }
@@ -145,7 +146,7 @@ namespace Wcf
         //Functie om een record toe te voegen aan de tabel Tbl_Categorien
         void IService.AddCategory(string omschr)
         {
-            Tbl_Categorien cat = new Tbl_Categorien() {Omschrijving = omschr};
+            var cat = new Tbl_Categorien { Omschrijving = omschr };
             Data.Tbl_Categoriens.InsertOnSubmit(cat);
 
             try
@@ -161,7 +162,7 @@ namespace Wcf
 
         void IService.AddWeersomstandigheden(string omschr)
         {
-            Tbl_Weersomstandigheden cat = new Tbl_Weersomstandigheden() { Omschrijving = omschr };
+            var cat = new Tbl_Weersomstandigheden { Omschrijving = omschr };
             Data.Tbl_Weersomstandighedens.InsertOnSubmit(cat);
 
             try
@@ -235,7 +236,7 @@ namespace Wcf
                 User_ID = usrID,
                 Activiteit_ID = actID,
                 Datum_Uur_Ingave = datumuuringave,
-                Datum_Uur_Activiteit = dtmuurActiviteit.Day+"-" + dtmuurActiviteit.Month+"-"+dtmuurActiviteit.Year,
+                Datum_Uur_Activiteit = dtmuurActiviteit.Day + "-" + dtmuurActiviteit.Month + "-" + dtmuurActiviteit.Year,
                 Beginuur_Activiteit = beginuur,
                 Einduur_Activiteit = einduur,
                 Commentaar = commentaar,
@@ -336,24 +337,30 @@ namespace Wcf
         }
         DateTime IService.GetLatestInput(int UserId)
         {
-            List<DateTime> activiteiten = (from i in Data.Tbl_GebruikersIngaves where i.User_ID == UserId select i.Datum_Uur_Ingave).OrderByDescending(c=>c.Date).ToList();
+            List<DateTime> activiteiten = (from i in Data.Tbl_GebruikersIngaves where i.User_ID == UserId select i.Datum_Uur_Ingave).OrderByDescending(c => c.Date).ToList();
             return activiteiten[0];
         }
 
 
-        List<GrafiekData> IService.DagData(int UserId)
+        List<Tbl_GebruikersIngave> IService.DagData(int UserId, DateTime datum)
         {
-            var dagendata = from d in Data.Tbl_GebruikersIngaves
-                where d.User_ID == UserId
-                select
-                    new GrafiekData()
-                    {
-                        X = d.Beginuur_Activiteit,
-                        Y_value_line1 = d.Vermoeidheid,
-                        Y_value_line2 = d.Tevredenheid,
-                        Y_value_line3 = d.Belangrijkheid
-                    };
-            return dagendata.ToList();
+            List<GrafiekData> dagendata = new List<GrafiekData>();
+            var data = (from d in Data.Tbl_GebruikersIngaves
+                where
+                    d.User_ID == UserId &&
+                    new DateTime(Convert.ToInt16(d.Datum_Uur_Activiteit.Split('-')[2]),
+                        Convert.ToInt16(d.Datum_Uur_Activiteit.Split('-')[1]),
+                        Convert.ToInt16(d.Datum_Uur_Activiteit.Split('-')[0])).Date == DateTime.Now.Date
+                select d).ToList();
+
+                         //select new GrafiekData
+                         //   {
+                         //       X = d.Beginuur_Activiteit,
+                         //       Y_value_line1 = d.Vermoeidheid,
+                         //       Y_value_line2 = d.Tevredenheid,
+                         //       Y_value_line3 = d.Belangrijkheid
+                         //   }).ToList();
+            return data;
         }
     }
 }
