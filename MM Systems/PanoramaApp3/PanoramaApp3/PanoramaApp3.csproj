@@ -183,6 +183,7 @@
     <Content Include="ApplicationLogo.png" />
     <Content Include="MSLogo2.png" />
     <Content Include="ReadMe.Coding4Fun.Toolkit.txt" />
+<<<<<<< HEAD
     <None Include="Service References\ServiceReference1\PanoramaApp3.ServiceReference1.Activities.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -211,6 +212,36 @@
     <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
     <None Include="Service References\ServiceReference1\configuration.svcinfo" />
     <None Include="Service References\ServiceReference1\Reference.svcmap">
+=======
+    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Activities.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.GrafiekData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Tbl_Categorien.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Tbl_GebruikersIngave.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Tbl_Schaal_Nachtrust.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Tbl_User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Tbl_Weersomstandigheden.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\Service.disco" />
+    <None Include="Service References\ServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReference\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference\Reference.svcmap">
+>>>>>>> 6ebdcc4ddfb0b180c8485fb28ddf566a4dfc1330
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

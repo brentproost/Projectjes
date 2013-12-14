@@ -52,7 +52,11 @@ namespace PanoramaApp3.Pages
             }
         }
 
+<<<<<<< HEAD
         void client_GetAllCategoriesCompleted(object sender, ServiceReference1.GetAllCategoriesCompletedEventArgs e)
+=======
+        void client_GetAllCategoriesCompleted(object sender, ServiceReference.GetAllCategoriesCompletedEventArgs e)
+>>>>>>> 6ebdcc4ddfb0b180c8485fb28ddf566a4dfc1330
         {
             for (int i = 0; i < e.Result.Count; i++)
             {
@@ -65,7 +69,11 @@ namespace PanoramaApp3.Pages
             client.GetAllActivitiesCompleted += client_GetAllActivitiesCompleted;
         }
 
+<<<<<<< HEAD
         void client_GetAllActivitiesCompleted(object sender, ServiceReference1.GetAllActivitiesCompletedEventArgs e)
+=======
+        void client_GetAllActivitiesCompleted(object sender, ServiceReference.GetAllActivitiesCompletedEventArgs e)
+>>>>>>> 6ebdcc4ddfb0b180c8485fb28ddf566a4dfc1330
         {
             lp_Activiteiten.ItemsSource = null;
             if (lp_Categorien.SelectedIndex >= 0)
