@@ -109,9 +109,9 @@ namespace PanoramaApp3.ServiceReference {
         System.DateTime EndGetLatestInput(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/DagData", ReplyAction="http://tempuri.org/IService/DagDataResponse")]
-        System.IAsyncResult BeginDagData(int UserId, System.DateTime datum, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginDagData(int UserId, string datum, System.AsyncCallback callback, object asyncState);
         
-        System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.Tbl_GebruikersIngave> EndDagData(System.IAsyncResult result);
+        System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.GrafiekData> EndDagData(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -300,10 +300,10 @@ namespace PanoramaApp3.ServiceReference {
             this.results = results;
         }
         
-        public System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.Tbl_GebruikersIngave> Result {
+        public System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.GrafiekData> Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.Tbl_GebruikersIngave>)(this.results[0]));
+                return ((System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.GrafiekData>)(this.results[0]));
             }
         }
     }
@@ -1371,23 +1371,23 @@ namespace PanoramaApp3.ServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult PanoramaApp3.ServiceReference.IService.BeginDagData(int UserId, System.DateTime datum, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult PanoramaApp3.ServiceReference.IService.BeginDagData(int UserId, string datum, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginDagData(UserId, datum, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.Tbl_GebruikersIngave> PanoramaApp3.ServiceReference.IService.EndDagData(System.IAsyncResult result) {
+        System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.GrafiekData> PanoramaApp3.ServiceReference.IService.EndDagData(System.IAsyncResult result) {
             return base.Channel.EndDagData(result);
         }
         
         private System.IAsyncResult OnBeginDagData(object[] inValues, System.AsyncCallback callback, object asyncState) {
             int UserId = ((int)(inValues[0]));
-            System.DateTime datum = ((System.DateTime)(inValues[1]));
+            string datum = ((string)(inValues[1]));
             return ((PanoramaApp3.ServiceReference.IService)(this)).BeginDagData(UserId, datum, callback, asyncState);
         }
         
         private object[] OnEndDagData(System.IAsyncResult result) {
-            System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.Tbl_GebruikersIngave> retVal = ((PanoramaApp3.ServiceReference.IService)(this)).EndDagData(result);
+            System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.GrafiekData> retVal = ((PanoramaApp3.ServiceReference.IService)(this)).EndDagData(result);
             return new object[] {
                     retVal};
         }
@@ -1399,11 +1399,11 @@ namespace PanoramaApp3.ServiceReference {
             }
         }
         
-        public void DagDataAsync(int UserId, System.DateTime datum) {
+        public void DagDataAsync(int UserId, string datum) {
             this.DagDataAsync(UserId, datum, null);
         }
         
-        public void DagDataAsync(int UserId, System.DateTime datum, object userState) {
+        public void DagDataAsync(int UserId, string datum, object userState) {
             if ((this.onBeginDagDataDelegate == null)) {
                 this.onBeginDagDataDelegate = new BeginOperationDelegate(this.OnBeginDagData);
             }
@@ -1734,7 +1734,7 @@ namespace PanoramaApp3.ServiceReference {
                 return _result;
             }
             
-            public System.IAsyncResult BeginDagData(int UserId, System.DateTime datum, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginDagData(int UserId, string datum, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[2];
                 _args[0] = UserId;
                 _args[1] = datum;
@@ -1742,9 +1742,9 @@ namespace PanoramaApp3.ServiceReference {
                 return _result;
             }
             
-            public System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.Tbl_GebruikersIngave> EndDagData(System.IAsyncResult result) {
+            public System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.GrafiekData> EndDagData(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.Tbl_GebruikersIngave> _result = ((System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.Tbl_GebruikersIngave>)(base.EndInvoke("DagData", _args, result)));
+                System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.GrafiekData> _result = ((System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.GrafiekData>)(base.EndInvoke("DagData", _args, result)));
                 return _result;
             }
         }

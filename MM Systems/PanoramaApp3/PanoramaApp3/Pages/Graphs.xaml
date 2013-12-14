@@ -28,7 +28,7 @@
                        <RowDefinition Height="9*"></RowDefinition>
                         <RowDefinition Height="1.5*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <chart:SerialChart Foreground="White" PlotAreaBackground="Black" LegendVisibility="Visible" x:Name="chart" DataSource="{Binding linedata}" AxisForeground="White" CategoryValueMemberPath="X" MinimumValueGridStep="1" MinimumCategoryGridStep="65">
+                    <chart:SerialChart Foreground="White" PlotAreaBackground="Black" LegendVisibility="Visible" x:Name="chart" AxisForeground="White" CategoryValueMemberPath="X" MinimumValueGridStep="1" MinimumCategoryGridStep="65">
                         <chart:SerialChart.Graphs>
                             <chart:LineGraph Foreground="White" Brush="#FF30A2C7" BorderBrush="Gray" ValueMemberPath="Y_value_line1" Title="Vermoeidheid"/>
                             <chart:LineGraph Foreground="White" Brush="#FFB83D3D" BorderBrush="Gray" ValueMemberPath="Y_value_line2" Title="Tevredenheid"/>

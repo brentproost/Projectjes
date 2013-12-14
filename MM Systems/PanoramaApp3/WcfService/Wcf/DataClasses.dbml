@@ -51,7 +51,7 @@
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="User_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Activiteit_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Datum_Uur_Ingave" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Datum_Uur_Ingave" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="Datum_Uur_Activiteit" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="Beginuur_Activiteit" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
       <Column Name="Einduur_Activiteit" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />

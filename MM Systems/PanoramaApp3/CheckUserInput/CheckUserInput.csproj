@@ -65,6 +65,9 @@
     <None Include="Service References\ServiceReference\CheckUserInput.ServiceReference.Activities.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference\CheckUserInput.ServiceReference.GrafiekData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference\CheckUserInput.ServiceReference.Tbl_Categorien.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

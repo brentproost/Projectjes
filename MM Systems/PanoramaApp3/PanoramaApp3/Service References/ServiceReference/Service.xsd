@@ -54,9 +54,9 @@
   <xs:complexType name="Activities">
     <xs:sequence>
       <xs:element minOccurs="0" name="Activiteit" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Activiteit_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ActiviteitId" type="xs:int" />
       <xs:element minOccurs="0" name="Categorie" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Categorie_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="CategorieId" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Activities" nillable="true" type="tns:Activities" />
@@ -113,7 +113,7 @@
       <xs:element minOccurs="0" name="Belangrijkheid" type="xs:float" />
       <xs:element minOccurs="0" name="Commentaar" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Datum_Uur_Activiteit" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Datum_Uur_Ingave" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Datum_Uur_Ingave" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Einduur_Activiteit" type="ser:duration" />
       <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="Schaal_Nachtrust_ID" type="xs:int" />
@@ -124,4 +124,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Tbl_GebruikersIngave" nillable="true" type="tns:Tbl_GebruikersIngave" />
+  <xs:complexType name="ArrayOfGrafiekData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GrafiekData" nillable="true" type="tns:GrafiekData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGrafiekData" nillable="true" type="tns:ArrayOfGrafiekData" />
+  <xs:complexType name="GrafiekData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="X" type="ser:duration" />
+      <xs:element minOccurs="0" name="Y_value_line1" type="xs:double" />
+      <xs:element minOccurs="0" name="Y_value_line2" type="xs:double" />
+      <xs:element minOccurs="0" name="Y_value_line3" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GrafiekData" nillable="true" type="tns:GrafiekData" />
 </xs:schema>
