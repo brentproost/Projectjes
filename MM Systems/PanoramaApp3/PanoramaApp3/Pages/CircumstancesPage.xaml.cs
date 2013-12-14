@@ -9,13 +9,13 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
 using PanoramaApp3.Classes;
-using PanoramaApp3.ServiceReference1;
+using PanoramaApp3.ServiceReference;
 
 namespace PanoramaApp3.Pages
 {
     public partial class CircumstancesPage : PhoneApplicationPage
     {
-        ServiceReference1.ServiceClient client = new ServiceReference1.ServiceClient();
+        ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
         List<int> weersomstandighedenids = new List<int>();
         List<int> nachtrustids = new List<int>();
         private ProgressIndicator _progressIndicator;

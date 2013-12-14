@@ -1,9 +1,10 @@
-﻿<xapCache source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PanoramaApp3.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="14/12/2013 13:51:20">
-  <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="14/12/2013 13:50:55" />
+﻿<xapCache source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\PanoramaApp3.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="14/12/2013 16:14:58">
+  <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="14/12/2013 15:56:56" />
   <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\MSLogo2.png" archivePath="MSLogo2.png" lastWriteTime="14/12/2013 4:34:24" />
   <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\MSLogo2.png" archivePath="MSLogo2.png" lastWriteTime="14/12/2013 4:34:24" />
-  <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\MS Patient.dll" archivePath="MS Patient.dll" lastWriteTime="14/12/2013 13:51:19" />
+  <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\obj\Debug\MS Patient.dll" archivePath="MS Patient.dll" lastWriteTime="14/12/2013 16:14:58" />
   <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\packages\amChartsQuickCharts.1.1\lib\sl3-wp\AmCharts.Windows.QuickCharts.WP.dll" archivePath="AmCharts.Windows.QuickCharts.WP.dll" lastWriteTime="14/12/2013 4:34:24" />
+  <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\CheckUserInput\Bin\Debug\CheckUserInput.dll" archivePath="CheckUserInput.dll" lastWriteTime="14/12/2013 15:51:22" />
   <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\packages\Coding4Fun.Toolkit.Audio.2.0.7\lib\wp71\Coding4Fun.Toolkit.Audio.dll" archivePath="Coding4Fun.Toolkit.Audio.dll" lastWriteTime="14/12/2013 4:34:24" />
   <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\packages\Coding4Fun.Toolkit.Controls.2.0.7\lib\wp71\Coding4Fun.Toolkit.Controls.dll" archivePath="Coding4Fun.Toolkit.Controls.dll" lastWriteTime="14/12/2013 4:34:24" />
   <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\packages\Coding4Fun.Toolkit.Net.2.0.7\lib\wp71\Coding4Fun.Toolkit.Net.dll" archivePath="Coding4Fun.Toolkit.Net.dll" lastWriteTime="14/12/2013 4:34:24" />
@@ -15,13 +16,13 @@
   <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\MSLogo.png" archivePath="MSLogo.png" lastWriteTime="14/12/2013 4:34:24" />
   <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\ApplicationLogo.png" archivePath="ApplicationLogo.png" lastWriteTime="14/12/2013 4:34:24" />
   <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\ReadMe.Coding4Fun.Toolkit.txt" archivePath="ReadMe.Coding4Fun.Toolkit.txt" lastWriteTime="14/12/2013 4:34:24" />
-  <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="14/12/2013 13:49:02" />
+  <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="14/12/2013 15:56:08" />
   <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Background.png" archivePath="Background.png" lastWriteTime="14/12/2013 4:34:24" />
   <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Toolkit.Content\ApplicationBar.Cancel.png" archivePath="Toolkit.Content\ApplicationBar.Cancel.png" lastWriteTime="14/12/2013 4:34:24" />
   <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Toolkit.Content\ApplicationBar.Check.png" archivePath="Toolkit.Content\ApplicationBar.Check.png" lastWriteTime="14/12/2013 4:34:24" />
   <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Toolkit.Content\ApplicationBar.Delete.png" archivePath="Toolkit.Content\ApplicationBar.Delete.png" lastWriteTime="14/12/2013 4:34:24" />
   <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Toolkit.Content\ApplicationBar.Select.png" archivePath="Toolkit.Content\ApplicationBar.Select.png" lastWriteTime="14/12/2013 4:34:24" />
   <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="14/12/2013 4:34:24" />
-  <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="14/12/2013 13:50:55" />
+  <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="14/12/2013 15:56:56" />
   <file source="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\PanoramaApp3\Bin\Debug\Background.png" archivePath="Background.png" lastWriteTime="14/12/2013 4:34:24" />
 </xapCache>

@@ -5,7 +5,7 @@ using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
-using PanoramaApp3.ServiceReference1;
+using PanoramaApp3.ServiceReference;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
@@ -18,7 +18,7 @@ namespace PanoramaApp3.Pages
         
         List<string> cbitems = new List<string>();
         List<int> cbtag = new List<int>();
-        ServiceReference1.ServiceClient client = new ServiceReference1.ServiceClient();
+        ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
         private ProgressIndicator _progressIndicator;
         public ActivityPage()
         {
@@ -52,11 +52,7 @@ namespace PanoramaApp3.Pages
             }
         }
 
-<<<<<<< HEAD
-        void client_GetAllCategoriesCompleted(object sender, ServiceReference1.GetAllCategoriesCompletedEventArgs e)
-=======
         void client_GetAllCategoriesCompleted(object sender, ServiceReference.GetAllCategoriesCompletedEventArgs e)
->>>>>>> 6ebdcc4ddfb0b180c8485fb28ddf566a4dfc1330
         {
             for (int i = 0; i < e.Result.Count; i++)
             {
@@ -69,11 +65,7 @@ namespace PanoramaApp3.Pages
             client.GetAllActivitiesCompleted += client_GetAllActivitiesCompleted;
         }
 
-<<<<<<< HEAD
-        void client_GetAllActivitiesCompleted(object sender, ServiceReference1.GetAllActivitiesCompletedEventArgs e)
-=======
         void client_GetAllActivitiesCompleted(object sender, ServiceReference.GetAllActivitiesCompletedEventArgs e)
->>>>>>> 6ebdcc4ddfb0b180c8485fb28ddf566a4dfc1330
         {
             lp_Activiteiten.ItemsSource = null;
             if (lp_Categorien.SelectedIndex >= 0)
@@ -95,7 +87,7 @@ namespace PanoramaApp3.Pages
         {
             var activities = lp_Activiteiten.SelectedItem as Activities;
             if (activities != null)
-                InputDatabase.ActivityID = activities.ActiviteitId;
+                InputDatabase.ActivityID = activities.Activiteit_ID;
             else
                 MessageBox.Show("Er is iets mis gelopen probeer de activiteit opnieuw in te voegen");
             NavigationService.Navigate(new Uri("/Pages/CommentPage.xaml", UriKind.Relative));

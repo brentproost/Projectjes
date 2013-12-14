@@ -19,13 +19,24 @@
     </Sites>
     <Endpoints>
       <InputEndpoint name="Endpoint1" protocol="http" port="80" />
+      <InstanceInputEndpoint name="Microsoft.WindowsAzure.Plugins.RemoteDebugger.Connector" protocol="tcp" localPort="30398">
+        <AllocatePublicPortFrom>
+          <FixedPortRange min="30400" max="30424" />
+        </AllocatePublicPortFrom>
+      </InstanceInputEndpoint>
+      <InstanceInputEndpoint name="Microsoft.WindowsAzure.Plugins.RemoteDebugger.Forwarder" protocol="tcp" localPort="31398">
+        <AllocatePublicPortFrom>
+          <FixedPortRange min="31400" max="31424" />
+        </AllocatePublicPortFrom>
+      </InstanceInputEndpoint>
     </Endpoints>
     <Imports>
       <Import moduleName="Diagnostics" />
+      <Import moduleName="RemoteDebuggerConnector" />
     </Imports>
     <Contents>
       <Content destination=".\">
-        <SourceDirectory path="C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\Wcf.Azure2\rcf\Release\WcfContent\" />
+        <SourceDirectory path="C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\Wcf.Azure2\rcf\Release\WcfContent\" />
       </Content>
     </Contents>
   </WebRole>

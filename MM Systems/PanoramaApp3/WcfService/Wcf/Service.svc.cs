@@ -33,7 +33,7 @@ namespace Wcf
                        {
                            Activiteit = act.Omschrijving,
                            Categorie = cat.Omschrijving,
-                           ActiviteitId = act.ID,
+                           Activiteit_ID = act.ID,
                            CategorieId = cat.Id
                        }).ToList();
             return actlist;

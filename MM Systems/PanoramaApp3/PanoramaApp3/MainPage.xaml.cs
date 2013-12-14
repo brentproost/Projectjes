@@ -12,7 +12,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
-using PanoramaApp3.ServiceReference1;
+using PanoramaApp3.ServiceReference;
 using System.Threading;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 

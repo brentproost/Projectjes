@@ -9,19 +9,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-<<<<<<< HEAD
-using PanoramaApp3.ServiceReference1;
-using Microsoft.Phone.Controls;
-using PanoramaApp3.Classes;
-using DagDataCompletedEventArgs = PanoramaApp3.ServiceReference1.DagDataCompletedEventArgs;
-using ServiceClient = PanoramaApp3.ServiceReference1.ServiceClient;
-=======
-using CheckUserInput.ServiceReference;
+using PanoramaApp3.ServiceReference;
 using Microsoft.Phone.Controls;
 using PanoramaApp3.Classes;
 using DagDataCompletedEventArgs = PanoramaApp3.ServiceReference.DagDataCompletedEventArgs;
 using ServiceClient = PanoramaApp3.ServiceReference.ServiceClient;
->>>>>>> 6ebdcc4ddfb0b180c8485fb28ddf566a4dfc1330
 
 namespace PanoramaApp3.Pages
 {

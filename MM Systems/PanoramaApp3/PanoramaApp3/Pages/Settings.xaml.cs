@@ -10,7 +10,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Scheduler;
 using Microsoft.Phone.Shell;
 using PanoramaApp3.Pages;
-using PanoramaApp3.ServiceReference1;
+using PanoramaApp3.ServiceReference;
 using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Tasks;
 
@@ -18,7 +18,7 @@ namespace PanoramaApp3
 {
     public partial class Page1 : PhoneApplicationPage
     {
-       ServiceReference1.ServiceClient client = new ServiceReference1.ServiceClient();
+       ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
        private ProgressIndicator _progressIndicator;
        public Page1()
         {   
@@ -110,7 +110,7 @@ namespace PanoramaApp3
             messagePrompt.Show(); 
 
         }
-        void client_SigninUserCompleted(object sender, ServiceReference1.SigninUserCompletedEventArgs e)
+        void client_SigninUserCompleted(object sender, ServiceReference.SigninUserCompletedEventArgs e)
         {
             _progressIndicator.IsVisible = false;
             SystemTray.SetIsVisible(this, false);

@@ -12,7 +12,7 @@ namespace Wcf
         public string Activiteit { get; set; }
 
         [DataMember]
-        public int ActiviteitId{ get; set; }
+        public int Activiteit_ID{ get; set; }
 
         [DataMember]
         public int CategorieId{ get; set; }
