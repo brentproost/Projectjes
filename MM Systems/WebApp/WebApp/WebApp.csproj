@@ -62,12 +62,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Lite.ExcelLibrary">
-      <HintPath>..\..\..\..\..\Desktop\Binaries\Lite.ExcelLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Lite.Library">
-      <HintPath>..\..\..\..\..\Desktop\Binaries\Lite.Library.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="mscorlib" />
     <Reference Include="PasswordHashGen">
@@ -282,6 +276,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServiceReference\WebApp.ServiceReference.Activities.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\WebApp.ServiceReference.GrafiekData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference\WebApp.ServiceReference.Tbl_Categorien.datasource">

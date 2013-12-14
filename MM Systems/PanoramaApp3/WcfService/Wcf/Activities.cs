@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Web;
+﻿using System.Runtime.Serialization;
 
 namespace Wcf
 {
@@ -17,9 +12,9 @@ namespace Wcf
         public string Activiteit { get; set; }
 
         [DataMember]
-        public int Activiteit_ID{ get; set; }
+        public int ActiviteitId{ get; set; }
 
         [DataMember]
-        public int Categorie_ID{ get; set; }
+        public int CategorieId{ get; set; }
     }
 }

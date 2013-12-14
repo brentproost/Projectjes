@@ -5,13 +5,11 @@ using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
-using CheckUserInput.ServiceReference;
+using PanoramaApp3.ServiceReference1;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
 using PanoramaApp3.Classes;
-using GetAllActivitiesCompletedEventArgs = PanoramaApp3.ServiceReference.GetAllActivitiesCompletedEventArgs;
-using GetAllCategoriesCompletedEventArgs = PanoramaApp3.ServiceReference.GetAllCategoriesCompletedEventArgs;
 
 namespace PanoramaApp3.Pages
 {
@@ -20,7 +18,7 @@ namespace PanoramaApp3.Pages
         
         List<string> cbitems = new List<string>();
         List<int> cbtag = new List<int>();
-        ServiceReference.ServiceClient client = new ServiceReference.ServiceClient();
+        ServiceReference1.ServiceClient client = new ServiceReference1.ServiceClient();
         private ProgressIndicator _progressIndicator;
         public ActivityPage()
         {
@@ -48,12 +46,13 @@ namespace PanoramaApp3.Pages
                 SystemTray.SetOpacity(this, 1);
                 if (User.ID != 0)
                 {
-                    client.GetAllCategoriesCompleted += serviceClient_GetAllCategoriesCompleted;
                     client.GetAllCategoriesAsync();
+                    client.GetAllCategoriesCompleted += client_GetAllCategoriesCompleted;
                 }
             }
         }
-        void serviceClient_GetAllCategoriesCompleted(object sender, GetAllCategoriesCompletedEventArgs e)
+
+        void client_GetAllCategoriesCompleted(object sender, ServiceReference1.GetAllCategoriesCompletedEventArgs e)
         {
             for (int i = 0; i < e.Result.Count; i++)
             {
@@ -62,11 +61,11 @@ namespace PanoramaApp3.Pages
             }
 
             lp_Categorien.ItemsSource = cbitems;
-
-            client.GetAllActivitiesCompleted += client_GetAllActivitiesCompleted;
             client.GetAllActivitiesAsync();
+            client.GetAllActivitiesCompleted += client_GetAllActivitiesCompleted;
         }
-        void client_GetAllActivitiesCompleted(object sender, GetAllActivitiesCompletedEventArgs e)
+
+        void client_GetAllActivitiesCompleted(object sender, ServiceReference1.GetAllActivitiesCompletedEventArgs e)
         {
             lp_Activiteiten.ItemsSource = null;
             if (lp_Categorien.SelectedIndex >= 0)
@@ -74,7 +73,7 @@ namespace PanoramaApp3.Pages
                 if (e.Result != null)
                 {
                     var id = cbtag[lp_Categorien.SelectedIndex];
-                    var result = (from r in e.Result where r.Categorie_ID == id select r).ToList();
+                    var result = (from r in e.Result where r.CategorieId == id select r).ToList();
 
                     lp_Activiteiten.ItemsSource = result;
                 }
@@ -86,7 +85,11 @@ namespace PanoramaApp3.Pages
 
         private void btn_ok_Click(object sender, RoutedEventArgs e)
         {
-            InputDatabase.ActivityID = (lp_Activiteiten.SelectedItem as Activities).Activiteit_ID;
+            var activities = lp_Activiteiten.SelectedItem as Activities;
+            if (activities != null)
+                InputDatabase.ActivityID = activities.ActiviteitId;
+            else
+                MessageBox.Show("Er is iets mis gelopen probeer de activiteit opnieuw in te voegen");
             NavigationService.Navigate(new Uri("/Pages/CommentPage.xaml", UriKind.Relative));
         }
 

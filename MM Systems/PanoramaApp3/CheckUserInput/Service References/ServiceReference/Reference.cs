@@ -382,11 +382,11 @@ namespace CheckUserInput.ServiceReference {
         
         private string ActiviteitField;
         
-        private int Activiteit_IDField;
+        private int ActiviteitIdField;
         
         private string CategorieField;
         
-        private int Categorie_IDField;
+        private int CategorieIdField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Activiteit {
@@ -402,14 +402,14 @@ namespace CheckUserInput.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Activiteit_ID {
+        public int ActiviteitId {
             get {
-                return this.Activiteit_IDField;
+                return this.ActiviteitIdField;
             }
             set {
-                if ((this.Activiteit_IDField.Equals(value) != true)) {
-                    this.Activiteit_IDField = value;
-                    this.RaisePropertyChanged("Activiteit_ID");
+                if ((this.ActiviteitIdField.Equals(value) != true)) {
+                    this.ActiviteitIdField = value;
+                    this.RaisePropertyChanged("ActiviteitId");
                 }
             }
         }
@@ -428,14 +428,14 @@ namespace CheckUserInput.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Categorie_ID {
+        public int CategorieId {
             get {
-                return this.Categorie_IDField;
+                return this.CategorieIdField;
             }
             set {
-                if ((this.Categorie_IDField.Equals(value) != true)) {
-                    this.Categorie_IDField = value;
-                    this.RaisePropertyChanged("Categorie_ID");
+                if ((this.CategorieIdField.Equals(value) != true)) {
+                    this.CategorieIdField = value;
+                    this.RaisePropertyChanged("CategorieId");
                 }
             }
         }
@@ -602,7 +602,7 @@ namespace CheckUserInput.ServiceReference {
         
         private string Datum_Uur_ActiviteitField;
         
-        private System.DateTime Datum_Uur_IngaveField;
+        private string Datum_Uur_IngaveField;
         
         private System.TimeSpan Einduur_ActiviteitField;
         
@@ -697,12 +697,12 @@ namespace CheckUserInput.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Datum_Uur_Ingave {
+        public string Datum_Uur_Ingave {
             get {
                 return this.Datum_Uur_IngaveField;
             }
             set {
-                if ((this.Datum_Uur_IngaveField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.Datum_Uur_IngaveField, value) != true)) {
                     this.Datum_Uur_IngaveField = value;
                     this.RaisePropertyChanged("Datum_Uur_Ingave");
                 }
@@ -796,6 +796,81 @@ namespace CheckUserInput.ServiceReference {
                 if ((this.Weersomstandigheden_IDField.Equals(value) != true)) {
                     this.Weersomstandigheden_IDField = value;
                     this.RaisePropertyChanged("Weersomstandigheden_ID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GrafiekData", Namespace="http://schemas.datacontract.org/2004/07/Wcf")]
+    public partial class GrafiekData : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.TimeSpan XField;
+        
+        private double Y_value_line1Field;
+        
+        private double Y_value_line2Field;
+        
+        private double Y_value_line3Field;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.TimeSpan X {
+            get {
+                return this.XField;
+            }
+            set {
+                if ((this.XField.Equals(value) != true)) {
+                    this.XField = value;
+                    this.RaisePropertyChanged("X");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Y_value_line1 {
+            get {
+                return this.Y_value_line1Field;
+            }
+            set {
+                if ((this.Y_value_line1Field.Equals(value) != true)) {
+                    this.Y_value_line1Field = value;
+                    this.RaisePropertyChanged("Y_value_line1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Y_value_line2 {
+            get {
+                return this.Y_value_line2Field;
+            }
+            set {
+                if ((this.Y_value_line2Field.Equals(value) != true)) {
+                    this.Y_value_line2Field = value;
+                    this.RaisePropertyChanged("Y_value_line2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Y_value_line3 {
+            get {
+                return this.Y_value_line3Field;
+            }
+            set {
+                if ((this.Y_value_line3Field.Equals(value) != true)) {
+                    this.Y_value_line3Field = value;
+                    this.RaisePropertyChanged("Y_value_line3");
                 }
             }
         }
@@ -905,9 +980,9 @@ namespace CheckUserInput.ServiceReference {
         System.DateTime EndGetLatestInput(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/DagData", ReplyAction="http://tempuri.org/IService/DagDataResponse")]
-        System.IAsyncResult BeginDagData(int UserId, System.DateTime datum, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginDagData(int UserId, string datum, System.AsyncCallback callback, object asyncState);
         
-        System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.Tbl_GebruikersIngave> EndDagData(System.IAsyncResult result);
+        System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.GrafiekData> EndDagData(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1096,10 +1171,10 @@ namespace CheckUserInput.ServiceReference {
             this.results = results;
         }
         
-        public System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.Tbl_GebruikersIngave> Result {
+        public System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.GrafiekData> Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.Tbl_GebruikersIngave>)(this.results[0]));
+                return ((System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.GrafiekData>)(this.results[0]));
             }
         }
     }
@@ -2167,23 +2242,23 @@ namespace CheckUserInput.ServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult CheckUserInput.ServiceReference.IService.BeginDagData(int UserId, System.DateTime datum, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult CheckUserInput.ServiceReference.IService.BeginDagData(int UserId, string datum, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginDagData(UserId, datum, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.Tbl_GebruikersIngave> CheckUserInput.ServiceReference.IService.EndDagData(System.IAsyncResult result) {
+        System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.GrafiekData> CheckUserInput.ServiceReference.IService.EndDagData(System.IAsyncResult result) {
             return base.Channel.EndDagData(result);
         }
         
         private System.IAsyncResult OnBeginDagData(object[] inValues, System.AsyncCallback callback, object asyncState) {
             int UserId = ((int)(inValues[0]));
-            System.DateTime datum = ((System.DateTime)(inValues[1]));
+            string datum = ((string)(inValues[1]));
             return ((CheckUserInput.ServiceReference.IService)(this)).BeginDagData(UserId, datum, callback, asyncState);
         }
         
         private object[] OnEndDagData(System.IAsyncResult result) {
-            System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.Tbl_GebruikersIngave> retVal = ((CheckUserInput.ServiceReference.IService)(this)).EndDagData(result);
+            System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.GrafiekData> retVal = ((CheckUserInput.ServiceReference.IService)(this)).EndDagData(result);
             return new object[] {
                     retVal};
         }
@@ -2195,11 +2270,11 @@ namespace CheckUserInput.ServiceReference {
             }
         }
         
-        public void DagDataAsync(int UserId, System.DateTime datum) {
+        public void DagDataAsync(int UserId, string datum) {
             this.DagDataAsync(UserId, datum, null);
         }
         
-        public void DagDataAsync(int UserId, System.DateTime datum, object userState) {
+        public void DagDataAsync(int UserId, string datum, object userState) {
             if ((this.onBeginDagDataDelegate == null)) {
                 this.onBeginDagDataDelegate = new BeginOperationDelegate(this.OnBeginDagData);
             }
@@ -2530,7 +2605,7 @@ namespace CheckUserInput.ServiceReference {
                 return _result;
             }
             
-            public System.IAsyncResult BeginDagData(int UserId, System.DateTime datum, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginDagData(int UserId, string datum, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[2];
                 _args[0] = UserId;
                 _args[1] = datum;
@@ -2538,9 +2613,9 @@ namespace CheckUserInput.ServiceReference {
                 return _result;
             }
             
-            public System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.Tbl_GebruikersIngave> EndDagData(System.IAsyncResult result) {
+            public System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.GrafiekData> EndDagData(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.Tbl_GebruikersIngave> _result = ((System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.Tbl_GebruikersIngave>)(base.EndInvoke("DagData", _args, result)));
+                System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.GrafiekData> _result = ((System.Collections.ObjectModel.ObservableCollection<CheckUserInput.ServiceReference.GrafiekData>)(base.EndInvoke("DagData", _args, result)));
                 return _result;
             }
         }

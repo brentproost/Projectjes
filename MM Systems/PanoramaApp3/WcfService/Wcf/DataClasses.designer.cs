@@ -908,7 +908,7 @@ namespace Wcf
 		
 		private int _Activiteit_ID;
 		
-		private System.DateTime _Datum_Uur_Ingave;
+		private string _Datum_Uur_Ingave;
 		
 		private string _Datum_Uur_Activiteit;
 		
@@ -940,7 +940,7 @@ namespace Wcf
     partial void OnUser_IDChanged();
     partial void OnActiviteit_IDChanging(int value);
     partial void OnActiviteit_IDChanged();
-    partial void OnDatum_Uur_IngaveChanging(System.DateTime value);
+    partial void OnDatum_Uur_IngaveChanging(string value);
     partial void OnDatum_Uur_IngaveChanged();
     partial void OnDatum_Uur_ActiviteitChanging(string value);
     partial void OnDatum_Uur_ActiviteitChanged();
@@ -1029,8 +1029,8 @@ namespace Wcf
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Datum_Uur_Ingave", DbType="DateTime NOT NULL")]
-		public System.DateTime Datum_Uur_Ingave
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Datum_Uur_Ingave", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string Datum_Uur_Ingave
 		{
 			get
 			{

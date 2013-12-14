@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -32,8 +33,8 @@ namespace Wcf
                        {
                            Activiteit = act.Omschrijving,
                            Categorie = cat.Omschrijving,
-                           Activiteit_ID = act.ID,
-                           Categorie_ID = cat.Id
+                           ActiviteitId = act.ID,
+                           CategorieId = cat.Id
                        }).ToList();
             return actlist;
         }
@@ -235,7 +236,7 @@ namespace Wcf
             {
                 User_ID = usrID,
                 Activiteit_ID = actID,
-                Datum_Uur_Ingave = datumuuringave,
+                Datum_Uur_Ingave = datumuuringave.ToString("G"),
                 Datum_Uur_Activiteit = dtmuurActiviteit.Day + "-" + dtmuurActiviteit.Month + "-" + dtmuurActiviteit.Year,
                 Beginuur_Activiteit = beginuur,
                 Einduur_Activiteit = einduur,
@@ -337,30 +338,28 @@ namespace Wcf
         }
         DateTime IService.GetLatestInput(int UserId)
         {
-            List<DateTime> activiteiten = (from i in Data.Tbl_GebruikersIngaves where i.User_ID == UserId select i.Datum_Uur_Ingave).OrderByDescending(c => c.Date).ToList();
+            List<DateTime> activiteiten = (from i in Data.Tbl_GebruikersIngaves where i.User_ID == UserId select DateTime.ParseExact(i.Datum_Uur_Ingave, "G", 
+            CultureInfo.InvariantCulture)).OrderByDescending(c => c.Date).ToList();
             return activiteiten[0];
         }
 
 
-        List<Tbl_GebruikersIngave> IService.DagData(int UserId, DateTime datum)
+        List<GrafiekData> IService.DagData(int UserId, string datum)
         {
-            List<GrafiekData> dagendata = new List<GrafiekData>();
-            var data = (from d in Data.Tbl_GebruikersIngaves
+            var dagendata = (from d in Data.Tbl_GebruikersIngaves
                 where
-                    d.User_ID == UserId &&
-                    new DateTime(Convert.ToInt16(d.Datum_Uur_Activiteit.Split('-')[2]),
-                        Convert.ToInt16(d.Datum_Uur_Activiteit.Split('-')[1]),
-                        Convert.ToInt16(d.Datum_Uur_Activiteit.Split('-')[0])).Date == DateTime.Now.Date
-                select d).ToList();
+                    d.User_ID == UserId && d.Datum_Uur_Activiteit == datum
+                select
+                    new GrafiekData()
+                    {
+                        X = d.Beginuur_Activiteit,
+                        Y_value_line1 = d.Vermoeidheid,
+                        Y_value_line2 = d.Belangrijkheid,
+                        Y_value_line3 = d.Tevredenheid
+                    }).ToList();
+                
 
-                         //select new GrafiekData
-                         //   {
-                         //       X = d.Beginuur_Activiteit,
-                         //       Y_value_line1 = d.Vermoeidheid,
-                         //       Y_value_line2 = d.Tevredenheid,
-                         //       Y_value_line3 = d.Belangrijkheid
-                         //   }).ToList();
-            return data;
+            return dagendata;
         }
     }
 }

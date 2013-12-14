@@ -9,9 +9,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using PanoramaApp3.ServiceReference1;
 using Microsoft.Phone.Controls;
 using PanoramaApp3.Classes;
-using PanoramaApp3.ServiceReference;
+using DagDataCompletedEventArgs = PanoramaApp3.ServiceReference1.DagDataCompletedEventArgs;
+using ServiceClient = PanoramaApp3.ServiceReference1.ServiceClient;
 
 namespace PanoramaApp3.Pages
 {
@@ -25,7 +27,7 @@ namespace PanoramaApp3.Pages
 
             dp_daggrafiek.Value = DateTime.Now;
 
-            client.DagDataAsync(User.ID,(DateTime)dp_daggrafiek.Value);
+            client.DagDataAsync(User.ID,((DateTime)dp_daggrafiek.Value).Date.ToString("d"));
             client.DagDataCompleted += client_DagDataCompleted;
             //linedata.Add(new LineData() { X = 1, Y_value_line1 = 20, Y_value_line2 = 45, Y_value_line3 = 89});
             //linedata.Add(new LineData() { X = 2, Y_value_line1 = 45, Y_value_line2 = 20, Y_value_line3 = 45});
@@ -60,7 +62,9 @@ namespace PanoramaApp3.Pages
 
         void client_DagDataCompleted(object sender, DagDataCompletedEventArgs e)
         {
-            List<GrafiekData> gd = new List<GrafiekData>();
+
+            chart.DataSource = e.Result.ToList();
+
             //List<GrafiekData> linedata = new List<GrafiekData>();
             //linedata = e.Result.ToList();
             //foreach (var grafiekData in fakedata)
