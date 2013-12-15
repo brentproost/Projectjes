@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="WebApp.Web.Azure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2013-10.2.2">
+  <Role name="index.Web">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=brentazure;AccountKey=Iou8S/MceOOW1yVfD6At8dizP9/M8ECzjPB6szn6LnWy9W3eFiShi2qQkwyvV5uW4oHhllBuuBsFqnZPzYu/TA==" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>

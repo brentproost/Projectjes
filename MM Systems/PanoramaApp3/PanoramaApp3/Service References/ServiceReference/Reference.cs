@@ -983,6 +983,14 @@ namespace PanoramaApp3.ServiceReference {
         System.IAsyncResult BeginDagData(int UserId, string datum, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> EndDagData(System.IAsyncResult result);
+<<<<<<< HEAD
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/MaandData", ReplyAction="http://tempuri.org/IService/MaandDataResponse")]
+        System.IAsyncResult BeginMaandData(int UserId, string datum, System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> EndMaandData(System.IAsyncResult result);
+=======
+>>>>>>> ba5dafd528dbe4ad0a62aade0867f9abe9c37fee
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1172,6 +1180,28 @@ namespace PanoramaApp3.ServiceReference {
         }
         
         public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> Result {
+<<<<<<< HEAD
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class MaandDataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public MaandDataCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> Result {
+=======
+>>>>>>> ba5dafd528dbe4ad0a62aade0867f9abe9c37fee
             get {
                 base.RaiseExceptionIfNecessary();
                 return ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData>)(this.results[0]));
@@ -1297,6 +1327,12 @@ namespace PanoramaApp3.ServiceReference {
         
         private System.Threading.SendOrPostCallback onDagDataCompletedDelegate;
         
+        private BeginOperationDelegate onBeginMaandDataDelegate;
+        
+        private EndOperationDelegate onEndMaandDataDelegate;
+        
+        private System.Threading.SendOrPostCallback onMaandDataCompletedDelegate;
+        
         private BeginOperationDelegate onBeginOpenDelegate;
         
         private EndOperationDelegate onEndOpenDelegate;
@@ -1387,6 +1423,8 @@ namespace PanoramaApp3.ServiceReference {
         public event System.EventHandler<GetLatestInputCompletedEventArgs> GetLatestInputCompleted;
         
         public event System.EventHandler<DagDataCompletedEventArgs> DagDataCompleted;
+        
+        public event System.EventHandler<MaandDataCompletedEventArgs> MaandDataCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -2289,6 +2327,54 @@ namespace PanoramaApp3.ServiceReference {
                         datum}, this.onEndDagDataDelegate, this.onDagDataCompletedDelegate, userState);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult PanoramaApp3.ServiceReference.IService.BeginMaandData(int UserId, string datum, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginMaandData(UserId, datum, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> PanoramaApp3.ServiceReference.IService.EndMaandData(System.IAsyncResult result) {
+            return base.Channel.EndMaandData(result);
+        }
+        
+        private System.IAsyncResult OnBeginMaandData(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int UserId = ((int)(inValues[0]));
+            string datum = ((string)(inValues[1]));
+            return ((PanoramaApp3.ServiceReference.IService)(this)).BeginMaandData(UserId, datum, callback, asyncState);
+        }
+        
+        private object[] OnEndMaandData(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> retVal = ((PanoramaApp3.ServiceReference.IService)(this)).EndMaandData(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnMaandDataCompleted(object state) {
+            if ((this.MaandDataCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.MaandDataCompleted(this, new MaandDataCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void MaandDataAsync(int UserId, string datum) {
+            this.MaandDataAsync(UserId, datum, null);
+        }
+        
+        public void MaandDataAsync(int UserId, string datum, object userState) {
+            if ((this.onBeginMaandDataDelegate == null)) {
+                this.onBeginMaandDataDelegate = new BeginOperationDelegate(this.OnBeginMaandData);
+            }
+            if ((this.onEndMaandDataDelegate == null)) {
+                this.onEndMaandDataDelegate = new EndOperationDelegate(this.OnEndMaandData);
+            }
+            if ((this.onMaandDataCompletedDelegate == null)) {
+                this.onMaandDataCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnMaandDataCompleted);
+            }
+            base.InvokeAsync(this.onBeginMaandDataDelegate, new object[] {
+                        UserId,
+                        datum}, this.onEndMaandDataDelegate, this.onMaandDataCompletedDelegate, userState);
+        }
+        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -2614,8 +2700,27 @@ namespace PanoramaApp3.ServiceReference {
             }
             
             public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> EndDagData(System.IAsyncResult result) {
+<<<<<<< HEAD
                 object[] _args = new object[0];
                 System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> _result = ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData>)(base.EndInvoke("DagData", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginMaandData(int UserId, string datum, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = UserId;
+                _args[1] = datum;
+                System.IAsyncResult _result = base.BeginInvoke("MaandData", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> EndMaandData(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> _result = ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData>)(base.EndInvoke("MaandData", _args, result)));
+=======
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> _result = ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData>)(base.EndInvoke("DagData", _args, result)));
+>>>>>>> ba5dafd528dbe4ad0a62aade0867f9abe9c37fee
                 return _result;
             }
         }

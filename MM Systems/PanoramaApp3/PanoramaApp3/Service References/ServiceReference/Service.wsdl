@@ -121,6 +121,12 @@
   <wsdl:message name="IService_DagData_OutputMessage">
     <wsdl:part name="parameters" element="tns:DagDataResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_MaandData_InputMessage">
+    <wsdl:part name="parameters" element="tns:MaandData" />
+  </wsdl:message>
+  <wsdl:message name="IService_MaandData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MaandDataResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="GetAllUsers">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAllUsers" message="tns:IService_GetAllUsers_InputMessage" />
@@ -197,6 +203,10 @@
     <wsdl:operation name="DagData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/DagData" message="tns:IService_DagData_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/DagDataResponse" message="tns:IService_DagData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MaandData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/MaandData" message="tns:IService_MaandData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/MaandDataResponse" message="tns:IService_MaandData_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -365,6 +375,15 @@
     </wsdl:operation>
     <wsdl:operation name="DagData">
       <soap:operation soapAction="http://tempuri.org/IService/DagData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaandData">
+      <soap:operation soapAction="http://tempuri.org/IService/MaandData" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

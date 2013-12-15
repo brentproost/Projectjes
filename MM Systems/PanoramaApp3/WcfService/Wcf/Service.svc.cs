@@ -367,5 +367,21 @@ namespace Wcf
 
             return dagendata;
         }
+
+        List<GrafiekData> IService.MaandData(int UserId, string datum)
+        {
+            var dagendata = (from d in Data.Tbl_GebruikersIngaves
+                             where
+                                 d.User_ID == UserId && d.Datum_Uur_Activiteit.Split('-')[1]+"-"+d.Datum_Uur_Activiteit.Split('-')[2] == datum
+                             select
+                                 new GrafiekData()
+                                 {
+                                     X = d.Beginuur_Activiteit,
+                                     Y_value_line1 = d.Vermoeidheid,
+                                     Y_value_line2 = d.Belangrijkheid,
+                                     Y_value_line3 = d.Tevredenheid
+                                 }).ToList();
+            return dagendata;
+        }
     }
 }
