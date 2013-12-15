@@ -22,7 +22,7 @@
         <controls:Panorama Title="Grafieken">
 
             <!--Panorama item one-->
-            <controls:PanoramaItem Header="Dagen">
+            <controls:PanoramaItem Header="Dag">
                 <Grid>
                    <Grid.RowDefinitions>
                        <RowDefinition Height="9*"></RowDefinition>
@@ -36,17 +36,29 @@
                         </chart:SerialChart.Graphs>
                     </chart:SerialChart>
                     <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                        <toolkit:DatePicker ValueStringFormat="{}{0:dd-MM-yyyy}" x:Name="dp_daggrafiek" VerticalAlignment="Center"></toolkit:DatePicker>
+                        <toolkit:DatePicker ValueStringFormat="{}{0:dd-MM-yyyy}" x:Name="dp_daggrafiek" VerticalAlignment="Center" ValueChanged="dp_daggrafiek_ValueChanged"></toolkit:DatePicker>
                     </StackPanel>
                 </Grid>
             </controls:PanoramaItem>
 
             <!--Panorama item two-->
-            <controls:PanoramaItem Header="Weken">
-                <Grid/>
-            </controls:PanoramaItem>
-            <controls:PanoramaItem Header="Maanden">
-                <Grid/>
+            <controls:PanoramaItem Header="Maand">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="9*"></RowDefinition>
+                        <RowDefinition Height="1.5*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <chart:SerialChart Foreground="White" PlotAreaBackground="Black" LegendVisibility="Visible" x:Name="chart2" AxisForeground="White" CategoryValueMemberPath="X" MinimumValueGridStep="1" MinimumCategoryGridStep="65">
+                        <chart:SerialChart.Graphs>
+                            <chart:LineGraph Foreground="White" Brush="#FF30A2C7" BorderBrush="Gray" ValueMemberPath="Y_value_line1" Title="Vermoeidheid"/>
+                            <chart:LineGraph Foreground="White" Brush="#FFB83D3D" BorderBrush="Gray" ValueMemberPath="Y_value_line2" Title="Tevredenheid"/>
+                            <chart:LineGraph Foreground="White" Brush="#FFC0C730" BorderBrush="Gray" ValueMemberPath="Y_value_line3" Title="Belangrijkheid"/>
+                        </chart:SerialChart.Graphs>
+                    </chart:SerialChart>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <toolkit:DatePicker ValueStringFormat="{}{0:MMMM-yyyy}" x:Name="dp_maandgrafiek" VerticalAlignment="Center" ValueChanged="dp_maandgrafiek_ValueChanged"></toolkit:DatePicker>
+                    </StackPanel>
+                </Grid>
             </controls:PanoramaItem>
         </controls:Panorama>
     </Grid>

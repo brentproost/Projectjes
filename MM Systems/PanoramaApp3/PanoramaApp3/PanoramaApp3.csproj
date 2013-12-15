@@ -183,6 +183,30 @@
     <Content Include="ApplicationLogo.png" />
     <Content Include="MSLogo2.png" />
     <Content Include="ReadMe.Coding4Fun.Toolkit.txt" />
+    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Activities.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.GrafiekData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Tbl_Categorien.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Tbl_GebruikersIngave.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Tbl_Schaal_Nachtrust.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Tbl_User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Tbl_Weersomstandigheden.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference\Service.disco" />
     <None Include="Service References\ServiceReference\configuration91.svcinfo" />
     <None Include="Service References\ServiceReference\configuration.svcinfo" />

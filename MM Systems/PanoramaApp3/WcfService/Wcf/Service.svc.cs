@@ -236,7 +236,7 @@ namespace Wcf
             {
                 User_ID = usrID,
                 Activiteit_ID = actID,
-                Datum_Uur_Ingave = datumuuringave.ToString("G"),
+                Datum_Uur_Ingave = datumuuringave.ToString("G", CultureInfo.CreateSpecificCulture("nl-BE")),
                 Datum_Uur_Activiteit = dtmuurActiviteit.Day + "-" + dtmuurActiviteit.Month + "-" + dtmuurActiviteit.Year,
                 Beginuur_Activiteit = beginuur,
                 Einduur_Activiteit = einduur,
@@ -338,9 +338,15 @@ namespace Wcf
         }
         DateTime IService.GetLatestInput(int UserId)
         {
-            List<DateTime> activiteiten = (from i in Data.Tbl_GebruikersIngaves where i.User_ID == UserId select DateTime.ParseExact(i.Datum_Uur_Ingave, "G", 
-            CultureInfo.InvariantCulture)).OrderByDescending(c => c.Date).ToList();
-            return activiteiten[0];
+            IFormatProvider culture = new System.Globalization.CultureInfo("nl-BE", true);
+            
+                List<string> activiteitentemp = (from i in Data.Tbl_GebruikersIngaves
+                                                 where i.User_ID == UserId
+                                                 select i.Datum_Uur_Ingave).ToList();
+                DateTime activiteiten = (DateTime.Parse(activiteitentemp[0], culture, DateTimeStyles.AssumeLocal));
+
+                return activiteiten;
+            
         }
 
 
@@ -359,6 +365,22 @@ namespace Wcf
                     }).ToList();
                 
 
+            return dagendata;
+        }
+
+        List<GrafiekData> IService.MaandData(int UserId, string datum)
+        {
+            var dagendata = (from d in Data.Tbl_GebruikersIngaves
+                             where
+                                 d.User_ID == UserId && d.Datum_Uur_Activiteit.Split('-')[1]+"-"+d.Datum_Uur_Activiteit.Split('-')[2] == datum
+                             select
+                                 new GrafiekData()
+                                 {
+                                     X = d.Beginuur_Activiteit,
+                                     Y_value_line1 = d.Vermoeidheid,
+                                     Y_value_line2 = d.Belangrijkheid,
+                                     Y_value_line3 = d.Tevredenheid
+                                 }).ToList();
             return dagendata;
         }
     }

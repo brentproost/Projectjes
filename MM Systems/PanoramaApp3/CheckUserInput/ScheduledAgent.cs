@@ -73,7 +73,7 @@ namespace CheckUserInput
                 if (e.Result.Date == DateTime.Now.Date)
                 {
                 }
-                else
+                if (e.Result.Date <= DateTime.Now.Date)
                 {
                     if (DateTime.Now.Hour >= time && DateTime.Now.Hour <= (time+1) )
                     {
@@ -86,6 +86,10 @@ namespace CheckUserInput
                         toast.Content = "U heeft nog geen data ingevoerd vandaag";
                         toast.Show();
                     }
+                }
+                else
+                {
+                    
                 }
             }
             NotifyComplete();

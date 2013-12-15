@@ -68,5 +68,8 @@ namespace Wcf
         [OperationContract]
         List<GrafiekData> DagData(int UserId, string datum);
 
+        [OperationContract]
+        List<GrafiekData> MaandData(int UserId, string datum);
+
     }
 }
