@@ -27,7 +27,7 @@ namespace PanoramaApp3.Pages
 
             dp_daggrafiek.Value = DateTime.Now;
 
-            client.DagDataAsync(User.ID,((DateTime)dp_daggrafiek.Value).Date.ToString("d"));
+            client.DagDataAsync(User.ID,DateTime.Now.Date.ToString("dd-MM-yyyy"));
             client.DagDataCompleted += client_DagDataCompleted;
             //linedata.Add(new LineData() { X = 1, Y_value_line1 = 20, Y_value_line2 = 45, Y_value_line3 = 89});
             //linedata.Add(new LineData() { X = 2, Y_value_line1 = 45, Y_value_line2 = 20, Y_value_line3 = 45});

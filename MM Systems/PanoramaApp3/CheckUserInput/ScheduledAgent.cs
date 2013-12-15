@@ -68,13 +68,12 @@ namespace CheckUserInput
 
         void client_GetLatestInputCompleted(object sender, GetLatestInputCompletedEventArgs e)
         {
-            e.Result.Date.ToString();
             if (taskt.Name.Equals("ms", StringComparison.OrdinalIgnoreCase))
             {
                 if (e.Result.Date == DateTime.Now.Date)
                 {
                 }
-                else
+                if (e.Result.Date <= DateTime.Now.Date)
                 {
                     if (DateTime.Now.Hour >= time && DateTime.Now.Hour <= (time+1) )
                     {
@@ -87,6 +86,10 @@ namespace CheckUserInput
                         toast.Content = "U heeft nog geen data ingevoerd vandaag";
                         toast.Show();
                     }
+                }
+                else
+                {
+                    
                 }
             }
             NotifyComplete();

@@ -343,18 +343,10 @@ namespace Wcf
                 List<string> activiteitentemp = (from i in Data.Tbl_GebruikersIngaves
                                                  where i.User_ID == UserId
                                                  select i.Datum_Uur_Ingave).ToList();
-            if (activiteitentemp != null)
-            {
                 DateTime activiteiten = (DateTime.Parse(activiteitentemp[0], culture, DateTimeStyles.AssumeLocal));
 
                 return activiteiten;
-            }
-            else
-            {
-                DateTime temp = new DateTime(2100,0,0);
-                return temp;
-            }
-
+            
         }
 
 
