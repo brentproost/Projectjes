@@ -983,11 +983,14 @@ namespace PanoramaApp3.ServiceReference {
         System.IAsyncResult BeginDagData(int UserId, string datum, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> EndDagData(System.IAsyncResult result);
+<<<<<<< HEAD
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService/MaandData", ReplyAction="http://tempuri.org/IService/MaandDataResponse")]
         System.IAsyncResult BeginMaandData(int UserId, string datum, System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> EndMaandData(System.IAsyncResult result);
+=======
+>>>>>>> ba5dafd528dbe4ad0a62aade0867f9abe9c37fee
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1177,6 +1180,7 @@ namespace PanoramaApp3.ServiceReference {
         }
         
         public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> Result {
+<<<<<<< HEAD
             get {
                 base.RaiseExceptionIfNecessary();
                 return ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData>)(this.results[0]));
@@ -1196,6 +1200,8 @@ namespace PanoramaApp3.ServiceReference {
         }
         
         public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> Result {
+=======
+>>>>>>> ba5dafd528dbe4ad0a62aade0867f9abe9c37fee
             get {
                 base.RaiseExceptionIfNecessary();
                 return ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData>)(this.results[0]));
@@ -2694,6 +2700,7 @@ namespace PanoramaApp3.ServiceReference {
             }
             
             public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> EndDagData(System.IAsyncResult result) {
+<<<<<<< HEAD
                 object[] _args = new object[0];
                 System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> _result = ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData>)(base.EndInvoke("DagData", _args, result)));
                 return _result;
@@ -2710,6 +2717,10 @@ namespace PanoramaApp3.ServiceReference {
             public System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> EndMaandData(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> _result = ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData>)(base.EndInvoke("MaandData", _args, result)));
+=======
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData> _result = ((System.Collections.ObjectModel.ObservableCollection<PanoramaApp3.ServiceReference.GrafiekData>)(base.EndInvoke("DagData", _args, result)));
+>>>>>>> ba5dafd528dbe4ad0a62aade0867f9abe9c37fee
                 return _result;
             }
         }
