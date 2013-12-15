@@ -7,10 +7,10 @@
 
 <body>
 <div>
-<form>
+<form method="get" action="get.php">
 <input name="txt_klantennummer" type="text" />
 klantnummer
-<input type="submit" />
+<input  type="submit" />
 </form>
 </div>
 </body>

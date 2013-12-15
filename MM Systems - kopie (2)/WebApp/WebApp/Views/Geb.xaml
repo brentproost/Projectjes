@@ -1,0 +1,108 @@
+﻿<navigation:Page 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" x:Class="WebApp.Views.Gebruikers"
+           mc:Ignorable="d"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="Gebruikers"
+    Loaded="Gebruikers_OnLoaded">
+    <Grid x:Name="LayoutRoot">
+        <StackPanel>
+            <Border BorderThickness="3" Background="AliceBlue">
+                <TextBlock TextWrapping="Wrap" Text="Hieronder bevinden zich de gebruikers. U kan er ook zelf extra toevoegen op de homepage.
+                           Door op het kruisje te klikken verwijderd u de bijhorende gebruiker.
+                           De kolom 'Soort Gebruiker' geeft weer of deze kan inloggen op de webapplicatie."></TextBlock>
+            </Border>
+            <sdk:DataGrid AutoGenerateColumns="False" x:Name="gridd" ItemsSource="{Binding}">
+                <sdk:DataGrid.Columns>
+                    <sdk:DataGridTextColumn Binding="{Binding Naam}" Header="Naam"/>
+                    <sdk:DataGridTextColumn Binding="{Binding Voornaam}" Header="Voornaam"/>
+                    <sdk:DataGridTextColumn Binding="{Binding Adres}" Header="Adres"/>
+                    <sdk:DataGridTextColumn Binding="{Binding Nummer}" Header="Nummer"/>
+                    <sdk:DataGridTextColumn Binding="{Binding Postcode}" Header="Postcode"/>
+                    <sdk:DataGridTextColumn Binding="{Binding Plaats}" Header="Plaats"/>
+                    <sdk:DataGridTextColumn Binding="{Binding Gebruikersnaam}" Header="Gebruikersnaam"/>
+                    <sdk:DataGridTextColumn Binding="{Binding Rechten_Omschrijving}" Header="Soort Gebruiker"/>
+                    <sdk:DataGridTextColumn Binding="{Binding AantalIngaven}" Header="Aantal Ingaven"/>
+                    <sdk:DataGridTemplateColumn Header="" Width="SizeToCells" IsReadOnly="True">
+                        <sdk:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="/WebApp;component/icon-delete.png" Tag="{Binding Id}" MouseLeftButtonDown="Image_MouseLeftButtonDown"></Image>
+                            </DataTemplate>
+                        </sdk:DataGridTemplateColumn.CellTemplate>
+                    </sdk:DataGridTemplateColumn>
+                    <sdk:DataGridTemplateColumn Header="" Width="SizeToCells" IsReadOnly="True">
+                        <sdk:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <HyperlinkButton Tag="{Binding Id}" NavigateUri="/Resultaten" TargetName="ContentFrame" Click="HyperlinkButton_Click">
+                                    <HyperlinkButton.Content>
+                                        <Image Source="/WebApp;component/icon-inspect.png"></Image>
+                                    </HyperlinkButton.Content>
+                                </HyperlinkButton>
+                            </DataTemplate>
+                        </sdk:DataGridTemplateColumn.CellTemplate>
+                    </sdk:DataGridTemplateColumn>
+                </sdk:DataGrid.Columns>
+            </sdk:DataGrid>
+            <StackPanel Orientation="Vertical">
+                <Button HorizontalAlignment="Left"  x:Name="btn_export" Click="btn_export_Click">
+                    <Button.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image VerticalAlignment="Center"  Source="/WebApp;component/export.png" Stretch="None" />
+                                <TextBlock VerticalAlignment="Center" Text="Exporteer bovenstaande tabel naar Excel"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Button.ContentTemplate>
+                </Button>
+                <Button x:Name="btn_exportall" HorizontalAlignment="Left" Click="btn_exportall_Click" Visibility="Collapsed">
+                    <Button.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image VerticalAlignment="Center" Source="/WebApp;component/export.png" Stretch="None" />
+                                <TextBlock VerticalAlignment="Center" Text="Exporteer resultaten in afzonderlijke bestanden naar Excel"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Button.ContentTemplate>
+                </Button>
+                <Button x:Name="btn_export_allin_one_file" HorizontalAlignment="Left" Click="btn_export_allin_one_file_Click">
+                    <Button.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image VerticalAlignment="Center" Source="/WebApp;component/export.png" Stretch="None" />
+                                <TextBlock VerticalAlignment="Center" Text="Exporteer resultaten in één bestand"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Button.ContentTemplate>
+                </Button>
+                <Button x:Name="Run_as_app" HorizontalAlignment="Left" Click="Run_as_app_OnClick">
+                    <Button.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image VerticalAlignment="Center" Source="/WebApp;component/export.png" Stretch="None" />
+                                <TextBlock VerticalAlignment="Center" Text="Start de pagina als applicatie. Hierdoor zijn er meer functies"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Button.ContentTemplate>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <sdk:DataGrid AutoGenerateColumns="False" x:Name="inv_datagrid" Visibility="Collapsed" ItemsSource="{Binding}">
+            <sdk:DataGrid.Columns>
+                <sdk:DataGridTextColumn Header="Ingave_ID" Binding="{Binding ID}" />
+                <sdk:DataGridTextColumn Header="Ingave uur en datum" Binding="{Binding Datum_Uur_Ingave}" />
+                <sdk:DataGridTextColumn Header="Datum activiteit" Binding="{Binding Datum_Uur_Activiteit}"/>
+                <sdk:DataGridTextColumn Header="Beginuur" Binding="{Binding Beginuur_Activiteit}"/>
+                <sdk:DataGridTextColumn Header="Einduur" Binding="{Binding Einduur_Activiteit}"/>
+                <sdk:DataGridTextColumn Header="Commentaar" Binding="{Binding Commentaar}"/>
+                <sdk:DataGridTextColumn Header="Aantal uur geslapen" Binding="{Binding Aantal_Uren_Geslapen}"/>
+                <sdk:DataGridTextColumn Header="Vermoeidheid" Binding="{Binding Vermoeidheid}"/>
+                <sdk:DataGridTextColumn Header="Belangrijkheid" Binding="{Binding Belangrijkheid}"/>
+                <sdk:DataGridTextColumn Header="Tevredenheid" Binding="{Binding Tevredenheid}"/>
+            </sdk:DataGrid.Columns>
+        </sdk:DataGrid>
+    </Grid>
+</navigation:Page>

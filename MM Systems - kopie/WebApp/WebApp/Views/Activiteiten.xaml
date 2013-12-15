@@ -1,0 +1,58 @@
+﻿<navigation:Page 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" x:Class="WebApp.About"
+    mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480"
+    Title="Activiteiten" 
+    Style="{StaticResource PageStyle}">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="0.1*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Orientation="Vertical">
+            <Border BorderThickness="3" Background="AliceBlue">
+                <TextBlock TextWrapping="Wrap" Text="Hieronder bevinden zich de activiteiten. U kan er ook zelf extra toevoegen op de homepage.
+                           Door op het kruisje te klikken verwijderd u de bijhorende activiteit."></TextBlock>
+            </Border>
+            <TextBlock FontSize="20" Text="Activiteiten"></TextBlock>
+        <sdk:DataGrid Margin="0 0 10 10" AutoGenerateColumns="False" x:Name="gridd" ItemsSource="{Binding}" >
+            <sdk:DataGrid.Columns>
+                <sdk:DataGridTextColumn Header="Activiteit" Binding="{Binding Activiteit}"/>
+                <sdk:DataGridTextColumn Header="Categorie" Binding="{Binding Categorie}"/>
+                <sdk:DataGridTemplateColumn Width="SizeToCells" IsReadOnly="True">
+                    <sdk:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                                <Image Source="/WebApp;component/icon-delete.png" Tag="{Binding Activiteit_ID}" MouseLeftButtonUp="Image_MouseLeftButtonUp" ></Image>
+                        </DataTemplate>
+                    </sdk:DataGridTemplateColumn.CellTemplate>
+                </sdk:DataGridTemplateColumn>
+            </sdk:DataGrid.Columns>
+        </sdk:DataGrid>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Orientation="Vertical">
+            <Border BorderThickness="3" Background="AliceBlue">
+            <TextBlock TextWrapping="Wrap" Text="Hieronder bevinden zich de categorieën. U kan er ook zelf extra toevoegen op de homepage.
+                       Door op het kruisje te klikken verwijderd u de bijhorende categorie."></TextBlock>
+            </Border>
+            <TextBlock FontSize="20" Text="Categorieën"></TextBlock>
+            <sdk:DataGrid Margin="0 0 10 10" ItemsSource="{Binding}" x:Name="dg_categorien" AutoGenerateColumns="False">
+                <sdk:DataGrid.Columns>
+                    <sdk:DataGridTextColumn Binding="{Binding Omschrijving}" Header="Naam"/>
+                    <sdk:DataGridTemplateColumn Width="SizeToCells" IsReadOnly="True">
+                        <sdk:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="/WebApp;component/icon-delete.png" Tag="{Binding Id}" MouseLeftButtonUp="Image_MouseLeftButtonUp_1" ></Image>
+                            </DataTemplate>
+                        </sdk:DataGridTemplateColumn.CellTemplate>
+                    </sdk:DataGridTemplateColumn>
+                </sdk:DataGrid.Columns>
+            </sdk:DataGrid>
+        </StackPanel>
+    </Grid>
+
+</navigation:Page>
