@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <PublishProfile Include="Profiles\MMSystemsServiceProduction.azurePubxml" />
+    <PublishProfile Include="Profiles\MMSystemsServiceProduction1.azurePubxml" />
   </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>

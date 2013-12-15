@@ -19,10 +19,7 @@
     <AzureStorageAccountName>brentazure</AzureStorageAccountName>
     <AzureAppendTimestampToDeploymentLabel>True</AzureAppendTimestampToDeploymentLabel>
     <EnableRemoteDebugger>True</EnableRemoteDebugger>
-<<<<<<< HEAD
     <RemoteDebuggerConnectorCertificateThumbprint>C8C48A01AE30A41D032B346AF30387AD33F5545B</RemoteDebuggerConnectorCertificateThumbprint>
-=======
     <RemoteDebuggerConnectorCertificateThumbprint>3145C6E6FAC25157F40CB353BC24B9B51377E0D9</RemoteDebuggerConnectorCertificateThumbprint>
->>>>>>> ba5dafd528dbe4ad0a62aade0867f9abe9c37fee
   </PropertyGroup>
 </Project>

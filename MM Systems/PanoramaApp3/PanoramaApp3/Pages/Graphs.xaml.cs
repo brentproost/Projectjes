@@ -28,13 +28,10 @@ namespace PanoramaApp3.Pages
             dp_maandgrafiek.Value = DateTime.Now;
         }
 
-<<<<<<< HEAD
         private void dp_daggrafiek_ValueChanged(object sender, DateTimeValueChangedEventArgs e)
         {
             client.DagDataAsync(User.ID, ((DateTime)dp_daggrafiek.Value).Date.ToString("dd-MM-yyyy"));
-=======
             client.DagDataAsync(User.ID,DateTime.Now.Date.ToString("dd-MM-yyyy"));
->>>>>>> ba5dafd528dbe4ad0a62aade0867f9abe9c37fee
             client.DagDataCompleted += client_DagDataCompleted;
         }
 
