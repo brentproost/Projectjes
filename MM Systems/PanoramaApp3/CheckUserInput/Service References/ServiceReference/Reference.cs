@@ -382,7 +382,7 @@ namespace CheckUserInput.ServiceReference {
         
         private string ActiviteitField;
         
-        private int ActiviteitIdField;
+        private int Activiteit_IDField;
         
         private string CategorieField;
         
@@ -402,14 +402,14 @@ namespace CheckUserInput.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ActiviteitId {
+        public int Activiteit_ID {
             get {
-                return this.ActiviteitIdField;
+                return this.Activiteit_IDField;
             }
             set {
-                if ((this.ActiviteitIdField.Equals(value) != true)) {
-                    this.ActiviteitIdField = value;
-                    this.RaisePropertyChanged("ActiviteitId");
+                if ((this.Activiteit_IDField.Equals(value) != true)) {
+                    this.Activiteit_IDField = value;
+                    this.RaisePropertyChanged("Activiteit_ID");
                 }
             }
         }

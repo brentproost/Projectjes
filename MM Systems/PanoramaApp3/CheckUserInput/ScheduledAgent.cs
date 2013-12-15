@@ -68,6 +68,7 @@ namespace CheckUserInput
 
         void client_GetLatestInputCompleted(object sender, GetLatestInputCompletedEventArgs e)
         {
+            e.Result.Date.ToString();
             if (taskt.Name.Equals("ms", StringComparison.OrdinalIgnoreCase))
             {
                 if (e.Result.Date == DateTime.Now.Date)

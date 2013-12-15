@@ -236,7 +236,7 @@ namespace Wcf
             {
                 User_ID = usrID,
                 Activiteit_ID = actID,
-                Datum_Uur_Ingave = datumuuringave.ToString("G"),
+                Datum_Uur_Ingave = datumuuringave.ToString("G", CultureInfo.CreateSpecificCulture("nl-BE")),
                 Datum_Uur_Activiteit = dtmuurActiviteit.Day + "-" + dtmuurActiviteit.Month + "-" + dtmuurActiviteit.Year,
                 Beginuur_Activiteit = beginuur,
                 Einduur_Activiteit = einduur,
@@ -338,9 +338,23 @@ namespace Wcf
         }
         DateTime IService.GetLatestInput(int UserId)
         {
-            List<DateTime> activiteiten = (from i in Data.Tbl_GebruikersIngaves where i.User_ID == UserId select DateTime.ParseExact(i.Datum_Uur_Ingave, "G", 
-            CultureInfo.InvariantCulture)).OrderByDescending(c => c.Date).ToList();
-            return activiteiten[0];
+            IFormatProvider culture = new System.Globalization.CultureInfo("nl-BE", true);
+            
+                List<string> activiteitentemp = (from i in Data.Tbl_GebruikersIngaves
+                                                 where i.User_ID == UserId
+                                                 select i.Datum_Uur_Ingave).ToList();
+            if (activiteitentemp != null)
+            {
+                DateTime activiteiten = (DateTime.Parse(activiteitentemp[0], culture, DateTimeStyles.AssumeLocal));
+
+                return activiteiten;
+            }
+            else
+            {
+                DateTime temp = new DateTime(2100,0,0);
+                return temp;
+            }
+
         }
 
 
