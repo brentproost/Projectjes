@@ -34,7 +34,7 @@ namespace CheckUserInput
             {
                 ID = (int)Settings["ID"];
             }
-            time = 18;
+            time = 14;
         }
 
         /// Code to execute on Unhandled Exceptions
@@ -75,7 +75,7 @@ namespace CheckUserInput
                 }
                 if (e.Result.Date <= DateTime.Now.Date)
                 {
-                    if (DateTime.Now.Hour >= time && DateTime.Now.Hour <= (time+1) )
+                    if (DateTime.Now.Hour >= time && DateTime.Now.Hour < (time+1) )
                     {
                         ShellToast toast = new ShellToast();
                         Mutex mutex = new Mutex(true, "ScheduledAgentData");

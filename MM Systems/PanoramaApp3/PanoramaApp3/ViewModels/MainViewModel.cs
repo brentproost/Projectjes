@@ -27,7 +27,7 @@ namespace PanoramaApp3
         /// <summary>
         /// A collection for ItemViewModel objects.
         /// </summary>
-        public ObservableCollection<ItemViewModel> Items { get; private set; }
+       public ObservableCollection<ItemViewModel> Items { get; private set; }
         public ObservableCollection<DateViewModel> Date { get; private set; }
 
         private string _sampleProperty = "Sample Runtime Property Value";
@@ -63,11 +63,11 @@ namespace PanoramaApp3
         public void LoadData()
         {
             // Sample data; replace with real data
-            this.Items.Add(new ItemViewModel() { LineOne="Nieuwe invoer", LineTwo="Nieuwe data ingeven van een activiteit" });
+            /*this.Items.Add(new ItemViewModel() { LineOne="Nieuwe invoer", LineTwo="Nieuwe data ingeven van een activiteit" });
             this.Items.Add(new ItemViewModel() { LineOne="Grafieken", LineTwo="Grafieken van vorige data bekijken" });
             this.Items.Add(new ItemViewModel() { LineOne="Instellingen", LineTwo="Log je uit of verander andere instellingen" });
             this.Date.Add(new DateViewModel()  { LineOne="Datum", LineTwo="Geef de datum in van de activiteit" });
-            this.Date.Add(new DateViewModel() { LineOne="Uur", LineTwo="Geef het uur in waarop u de activiteit heeft gedaan" });
+            this.Date.Add(new DateViewModel() { LineOne="Uur", LineTwo="Geef het uur in waarop u de activiteit heeft gedaan" });*/
             this.IsDataLoaded = true;
         }
 

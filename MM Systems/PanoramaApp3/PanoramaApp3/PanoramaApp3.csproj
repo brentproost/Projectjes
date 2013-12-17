@@ -179,9 +179,7 @@
     <None Include="Properties\DataSources\CheckUserInput.ServiceReference.Tbl_Weersomstandigheden.datasource" />
     <None Include="Properties\DataSources\CheckUserInput.ServiceReference.User.datasource" />
     <None Include="Properties\WMAppManifest.xml" />
-    <Content Include="MSLogo.png" />
-    <Content Include="ApplicationLogo.png" />
-    <Content Include="MSLogo2.png" />
+    <Content Include="logo173.png" />
     <Content Include="ReadMe.Coding4Fun.Toolkit.txt" />
     <None Include="Service References\ServiceReference\PanoramaApp3.ServiceReference.Activities.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
