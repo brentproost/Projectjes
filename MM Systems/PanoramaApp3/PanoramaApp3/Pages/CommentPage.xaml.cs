@@ -32,7 +32,7 @@ namespace PanoramaApp3.Pages
         private void btnok_Click(object sender, RoutedEventArgs e)
         {
             client.AddGebruikersIngaveCompleted += client_AddGebruikersIngaveCompleted;
-            client.AddGebruikersIngaveAsync(User.ID, InputDatabase.ActivityID, DateTime.Now, InputDatabase.Date, InputDatabase.FromHour, InputDatabase.ToHour, txt_Commentaar.Text, InputDatabase.WeersomstandighedenIDs, InputDatabase.NachtrustIDs, InputDatabase.UrenSlaap, InputDatabase.Vermoeidheid, InputDatabase.Belangrijk, InputDatabase.Tevredenheid);
+            client.AddGebruikersIngaveAsync(User.ID, InputDatabase.ActivityID,DateTime.Now,InputDatabase.Date, InputDatabase.FromHour, InputDatabase.ToHour, txt_Commentaar.Text, InputDatabase.WeersomstandighedenIDs, InputDatabase.NachtrustIDs, InputDatabase.UrenSlaap, InputDatabase.Vermoeidheid, InputDatabase.Belangrijk, InputDatabase.Tevredenheid);
             _progressIndicator = new ProgressIndicator
             {
                 IsIndeterminate = true,

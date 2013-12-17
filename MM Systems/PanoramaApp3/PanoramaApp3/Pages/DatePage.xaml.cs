@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Windows;
@@ -34,7 +35,7 @@ namespace PanoramaApp3.Pages
 
         private void DtuurActiviteit_OnValueChanged(object sender, DateTimeValueChangedEventArgs e)
         {
-            InputDatabase.Date = DateTime.Parse(dtuurActiviteit.Value.ToString());
+            InputDatabase.Date = ((DateTime) dtuurActiviteit.Value).ToString("dd-MM-yyyy");
         }
     }
 }

@@ -1,5 +1,3 @@
-C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\Wcf.Azure2\bin\Debug\ServiceConfiguration.cscfg
-C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\Wcf.Azure2\bin\Debug\ServiceDefinition.csdef
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\Wcf.Azure2\bin\Debug\ServiceConfiguration.cscfg
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\Wcf.Azure2\bin\Debug\ServiceDefinition.csdef
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\Wcf.Azure2\obj\Debug\Wcf\bin\de\Microsoft.Data.Edm.resources.dll
@@ -95,6 +93,8 @@ C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\Wcf.Azure2\obj
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\Wcf.Azure2\obj\Debug\RemoteDebuggerConnector\Connector\Microsoft.VisualStudio.WindowsAzure.RemoteDebugger.Connector.exe.config
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\Wcf.Azure2\obj\Debug\RemoteDebuggerConnector\Connector\Microsoft.VisualStudio.WindowsAzure.RemoteDebugger.Contract.dll
 C:\Users\BrentProost\Documents\Projectjes\MM Systems\PanoramaApp3\Wcf.Azure2\obj\Debug\RemoteDebuggerConnector\RemoteDebuggerConnector.csplugin
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\Wcf.Azure2\bin\Debug\ServiceConfiguration.cscfg
+C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\Wcf.Azure2\bin\Debug\ServiceDefinition.csdef
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\Wcf.Azure2\obj\Debug\Wcf\bin\de\Microsoft.Data.Edm.resources.dll
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\Wcf.Azure2\obj\Debug\Wcf\bin\de\Microsoft.Data.OData.resources.dll
 C:\Users\senne\Documents\Projectjes\MM Systems\PanoramaApp3\Wcf.Azure2\obj\Debug\Wcf\bin\de\System.Spatial.resources.dll

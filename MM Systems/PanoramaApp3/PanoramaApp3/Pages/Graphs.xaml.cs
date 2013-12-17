@@ -23,7 +23,6 @@ namespace PanoramaApp3.Pages
         public Graphs()
         {
             InitializeComponent();
-
             dp_daggrafiek.Value = DateTime.Now;
             dp_maandgrafiek.Value = DateTime.Now;
         }
@@ -31,7 +30,7 @@ namespace PanoramaApp3.Pages
         private void dp_daggrafiek_ValueChanged(object sender, DateTimeValueChangedEventArgs e)
         {
             client.DagDataAsync(User.ID, ((DateTime)dp_daggrafiek.Value).Date.ToString("dd-MM-yyyy"));
-            client.DagDataAsync(User.ID,DateTime.Now.Date.ToString("dd-MM-yyyy"));
+            //client.DagDataAsync(User.ID,DateTime.Now.Date.ToString("dd-MM-yyyy"));
             client.DagDataCompleted += client_DagDataCompleted;
         }
 
@@ -48,7 +47,6 @@ namespace PanoramaApp3.Pages
             else
             {
                 MessageBox.Show("Er zijn nog geen ingaven voor deze dag");
-                dp_daggrafiek.ValueChanged -= dp_daggrafiek_ValueChanged;
             }
         }
 
@@ -59,7 +57,6 @@ namespace PanoramaApp3.Pages
             else
             {
                 MessageBox.Show("Er zijn nog geen ingaven voor deze maand");
-                dp_daggrafiek.ValueChanged -= dp_daggrafiek_ValueChanged;
             }
         }
     }

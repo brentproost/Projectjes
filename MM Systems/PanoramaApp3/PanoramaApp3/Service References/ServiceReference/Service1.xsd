@@ -141,7 +141,7 @@
         <xs:element minOccurs="0" name="usrID" type="xs:int" />
         <xs:element minOccurs="0" name="actID" type="xs:int" />
         <xs:element minOccurs="0" name="datumuuringave" type="xs:dateTime" />
-        <xs:element minOccurs="0" name="dtmuurActiviteit" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtmuurActiviteit" nillable="true" type="xs:string" />
         <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="beginuur" type="q5:duration" />
         <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="einduur" type="q6:duration" />
         <xs:element minOccurs="0" name="commentaar" nillable="true" type="xs:string" />

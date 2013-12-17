@@ -230,14 +230,14 @@ namespace Wcf
         }
 
         //Functie om een record toe te voegen aan de tabel Tbl_GebruikersIngave
-        void IService.AddGebruikersIngave(int usrID, int actID, DateTime datumuuringave, DateTime dtmuurActiviteit, TimeSpan beginuur, TimeSpan einduur, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid)
+        void IService.AddGebruikersIngave(int usrID, int actID, DateTime datumuuringave, string dtmuurActiviteit, TimeSpan beginuur, TimeSpan einduur, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid)
         {
             Tbl_GebruikersIngave gebi = new Tbl_GebruikersIngave()
             {
                 User_ID = usrID,
                 Activiteit_ID = actID,
                 Datum_Uur_Ingave = datumuuringave.ToString("G", CultureInfo.CreateSpecificCulture("nl-BE")),
-                Datum_Uur_Activiteit = dtmuurActiviteit.Day + "-" + dtmuurActiviteit.Month + "-" + dtmuurActiviteit.Year,
+                Datum_Uur_Activiteit = dtmuurActiviteit,
                 Beginuur_Activiteit = beginuur,
                 Einduur_Activiteit = einduur,
                 Commentaar = commentaar,
@@ -372,7 +372,7 @@ namespace Wcf
         {
             var dagendata = (from d in Data.Tbl_GebruikersIngaves
                              where
-                                 d.User_ID == UserId && d.Datum_Uur_Activiteit.Split('-')[1]+"-"+d.Datum_Uur_Activiteit.Split('-')[2] == datum
+                                 d.User_ID == UserId && d.Datum_Uur_Activiteit.Remove(0,3) == datum
                              select
                                  new GrafiekData()
                                  {

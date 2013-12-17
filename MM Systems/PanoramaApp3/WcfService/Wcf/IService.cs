@@ -43,7 +43,7 @@ namespace Wcf
         void DeleteUser(int id);
 
         [OperationContract]
-        void AddGebruikersIngave(int usrID, int actID, DateTime datumuuringave, DateTime dtmuurActiviteit, TimeSpan beginuur, TimeSpan einduur, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid);
+        void AddGebruikersIngave(int usrID, int actID, DateTime datumuuringave, string dtmuurActiviteit, TimeSpan beginuur, TimeSpan einduur, string commentaar, int weersid, int nachtrid, int aantaluurgeslapen, float vermoeidheid, float belangrijkheid, float tevredenheid);
 
         [OperationContract]
         List<Tbl_Weersomstandigheden> GetAllWeersOmstandigheden();
